@@ -10,10 +10,20 @@ import org.xutils.x;
  * 作用：软件入口
  */
 public class App extends Application {
+    private static App mApp;
     @Override
     public void onCreate() {
         super.onCreate();
+
         x.Ext.init(this);
         x.Ext.setDebug(BuildConfig.DEBUG);//是否输出debug日记，开启会影响性能
+    }
+
+    public static App getInstance(){
+        if (mApp == null)
+        {
+            mApp = new App();
+        }
+        return mApp;
     }
 }

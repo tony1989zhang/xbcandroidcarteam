@@ -12,7 +12,7 @@
         android:name=".app.App"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeAct"
+            android:name=".activities.HomeAct"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme">
