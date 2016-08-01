@@ -11,6 +11,8 @@ import org.xutils.image.ImageOptions;
 import org.xutils.x;
 import java.util.Map;
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.tools.XgoLog;
+
 /**
  * 作者：V先生 on 2016/8/1 16:05
  * 作用：网络请求工具类
@@ -35,6 +37,7 @@ public class CUtil {
     }
 
     public static <T>Cancelable Post(String path, Map<String,Object> map, CommonCallback<T> callback){
+        XgoLog.e("map:" + map);
         RequestParams params = new RequestParams(getUrl(path));
         if (null != map)
         {
