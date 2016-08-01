@@ -3,6 +3,7 @@ package www.lvchehui.com.carteam.http;
 import org.xutils.common.Callback.CommonCallback;
 import org.xutils.ex.HttpException;
 import www.lvchehui.com.carteam.tools.XgoLog;
+import www.lvchehui.com.carteam.view.toast.ToastManager;
 
 /**
  * 作者：V先生 on 2016/7/30 16:40
@@ -32,5 +33,6 @@ public  abstract class ComCb<ResultType> implements CommonCallback<ResultType> {
     }
     @Override
     public void onFinished() {
+        ToastManager.getManager().show("加载数据完成");
     }
 }
