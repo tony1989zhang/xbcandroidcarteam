@@ -10,8 +10,10 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.http.ComCb;
-import www.lvchehui.com.carteam.http.ConnectionManager;
+import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.view.toast.ToastManager;
 
 @ContentView(R.layout.activity_home)
 public class HomeAct extends BaseAct{
@@ -25,10 +27,14 @@ public class HomeAct extends BaseAct{
 
     @Event( R.id.btn_ok)
     private void onHomeActOnClick(View v){
-        ConnectionManager.getInstance().login(new ComCb() {
+        CM.getInstance().login("", "", new ComCb<LoginBean>() {
             @Override
-            public void onSuccess(String result) {
-                m_fullscreen_content.setText("result:" + result);
+            public void onSuccess(LoginBean result) {
+                m_fullscreen_content.setText("result:" + result.toString());
+            }
+            @Override
+            public void onFinished() {
+                super.onFinished();
             }
         });
     }
