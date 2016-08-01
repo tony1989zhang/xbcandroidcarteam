@@ -1,5 +1,4 @@
 package www.lvchehui.com.carteam.app;
-
 import android.app.Activity;
 import android.app.Application;
 
@@ -15,7 +14,6 @@ import java.util.List;
 
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.toast.ToastManager;
-
 /**
  * 作者：V先生 on 2016/7/29 20:06
  * 作用：软件入口
@@ -38,7 +36,6 @@ public class App extends Application {
         x.Ext.setDebug(BuildConfig.DEBUG);//是否输出debug日记，开启会影响性能
         initDb();
     }
-
     public static App getInstance(){
         if (mApp == null)
         {
@@ -46,7 +43,6 @@ public class App extends Application {
         }
         return mApp;
     }
-
     public void initDb(){
         new DbManager.DaoConfig().setDbName("xbc_cart_team_db").setDbVersion(1).setDbUpgradeListener(new DbManager.DbUpgradeListener() {
             @Override
@@ -76,7 +72,6 @@ public class App extends Application {
             }
         }
     }
-
     public Activity getTopActivity(){
         return aliveActivitys.get(aliveActivitys.size() - 1).get();
     }
