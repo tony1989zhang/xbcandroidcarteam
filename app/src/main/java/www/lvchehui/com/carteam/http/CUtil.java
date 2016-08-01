@@ -11,7 +11,7 @@ import java.util.Objects;
  * 作者：V先生 on 2016/8/1 16:05
  * 作用：
  */
-public class ConnectionUtil {
+public class CUtil {
     private static final String SERVER_URL = "192.168.1.66/api.php/main/";
 
     //get方法

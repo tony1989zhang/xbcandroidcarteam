@@ -15,21 +15,21 @@ import www.lvchehui.com.carteam.R;
  * 作者：V先生 on 2016/7/30 17:13
  * 作用：提交网络请求。
  */
-public class ConnectionManager {
+public class CM {
     private static final String SERVER_URL = "192.168.1.66/api.php/main/";
     private static final String USERS_LOGIN = "Users/login";
-    private static ConnectionManager mConnectionManager;
+    private static CM mCM;
     private Drawable drawableResult;
     private ImageOptions imageOptions;
 
-    private ConnectionManager() {
+    private CM() {
     }
 
-    public static final ConnectionManager getInstance() {
-        if (mConnectionManager == null) {
-            mConnectionManager = new ConnectionManager();
+    public static final CM getInstance() {
+        if (mCM == null) {
+            mCM = new CM();
         }
-        return mConnectionManager;
+        return mCM;
     }
 
     public void login(ComCb comCb) {
