@@ -1,19 +1,16 @@
 package www.lvchehui.com.carteam.http;
-
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import org.xutils.common.Callback;
+import org.xutils.common.Callback.CommonCallback;
+import org.xutils.common.Callback.Cancelable;
 import org.xutils.common.util.DensityUtil;
 import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
-
 import java.util.Map;
-import java.util.Objects;
-
 import www.lvchehui.com.carteam.R;
-
 /**
  * 作者：V先生 on 2016/8/1 16:05
  * 作用：网络请求工具类
@@ -25,7 +22,7 @@ public class CUtil {
     private static ImageOptions imageOptions;
 
     //get方法
-    public static<T>Callback.Cancelable Get(String path, Map<String,String> map, Callback.CommonCallback<T> callback){
+    public static<T>Cancelable Get(String path, Map<String,String> map, CommonCallback<T> callback){
         RequestParams params = new RequestParams(getUrl(path));
         if (null != map)
         {
@@ -33,11 +30,11 @@ public class CUtil {
                 params.addQueryStringParameter(entry.getKey(),entry.getValue());
             }
         }
-        Callback.Cancelable cancelable = x.http().get(params, callback);
+        Cancelable cancelable = x.http().get(params, callback);
         return cancelable;
     }
 
-    public static <T>Callback.Cancelable Post(String path, Map<String,Object> map, Callback.CommonCallback<T> callback){
+    public static <T>Cancelable Post(String path, Map<String,Object> map, CommonCallback<T> callback){
         RequestParams params = new RequestParams(getUrl(path));
         if (null != map)
         {
@@ -46,11 +43,11 @@ public class CUtil {
                params.addParameter(entry.getKey(),entry.getValue());
             }
         }
-        Callback.Cancelable cancelable = x.http().post(params, callback);
+        Cancelable cancelable = x.http().post(params, callback);
         return cancelable;
     }
 
-    public static <T>Callback.Cancelable UpLoadFile(String path,Map<String,Object> map,Callback.CommonCallback<T> callback){
+    public static <T>Cancelable UpLoadFile(String path,Map<String,Object> map,CommonCallback<T> callback){
         RequestParams params = new RequestParams(getUrl(path));
         if (null != map)
         {
@@ -60,16 +57,16 @@ public class CUtil {
             }
         }
         params.setMultipart(true);
-        Callback.Cancelable cancelable = x.http().post(params, callback);
+        Cancelable cancelable = x.http().post(params, callback);
         return cancelable;
     }
 
-    public static <T>Callback.Cancelable DownLoadFile(String url, String filePath, Callback.CommonCallback<T> callback)
+    public static <T>Cancelable DownLoadFile(String url, String filePath,CommonCallback<T> callback)
     {
         RequestParams params = new RequestParams(getUrl(url));
         params.setAutoRename(true);
         params.setSaveFilePath(filePath);
-        Callback.Cancelable cancelable = x.http().get(params, callback);
+        Cancelable cancelable = x.http().get(params, callback);
         return cancelable;
     }
 
@@ -79,7 +76,7 @@ public class CUtil {
 
     public static Drawable loadImage(ImageView iv, String picUrl) {
         initImageOptions();
-        x.image().bind(iv, picUrl, imageOptions, new Callback.CommonCallback<Drawable>() {
+        x.image().bind(iv, picUrl, imageOptions, new CommonCallback<Drawable>() {
             @Override
             public void onSuccess(Drawable result) {
                 drawableResult = result;

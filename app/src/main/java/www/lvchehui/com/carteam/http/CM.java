@@ -1,15 +1,9 @@
 package www.lvchehui.com.carteam.http;
 
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
+import org.xutils.common.Callback.Cancelable;
 
-import org.xutils.common.Callback;
-import org.xutils.common.util.DensityUtil;
-import org.xutils.http.RequestParams;
-import org.xutils.image.ImageOptions;
-import org.xutils.x;
-
-import www.lvchehui.com.carteam.R;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 作者：V先生 on 2016/7/30 17:13
@@ -19,8 +13,6 @@ public class CM {
     private static final String SERVER_URL = "192.168.1.66/api.php/main/";
     private static final String USERS_LOGIN = "Users/login";
     private static CM mCM;
-    private Drawable drawableResult;
-    private ImageOptions imageOptions;
 
     private CM() {
     }
@@ -32,49 +24,12 @@ public class CM {
         return mCM;
     }
 
-    public void login(ComCb comCb) {
-        RequestParams requestParams = new RequestParams(getUrl(USERS_LOGIN));
-        requestParams.addBodyParameter("username", "15859254561");
-        requestParams.addBodyParameter("password", "E10ADC3949BA59ABBE56E057F20F883E");
-        x.http().post(requestParams, comCb);
+      public Cancelable login(String uname,String pwd ,ComCb comCb) {
+       Map<String,Object> params = new HashMap<>();
+        params.put("username", "15859254561");
+        params.put("password", "E10ADC3949BA59ABBE56E057F20F883E");
+        return CUtil.Post(USERS_LOGIN, params, comCb);
     }
 
-    public Drawable loadImage(ImageView iv, String picUrl) {
-        initImageOptions();
-        x.image().bind(iv, picUrl, imageOptions, new Callback.CommonCallback<Drawable>() {
-            @Override
-            public void onSuccess(Drawable result) {
-                drawableResult = result;
-            }
 
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-                drawableResult = x.app().getResources().getDrawable(R.mipmap.ic_launcher);
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-                drawableResult = x.app().getResources().getDrawable(R.mipmap.ic_launcher);
-            }
-
-            @Override
-            public void onFinished() {
-                drawableResult = x.app().getResources().getDrawable(R.mipmap.ic_launcher);
-            }
-        });
-        return drawableResult;
-    }
-
-    public String getUrl(String path) {
-        return "http://" + SERVER_URL + path;
-    }
-
-    private void initImageOptions() {
-        if (null == imageOptions) {
-            imageOptions = new ImageOptions.Builder().setSize(DensityUtil.dip2px(120), DensityUtil.dip2px(120))
-                    .setRadius(DensityUtil.dip2px(5)).setCrop(true)
-                    .setImageScaleType(ImageView.ScaleType.CENTER_CROP).setLoadingDrawableId(R.mipmap.ic_launcher)
-                    .setFailureDrawableId(R.mipmap.ic_launcher).build();
-        }
-    }
 }
