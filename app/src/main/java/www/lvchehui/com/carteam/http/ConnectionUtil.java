@@ -54,6 +54,15 @@ public class ConnectionUtil {
         return cancelable;
     }
 
+    public static <T>Callback.Cancelable DownLoadFile(String url, String filePath, Callback.CommonCallback<T> callback)
+    {
+        RequestParams params = new RequestParams(getUrl(url));
+        params.setAutoRename(true);
+        params.setSaveFilePath(filePath);
+        Callback.Cancelable cancelable = x.http().get(params, callback);
+        return cancelable;
+    }
+
     private static String getUrl(String path) {
         return "http://" + SERVER_URL + path;
     }
