@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.xutils.x;
+
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.app.App;
 
@@ -33,7 +35,7 @@ public class ToastManager {
 	}
 
 	private void init() {
-		context = App.getInstance();
+		context = x.app().getBaseContext();
 		toastView = LayoutInflater.from(context).inflate(R.layout.toast_view, null);
 		tvToast = (TextView) toastView.findViewById(R.id.toastMessage);
 		toast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
