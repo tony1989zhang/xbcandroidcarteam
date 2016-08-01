@@ -9,8 +9,12 @@ import www.lvchehui.com.carteam.view.toast.ToastManager;
  * 作者：V先生 on 2016/7/30 16:40
  * 作用：网络请求返回结果
  */
-public  abstract class ComCb<ResultType> implements CommonCallback<ResultType> {
+public   class ComCb<ResultType> implements CommonCallback<ResultType> {
     String errStr = "";
+    @Override
+    public void onSuccess(ResultType result) {
+    }
+
     @Override
     public void onError(Throwable ex, boolean isOnCallback) {
         errStr = "";
