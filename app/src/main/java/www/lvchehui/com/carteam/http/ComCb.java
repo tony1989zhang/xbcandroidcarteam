@@ -31,11 +31,13 @@ public abstract class ComCb implements Callback.CommonCallback<String> {
             errStr = "网络错误";
         }
         XgoLog.e("errStr:" + errStr);
+        ToastManager.getManager().show("网络错误");
     }
 
     @Override
     public void onCancelled(CancelledException cex) {
         XgoLog.e("ex_onError:" + cex.toString());
+        ToastManager.getManager().show("ex_onError:" + cex.toString());
     }
 
     @Override
