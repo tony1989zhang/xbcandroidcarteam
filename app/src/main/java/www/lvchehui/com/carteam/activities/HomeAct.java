@@ -11,9 +11,8 @@ import org.xutils.view.annotation.ViewInject;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.bean.LoginBean;
-import www.lvchehui.com.carteam.http.ComCb;
 import www.lvchehui.com.carteam.http.CM;
-import www.lvchehui.com.carteam.view.toast.ToastManager;
+import www.lvchehui.com.carteam.http.ComCb;
 
 @ContentView(R.layout.activity_home)
 public class HomeAct extends BaseAct{
@@ -38,6 +37,4 @@ public class HomeAct extends BaseAct{
             }
         });
     }
-    //测试更改
-    //测试一下
 }
