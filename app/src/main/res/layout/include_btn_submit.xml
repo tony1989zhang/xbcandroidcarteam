@@ -10,6 +10,9 @@
         android:minHeight="48dp"
         android:background="@drawable/selector_btn_submit"
         android:textColor="@color/white"
+        android:textSize="@dimen/text_default_size"
+        android:gravity="center"
+        android:text="提交"
         android:id="@+id/tv_ok"
         />
 
