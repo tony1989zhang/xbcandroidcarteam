@@ -8,7 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:background=""
+        android:background="@drawable/selector_btn_submit"
+        android:textColor="@color/white"
+        android:id="@+id/tv_ok"
         />
 
 </LinearLayout>
