@@ -14,13 +14,13 @@
         android:layout_alignParentTop="true"
         android:layout_margin="8dp"
         android:text="请选择操作"
-        android:textColor="@color/text_default_hintcolor"
+        android:textColor="@color/text_hint_color"
         android:textSize="18dp" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
-        android:background="@color/title_bg_color" />
+        android:background="#999" />
 
     <TextView
         android:id="@+id/tv_1"
@@ -32,11 +32,12 @@
         android:text="拍照"
         android:background="@drawable/bg_white_gray"
         android:textColor="@color/text_default_color"
-        android:textSize="@dimen/text_default_size" />
+        android:textSize="@dimen/text_larght_size" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="0.5dp"
+        android:layout_marginLeft="5dp"
         android:background="#999" />
 
     <TextView
@@ -49,7 +50,7 @@
         android:background="@drawable/bg_white_gray"
         android:text="相册"
         android:textColor="@color/text_default_color"
-        android:textSize="@dimen/text_default_size"
+        android:textSize="@dimen/text_larght_size"
         />
 
     <View
@@ -86,7 +87,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="取消"
-        android:textColor="@color/text_default_hintcolor"
+        android:textColor="@color/text_hint_color"
         android:textSize="@dimen/text_default_size" />
 
 </LinearLayout>
