@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_margin="8dp"
         android:text="请选择操作"
-        android:textColor="@color/title_bg_color"
+        android:textColor="@color/text_default_hintcolor"
         android:textSize="18dp" />
 
     <View
@@ -29,10 +29,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:padding="10dp"
-        android:text="设置为头像"
+        android:text="拍照"
         android:background="@drawable/bg_white_gray"
-        android:textColor="@color/title_bg_color"
-        android:textSize="16dp" />
+        android:textColor="@color/text_default_color"
+        android:textSize="@dimen/text_default_size" />
 
     <View
         android:layout_width="fill_parent"
@@ -47,9 +47,10 @@
         android:layout_alignParentTop="true"
         android:padding="10dp"
         android:background="@drawable/bg_white_gray"
-        android:text="删除图片"
-        android:textColor="@color/title_bg_color"
-        android:textSize="16dp" />
+        android:text="相册"
+        android:textColor="@color/text_default_color"
+        android:textSize="@dimen/text_default_size"
+        />
 
     <View
         android:layout_width="fill_parent"
@@ -85,7 +86,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="取消"
-        android:textColor="@color/title_bg_color"
-        android:textSize="16dp" />
+        android:textColor="@color/text_default_hintcolor"
+        android:textSize="@dimen/text_default_size" />
 
 </LinearLayout>
