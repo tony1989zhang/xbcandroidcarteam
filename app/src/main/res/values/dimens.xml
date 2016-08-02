@@ -8,4 +8,7 @@
 
     <dimen name="radius">5dp</dimen>
     <dimen name="stroke_width">1dp</dimen>
+
+
+    <dimen name="parallax_ad_height_size">190dp</dimen>
 </resources>

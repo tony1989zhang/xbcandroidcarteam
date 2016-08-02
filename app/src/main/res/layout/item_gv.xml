@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     >
-    <www.lvchehui.com.carteam.view.XbcGV
+    <www.lvchehui.com.carteam.view.XbcGv
         android:id="@+id/xbc_gv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
