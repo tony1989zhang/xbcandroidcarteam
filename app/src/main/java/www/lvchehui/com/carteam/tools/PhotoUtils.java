@@ -13,9 +13,10 @@ import android.provider.MediaStore;
 import android.view.Display;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import www.lvchehui.com.carteam.view.toast.ToastManager;
 
@@ -23,9 +24,9 @@ import www.lvchehui.com.carteam.view.toast.ToastManager;
  * 作者：V先生 on 2016/8/2 10:13
  * 作用：
  */
-public class UtilsPhoto{
+public class PhotoUtils {
     private GetPhotoResultListener mGetPhotoResultListener;
-    private static UtilsPhoto utilsPhoto;
+    private static PhotoUtils photoUtils;
     private static final int PHOTO_CARMERA = 1;
     private static final int PHOTO_PICK = 2;
     private String picname;
@@ -34,47 +35,45 @@ public class UtilsPhoto{
     private int height;
 
     private File file;
-    private UtilsPhoto(){}
-    private UtilsPhoto(Activity acy,GetPhotoResultListener getPRListener)
+    private PhotoUtils(Activity acy, GetPhotoResultListener getPRListener)
     {
         mActivity = acy;
-        SharedPreferences spf = acy.getSharedPreferences("info_user", Context.MODE_APPEND);
-        String picname = "f_" + spf.getString("_id", "") + "_" + System.currentTimeMillis() / 1000 + ".png";
+        mGetPhotoResultListener = getPRListener;
+         picname = "IMG_" + System.currentTimeMillis() / 1000 + ".png";
         file = new File(Environment.getExternalStorageDirectory(), picname);
         Display display = acy.getWindowManager().getDefaultDisplay();
         width = display.getWidth();
         height = display.getHeight();
     }
-    public static UtilsPhoto getInstance(Activity acy,GetPhotoResultListener getPhotoResultListener){
-        if (null == utilsPhoto)
+    public static PhotoUtils getInstance(Activity acy, GetPhotoResultListener getPhotoResultListener){
+        if (null == photoUtils)
         {
-            utilsPhoto = new UtilsPhoto(acy,getPhotoResultListener);
+            photoUtils = new PhotoUtils(acy,getPhotoResultListener);
         }
-        return utilsPhoto;
+        return photoUtils;
     }
     public void showDialog()
     {
-        //相册获取
+        //  //拍照
         startCamera();
-        //拍照
+      //相册获取
+//        startPick();
     }
-
     private void startCamera(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.ACTION_IMAGE_CAPTURE, Uri.fromFile(file));
         mActivity.startActivityForResult(intent,PHOTO_CARMERA);
     }
     private void startPick(){
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent intent = new Intent(Intent.ACTION_PICK,null);
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
         mActivity.startActivityForResult(intent,PHOTO_PICK);
     }
-
     public void getActivityResult(int requestCode,int resultCode,Intent data)
     {
         if (resultCode != Activity.RESULT_OK)
         return;
-        if (Environment.MEDIA_UNKNOWN.equals(Environment.getExternalStorageState()))
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_UNKNOWN))
         {
             ToastManager.getManager().show("SD卡不可用");
             return;
@@ -91,7 +90,6 @@ public class UtilsPhoto{
                 break;
         }
     }
-
     private void setPicToView(Uri data) {
        Uri uri = data;
         Cursor c = mActivity.getContentResolver().query(uri, null, null, null, null);
@@ -100,12 +98,11 @@ public class UtilsPhoto{
             String path = c.getString(c.getColumnIndex(MediaStore.Images.Media.DATA));
             file = new File(path);
             Bitmap bp = getBitmap();
-            saveMyBitmap(bp);//保存图片
+            //传递给activity
             if (null !=  mGetPhotoResultListener)
                 mGetPhotoResultListener.onPotoResult(bp);
         }
     }
-
     private void setCarmeraToView() {
         Bitmap bitmap = getBitmap();
         if (null != mGetPhotoResultListener){
@@ -113,7 +110,6 @@ public class UtilsPhoto{
         }
 
     }
-
     private Bitmap getBitmap() {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
@@ -134,26 +130,33 @@ public class UtilsPhoto{
         bitmap = BitmapFactory.decodeFile(file.getPath(),options);
         return bitmap;
     }
-
-    public void saveMyBitmap(Bitmap bp)
-    {
-       file = new File(Environment.getExternalStorageDirectory(),picname);
-        FileOutputStream fOut = null;
-        try{
-            fOut = new FileOutputStream(file);
-            bp.compress(Bitmap.CompressFormat.JPEG,100,fOut);
-            fOut.flush();
-            fOut.close();
-            XgoLog.e("name=" + file.getName() + "\n\n path" + file.getPath());
-        }catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public interface GetPhotoResultListener{
         void onPotoResult(Bitmap ib);
     }
-
+    // 将剪切后的图片保存到本地图片上！
+    public String saveBitmap(Bitmap bitmap) {
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("'IMG'_yyyyMMddHHmmss");
+        String cutnameString = dateFormat.format(date);
+        String filename = Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera" + "/" + cutnameString + ".jpg";
+        File f = new File(filename);
+        FileOutputStream fOut = null;
+        try {
+            f.createNewFile();
+            fOut = new FileOutputStream(f);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fOut);// 把Bitmap对象解析成流
+        try {
+            fOut.flush();
+            fOut.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return filename;
+    }
+    public interface PhotoResultIml{
+        void OnPotoResult(Bitmap ib);
+    }
 }
