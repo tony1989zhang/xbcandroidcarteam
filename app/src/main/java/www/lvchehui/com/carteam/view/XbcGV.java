@@ -9,16 +9,16 @@ import android.widget.GridView;
  * 作者：V先生 on 2016/8/2 18:54
  * 作用：自定义GridView 布局首页
  */
-public class XbcGV  extends GridView{
-    public XbcGV(Context context) {
+public class XbcGv extends GridView{
+    public XbcGv(Context context) {
         super(context);
     }
 
-    public XbcGV(Context context, AttributeSet attrs) {
+    public XbcGv(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public XbcGV(Context context, AttributeSet attrs, int defStyleAttr) {
+    public XbcGv(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
