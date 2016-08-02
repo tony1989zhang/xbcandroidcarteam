@@ -30,4 +30,16 @@
         android:text="btn"
         />
 
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        />
+    <Button
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="share"
+        android:layout_gravity="right" />
+
 </LinearLayout>
