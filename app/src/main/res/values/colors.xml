@@ -9,4 +9,6 @@
     <color name="main_color">#ffeeeeee</color>
     <color name="text_default_color">#4b4b4b</color>
     <color name="text_default_hintcolor">#4b4b4b</color>
+    <color name="title_bg_color">#6a6aff</color>
+    <color name="item_list_press">#fff6f6f6</color>
 </resources>
