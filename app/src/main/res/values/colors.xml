@@ -6,9 +6,10 @@
     <color name="black_overlay">#66000000</color>
 
     <color name="white">#FFF</color>
-    <color name="main_color">#ffeeeeee</color>
+    <color name="main_color">#f0f0f0</color>
     <color name="text_default_color">#4b4b4b</color>
-    <color name="text_default_hintcolor">#969696</color>
+    <color name="text_hint_color">#969696</color>
+    <color name="line_hint_color">#cbcbcb</color>
     <color name="title_bg_color">#6a6aff</color>
     <color name="item_list_press">#fff6f6f6</color>
 </resources>
