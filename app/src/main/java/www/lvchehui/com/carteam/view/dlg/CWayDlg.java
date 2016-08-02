@@ -6,46 +6,107 @@ import android.content.Context;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
+
+import org.xutils.view.annotation.ContentView;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.tools.XgoLog;
 
 /**
  * 作者：V先生 on 2016/8/1 15:36
  * 作用：设置默认的弹框
  */
+@ContentView(R.layout.dlg_c_way)
 public class CWayDlg extends Dialog implements View.OnClickListener {
-//    @ViewInject(R.id.tv_tip)
-//    private TextView m_tv_tip; //请选择操作;
-//
-//    @ViewInject(R.id.tv_1)
-//    private TextView m_tv_1; //设置为头像;
-//
-//    @ViewInject(R.id.tv_2)
-//    private TextView m_tv_2; //删除图片;
-//
-//    @ViewInject(R.id.tv_3)
-//    private TextView m_tv_3; //替换图片;
-//
-//    @ViewInject(R.id.divider_3)
-//    private View m_divider_3;
-//
-//    @ViewInject(R.id.tv_cancel)
-//    private TextView m_tv_cancel; //取消;
-
+    private ChooseBack mWayBack;
+    private TextView mTv1;
+    private TextView mTv2;
+    private TextView mTv3;
+    private TextView mtip;
 
     public CWayDlg(Context context) {
-        super(context, R.style.custom_dialog);
+        super(context, R.style.AlertDialogStyle);
         this.setContentView(R.layout.dlg_c_way);
         WindowManager windowManager = ((Activity) context).getWindowManager();
         Display display = windowManager.getDefaultDisplay();
         WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.width = display.getWidth() / 6 * 5;
+        lp.width = (int) (display.getWidth() / 6 * 5); // 设置宽度
         getWindow().setAttributes(lp);
+        findViewById(R.id.tv_cancel).setOnClickListener(this);
+        mtip = (TextView) findViewById(R.id.tv_tip);
+        mTv1 = (TextView) findViewById(R.id.tv_1);
+        mTv1.setOnClickListener(this);
+        mTv2 = (TextView) findViewById(R.id.tv_2);
+        mTv2.setOnClickListener(this);
+        mTv3 = (TextView) findViewById(R.id.tv_3);
+        mTv3.setOnClickListener(this);
+
+    }
+
+    public void settitle(String title) {
+        if (null != title) {
+            mtip.setText(title);
+        }
+    }
+
+    public void setData(String Str1, String Str2, String Str3) {
+        if (null != Str1) {
+            mTv1.setText(Str1);
+        } else {
+            mTv1.setVisibility(View.GONE);
+        }
+        if (null != Str2) {
+            mTv2.setText(Str2);
+        } else {
+            mTv2.setVisibility(View.GONE);
+        }
+        if (null != Str3) {
+            mTv3.setVisibility(View.VISIBLE);
+            findViewById(R.id.divider_3).setVisibility(View.VISIBLE);
+            mTv3.setText(Str3);
+        } else {
+            mTv3.setVisibility(View.GONE);
+        }
+
+    }
+
+    public void setWayBack(ChooseBack mWayBack) {
+        this.mWayBack = mWayBack;
+
     }
 
     @Override
     public void onClick(View v) {
-        XgoLog.e("点击");
+        switch (v.getId()) {
+            case R.id.tv_cancel:
+                this.cancel();
+                break;
+            case R.id.tv_1:
+                if (null != mWayBack) {
+                    mWayBack.wayback(0);
+                }
+                this.cancel();
+                break;
+            case R.id.tv_2:
+                if (null != mWayBack) {
+                    mWayBack.wayback(1);
+                }
+                this.cancel();
+                break;
+            case R.id.tv_3:
+                if (null != mWayBack) {
+                    mWayBack.wayback(2);
+                }
+                this.cancel();
+                break;
+
+            default:
+                break;
+        }
+
+    }
+
+    public interface ChooseBack {
+        void wayback(int i);
     }
 }
