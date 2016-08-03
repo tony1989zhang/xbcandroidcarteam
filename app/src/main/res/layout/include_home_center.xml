@@ -88,7 +88,7 @@
         android:padding="5dp">
 
         <LinearLayout
-            android:id="@+id/ll_my_msg"
+            android:id="@+id/ll_month_orders"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
@@ -97,6 +97,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_month_orders_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_default_size"
@@ -106,10 +107,11 @@
 
 
             <TextView
+                android:id="@+id/tv_month_orders_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5.0dip"
-                android:text="我的消息"
+                android:text="本月接单数(笔)"
                 android:textColor="@color/text_default_color"
                 android:textSize="12.0sp" />
         </LinearLayout>
@@ -117,7 +119,7 @@
         <View style="@style/lineSolid_height" />
 
         <LinearLayout
-            android:id="@+id/ll_make_money"
+            android:id="@+id/ll_today_orders_total"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
@@ -126,6 +128,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_today_orders_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_default_size"
@@ -135,10 +138,11 @@
 
 
             <TextView
+                android:id="@+id/tv_today_orders_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5.0dip"
-                android:text="我要赚钱"
+                android:text="今日被抢单数(笔)"
                 android:textColor="@color/text_default_color"
                 android:textSize="12.0sp" />
         </LinearLayout>
@@ -167,7 +171,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5.0dip"
-                android:text="综合评价"
+                android:text="综合评价(分)"
                 android:textColor="@color/text_default_color"
                 android:textSize="12.0sp" />
         </LinearLayout>
