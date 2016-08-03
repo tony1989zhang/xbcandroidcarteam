@@ -16,20 +16,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <include layout="@layout/include_home_center" />
+            <View style="@style/lineSolid" />
             <www.lvchehui.com.carteam.view.XbcGv
                 android:id="@+id/xbc_gv"
                 android:layout_width="match_parent"
-                android:layout_height="369dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:numColumns="3"
                 android:scrollbars="none"
                 android:stretchMode="columnWidth"
                 />
-
         </LinearLayout>
     </ScrollView>
-
 
 </LinearLayout>

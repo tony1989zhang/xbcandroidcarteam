@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:background="@color/white"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/ll_level"
@@ -24,12 +23,11 @@
                 android:id="@+id/tv_level_total"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:textSize="@dimen/text_default_size"
-                android:textColor="@color/white"
                 android:background="@drawable/shape_solid_cygreen"
                 android:gravity="center"
                 android:text="1811"
-                />
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_default_size" />
 
 
             <TextView
@@ -41,7 +39,6 @@
                 android:textColor="@color/text_default_color"
                 android:textSize="@dimen/text_default_size" />
         </LinearLayout>
-
 
 
         <View style="@style/lineSolid_height" />
@@ -59,37 +56,37 @@
                 android:id="@+id/tv_credit_total"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
-                android:textSize="@dimen/text_default_size"
-                android:textColor="@color/white"
                 android:background="@drawable/shape_solid_blue"
                 android:gravity="center"
                 android:text="1821"
-                />
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_default_size" />
 
 
             <TextView
                 android:id="@+id/tv_credit_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="信用值"
                 android:layout_marginLeft="15dp"
+                android:text="信用值"
                 android:textColor="@color/text_default_color"
                 android:textSize="@dimen/text_default_size" />
         </LinearLayout>
     </LinearLayout>
-    <View
-        style="@style/lineSolid"
-        />
+
+    <View style="@style/lineSolid" />
+
+    <View style="@style/lineSolid" />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="60dp"
         android:background="@color/white"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/ll_month_orders"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:background="@drawable/bg_white_gray"
@@ -100,10 +97,9 @@
                 android:id="@+id/tv_month_orders_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_default_size"
-                android:textColor="@color/text_default_color"
                 android:text="18"
-                />
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size" />
 
 
             <TextView
@@ -113,14 +109,14 @@
                 android:layout_marginTop="5.0dip"
                 android:text="本月接单数(笔)"
                 android:textColor="@color/text_default_color"
-                android:textSize="12.0sp" />
+                android:textSize="@dimen/text_middle_size" />
         </LinearLayout>
 
         <View style="@style/lineSolid_height" />
 
         <LinearLayout
             android:id="@+id/ll_today_orders_total"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:background="@drawable/bg_white_gray"
@@ -131,10 +127,9 @@
                 android:id="@+id/tv_today_orders_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_default_size"
-                android:textColor="@color/text_default_color"
                 android:text="18"
-                />
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size" />
 
 
             <TextView
@@ -142,16 +137,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5.0dip"
-                android:text="今日被抢单数(笔)"
+                android:text="今日被抢数(笔)"
                 android:textColor="@color/text_default_color"
-                android:textSize="12.0sp" />
+                android:textSize="@dimen/text_middle_size" />
         </LinearLayout>
 
         <View style="@style/lineSolid_height" />
 
         <LinearLayout
             android:id="@+id/ll_my_wall"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:background="@drawable/bg_white_gray"
@@ -161,10 +156,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_default_size"
-                android:textColor="@color/text_default_color"
                 android:text="18"
-                />
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size" />
 
 
             <TextView
@@ -173,8 +167,7 @@
                 android:layout_marginTop="5.0dip"
                 android:text="综合评价(分)"
                 android:textColor="@color/text_default_color"
-                android:textSize="12.0sp" />
+                android:textSize="@dimen/text_middle_size" />
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
