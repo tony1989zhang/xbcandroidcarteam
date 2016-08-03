@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.activities.HomeAct;
 import www.lvchehui.com.carteam.base.BaseViewHolder;
+import www.lvchehui.com.carteam.view.toast.ToastManager;
 
 /**
  * 作者：V先生 on 2016/8/3 18:17
@@ -52,11 +54,18 @@ public class GvAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(
                     R.layout.item_gv, parent, false);
         }
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mContext instanceof HomeAct)
+                    ((HomeAct)mContext).itemClick(position);
+            }
+        });
         TextView tv = BaseViewHolder.get(convertView, R.id.tv_item);
         ImageView iv = BaseViewHolder.get(convertView, R.id.iv_item);
         iv.setBackgroundResource(bgs[position]);
