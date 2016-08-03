@@ -1,15 +1,35 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_color"
+    android:orientation="vertical"
     tools:context=".activities.HomeAct">
-    <!--<www.lvchehui.com.carteam.view.ParallaxSv-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--&gt;</www.lvchehui.com.carteam.view.ParallaxSv>-->
 
-   <include
-       layout="@layout/home_title"
-       />
-</RelativeLayout>
+    <include layout="@layout/home_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_home_center" />
+            <www.lvchehui.com.carteam.view.XbcGv
+                android:id="@+id/xbc_gv"
+                android:layout_width="match_parent"
+                android:layout_height="369dp"
+                android:gravity="center"
+                android:numColumns="3"
+                android:scrollbars="none"
+                android:stretchMode="columnWidth"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
