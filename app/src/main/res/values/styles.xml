@@ -39,7 +39,7 @@
 
     <style name="lineSolid_height">
         <item name="android:background">@color/line_hint_color</item>
-        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_width">2.0px</item>
         <item name="android:layout_height">match_parent</item>
     </style>
 
