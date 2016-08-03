@@ -20,6 +20,13 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+    <style parent="@style/AlertDialogStyle" name="CustomProgressDialog">
+
+    <item name="android:windowBackground">@android:color/transparent</item>
+
+    <item name="android:windowNoTitle">true</item>
+
+</style>
     <!-- 自定义仿IOS的AlertDialog的样式 -->
     <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
