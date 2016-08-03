@@ -25,7 +25,6 @@ public class BaseAct extends Activity {
     private View toastView;
     private Toast toast;
     public WeakReference<Activity> WriActivity = new WeakReference<Activity>(this);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,68 +35,53 @@ public class BaseAct extends Activity {
         toast = Toast.makeText(this, null, Toast.LENGTH_LONG);
         toast.setView(toastView);
     }
-
     public void setTitleV(TitleView title_v, String title) {
         setTitleV(title_v, title, null);
     }
-
     public void setTitleV(TitleView title_v, String title, String rightText) {
         if (title_v == null) return;
         title_v.setTitle(title);
         title_v.setTitleBackVisibility(View.VISIBLE);
         title_v.setTitleRightText(rightText);
     }
-
-
     public void showProgressDialog() {
         showProgressDialog("请稍后");
     }
-
     public void showProgressDialog(String strMessage) {
         showProgressDialog(strMessage, false);
     }
-
     public void showProgressDialog(String strMessage, boolean isCancelAble) {
-
         if (null == mProgress) {
             return;
         }
-
         if (isCancelAble) {
             mProgress.setCancelable(true);
             mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {
-
                 @Override
                 public void onCancel(DialogInterface dialog) {
                     mProgress.dismiss();
                 }
             });
         }
-
         mProgress.setMessage(strMessage);
         mProgress.show();
     }
-
     public void dismissProgressDialog() {
         if (null != mProgress && mProgress.isShowing()) {
             mProgress.dismiss();
         }
     }
-
     public void showToast(String hint) {
         showToast(hint, Toast.LENGTH_LONG);
     }
-
     public void showToast(String hint, int duration) {
         if (null == toast || null == toastView)
             return;
-
         TextView tv = (TextView) toastView.findViewById(R.id.toastMessage);
         tv.setText(hint);
         toast.setDuration(duration);
         toast.show();
     }
-
     @Event(value = {R.id.title_back, R.id.title_right})
     private void titleClick(View v) {
         switch (v.getId()) {
@@ -106,21 +90,17 @@ public class BaseAct extends Activity {
                 break;
             case R.id.title_right:
                 break;
-
             default:
                 break;
         }
     }
-
     @Override
     public void startActivity(Intent intent) {
-
         if (null != intent) {
             intent.putExtra(LAST_ACTIVITY_NAME, this.getClass().getName());
         }
         super.startActivity(intent);
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
