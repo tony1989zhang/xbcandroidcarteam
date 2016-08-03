@@ -1,43 +1,53 @@
 package www.lvchehui.com.carteam.activities;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ScrollView;
 
 import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.adapter.GvAdapter;
 import www.lvchehui.com.carteam.base.BaseAct;
-import www.lvchehui.com.carteam.view.dlg.CWayDlg;
+import www.lvchehui.com.carteam.view.XbcGv;
+import www.lvchehui.com.carteam.view.toast.ToastManager;
 
 @ContentView(R.layout.activity_home)
 public class HomeAct extends BaseAct{
-    @ViewInject(R.id.fullscreen_content)
-    private TextView m_fullscreen_content;
-    @ViewInject(R.id.iv)
-    private ImageView m_iv;
-
+    @ViewInject(R.id.sv)
+    private ScrollView m_sv;
+    @ViewInject(R.id.xbc_gv)
+    private XbcGv m_xbc_gv;
+    private GvAdapter imagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        showProgressDialog();
+        imagerAdapter = new GvAdapter(this);
+        m_xbc_gv.setAdapter(imagerAdapter);
+        m_xbc_gv.setSelector(new ColorDrawable(Color.TRANSPARENT));
+        x.task().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+              dismissProgressDialog();
+                m_sv.scrollTo(0,0);
+            }
+        },3000);
     }
+    public void itemClick(int position) {
+        ToastManager.getManager().show("" + position);
+        switch (position)
+        {
+            case 0:
 
-    @Event( R.id.btn_ok)
-    private void onHomeActOnClick(View v){
-        new CWayDlg(this).show();
-//        CM.getInstance().login("", "", new ComCb<LoginBean>() {
-//            @Override
-//            public void onSuccess(LoginBean result) {
-//                m_fullscreen_content.setText("result:" + result.toString());
-//            }
-//            @Override
-//            public void onFinished() {
-//                super.onFinished();
-//            }
-//        });
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+        }
     }
-
 }
