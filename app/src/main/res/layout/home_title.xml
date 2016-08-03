@@ -1,9 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/title_view_root"
     style="@style/title_bg"
     android:layout_width="match_parent"
-    android:layout_height="55dp" >
+    android:orientation="vertical"
+    android:layout_height="wrap_content" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -85,4 +86,28 @@
             android:layout_alignEnd="@+id/title_right_img" />
     </RelativeLayout>
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="120dp">
+        <TextView
+            android:id="@+id/total_amount"
+            android:text="3000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_default_size"
+            android:textColor="@color/white"
+            android:text="本月成交金额(元)"
+            android:layout_below="@+id/total_amount"
+            android:layout_centerInParent="true"
+         />
+    </RelativeLayout>
+
+</LinearLayout>
