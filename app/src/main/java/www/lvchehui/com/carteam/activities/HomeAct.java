@@ -1,20 +1,16 @@
 package www.lvchehui.com.carteam.activities;
-
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.ScrollView;
-
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
-
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.adapter.GvAdapter;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.view.XbcGv;
 import www.lvchehui.com.carteam.view.toast.ToastManager;
-
 @ContentView(R.layout.activity_home)
 public class HomeAct extends BaseAct{
     @ViewInject(R.id.sv)
