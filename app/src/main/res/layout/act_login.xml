@@ -6,4 +6,71 @@
     android:orientation="vertical"
     >
 
+    <com.lvchehui.www.xiangbc.view.EditText.ClearEditText
+        android:id="@+id/account_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/selector_edit_box_bg"
+        android:digits="0123456789"
+        android:gravity="center|left"
+        android:hint="@string/account_hint"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:singleLine="true"
+        android:textSize="@dimen/text_default_size" />
+
+    <www.lvchehui.com.carteam.view.et.PwdEt
+        android:id="@+id/password_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_edit_box_bg"
+        android:digits="._@0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ/*-+`!$#%"
+        android:gravity="center|left"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:maxLength="16"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:textSize="@dimen/text_default_size" />
+
+    <TextView
+        android:id="@+id/login_tv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rect_normal_white"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_default_size" />
+
+    <TextView
+        android:id="@+id/retset_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="忘记密码？"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_middle_size" />
 </LinearLayout>
