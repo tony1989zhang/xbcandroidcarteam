@@ -37,35 +37,28 @@ public class WelAct extends Activity{
     private LinearLayout m_layout_btn;
     @ViewInject(R.id.btn_ok)
     private Button m_btn_ok;
-
     private VpAdapter adapter;
     private Intent intent = new Intent();
     private ImageView[] imageViews;
-    private LinearLayout group;
     private final List<View> data = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
         setAdapter();
     }
-
     private void setAdapter() {
-
         data.clear();
         BitmapFactory.Options opt = new BitmapFactory.Options();
         opt.inPreferredConfig = Bitmap.Config.RGB_565;
         opt.inPurgeable = true;
         opt.inInputShareable = true;
-
         ImageView imageView = new ImageView(this);
         InputStream is = getResources().openRawResource(R.raw.login_bg_img);
         Bitmap bm = BitmapFactory.decodeStream(is, null, opt);
         imageView.setImageBitmap(bm);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         data.add(imageView);
-
         imageView = new ImageView(this);
         is = getResources().openRawResource(R.raw.login_bg_img);
         bm = BitmapFactory.decodeStream(is, null, opt);
@@ -84,26 +77,10 @@ public class WelAct extends Activity{
         is = getResources().openRawResource(R.raw.login_bg_img);
         bm = BitmapFactory.decodeStream(is, null, opt);
         imageView.setImageBitmap(bm);
-        // imageView.setBackgroundResource(R.drawable.pic_welcome_4);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         data.add(imageView);
-//        imageView = new ImageView(this);
-//        is = getResources().openRawResource(R.drawable.pic_welcome_5);
-//        bm = BitmapFactory.decodeStream(is, null, opt);
-//        imageView.setImageBitmap(bm);
-        // imageView.setBackgroundResource(R.drawable.pic_welcome_5);
-//         imageView.setScaleType(ScaleType.CENTER_CROP);
-//        data.add(imageView);
-
-        // imageView = new ImageView(this);
-        // is = getResources().openRawResource(R.drawable.pic_welcome_6);
-        // bm = BitmapFactory.decodeStream(is, null, opt);
-        // imageView.setImageBitmap(bm);
-        // // imageView.setBackgroundResource(R.drawable.pic_welcome_6);
-        // data.add(imageView);
         adapter = new VpAdapter(data);
         m_viewpager.setAdapter(adapter);
-        // indicator.setViewPager(viewpager);
         setCirclePageIndicator();
         m_viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -142,7 +119,7 @@ public class WelAct extends Activity{
      * 设置圆点指示器
      */
     private void setCirclePageIndicator() {
-        group.removeAllViews();
+        m_iv_image.removeAllViews();
         int pageCount = data.size();// 对应小点个数 final ImageView[]
         imageViews = new ImageView[pageCount];
         if (this.data.size() > 0) {
@@ -162,7 +139,7 @@ public class WelAct extends Activity{
                 } else { // 其他图片都设置未选中状态
                     imageViews[i].setBackgroundResource(R.mipmap.jshop_banner_point_inactive);
                 }
-                group.addView(imageViews[i], margin);
+                m_iv_image.addView(imageViews[i], margin);
             }
         }
 
