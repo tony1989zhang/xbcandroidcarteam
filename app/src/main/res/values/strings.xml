@@ -6,4 +6,6 @@
     <string name="password_hint">请输入密码</string>
     <string name="agree_msg">点击注册便默认同意《享包车平台注册协议》</string>
     <string name="account_hint">请输入账号</string>
+    <string name="get_cap">获取验证码</string>
+    <string name="input_captcha">输入验证码</string>
 </resources>
