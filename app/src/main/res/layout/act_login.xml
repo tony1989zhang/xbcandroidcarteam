@@ -88,7 +88,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/selector_btn_tra"
         android:gravity="center"
         android:paddingBottom="10dp"
@@ -96,9 +96,24 @@
         android:text="登录"
         android:textColor="@color/white"
         android:textSize="@dimen/text_default_size" />
-
+    <TextView
+        android:id="@+id/register_tv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_tra"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="注册"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_default_size" />
     <TextView
         android:id="@+id/retset_pw"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
