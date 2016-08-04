@@ -6,76 +6,94 @@
     android:orientation="vertical"
     >
 
-    <www.lvchehui.com.carteam.view.TitleView
-        android:id="@+id/title_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <www.lvchehui.com.carteam.view.et.ClearEt
+        android:id="@+id/account_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/selector_edit_box_bg"
+        android:digits="0123456789"
+        android:gravity="center|left"
+        android:hint="@string/account_hint"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:singleLine="true"
+        android:textSize="@dimen/text_default_size" />
 
-    <!--<www.lvchehui.com.carteam.view.et.ClearEt-->
-        <!--android:id="@+id/account_et"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginTop="40dp"-->
-        <!--android:background="@drawable/selector_edit_box_bg"-->
-        <!--android:digits="0123456789"-->
-        <!--android:gravity="center|left"-->
-        <!--android:hint="@string/account_hint"-->
-        <!--android:maxLength="11"-->
-        <!--android:maxLines="1"-->
-        <!--android:paddingBottom="10dp"-->
-        <!--android:paddingLeft="5dp"-->
-        <!--android:paddingRight="5dp"-->
-        <!--android:paddingTop="10dp"-->
-        <!--android:singleLine="true"-->
-        <!--android:textSize="@dimen/text_default_size" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:paddingRight="10dp"
+        android:background="@drawable/selector_edit_box_bg"
+        android:orientation="horizontal"
+        android:weightSum="5">
 
-    <!--<www.lvchehui.com.carteam.view.et.PwdEt-->
-        <!--android:id="@+id/password_et"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:background="@drawable/selector_edit_box_bg"-->
-        <!--android:digits="._@0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ/*-+`!$#%"-->
-        <!--android:gravity="center|left"-->
-        <!--android:hint="@string/password_hint"-->
-        <!--android:inputType="textPassword"-->
-        <!--android:maxLength="16"-->
-        <!--android:maxLines="1"-->
-        <!--android:paddingBottom="10dp"-->
-        <!--android:paddingLeft="5dp"-->
-        <!--android:paddingRight="5dp"-->
-        <!--android:paddingTop="10dp"-->
-        <!--android:textSize="@dimen/text_default_size" />-->
+        <EditText
+            android:id="@+id/captcha_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@null"
+            android:digits="0123456789"
+            android:gravity="center|left"
+            android:hint="@string/input_captcha"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:textSize="@dimen/text_default_size" />
 
-    <!--<TextView-->
-        <!--android:id="@+id/login_tv"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginTop="40dp"-->
-        <!--android:background="@drawable/shape_btn_dialog_white"-->
-        <!--android:gravity="center"-->
-        <!--android:paddingBottom="10dp"-->
-        <!--android:paddingTop="10dp"-->
-        <!--android:text="登录"-->
-        <!--android:textColor="@color/white"-->
-        <!--android:textSize="@dimen/text_default_size" />-->
+        <www.lvchehui.com.carteam.view.btn.CaptchaButton
+            android:id="@+id/btn_captcha"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_yellow_selector"
+            android:gravity="center"
+            android:textColor="@drawable/text_yellow_selector"
+            android:text="验证码"
+            android:minHeight="40dp"
+            />
 
-    <!--<TextView-->
-        <!--android:id="@+id/retset_pw"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginTop="15dp"-->
-        <!--android:gravity="center"-->
-        <!--android:text="@string/agree_msg"-->
-        <!--android:textColor="@color/white"-->
-        <!--android:textSize="@dimen/text_middle_size" />-->
+    </LinearLayout>
+    <TextView
+        android:id="@+id/login_tv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_btn_dialog_white"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_default_size" />
+
+    <TextView
+        android:id="@+id/retset_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/agree_msg"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_middle_size" />
 </LinearLayout>
