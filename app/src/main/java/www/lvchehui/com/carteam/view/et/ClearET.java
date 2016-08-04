@@ -19,18 +19,18 @@ import www.lvchehui.com.carteam.R;
  * 作者：V先生 on 2016/8/4 10:22
  * 作用：带清除功能的文本输入框
  */
-public class ClearET extends EditText  implements TextWatcher, View.OnFocusChangeListener {
+public class ClearEt extends EditText  implements TextWatcher, View.OnFocusChangeListener {
     private OnFocusChangeListener focusChangeListener;
-    public ClearET(Context context) {
+    public ClearEt(Context context) {
         super(context);
     }
 
-    public ClearET(Context context, AttributeSet attrs) {
+    public ClearEt(Context context, AttributeSet attrs) {
 
         super(context,attrs,android.R.attr.editTextStyle);
     }
 
-    public ClearET(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ClearEt(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
