@@ -89,7 +89,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/shape_btn_dialog_white"
+        android:background="@drawable/selector_btn_tra"
         android:gravity="center"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
