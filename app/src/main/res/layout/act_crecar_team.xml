@@ -39,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@drawable/text_bla_yel_selector"
                 android:text="@string/responInfo"
                 android:textSize="@dimen/title_text_size" />
 
@@ -68,6 +69,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/carteamInfo"
+                android:textColor="@drawable/text_bla_yel_selector"
                 android:textSize="@dimen/title_text_size" />
 
             <ImageView
@@ -96,6 +98,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/vehicleInfo"
+                android:textColor="@drawable/text_bla_yel_selector"
                 android:textSize="@dimen/title_text_size" />
 
             <ImageView
@@ -124,6 +127,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/driverInfo"
+                android:textColor="@drawable/text_bla_yel_selector"
                 android:textSize="@dimen/title_text_size" />
 
             <ImageView
