@@ -59,7 +59,8 @@
                     android:ellipsize="end"
                     android:gravity="center|right"
                     android:hint="请输入真实姓名"
-                    android:maxLines="3"
+                    android:maxLines="1"
+                    android:maxLength="6"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
 
@@ -96,8 +97,8 @@
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
-                <TextView
-                    android:id="@+id/tv_respon_sex"
+                <EditText
+                    android:id="@+id/et_respon_sex"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -143,7 +144,7 @@
                     android:textSize="15.0sp" />
 
                 <TextView
-                    android:id="@+id/tv_preson_id_card"
+                    android:id="@+id/et_preson_id_card"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
