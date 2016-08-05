@@ -141,8 +141,5 @@
                 android:visibility="gone" />
         </RelativeLayout>
     </LinearLayout>
-
     <include layout="@layout/include_btn_submit" />
-
-
 </LinearLayout>
