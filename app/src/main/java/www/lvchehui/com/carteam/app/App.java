@@ -43,13 +43,22 @@ public class App extends Application {
         }
         return mApp;
     }
-    public void initDb(){
-        new DbManager.DaoConfig().setDbName("xbc_cart_team_db").setDbVersion(1).setDbUpgradeListener(new DbManager.DbUpgradeListener() {
+    private void initDb(){
+        daoConfig = new DbManager.DaoConfig().setDbName("xbc_cart_team_db").setDbVersion(1).setDbUpgradeListener(new DbManager.DbUpgradeListener() {
             @Override
             public void onUpgrade(DbManager db, int oldVersion, int newVersion) {
                     XgoLog.e("数据库更新" + newVersion);
             }
         });//数据库更新操作
+
+    }
+
+    /**
+     * 获取到数据库管理器
+     * */
+    public DbManager getDbManager(){
+        if (null == daoConfig)initDb();
+        return  x.getDb(daoConfig);
     }
     public <T>T getBeanFromJson(String ret,Class<T> c){
         T bean = null;
