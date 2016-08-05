@@ -16,4 +16,7 @@
     <dimen name="title_text_size">20sp</dimen>
     <dimen name="title_larght_text_size">24sp</dimen>
     <dimen name="home_gv_height">369dp</dimen>
+
+
+    <dimen name="margin_top_height">10dp</dimen>
 </resources>
