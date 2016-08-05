@@ -34,7 +34,12 @@ public class BaseAct extends Activity {
         toastView = LayoutInflater.from(this).inflate(R.layout.toast_view, null);
         toast = Toast.makeText(this, null, Toast.LENGTH_LONG);
         toast.setView(toastView);
+        initView();
     }
+
+    private void initView() {
+    }
+
     public void setTitleV(TitleView title_v, String title) {
         setTitleV(title_v, title, null);
     }
