@@ -113,4 +113,13 @@ public class BaseAct extends Activity {
         mProgress = null;
         App.getInstance().aliveActivitys.remove(WriActivity);
     }
+
+    @Event(R.id.tv_submit_ok)
+    private void onBaseOnClick(View v){
+        submitOnClick();
+    }
+
+    protected void submitOnClick(){
+
+    }
 }
