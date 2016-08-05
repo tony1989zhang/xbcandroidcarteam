@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="填写负责人信息"
+                android:text="@string/responInfo"
                 android:textSize="@dimen/title_text_size" />
 
             <ImageView
@@ -47,7 +47,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="10dp"
                 android:src="@mipmap/item_yes_icon"
@@ -68,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="填写车队信息"
+                android:text="@string/carteamInfo"
                 android:textSize="@dimen/title_text_size" />
 
             <ImageView
@@ -76,7 +75,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="10dp"
                 android:src="@mipmap/item_yes_icon"
@@ -97,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="填写车辆信息"
+                android:text="@string/vehicleInfo"
                 android:textSize="@dimen/title_text_size" />
 
             <ImageView
@@ -105,7 +103,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="10dp"
                 android:src="@mipmap/item_yes_icon"
@@ -126,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="填写司机信息"
+                android:text="@string/driverInfo"
                 android:textSize="@dimen/title_text_size" />
 
             <ImageView
@@ -134,11 +131,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="10dp"
                 android:src="@mipmap/item_yes_icon"
-                android:visibility="gone" />
+                android:visibility="gone"
+               />
         </RelativeLayout>
     </LinearLayout>
     <include layout="@layout/include_btn_submit" />
