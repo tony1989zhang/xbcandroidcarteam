@@ -1,11 +1,13 @@
 package www.lvchehui.com.carteam.activities;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
@@ -58,8 +60,29 @@ public class CreCarTeamAct extends BaseAct {
     private ImageView m_iv_driverInfo;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected void initView() {
+        super.initView();
+        setTitleV(m_title_view,"填写入驻信息");
+    }
+    @Event({R.id.rl_responInfo,R.id.rl_carTeamInfo,R.id.rl_vehicleInfo,R.id.rl_driverInfo,R.id.tv_ok})
+    private void onCreCarTeamOnClick(View v){
+        switch (v.getId())
+        {
+            case R.id.rl_responInfo:
+                showToast("负责人信息填写");
+                break;
+            case R.id.rl_carTeamInfo:
+                showToast("车队信息填写");
+                break;
+            case R.id.rl_vehicleInfo:
+                showToast("车辆信息填写");
+                break;
+            case R.id.rl_driverInfo:
+                showToast("司机信息填写");
+                break;
+            case R.id.tv_ok:
+                showToast("提交服务端");
+                break;
+        }
     }
 }
