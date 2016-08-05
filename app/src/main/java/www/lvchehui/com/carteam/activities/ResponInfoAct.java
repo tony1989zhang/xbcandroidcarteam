@@ -56,6 +56,6 @@ public class ResponInfoAct extends BaseAct {
     protected void initView() {
         super.initView();
         setTitleV(m_title_view, "负责人信息");
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+      //  getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 }
