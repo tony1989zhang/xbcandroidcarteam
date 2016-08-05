@@ -2,7 +2,7 @@
 <!--登录页面透明框-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
    <corners android:radius="@dimen/radius"/>
-    <solid android:color="@color/transparent"/>
+    <solid android:color="@color/line_hint_color"/>
     <stroke android:width="@dimen/stroke_width"
         android:color="@color/text_default_color"
         />
