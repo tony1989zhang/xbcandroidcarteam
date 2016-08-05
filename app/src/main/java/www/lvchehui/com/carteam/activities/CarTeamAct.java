@@ -7,4 +7,5 @@ import www.lvchehui.com.carteam.base.BaseAct;
  * 作用：车队信息
  */
 public class CarTeamAct extends BaseAct {
+
 }
