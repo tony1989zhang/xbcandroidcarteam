@@ -198,7 +198,7 @@
                     android:ellipsize="end"
                     android:gravity="center|right"
                     android:hint="请输入手机号码"
-                    android:maxLength="18"
+                    android:maxLength="11"
                     android:maxLines="1"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
@@ -246,7 +246,7 @@
                     android:ellipsize="end"
                     android:gravity="center|right"
                     android:hint="请输入备用手机号"
-                    android:maxLength="18"
+                    android:maxLength="11"
                     android:maxLines="1"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
@@ -255,6 +255,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:visibility="gone"
                     android:src="@mipmap/item_back_icon" />
             </LinearLayout>
 
