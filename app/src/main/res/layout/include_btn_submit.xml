@@ -18,7 +18,7 @@
         android:textSize="@dimen/text_default_size"
         android:gravity="center"
         android:text="提交"
-        android:id="@+id/tv_ok"
+        android:id="@+id/tv_submit_ok"
         />
 
 </LinearLayout>
