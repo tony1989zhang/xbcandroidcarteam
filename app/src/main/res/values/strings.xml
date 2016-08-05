@@ -8,4 +8,9 @@
     <string name="account_hint">请输入账号</string>
     <string name="get_cap">获取验证码</string>
     <string name="input_captcha">输入验证码</string>
+    <string name="act_car_team_des">您正在进行车队入驻，请完成一下内容后提交审核，审核成功将以短信形式通知您。</string>
+    <string name="responInfo">填写负责人信息</string>
+    <string name="carteamInfo">填写车队信息</string>
+    <string name="vehicleInfo">填写车辆信息</string>
+    <string name="driverInfo">填写司机信息</string>
 </resources>

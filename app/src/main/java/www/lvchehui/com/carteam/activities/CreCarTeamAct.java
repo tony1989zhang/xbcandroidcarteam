@@ -1,6 +1,6 @@
 package www.lvchehui.com.carteam.activities;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -62,27 +62,37 @@ public class CreCarTeamAct extends BaseAct {
     @Override
     protected void initView() {
         super.initView();
-        setTitleV(m_title_view,"填写入驻信息");
+        setTitleV(m_title_view, "填写入驻信息");
     }
-    @Event({R.id.rl_responInfo,R.id.rl_carTeamInfo,R.id.rl_vehicleInfo,R.id.rl_driverInfo,R.id.tv_ok})
-    private void onCreCarTeamOnClick(View v){
-        switch (v.getId())
-        {
+
+    @Event({R.id.rl_responInfo, R.id.rl_carTeamInfo, R.id.rl_vehicleInfo, R.id.rl_driverInfo, R.id.tv_ok})
+    private void onCreCarTeamOnClick(View v) {
+        Class t = null;
+        switch (v.getId()) {
             case R.id.rl_responInfo:
                 showToast("负责人信息填写");
+                t = ResponInfoAct.class;
                 break;
             case R.id.rl_carTeamInfo:
                 showToast("车队信息填写");
+                t = CarTeamInfoAct.class;
                 break;
             case R.id.rl_vehicleInfo:
                 showToast("车辆信息填写");
+                t = VehicleInfoAct.class;
                 break;
             case R.id.rl_driverInfo:
                 showToast("司机信息填写");
+                t = DriverInfoAct.class;
                 break;
             case R.id.tv_ok:
                 showToast("提交服务端");
                 break;
+        }
+        if (null != t) {
+            Intent intent = new Intent();
+            intent.setClass(this, t);
+            startActivity(intent);
         }
     }
 }
