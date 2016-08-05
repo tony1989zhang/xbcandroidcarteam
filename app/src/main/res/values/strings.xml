@@ -13,4 +13,12 @@
     <string name="carteamInfo">填写车队信息</string>
     <string name="vehicleInfo">填写车辆信息</string>
     <string name="driverInfo">填写司机信息</string>
+
+
+    <string name="err_userid">用户id错误</string>
+    <string name="err_name">名字错误</string>
+    <string name="err_email">邮箱格式错误</string>
+    <string name="err_tel">电话格式错误</string>
+    <string name="err_zipcode">编码错误</string>
+    <string name="err_year">年份错误</string>
 </resources>
