@@ -31,7 +31,6 @@
             android:name=".activities.CreCarTeamAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="stateVisible|adjustResize"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.CarTeamInfoAct"
@@ -51,6 +50,7 @@
         <activity
             android:name=".activities.ResponInfoAct"
             android:alwaysRetainTaskState="true"
+            android:windowSoftInputMode="stateVisible|adjustResize"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
