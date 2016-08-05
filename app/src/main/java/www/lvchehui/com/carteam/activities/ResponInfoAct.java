@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.activities;
 
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -54,6 +55,7 @@ public class ResponInfoAct extends BaseAct {
     @Override
     protected void initView() {
         super.initView();
-        setTitleV(m_title_view,"负责人信息");
+        setTitleV(m_title_view, "负责人信息");
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 }
