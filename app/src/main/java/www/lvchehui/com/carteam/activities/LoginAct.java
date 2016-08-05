@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -44,6 +45,7 @@ public class LoginAct extends BaseAct {
                 break;
             case R.id.login_tv:
                 showToast("登录注册同一个页面");
+                startActivity(new Intent(this,CreCarTeamAct.class));
                 break;
         }
     }
