@@ -96,8 +96,8 @@
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
-                <EditText
-                    android:id="@+id/et_respon_sex"
+                <TextView
+                    android:id="@+id/tv_respon_sex"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -142,8 +142,8 @@
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
-                <EditText
-                    android:id="@+id/et_preson_id_card"
+                <TextView
+                    android:id="@+id/tv_preson_id_card"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -207,6 +207,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:visibility="gone"
                     android:src="@mipmap/item_back_icon" />
             </LinearLayout>
 
@@ -264,6 +265,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:gravity="right"
+                android:visibility="gone"
                 android:text="带＊必须填写" />
         </LinearLayout>
     </ScrollView>
