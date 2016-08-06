@@ -1,5 +1,8 @@
 package www.lvchehui.com.carteam.http;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.widget.ImageView;
 
 import org.xutils.common.Callback;
@@ -43,7 +46,7 @@ public class CUtil {
         {
             for (Map.Entry<String,Object> entry:map.entrySet())
             {
-               params.addParameter(entry.getKey(),entry.getValue());
+               params.addParameter(entry.getKey(), entry.getValue());
             }
         }
         Cancelable cancelable = x.http().post(params, callback);
@@ -102,7 +105,16 @@ public class CUtil {
         });
         return drawableResult;
     }
-
+    public static boolean isNetworkConnected(Context context) {
+        if (context != null) {
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
+            if (mNetworkInfo != null) {
+                return mNetworkInfo.isAvailable();
+            }
+        }
+        return false;
+    }
 
     private static void initImageOptions() {
         if (null == imageOptions) {

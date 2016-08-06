@@ -22,4 +22,6 @@
     <string name="err_tel">电话格式错误</string>
     <string name="err_zipcode">编码错误</string>
     <string name="err_year">年份错误</string>
+    <string name="network_not_connection">网络未响应</string>
+    <string name="not_connected">网络未连接</string>
 </resources>
