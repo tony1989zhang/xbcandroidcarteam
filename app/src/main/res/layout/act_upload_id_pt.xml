@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/ll_credential_number"
+            android:id="@+id/ll_id_number"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -31,14 +31,15 @@
             android:weightSum="1">
 
             <TextView
+                android:id="@+id/tv_id_number_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="统一社会信用代码"
+                android:text="证件号码标题"
                 android:textColor="@color/text_default_color"
                 android:textSize="15.0sp" />
 
             <EditText
-                android:id="@+id/tv_credential_number"
+                android:id="@+id/tv_id_number_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1.0"
@@ -58,20 +59,32 @@
             android:paddingBottom="20dp">
 
             <TextView
-                android:id="@+id/tv_describe"
+                android:id="@+id/tv_des_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="5dp"
+                android:text="标题"
+                android:textColor="@color/text_default_color"
                 android:textSize="@dimen/text_default_size" />
+            <TextView
+                android:id="@+id/tv_des_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_des_title"
+                android:text="内容"
+                android:layout_margin="5dp"
+                android:textColor="@color/text_hint_color"
+                android:textSize="@dimen/text_middle_size" />
 
             <ImageView
                 android:id="@+id/iv_photo"
                 android:layout_width="115dp"
                 android:layout_height="115dp"
-                android:layout_below="@+id/tv_describe"
+                android:layout_below="@+id/tv_des_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/layerlist_pt_bg"
