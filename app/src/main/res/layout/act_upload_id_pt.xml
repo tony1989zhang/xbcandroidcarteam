@@ -1,6 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/main_color"
+    android:orientation="vertical">
 
+    <www.lvchehui.com.carteam.view.TitleView
+        android:id="@+id/title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_credential_number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_white_gray"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:minHeight="48.0dip"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="统一社会信用代码"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+
+            <EditText
+                android:id="@+id/tv_credential_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:digits="0123456789"
+                android:padding="5dp"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/tv_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
+                android:textSize="@dimen/text_default_size" />
+
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:layout_below="@+id/tv_describe"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/layerlist_pt_bg"
+                android:minHeight="100dp"
+                android:minWidth="100dp" />
+
+            <Button
+                android:id="@+id/btn_submit_pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_photo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_yellow_selector"
+                android:minHeight="25dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="拍照/上传"
+                android:textColor="@drawable/text_yellow_selector"
+                android:textSize="@dimen/text_middle_size" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include
+        layout="@layout/include_btn_submit"
+        android:layout_width="match_parent"
+
+
+        android:layout_height="wrap_content" />
 </LinearLayout>
