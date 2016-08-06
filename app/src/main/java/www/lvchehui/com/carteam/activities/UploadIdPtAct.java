@@ -18,6 +18,7 @@ import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.http.CUtil;
 import www.lvchehui.com.carteam.tools.PhotoUtils;
 import www.lvchehui.com.carteam.tools.RegexUtils;
+import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -83,13 +84,12 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
-        if(validationAwe(R.id.et_id_number_content, RegexUtils.NOT_EMPTY,R.string.err_no_empty))
-            return;
-
+        validationAwe(R.id.et_id_number_content, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
     }
 
     @Override
     public void onPotoResult(Bitmap ib) {
+        XgoLog.e("onPotoResult:" + ib);
         m_iv_photo.setImageBitmap(ib);
         //执行上传文件操作，返回url交给子类保存到对应的表当中
         mUrl = "123";
