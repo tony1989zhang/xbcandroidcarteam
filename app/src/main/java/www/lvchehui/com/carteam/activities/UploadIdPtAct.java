@@ -15,6 +15,7 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.http.CUtil;
 import www.lvchehui.com.carteam.tools.PhotoUtils;
 import www.lvchehui.com.carteam.tools.RegexUtils;
 import www.lvchehui.com.carteam.view.TitleView;
@@ -62,6 +63,13 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         m_tv_id_number_title.setText(idNumTitle);
         m_tv_des_title.setText(desTitle);
         m_tv_des_content.setText(desContent);
+    }
+
+    public void initTextView(String idNumTitle,String desTitle,String desContent,String pic){
+        m_tv_id_number_title.setText(idNumTitle);
+        m_tv_des_title.setText(desTitle);
+        m_tv_des_content.setText(desContent);
+        CUtil.loadImage(m_iv_photo, pic);
     }
 
     @Event(R.id.btn_submit_pt)
