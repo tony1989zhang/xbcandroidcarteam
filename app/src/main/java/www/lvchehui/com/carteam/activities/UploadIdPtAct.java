@@ -1,5 +1,7 @@
 package www.lvchehui.com.carteam.activities;
 
+import android.graphics.Bitmap;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -7,10 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.tools.PhotoUtils;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -18,7 +22,7 @@ import www.lvchehui.com.carteam.view.TitleView;
  * 作用：提交上传id的类
  */
 @ContentView(R.layout.act_upload_id_pt)
-public class UploadIdPtAct extends BaseFormAct {
+public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoResultListener{
 
     @ViewInject(R.id.title_view)
     private TitleView m_title_view;
@@ -43,11 +47,36 @@ public class UploadIdPtAct extends BaseFormAct {
 
     @ViewInject(R.id.btn_submit_pt)
     private Button m_btn_submit_pt; //拍照/上传;
+    private  PhotoUtils mInstance;
+    private String mUrl;
 
+    @Override
+    protected void initView() {
+        super.initView();
+        mInstance = PhotoUtils.getInstance(this, this);
+    }
 
     public void initTextView(String idNumTitle,String desTitle,String desContent){
         m_tv_id_number_title.setText(idNumTitle);
         m_tv_des_title.setText(desTitle);
         m_tv_des_content.setText(desContent);
+    }
+
+    @Event(R.id.btn_submit_pt)
+    private void submitPt(View v){
+        if(null == mInstance)
+        return;
+
+        mInstance.showDialog();;
+    }
+
+    @Override
+    public void onPotoResult(Bitmap ib) {
+        //执行上传文件操作，返回url交给子类保存到对应的表当中
+        mUrl = "123";
+    }
+
+    protected String getUrl(){
+        return mUrl;
     }
 }
