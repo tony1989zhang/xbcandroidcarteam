@@ -28,27 +28,27 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.CreCarTeamAct"
+            android:name=".module.crecarteam.activities.CreCarTeamAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.CarTeamInfoAct"
+            android:name=".module.crecarteam.activities.CarTeamInfoAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.DriverInfoAct"
+            android:name=".module.crecarteam.activities.DriverInfoAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.VehicleInfoAct"
+            android:name=".module.crecarteam.activities.VehicleInfoAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.ResponInfoAct"
+            android:name=".module.crecarteam.activities.ResponInfoAct"
             android:alwaysRetainTaskState="true"
             android:windowSoftInputMode="stateVisible|adjustResize"
             android:launchMode="singleTop"
