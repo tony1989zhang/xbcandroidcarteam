@@ -16,7 +16,7 @@ public class UpdPeopleIDcardActivity extends UploadIdPtAct {
     protected void initView() {
         super.initView();
         //获取数据库进行查询操作。
-        initTextView("身份证","大家好","瞎扯淡","");
+        initTextView("申请人信息","身份证","大家好","瞎扯淡","");
     }
 
     @Override

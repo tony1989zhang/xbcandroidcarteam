@@ -60,13 +60,8 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         mInstance = PhotoUtils.getInstance(this, this);
     }
 
-    public void initTextView(String idNumTitle,String desTitle,String desContent){
-        m_tv_id_number_title.setText(idNumTitle);
-        m_tv_des_title.setText(desTitle);
-        m_tv_des_content.setText(desContent);
-    }
-
-    public void initTextView(String idNumTitle,String desTitle,String desContent,String pic){
+    public void initTextView(String titleView,String idNumTitle,String desTitle,String desContent,String pic){
+        setTitleV(m_title_view,titleView);
         m_tv_id_number_title.setText(idNumTitle);
         m_tv_des_title.setText(desTitle);
         m_tv_des_content.setText(desContent);
