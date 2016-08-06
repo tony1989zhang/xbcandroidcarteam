@@ -65,7 +65,7 @@ public class CreCarTeamAct extends BaseAct {
         setTitleV(m_title_view, "填写入驻信息");
     }
 
-    @Event({R.id.rl_responInfo, R.id.rl_carTeamInfo, R.id.rl_vehicleInfo, R.id.rl_driverInfo, R.id.tv_ok})
+    @Event({R.id.rl_responInfo, R.id.rl_carTeamInfo, R.id.rl_vehicleInfo, R.id.rl_driverInfo, R.id.tv_submit_ok})
     private void onCreCarTeamOnClick(View v) {
         Class t = null;
         switch (v.getId()) {
@@ -85,7 +85,7 @@ public class CreCarTeamAct extends BaseAct {
                 showToast("司机信息填写");
                 t = DriverInfoAct.class;
                 break;
-            case R.id.tv_ok:
+            case R.id.tv_submit_ok:
                 showToast("提交服务端");
                 break;
         }

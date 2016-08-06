@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.activities;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -8,10 +9,13 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
+import java.util.ArrayList;
+
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.tools.RegexUtils;
 import www.lvchehui.com.carteam.view.TitleView;
+import www.lvchehui.com.carteam.view.dlg.CWayDlg;
 
 /**
  * Created by 张灿能 on 2016/8/5.
@@ -58,8 +62,26 @@ public class ResponInfoAct extends BaseFormAct {
             showToast("数据不对");
         }
     }
-    @Event({R.id.et_respon_sex,R.id.et_preson_id_card})
-    private void onResponClick(View v){
-               showToast("点击事件");
+    @Event({R.id.et_respon_sex})
+    private void setSexClick(View v){
+        final ArrayList<String > sexArr =  new ArrayList<>();
+        sexArr.add("先生");
+        sexArr.add("小姐");
+
+        CWayDlg cwDlg = new CWayDlg(this);
+        cwDlg.settitle("选择您的性别");
+        cwDlg.setData(sexArr.get(0), sexArr.get(1), null);
+        cwDlg.setWayBack(new CWayDlg.ChooseBack() {
+            @Override
+            public void wayback(int i) {
+                m_et_respon_sex.setText(sexArr.get(i));
+            }
+        });
+        cwDlg.show();
+
+    }
+    @Event(R.id.et_preson_id_card)
+    private void setPresonIdCard(View v){
+         startActivity(new Intent());
     }
 }
