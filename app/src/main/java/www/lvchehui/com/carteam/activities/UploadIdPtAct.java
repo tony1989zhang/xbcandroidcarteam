@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import org.xutils.view.annotation.ViewInject;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.tools.PhotoUtils;
+import www.lvchehui.com.carteam.tools.RegexUtils;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -33,8 +35,8 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
     @ViewInject(R.id.tv_id_number_title)
     private TextView m_tv_id_number_title; //证件号码标题;
 
-    @ViewInject(R.id.tv_id_number_content)
-    private EditText m_tv_id_number_content;
+    @ViewInject(R.id.et_id_number_content)
+    private EditText m_et_id_number_content;
 
     @ViewInject(R.id.tv_des_title)
     private TextView m_tv_des_title; //标题;
@@ -71,6 +73,13 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
     }
 
     @Override
+    protected void submitOnClick() {
+        super.submitOnClick();
+        if(!validationAwe(R.id.et_id_number_content, RegexUtils.NOT_EMPTY,R.string.err_no_empty))
+            return;
+    }
+
+    @Override
     public void onPotoResult(Bitmap ib) {
         //执行上传文件操作，返回url交给子类保存到对应的表当中
         mUrl = "123";
@@ -78,5 +87,15 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
 
     protected String getUrl(){
         return mUrl;
+    }
+
+    protected String getIdNumContent(){
+        return  m_et_id_number_content.getText().toString();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        mInstance.getActivityResult(requestCode,resultCode,data);
     }
 }
