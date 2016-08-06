@@ -22,12 +22,6 @@ public class App extends Application {
     private static App mApp;
     public List<WeakReference<Activity>> aliveActivitys = new ArrayList<>();
     private  DbManager.DaoConfig daoConfig;
-    public DbManager.DaoConfig getDaoConfig(){
-        if (null == daoConfig){
-            initDb();
-        }
-        return  daoConfig;
-    }
     @Override
     public void onCreate() {
         super.onCreate();
