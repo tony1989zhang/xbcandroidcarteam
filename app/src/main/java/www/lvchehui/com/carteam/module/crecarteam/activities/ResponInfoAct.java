@@ -12,6 +12,7 @@ import org.xutils.view.annotation.ViewInject;
 import java.util.ArrayList;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.activities.UploadIdPtAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.tools.RegexUtils;
 import www.lvchehui.com.carteam.view.TitleView;
@@ -82,6 +83,6 @@ public class ResponInfoAct extends BaseFormAct {
     }
     @Event(R.id.et_preson_id_card)
     private void setPresonIdCard(View v){
-         startActivity(new Intent());
+         startActivity(new Intent(this, UploadIdPtAct.class));
     }
 }
