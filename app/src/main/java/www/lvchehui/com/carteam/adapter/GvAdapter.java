@@ -9,9 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.activities.HomeAct;
 import www.lvchehui.com.carteam.base.BaseViewHolder;
-import www.lvchehui.com.carteam.view.toast.ToastManager;
+import www.lvchehui.com.carteam.module.HomeAct;
 
 /**
  * 作者：V先生 on 2016/8/3 18:17
