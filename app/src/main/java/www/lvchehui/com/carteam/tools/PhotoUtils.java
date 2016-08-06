@@ -39,7 +39,7 @@ public class PhotoUtils {
     {
         mActivity = acy;
         mGetPhotoResultListener = getPRListener;
-         picname = "IMG_" + System.currentTimeMillis() / 1000 + ".png";
+        picname = "IMG_" + System.currentTimeMillis() / 1000 + ".png";
         file = new File(Environment.getExternalStorageDirectory(), picname);
         Display display = acy.getWindowManager().getDefaultDisplay();
         width = display.getWidth();
@@ -91,7 +91,7 @@ public class PhotoUtils {
         }
     }
     private void setPicToView(Uri data) {
-       Uri uri = data;
+        Uri uri = data;
         Cursor c = mActivity.getContentResolver().query(uri, null, null, null, null);
         if (c.moveToNext())
         {
