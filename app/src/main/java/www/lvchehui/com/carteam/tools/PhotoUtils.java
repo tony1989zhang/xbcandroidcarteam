@@ -12,6 +12,8 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.Display;
 
+import org.xutils.x;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -28,18 +30,16 @@ import www.lvchehui.com.carteam.view.toast.ToastManager;
  */
 public class PhotoUtils {
     private GetPhotoResultListener mGetPhotoResultListener;
-    private static PhotoUtils photoUtils;
+    private static  PhotoUtils photoUtils;
     private static final int PHOTO_CARMERA = 1;
     private static final int PHOTO_PICK = 2;
     private String picname;
-    private Activity mActivity;
     private int width;
     private int height;
 
     private File file;
     private PhotoUtils(Activity acy, GetPhotoResultListener getPRListener)
     {
-        mActivity = acy;
         mGetPhotoResultListener = getPRListener;
         picname = "IMG_" + System.currentTimeMillis() / 1000 + ".png";
         file = new File(Environment.getExternalStorageDirectory(), picname);
@@ -54,37 +54,37 @@ public class PhotoUtils {
         }
         return photoUtils;
     }
-    public void showDialog()
+    public void showDialog(final Activity act)
     {
-
         final ArrayList<String > picArr =  new ArrayList<>();
         picArr.add("拍照");
         picArr.add("相册");
 
-        CWayDlg cwDlg = new CWayDlg(mActivity);
+        final CWayDlg cwDlg = new CWayDlg(x.app());
         cwDlg.settitle("选择上传照片");
         cwDlg.setData(picArr.get(0), picArr.get(1), null);
         cwDlg.setWayBack(new CWayDlg.ChooseBack() {
             @Override
             public void wayback(int i) {
-                if (i==0)startCamera();
-                else startPick();
+                if (i==0)startCamera(act);
+                else startPick(act);
+
             }
         });
         cwDlg.show();
     }
-    private void startCamera(){
+    private void startCamera(Activity act){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
 //        intent.putExtra(MediaStore.ACTION_IMAGE_CAPTURE, Uri.fromFile(file));
-        mActivity.startActivityForResult(intent,PHOTO_CARMERA);
+        act.startActivityForResult(intent,PHOTO_CARMERA);
     }
-    private void startPick(){
+    private void startPick(Activity act){
         Intent intent = new Intent(Intent.ACTION_PICK,null);
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
-        mActivity.startActivityForResult(intent,PHOTO_PICK);
+        act.startActivityForResult(intent,PHOTO_PICK);
     }
-    public void getActivityResult(int requestCode,int resultCode,Intent data)
+    public void getActivityResult(Activity act,int requestCode,int resultCode,Intent data)
     {
         if (resultCode != Activity.RESULT_OK)
         return;
@@ -101,13 +101,13 @@ public class PhotoUtils {
             case PHOTO_PICK:
                 if (null == data)
                     return;
-                setPicToView(data.getData());
+                setPicToView(data.getData(),act);
                 break;
         }
     }
-    private void setPicToView(Uri data) {
+    private void setPicToView(Uri data,Activity act) {
         Uri uri = data;
-        Cursor c = mActivity.getContentResolver().query(uri, null, null, null, null);
+        Cursor c = act.getContentResolver().query(uri, null, null, null, null);
         if (c.moveToNext())
         {
             String path = c.getString(c.getColumnIndex(MediaStore.Images.Media.DATA));
