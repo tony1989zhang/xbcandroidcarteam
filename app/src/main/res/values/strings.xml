@@ -16,7 +16,8 @@
 
 
     <string name="err_userid">用户id错误</string>
-    <string name="err_name">名字错误</string>
+    <string name="err_name">格式错误</string>
+    <string name="err_no_empty">格式不能为空</string>
     <string name="err_email">邮箱格式错误</string>
     <string name="err_tel">电话格式错误</string>
     <string name="err_zipcode">编码错误</string>
