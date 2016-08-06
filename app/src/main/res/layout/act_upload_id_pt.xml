@@ -111,7 +111,5 @@
     <include
         layout="@layout/include_btn_submit"
         android:layout_width="match_parent"
-
-
         android:layout_height="wrap_content" />
 </LinearLayout>
