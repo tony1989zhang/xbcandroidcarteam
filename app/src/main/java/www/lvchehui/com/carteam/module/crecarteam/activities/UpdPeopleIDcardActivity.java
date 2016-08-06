@@ -4,6 +4,7 @@ import org.xutils.DbManager;
 
 import www.lvchehui.com.carteam.activities.UploadIdPtAct;
 import www.lvchehui.com.carteam.app.App;
+import www.lvchehui.com.carteam.tools.StringUtils;
 
 /**
  * Created by 张灿能 on 2016/8/6.
@@ -23,6 +24,7 @@ public class UpdPeopleIDcardActivity extends UploadIdPtAct {
         super.submitOnClick();
 
         String idNumContent = getIdNumContent();
+        if (StringUtils.isEmpty(idNumContent)) return;
         String url = getUrl();
         DbManager dbManager = App.getInstance().getDbManager();
         //获取到数据库管理器，进行查询保存数据库操作。
