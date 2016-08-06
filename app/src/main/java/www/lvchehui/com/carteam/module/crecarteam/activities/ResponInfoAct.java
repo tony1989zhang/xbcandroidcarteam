@@ -83,6 +83,6 @@ public class ResponInfoAct extends BaseFormAct {
     }
     @Event(R.id.et_preson_id_card)
     private void setPresonIdCard(View v){
-         startActivity(new Intent(this, UploadIdPtAct.class));
+         startActivity(new Intent(this, UpdPeopleIDcardActivity.class));
     }
 }
