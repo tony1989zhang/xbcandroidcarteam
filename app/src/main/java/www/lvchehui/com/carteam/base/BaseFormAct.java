@@ -20,11 +20,11 @@ public class BaseFormAct extends BaseAct {
 
     private AwesomeValidation mAwesomeValidation;
 //    RegexUtils.TELEPHONE
-    protected void setmAwesomeValidation(int v,String regex,int errMsgId){
+    protected boolean validationAwe(int v,String regex,int errMsgId){
         mAwesomeValidation = new AwesomeValidation(ValidationStyle.COLORATION);
         mAwesomeValidation.setColor(Color.YELLOW);
-        mAwesomeValidation.addValidation(this,v,regex, errMsgId);
-        mAwesomeValidation.validate();
+        mAwesomeValidation.addValidation(this, v, regex, errMsgId);
+        return mAwesomeValidation.validate();
 //        mAwesomeValidation = new AwesomeValidation(ValidationStyle.COLORATION);
 //        mAwesomeValidation.setColor(Color.YELLOW);
 //        mAwesomeValidation.addValidation(this, R.id.et_respon_sex, RegexUtils.NOT_EMPTY, R.string.err_tel);
