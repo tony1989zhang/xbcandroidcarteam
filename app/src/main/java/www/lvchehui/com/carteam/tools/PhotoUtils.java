@@ -16,8 +16,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
+import www.lvchehui.com.carteam.view.dlg.CWayDlg;
 import www.lvchehui.com.carteam.view.toast.ToastManager;
 
 /**
@@ -54,14 +56,27 @@ public class PhotoUtils {
     }
     public void showDialog()
     {
-        //  //拍照
-        startCamera();
-      //相册获取
-//        startPick();
+
+        final ArrayList<String > picArr =  new ArrayList<>();
+        picArr.add("拍照");
+        picArr.add("相册");
+
+        CWayDlg cwDlg = new CWayDlg(mActivity);
+        cwDlg.settitle("选择上传照片");
+        cwDlg.setData(picArr.get(0), picArr.get(1), null);
+        cwDlg.setWayBack(new CWayDlg.ChooseBack() {
+            @Override
+            public void wayback(int i) {
+                if (i==0)startCamera();
+                else startPick();
+            }
+        });
+        cwDlg.show();
     }
     private void startCamera(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.ACTION_IMAGE_CAPTURE, Uri.fromFile(file));
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+//        intent.putExtra(MediaStore.ACTION_IMAGE_CAPTURE, Uri.fromFile(file));
         mActivity.startActivityForResult(intent,PHOTO_CARMERA);
     }
     private void startPick(){
