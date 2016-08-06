@@ -1,4 +1,4 @@
-package www.lvchehui.com.carteam.activities;
+package www.lvchehui.com.carteam.module;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
