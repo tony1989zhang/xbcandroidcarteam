@@ -60,7 +60,7 @@ public class PhotoUtils {
         picArr.add("拍照");
         picArr.add("相册");
 
-        final CWayDlg cwDlg = new CWayDlg(x.app());
+        final CWayDlg cwDlg = new CWayDlg(act);
         cwDlg.settitle("选择上传照片");
         cwDlg.setData(picArr.get(0), picArr.get(1), null);
         cwDlg.setWayBack(new CWayDlg.ChooseBack() {

@@ -60,6 +60,7 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         mInstance = PhotoUtils.getInstance(this, this);
     }
 
+
     public void initTextView(String titleView,String idNumTitle,String desTitle,String desContent,String pic){
         setTitleV(m_title_view,titleView);
         m_tv_id_number_title.setText(idNumTitle);
@@ -73,7 +74,7 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         if(null == mInstance)
         return;
 
-        mInstance.showDialog();;
+        mInstance.showDialog(this);;
     }
 
     @Override
@@ -101,6 +102,6 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        mInstance.getActivityResult(requestCode,resultCode,data);
+        mInstance.getActivityResult(this,requestCode,resultCode,data);
     }
 }
