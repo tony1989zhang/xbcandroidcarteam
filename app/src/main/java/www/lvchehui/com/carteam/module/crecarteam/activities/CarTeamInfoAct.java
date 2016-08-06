@@ -1,4 +1,4 @@
-package www.lvchehui.com.carteam.activities;
+package www.lvchehui.com.carteam.module.crecarteam.activities;
 
 import org.xutils.view.annotation.ContentView;
 
