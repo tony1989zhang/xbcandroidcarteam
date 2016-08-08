@@ -45,7 +45,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="负责人＊"
                     android:textColor="@color/text_default_color"
@@ -91,7 +90,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="性别"
                     android:textColor="@color/text_default_color"
@@ -126,7 +124,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
                 android:gravity="center_vertical"
-
                 android:minHeight="48.0dip"
                 android:paddingLeft="10.0dip"
                 android:paddingRight="10.0dip">
@@ -138,7 +135,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="身份证＊"
                     android:textColor="@color/text_default_color"
@@ -186,7 +182,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="手机号码＊"
                     android:textColor="@color/text_default_color"
@@ -234,7 +229,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="备用手机号码"
                     android:textColor="@color/text_default_color"
