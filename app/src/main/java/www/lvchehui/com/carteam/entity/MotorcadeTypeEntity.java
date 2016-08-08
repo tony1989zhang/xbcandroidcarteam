@@ -7,6 +7,7 @@ package www.lvchehui.com.carteam.entity;
 public class MotorcadeTypeEntity {
     private String MotorcadeTypeName;
     private String MotorcadeTypeDes;
+    private int type;
 
     public MotorcadeTypeEntity(String motorcadeTypeName, String motorcadeTypeDes) {
         MotorcadeTypeName = motorcadeTypeName;

@@ -20,6 +20,7 @@ import www.lvchehui.com.carteam.entity.MotorcadeTypeEntity;
 import www.lvchehui.com.carteam.evebus.CarTeamEvent;
 import www.lvchehui.com.carteam.impl.AdapterViewSetListener;
 import www.lvchehui.com.carteam.impl.ListDlgItemClickListener;
+import www.lvchehui.com.carteam.tools.RegexUtils;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -81,6 +82,14 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     protected void submitOnClick() {
         super.submitOnClick();
 
+        validationAwe(R.id.et_team_type, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
+        validationAwe(R.id.et_team_name, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
+        validationAwe(R.id.et_representative, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
+        validationAwe(R.id.et_address, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
+        validationAwe(R.id.et_area, RegexUtils.NOT_EMPTY,R.string.err_no_empty);
+        validationAwe(R.id.et_business_lic_photo, RegexUtils.NOT_EMPTY,R.string.err_no_empty);
+        validationAwe(R.id.et_road_permit_photo, RegexUtils.NOT_EMPTY,R.string.err_no_empty);
+        validationAwe(R.id.et_account, RegexUtils.NOT_EMPTY,R.string.err_no_empty);
         CarTeamEvent carTeamEvent = new CarTeamEvent();
         carTeamEvent.setCarTeamOnClick(true);
         EventBus.getDefault().post(carTeamEvent);
