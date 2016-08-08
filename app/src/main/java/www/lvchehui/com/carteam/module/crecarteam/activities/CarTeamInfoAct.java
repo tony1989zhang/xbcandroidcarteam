@@ -23,6 +23,7 @@ import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.entity.MotorcadeTypeEntity;
 import www.lvchehui.com.carteam.evebus.CarTeamEvent;
 import www.lvchehui.com.carteam.evebus.PkwSearchEvent;
+import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
 import www.lvchehui.com.carteam.impl.AdapterViewSetListener;
 import www.lvchehui.com.carteam.impl.ListDlgItemClickListener;
 import www.lvchehui.com.carteam.tools.MD5Util;
@@ -78,6 +79,7 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
                 startActivity(new Intent(this, PkwSearchAct.class));
                 break;
             case R.id.et_business_lic_photo:
+                startActivity(new Intent(this,UpdBusLicPtAct.class));
                 break;
             case R.id.et_road_permit_photo:
                 break;
@@ -120,9 +122,17 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
         }
     }
 
+//    @Subscribe(threadMode = ThreadMode.MAIN)
+//   public void getPkwSearch(PkwSearchEvent event){
+//        m_et_address.setText(event.getAddress());
+//        EventBus.getDefault().removeStickyEvent(event.getClass());
+//
+//    }
     @Subscribe(threadMode = ThreadMode.MAIN)
-   public void getPkwSearch(PkwSearchEvent event){
-        m_et_address.setText(event.getAddress());
+    public void onUploadIdPtEvent(UploadIdPtEvent event){
+        if (event !=null) {
+            m_et_road_permit_photo.setText("已上传");
+        }
         EventBus.getDefault().removeStickyEvent(event.getClass());
     }
     @Override

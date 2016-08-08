@@ -78,6 +78,16 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".module.crecarteam.activities.UpdBusLicPtAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".module.crecarteam.activities.UpdRoadPtPtAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activities.RegisterAct"
             android:alwaysRetainTaskState="true"
