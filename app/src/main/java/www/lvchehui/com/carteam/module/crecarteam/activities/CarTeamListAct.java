@@ -9,8 +9,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.xutils.common.Callback;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -18,10 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
+import www.lvchehui.com.carteam.evebus.CarTeamEvent;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
@@ -29,6 +33,7 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  * Created by 张灿能 on 2016/8/5.
  * 作用：车队信息
  */
+@ContentView(R.layout.act_car_team_list)
 public class CarTeamListAct extends BaseListAct<LoginBean> {
 
 
@@ -39,7 +44,8 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
     @Override
     protected void initViews() {
         super.initViews();
-        setTitleView(mTitleView,"消息中心");
+        EventBus.getDefault().register(this);
+        setTitleView(mTitleView, "消息中心");
     }
 
     @Override
@@ -132,6 +138,27 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
 
             }
         }
+    }
 
+    @Event(R.id.tv_submit_ok)
+    private void submitOk(View v){
+        startActivity(new Intent(this,CarTeamInfoAct.class));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onReceiveStickyEvent(CarTeamEvent event) {
+        if (event.isCarTeamOnClick())
+        {
+            showToast("我已经刷新了");
+            onRefresh();
+            EventBus.getDefault().removeAllStickyEvents();
+        }
     }
 }
+
