@@ -29,7 +29,7 @@
                 android:layout_marginTop="@dimen/margin_top_height" />
 
             <LinearLayout
-                android:id="@+id/ll_respon_name"
+                android:id="@+id/ll_team_type"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -47,12 +47,103 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="负责人＊"
+                    android:text="车队类型＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
                 <EditText
-                    android:id="@+id/et_respon_name"
+                    android:id="@+id/et_team_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请选择车队类型"
+                    android:focusable="false"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                  />
+            </LinearLayout>
+
+            <View style="@style/lineSolid_center" />
+
+            <LinearLayout
+                android:id="@+id/ll_team_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="车队名称＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_team_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请输入车队名称"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    android:visibility="gone"
+                  />
+            </LinearLayout>
+
+            <View style="@style/lineSolid_center" />
+            <LinearLayout
+                android:id="@+id/ll_representative"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="法人代表＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_representative"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -68,13 +159,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:src="@mipmap/item_back_icon"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                  />
             </LinearLayout>
 
             <View style="@style/lineSolid_center" />
 
             <LinearLayout
-                android:id="@+id/ll_respon_sex"
+                android:id="@+id/ll_address"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -92,18 +184,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="性别"
+                    android:text="地址＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
                 <EditText
-                    android:id="@+id/et_respon_sex"
+                    android:id="@+id/et_address"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:ellipsize="end"
                     android:gravity="center|right"
-                    android:hint="请选择性别"
+                    android:hint="请输入地址"
+                    android:focusable="false"
                     android:maxLines="3"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
@@ -112,14 +205,60 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:src="@mipmap/item_back_icon" />
+                    android:src="@mipmap/item_back_icon"
+                    />
+            </LinearLayout>
+            <View style="@style/lineSolid_center" />
+
+            <LinearLayout
+                android:id="@+id/ll_area"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="所属地区＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请选择所属地区"
+                    android:focusable="false"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    />
             </LinearLayout>
 
             <View style="@style/lineSolid_center" />
 
 
             <LinearLayout
-                android:id="@+id/ll_preson_id_card"
+                android:id="@+id/ll_business_lic_photo"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -138,12 +277,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="身份证＊"
+                    android:text="营业执照＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
                 <EditText
-                    android:id="@+id/et_preson_id_card"
+                    android:id="@+id/et_business_lic_photo"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -152,6 +291,7 @@
                     android:gravity="center|right"
                     android:hint="请上传证件"
                     android:maxLength="18"
+                    android:focusable="false"
                     android:maxLines="1"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
@@ -162,11 +302,11 @@
                     android:layout_marginLeft="5dp"
                     android:src="@mipmap/item_back_icon" />
             </LinearLayout>
-
             <View style="@style/lineSolid_center" />
 
+
             <LinearLayout
-                android:id="@+id/ll_phone"
+                android:id="@+id/ll_road_permit_photo"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -185,20 +325,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="手机号码＊"
+                    android:text="道路经营许可证＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
                 <EditText
-                    android:id="@+id/et_phone"
+                    android:id="@+id/et_road_permit_photo"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:digits="0123456789Xx"
                     android:ellipsize="end"
                     android:gravity="center|right"
-                    android:hint="请输入手机号码"
+                    android:hint="请上传证件"
                     android:maxLength="18"
+                    android:focusable="false"
                     android:maxLines="1"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
@@ -212,8 +353,9 @@
 
             <View style="@style/lineSolid_center" />
 
+
             <LinearLayout
-                android:id="@+id/ll_phone_sec"
+                android:id="@+id/ll_account"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -232,19 +374,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="备用手机号码"
+                    android:text="对公账户＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
                 <EditText
-                    android:id="@+id/et_phone_sec"
+                    android:id="@+id/et_account"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:digits="0123456789Xx"
                     android:ellipsize="end"
                     android:gravity="center|right"
-                    android:hint="请输入备用手机号"
+                    android:hint="请输入信息"
                     android:maxLength="18"
                     android:maxLines="1"
                     android:textColor="@color/text_default_color"
@@ -254,8 +396,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:src="@mipmap/item_back_icon" />
+                    android:src="@mipmap/item_back_icon"
+                    android:visibility="gone"
+                    />
             </LinearLayout>
+
 
             <View style="@style/lineSolid" />
 
