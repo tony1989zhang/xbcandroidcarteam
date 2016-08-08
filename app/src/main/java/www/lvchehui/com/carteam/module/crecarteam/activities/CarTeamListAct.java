@@ -5,10 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.xutils.common.Callback;
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,12 +46,12 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
     protected List convertToBeanList(LoginBean t) {
         XgoLog.e("json:" + t);
         ArrayList<TextBean> arr =  new ArrayList<>();
-//        for (int i = 0;i<30;i++){
-//            TextBean textBean = new TextBean();
-//            textBean.a = "a" + i;
-//            textBean.b = "b" + i;
-//            arr.add(textBean);
-//        }
+        for (int i = 0;i<30;i++){
+            TextBean textBean = new TextBean();
+            textBean.a = "a" + i;
+            textBean.b = "b" + i;
+            arr.add(textBean);
+        }
         return arr;
     }
 
@@ -85,21 +89,35 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
     class MessageListAdapter extends BasePageAdapter {
 
         class MessageItemViewHolder extends RecyclerView.ViewHolder {
-            View root;
-            TextView tvMsg;
-            TextView tvData;
+            @ViewInject(R.id.root)
+            private LinearLayout m_root;
+
+            @ViewInject(R.id.tv_team_type)
+            private TextView m_tv_team_type; //A;
+
+            @ViewInject(R.id.tv_team_name)
+            private TextView m_tv_team_name; //闽南龙翔快运;
+
+            @ViewInject(R.id.tv_team_add)
+            private TextView m_tv_team_add; //福建厦门;
+
+            @ViewInject(R.id.iv_edit)
+            private ImageView m_iv_edit;
+
+            @ViewInject(R.id.iv_del)
+            private ImageView m_iv_del;
+
+
             public MessageItemViewHolder(View itemView) {
                 super(itemView);
-                root = itemView.findViewById(R.id.root);
-                tvMsg = (TextView) itemView.findViewById(R.id.tv_msg);
-                tvData = (android.widget.TextView) itemView.findViewById(R.id.tv_data);
+                x.view().inject(this,itemView);
 
             }
         }
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_message, viewGroup, false);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_car_team, viewGroup, false);
             return new MessageItemViewHolder(inflate);
         }
 
@@ -109,8 +127,8 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
             if (viewHoder instanceof  MessageItemViewHolder){
                 MessageItemViewHolder msgViewHolder = (MessageItemViewHolder) viewHoder;
                 TextBean bean = (TextBean) mItems.get(position);
-                msgViewHolder.tvMsg.setText(bean.a);
-                msgViewHolder.tvData.setText(bean.b);
+                msgViewHolder.m_tv_team_type.setText(bean.a);
+                msgViewHolder.m_tv_team_add.setText(bean.b);
 
             }
         }
