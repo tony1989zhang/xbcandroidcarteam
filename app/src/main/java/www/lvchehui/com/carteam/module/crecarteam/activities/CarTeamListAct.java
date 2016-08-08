@@ -17,6 +17,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
+import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
@@ -24,7 +25,7 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  * Created by 张灿能 on 2016/8/5.
  * 作用：车队信息
  */
-public class CarTeamListAct extends BaseListAct {
+public class CarTeamListAct extends BaseListAct<LoginBean> {
 
 
     class TextBean{
@@ -38,15 +39,15 @@ public class CarTeamListAct extends BaseListAct {
     }
 
     @Override
-    protected List convertToBeanList(String json) {
-        XgoLog.e("json:" + json);
+    protected List convertToBeanList(LoginBean t) {
+        XgoLog.e("json:" + t);
         ArrayList<TextBean> arr =  new ArrayList<>();
-        for (int i = 0;i<30;i++){
-            TextBean textBean = new TextBean();
-            textBean.a = "a" + i;
-            textBean.b = "b" + i;
-            arr.add(textBean);
-        }
+//        for (int i = 0;i<30;i++){
+//            TextBean textBean = new TextBean();
+//            textBean.a = "a" + i;
+//            textBean.b = "b" + i;
+//            arr.add(textBean);
+//        }
         return arr;
     }
 
@@ -57,7 +58,7 @@ public class CarTeamListAct extends BaseListAct {
 
     @Override
     protected boolean isSwipeRefreshLayoutEnabled() {
-        return false;
+        return true;
     }
 
     @Override

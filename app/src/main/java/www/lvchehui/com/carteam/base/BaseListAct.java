@@ -39,8 +39,11 @@ import www.lvchehui.com.carteam.view.dlg.CProDlg;
  */
 @ContentView(R.layout.list_normal_hastitle)
 public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLayout.OnRefreshListener, Callback.CommonCallback<T> {
+    @ViewInject(R.id.title_view)
     protected TitleView mTitleView;
+    @ViewInject(R.id.recycler_view)
     protected RecyclerView mViewList;
+    @ViewInject(R.id.empty_propt)
     private TextView mEmptyTips;
 
     SwipeRefreshLayout mSwipeRefreshLayout;
@@ -71,9 +74,8 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
 
 
     protected void initViews() {
-        mTitleView = (TitleView) findViewById(R.id.title_view);
-
-        mViewList = (RecyclerView) findViewById(R.id.recycler_view);
+//        mTitleView = (TitleView) findViewById(R.id.title_view);
+//        mViewList = (RecyclerView) findViewById(R.id.recycler_view);
         mViewList.setLayoutManager(initLayoutManager());
 
 
@@ -81,7 +83,7 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
         mAdapter.init(mViewList, isPageEnabled());
         mViewList.setItemAnimator(new DefaultItemAnimator());
         //mViewList.addItemDecoration(new DividerItemDecoration(mViewList.getContext(), LinearLayoutManager.VERTICAL));
-        mEmptyTips = (TextView) findViewById(R.id.empty_propt);
+       // mEmptyTips = (TextView) findViewById(R.id.empty_propt);
         mEmptyTips.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -91,7 +93,8 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
                     mSwipeRefreshLayout.setRefreshing(true);
                     requestData(0, false);
                 } else {
-                    Toast.makeText(mTitleView.getContext(), R.string.network_not_connection, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(mTitleView.getContext(), R.string.network_not_connection, Toast.LENGTH_SHORT).show();
+                    showToast(getResources().getString(R.string.network_not_connection));
                 }
 
             }
@@ -148,7 +151,7 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
     /**
      * 解析Json，得到List,在子线程中运行
      */
-    protected abstract List<T> convertToBeanList(String json);
+    protected abstract List<T> convertToBeanList(T t);
 
     protected RecyclerView.LayoutManager initLayoutManager() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(mViewList.getContext());
@@ -205,7 +208,8 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
         if (CUtil.isNetworkConnected(mViewList.getContext())) {
             reloadData();
         } else {
-            Toast.makeText(mTitleView.getContext(), R.string.network_not_connection, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(mTitleView.getContext(), R.string.network_not_connection, Toast.LENGTH_SHORT).show();
+            showToast(getResources().getString(R.string.network_not_connection));
             mSwipeRefreshLayout.setRefreshing(false);
         }
     }
@@ -222,7 +226,7 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
         @Override
         protected Object doInBackground(Object... params) {
             // TODO Auto-generated method stub
-            return convertToBeanList(params[0].toString());
+            return convertToBeanList((T)params[0]);
         }
 
         @Override
