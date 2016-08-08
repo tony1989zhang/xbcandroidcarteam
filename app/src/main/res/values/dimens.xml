@@ -19,4 +19,6 @@
 
 
     <dimen name="margin_top_height">10dp</dimen>
+    <dimen name="padding_left">10dp</dimen>
+    <dimen name="padding_right">10dp</dimen>
 </resources>
