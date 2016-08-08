@@ -1,11 +1,14 @@
 package www.lvchehui.com.carteam.module.crecarteam.activities;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -13,14 +16,18 @@ import org.xutils.view.annotation.ViewInject;
 import java.util.ArrayList;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.activities.PkwSearchAct;
 import www.lvchehui.com.carteam.adapter.CusArrAdapter;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.entity.MotorcadeTypeEntity;
 import www.lvchehui.com.carteam.evebus.CarTeamEvent;
+import www.lvchehui.com.carteam.evebus.PkwSearchEvent;
 import www.lvchehui.com.carteam.impl.AdapterViewSetListener;
 import www.lvchehui.com.carteam.impl.ListDlgItemClickListener;
+import www.lvchehui.com.carteam.tools.MD5Util;
 import www.lvchehui.com.carteam.tools.RegexUtils;
+import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -52,6 +59,7 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     @Override
     protected void initView() {
         super.initView();
+        EventBus.getDefault().register(this);
         setTitleV(m_title_view, "车队信息");
     }
 
@@ -67,6 +75,7 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
                 showListDlg(this, this, this, list);
                 break;
             case R.id.et_address:
+                startActivity(new Intent(this, PkwSearchAct.class));
                 break;
             case R.id.et_business_lic_photo:
                 break;
@@ -111,7 +120,11 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
         }
     }
 
-
+    @Subscribe(threadMode = ThreadMode.MAIN)
+   public void getPkwSearch(PkwSearchEvent event){
+        m_et_address.setText(event.getAddress());
+        EventBus.getDefault().removeStickyEvent(event.getClass());
+    }
     @Override
     public void getItemView(View view, ArrayList<MotorcadeTypeEntity> list, int position) {
         TextView title = (TextView) view.findViewById(R.id.tv_title);
@@ -123,5 +136,11 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     @Override
     public void getItem(MotorcadeTypeEntity motorcadeTypeEntity) {
         m_et_team_type.setText(motorcadeTypeEntity.getMotorcadeTypeName());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

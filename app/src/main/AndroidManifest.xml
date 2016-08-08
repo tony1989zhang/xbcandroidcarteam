@@ -26,7 +26,7 @@
         <!--android:value="5aefedd8a502caf3dccf97b1a44d8f52" />-->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="6840bbb82ec26d645b88ae2e87332a4c" />
+            android:value="1524b138d4f4c2702dc4cdb916a13fc3" />
         <activity
             android:name=".module.HomeAct"
             android:alwaysRetainTaskState="true"
@@ -42,6 +42,11 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity android:name=".activities.PkwSearchAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".module.crecarteam.activities.CarTeamInfoAct"
             android:alwaysRetainTaskState="true"
