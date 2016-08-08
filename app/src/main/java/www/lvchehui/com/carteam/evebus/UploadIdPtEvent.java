@@ -5,6 +5,7 @@ package www.lvchehui.com.carteam.evebus;
  * 作用：上传证件id 与 照片链接的
  */
 public class UploadIdPtEvent {
+    private String upLoadType;
     private String idNum;
     private String idCardPt;
 
@@ -22,5 +23,13 @@ public class UploadIdPtEvent {
 
     public void setIdCardPt(String idCardPt) {
         this.idCardPt = idCardPt;
+    }
+
+    public String getUpLoadType() {
+        return upLoadType;
+    }
+
+    public void setUpLoadType(String upLoadType) {
+        this.upLoadType = upLoadType;
     }
 }

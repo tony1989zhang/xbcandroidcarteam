@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.activities.PkwSearchAct;
+import www.lvchehui.com.carteam.activities.UploadIdPtAct;
 import www.lvchehui.com.carteam.adapter.CusArrAdapter;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
@@ -82,6 +83,7 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
                 startActivity(new Intent(this,UpdBusLicPtAct.class));
                 break;
             case R.id.et_road_permit_photo:
+                startActivity(new Intent(this,UpdRoadPtPtAct.class));
                 break;
             case R.id.et_account:
                 break;
@@ -122,15 +124,18 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
         }
     }
 
-//    @Subscribe(threadMode = ThreadMode.MAIN)
-//   public void getPkwSearch(PkwSearchEvent event){
-//        m_et_address.setText(event.getAddress());
-//        EventBus.getDefault().removeStickyEvent(event.getClass());
-//
-//    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+   public void getPkwSearch(PkwSearchEvent event){
+        m_et_address.setText(event.getAddress());
+        EventBus.getDefault().removeStickyEvent(event.getClass());
+
+    }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onUploadIdPtEvent(UploadIdPtEvent event){
         if (event !=null) {
+            if (event.getUpLoadType().equals(UpdBusLicPtAct.class.getSimpleName()))
+            m_et_business_lic_photo.setText("已上传");
+            if (event.getUpLoadType().equals(UpdRoadPtPtAct.class.getSimpleName()))
             m_et_road_permit_photo.setText("已上传");
         }
         EventBus.getDefault().removeStickyEvent(event.getClass());

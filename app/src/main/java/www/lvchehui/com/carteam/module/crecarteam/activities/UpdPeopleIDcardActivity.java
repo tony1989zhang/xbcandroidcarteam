@@ -20,23 +20,4 @@ public class UpdPeopleIDcardActivity extends UploadIdPtAct {
         //获取数据库进行查询操作。
         initTextView("申请人信息", "身份证", "大家好", "瞎扯淡", "");
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        XgoLog.e("upPeo——ondestory");
-    }
-
-    @Override
-    protected void submitOnClick() {
-        super.submitOnClick();
-
-        String idNumContent = getIdNumContent();
-        if (StringUtils.isEmpty(idNumContent)) return;
-        String url = getUrl();
-        DbManager dbManager = App.getInstance().getDbManager();
-        //获取到数据库管理器，进行查询保存数据库操作。
-        showToast("url:" + url + "idNum:" + idNumContent);
-    }
-
 }
