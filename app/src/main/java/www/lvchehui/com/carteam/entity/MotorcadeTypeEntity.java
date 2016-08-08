@@ -9,7 +9,8 @@ public class MotorcadeTypeEntity {
     private String MotorcadeTypeDes;
     private int type;
 
-    public MotorcadeTypeEntity(String motorcadeTypeName, String motorcadeTypeDes) {
+    public MotorcadeTypeEntity(int type,String motorcadeTypeName, String motorcadeTypeDes) {
+        this.type = type;
         MotorcadeTypeName = motorcadeTypeName;
         MotorcadeTypeDes = motorcadeTypeDes;
     }
