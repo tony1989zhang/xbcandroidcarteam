@@ -61,9 +61,9 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
             case R.id.et_team_type:
 
                 ArrayList<MotorcadeTypeEntity> list = new ArrayList<>();
-                list.add(new MotorcadeTypeEntity("A 旅游客运公司","正规客运、旅游运输公司等"));
-                list.add(new MotorcadeTypeEntity("B 企事业单位","租凭车行、酒店等"));
-                list.add(new MotorcadeTypeEntity("C 私家车","个人"));
+                list.add(new MotorcadeTypeEntity(1,"A 旅游客运公司","正规客运、旅游运输公司等"));
+                list.add(new MotorcadeTypeEntity(2,"B 企事业单位","租凭车行、酒店等"));
+                list.add(new MotorcadeTypeEntity(3,"C 私家车","个人"));
                 showListDlg(this, this, this, list);
                 break;
             case R.id.et_address:
