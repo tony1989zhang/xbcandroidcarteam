@@ -101,4 +101,3 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
         m_et_team_type.setText(motorcadeTypeEntity.getMotorcadeTypeName());
     }
 }
-nmnn
