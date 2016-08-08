@@ -28,7 +28,7 @@ import www.lvchehui.com.carteam.view.TitleView;
  * 作用：车队信息
  */
 @ContentView(R.layout.act_car_team_info)
-public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListener<MotorcadeTypeEntity>,AdapterViewSetListener<MotorcadeTypeEntity> {
+public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListener<MotorcadeTypeEntity>, AdapterViewSetListener<MotorcadeTypeEntity> {
     @ViewInject(R.id.title_view)
     private TitleView m_title_view;
     @ViewInject(R.id.et_team_type)
@@ -47,23 +47,23 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     private EditText m_et_road_permit_photo;
     @ViewInject(R.id.et_account)
     private EditText m_et_account;
+    private int motorcadeDefaultType = 0;
 
     @Override
     protected void initView() {
         super.initView();
-        setTitleV(m_title_view,"车队信息");
+        setTitleV(m_title_view, "车队信息");
     }
 
-    @Event({R.id.et_team_type,R.id.et_address,R.id.et_business_lic_photo,R.id.et_road_permit_photo,R.id.et_account})
-    private void onCarTeamOnClick(View v){
-        switch (v.getId())
-        {
+    @Event({R.id.et_team_type, R.id.et_address, R.id.et_business_lic_photo, R.id.et_road_permit_photo, R.id.et_account})
+    private void onCarTeamOnClick(View v) {
+        switch (v.getId()) {
             case R.id.et_team_type:
 
                 ArrayList<MotorcadeTypeEntity> list = new ArrayList<>();
-                list.add(new MotorcadeTypeEntity(1,"A 旅游客运公司","正规客运、旅游运输公司等"));
-                list.add(new MotorcadeTypeEntity(2,"B 企事业单位","租凭车行、酒店等"));
-                list.add(new MotorcadeTypeEntity(3,"C 私家车","个人"));
+                list.add(new MotorcadeTypeEntity(1, "A 旅游客运公司", "正规客运、旅游运输公司等"));
+                list.add(new MotorcadeTypeEntity(2, "B 企事业单位", "租凭车行、酒店等"));
+                list.add(new MotorcadeTypeEntity(3, "C 私家车", "个人"));
                 showListDlg(this, this, this, list);
                 break;
             case R.id.et_address:
@@ -81,19 +81,34 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
+        boolean isSubmit = false;
+        if (validationAwe(R.id.et_team_type, RegexUtils.NOT_EMPTY, R.string.err_no_empty) &&
+                validationAwe(R.id.et_team_name, RegexUtils.NOT_EMPTY, R.string.err_no_empty) &&
+                validationAwe(R.id.et_representative, RegexUtils.NOT_EMPTY, R.string.err_no_empty) &&
+                validationAwe(R.id.et_address, RegexUtils.NOT_EMPTY, R.string.err_no_empty) &&
+                validationAwe(R.id.et_area, RegexUtils.NOT_EMPTY, R.string.err_no_empty)) {
+            if (motorcadeDefaultType == 3) {
+                isSubmit = true;
+            }
+            if (motorcadeDefaultType == 2 && validationAwe(R.id.et_business_lic_photo, RegexUtils.NOT_EMPTY, R.string.err_no_empty)) {
+                isSubmit = true;
+            }
+            if (motorcadeDefaultType == 1
+                    && validationAwe(R.id.et_business_lic_photo, RegexUtils.NOT_EMPTY, R.string.err_no_empty)
+                    && validationAwe(R.id.et_road_permit_photo, RegexUtils.NOT_EMPTY, R.string.err_no_empty) &&
+                    validationAwe(R.id.et_account, RegexUtils.NOT_EMPTY, R.string.err_no_empty)
+                    ) {
+                isSubmit = true;
+            }
 
-        validationAwe(R.id.et_team_type, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
-        validationAwe(R.id.et_team_name, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
-        validationAwe(R.id.et_representative, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
-        validationAwe(R.id.et_address, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
-        validationAwe(R.id.et_area, RegexUtils.NOT_EMPTY,R.string.err_no_empty);
-        validationAwe(R.id.et_business_lic_photo, RegexUtils.NOT_EMPTY,R.string.err_no_empty);
-        validationAwe(R.id.et_road_permit_photo, RegexUtils.NOT_EMPTY,R.string.err_no_empty);
-        validationAwe(R.id.et_account, RegexUtils.NOT_EMPTY,R.string.err_no_empty);
-        CarTeamEvent carTeamEvent = new CarTeamEvent();
-        carTeamEvent.setCarTeamOnClick(true);
-        EventBus.getDefault().post(carTeamEvent);
-        finish();
+
+        }
+        if (isSubmit) {
+            CarTeamEvent carTeamEvent = new CarTeamEvent();
+            carTeamEvent.setCarTeamOnClick(true);
+            EventBus.getDefault().post(carTeamEvent);
+            finish();
+        }
     }
 
 
