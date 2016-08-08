@@ -18,6 +18,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--2016-07-22 高德地图进行定位-->
+        <service android:name="com.amap.api.location.APSService" />
+        <!--高德地图-->
+        <!--<meta-data-->
+        <!--android:name="com.amap.api.v2.apikey"-->
+        <!--android:value="5aefedd8a502caf3dccf97b1a44d8f52" />-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="6840bbb82ec26d645b88ae2e87332a4c" />
         <activity
             android:name=".module.HomeAct"
             android:alwaysRetainTaskState="true"
