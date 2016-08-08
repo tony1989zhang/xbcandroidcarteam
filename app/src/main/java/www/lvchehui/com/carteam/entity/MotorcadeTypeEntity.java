@@ -12,4 +12,12 @@ public class MotorcadeTypeEntity {
         MotorcadeTypeName = motorcadeTypeName;
         MotorcadeTypeDes = motorcadeTypeDes;
     }
+
+    public String getMotorcadeTypeName() {
+        return MotorcadeTypeName;
+    }
+
+    public String getMotorcadeTypeDes() {
+        return MotorcadeTypeDes;
+    }
 }

@@ -30,9 +30,14 @@ public class CusArrAdapter<T> extends ArrayAdapter<T> {
     }
 
     @Override
+    public int getCount() {
+        return mList.size();
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View inflate = LayoutInflater.from(mContext).inflate(mResource, parent, false);
-        mItemViewListener.getItemView(inflate,mList);
+        mItemViewListener.getItemView(inflate, mList, position);
         return inflate;
     }
 }

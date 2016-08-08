@@ -1,20 +1,33 @@
 package www.lvchehui.com.carteam.base;
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 import org.xutils.view.annotation.Event;
 import org.xutils.x;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
+
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.adapter.CusArrAdapter;
 import www.lvchehui.com.carteam.app.App;
+import www.lvchehui.com.carteam.view.HalfListV;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dlg.CProDlg;
-
+import www.lvchehui.com.carteam.view.dlg.Listdlg;
+import www.lvchehui.com.carteam.impl.*;
 /**
  * 作者：V先生
  * 作用：Activity 基类
@@ -121,5 +134,21 @@ public class BaseAct extends Activity {
 
     protected void submitOnClick(){
 
+    }
+
+    public <T>void showListDlg(Context context,final ListDlgItemClickListener listener,AdapterViewSetListener<T> adalistener,final ArrayList<T> list) {
+        HalfListV halfListView = new HalfListV(this);
+        final CusArrAdapter<T> adapter = new CusArrAdapter<>(context, R.layout.item_team_type, adalistener, list);
+        halfListView.setAdapter(adapter);
+        halfListView.setCacheColorHint(0x000000);
+        final Listdlg listDialog = new Listdlg(this,halfListView);
+        listDialog.show();
+        halfListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                listener.getItem(list.get(position));
+                listDialog.dismiss();
+            }
+        });
     }
 }
