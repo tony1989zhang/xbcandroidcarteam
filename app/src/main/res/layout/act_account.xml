@@ -21,7 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            android:background="@color/white"
             android:orientation="vertical">
 
             <View
@@ -215,7 +215,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
+                android:background="@color/main_color"
+                android:paddingRight="10dp"
                 android:gravity="right"
                 android:text="带＊必须填写" />
         </LinearLayout>
