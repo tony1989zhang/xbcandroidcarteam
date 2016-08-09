@@ -102,6 +102,8 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
+        //暂时性设置
+        m_et_area.setText("厦门");
         boolean isSubmit = false;
         if (validationAwe(R.id.et_team_type, RegexUtils.NOT_EMPTY, R.string.err_no_empty) &&
                 validationAwe(R.id.et_team_name, RegexUtils.NOT_EMPTY, R.string.err_no_empty) &&
