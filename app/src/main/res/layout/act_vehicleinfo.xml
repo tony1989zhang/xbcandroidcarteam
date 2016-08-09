@@ -21,58 +21,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            android:background="@color/white"
             android:orientation="vertical">
 
             <View
                 style="@style/lineSolid"
                 android:layout_marginTop="@dimen/margin_top_height" />
-
-            <LinearLayout
-                android:id="@+id/ll_team_type"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_white_gray"
-                android:gravity="center_vertical"
-                android:minHeight="48.0dip"
-                android:paddingLeft="10.0dip"
-                android:paddingRight="10.0dip">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="0.0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
-                    android:layout_weight="1.0"
-                    android:text="车队类型＊"
-                    android:textColor="@color/text_default_color"
-                    android:textSize="15.0sp" />
-
-                <EditText
-                    android:id="@+id/et_team_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:ellipsize="end"
-                    android:gravity="center|right"
-                    android:hint="请选择车队类型"
-                    android:focusable="false"
-                    android:maxLines="3"
-                    android:textColor="@color/text_default_color"
-                    android:textSize="@dimen/text_default_size" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:src="@mipmap/item_back_icon"
-                    />
-            </LinearLayout>
-
-            <View style="@style/lineSolid_center" />
 
             <LinearLayout
                 android:id="@+id/ll_team_name"
@@ -93,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="车队名称＊"
+                    android:text="所属车队＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
@@ -104,98 +58,7 @@
                     android:background="@null"
                     android:ellipsize="end"
                     android:gravity="center|right"
-                    android:hint="请输入车队名称"
-                    android:maxLines="3"
-                    android:textColor="@color/text_default_color"
-                    android:textSize="@dimen/text_default_size" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:src="@mipmap/item_back_icon"
-                    android:visibility="gone"
-                    />
-            </LinearLayout>
-
-            <View style="@style/lineSolid_center" />
-            <LinearLayout
-                android:id="@+id/ll_representative"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_white_gray"
-                android:gravity="center_vertical"
-                android:minHeight="48.0dip"
-                android:paddingLeft="10.0dip"
-                android:paddingRight="10.0dip">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="0.0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
-                    android:layout_weight="1.0"
-                    android:text="法人代表＊"
-                    android:textColor="@color/text_default_color"
-                    android:textSize="15.0sp" />
-
-                <EditText
-                    android:id="@+id/et_representative"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:ellipsize="end"
-                    android:gravity="center|right"
-                    android:hint="请输入真实姓名"
-                    android:maxLines="3"
-                    android:textColor="@color/text_default_color"
-                    android:textSize="@dimen/text_default_size" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:src="@mipmap/item_back_icon"
-                    android:visibility="gone"
-                    />
-            </LinearLayout>
-
-            <View style="@style/lineSolid_center" />
-
-            <LinearLayout
-                android:id="@+id/ll_address"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_white_gray"
-                android:gravity="center_vertical"
-                android:minHeight="48.0dip"
-                android:paddingLeft="10.0dip"
-                android:paddingRight="10.0dip">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="0.0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
-                    android:layout_weight="1.0"
-                    android:text="地址＊"
-                    android:textColor="@color/text_default_color"
-                    android:textSize="15.0sp" />
-
-                <EditText
-                    android:id="@+id/et_address"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:ellipsize="end"
-                    android:gravity="center|right"
-                    android:hint="请输入地址"
+                    android:hint="请选择所属车队"
                     android:focusable="false"
                     android:maxLines="3"
                     android:textColor="@color/text_default_color"
@@ -206,6 +69,233 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:src="@mipmap/item_back_icon"
+                    />
+            </LinearLayout>
+
+            <View style="@style/lineSolid_center" />
+
+            <LinearLayout
+                android:id="@+id/ll_car_num"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="车牌＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_car_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请输入车牌号"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+            <View style="@style/lineSolid_center" />
+            <LinearLayout
+                android:id="@+id/ll_vehicle_model"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="品牌车型＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_vehicle_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请输入车型"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+            <View style="@style/lineSolid_center" />
+
+            <LinearLayout
+                android:id="@+id/ll_seat_number_just"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="座位数＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_seat_number_just"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请输入正座个数"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+            <View style="@style/lineSolid_center" />
+
+            <LinearLayout
+                android:id="@+id/ll_seat_number_sum_as"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="副座位数＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_seat_number_sum_as"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请输入副座个数(扣除司机)"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+            <View style="@style/lineSolid_center" />
+
+            <LinearLayout
+                android:id="@+id/ll_vehicle_color"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="车身颜色＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_vehicle_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请输入车身颜色"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    android:visibility="gone"
                     />
             </LinearLayout>
             <View style="@style/lineSolid_center" />
@@ -256,9 +346,55 @@
 
             <View style="@style/lineSolid_center" />
 
+            <LinearLayout
+                android:id="@+id/ll_registration_first"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="首次上牌时间＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_registration_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请选择时间"
+                    android:focusable="false"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    />
+            </LinearLayout>
+
+            <View style="@style/lineSolid_center" />
+
 
             <LinearLayout
-                android:id="@+id/ll_business_lic_photo"
+                android:id="@+id/ll_passanger_premium"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -273,17 +409,17 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/tv_business_lic_photo"
+                    android:id="@+id/tv_passanger_premium"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="营业执照＊"
+                    android:text="乘客险＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
                 <EditText
-                    android:id="@+id/et_business_lic_photo"
+                    android:id="@+id/et_passanger_premium"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -307,7 +443,7 @@
 
 
             <LinearLayout
-                android:id="@+id/ll_road_permit_photo"
+                android:id="@+id/ll_drive_licence_photo"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -322,12 +458,61 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/tv_road_permit_photo"
+                    android:id="@+id/tv_drive_licence_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="道路经营许可证＊"
+                    android:text="行驶证＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_drive_licence_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:digits="0123456789Xx"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请上传证件"
+                    android:maxLength="18"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon" />
+            </LinearLayout>
+            <View style="@style/lineSolid_center" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_road_transport_photo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_road_transport_photo"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="道路运输证＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
@@ -353,11 +538,12 @@
                     android:src="@mipmap/item_back_icon" />
             </LinearLayout>
 
+
             <View style="@style/lineSolid_center" />
 
 
             <LinearLayout
-                android:id="@+id/ll_account"
+                android:id="@+id/ll_car_photos_inner_photo"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -372,24 +558,24 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/tv_account"
+                    android:id="@+id/tv_car_photos_inner_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
-                    android:text="对公账户＊"
+                    android:text="车辆内景＊"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
                 <EditText
-                    android:id="@+id/et_account"
+                    android:id="@+id/et_car_photos_inner_photo"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:digits="0123456789Xx"
                     android:ellipsize="end"
                     android:gravity="center|right"
-                    android:hint="请输入信息"
+                    android:hint="请上传照片"
                     android:maxLength="18"
                     android:focusable="false"
                     android:maxLines="1"
@@ -400,9 +586,61 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:src="@mipmap/item_back_icon"
-                    />
+                    android:src="@mipmap/item_back_icon" />
             </LinearLayout>
+
+
+            <View style="@style/lineSolid_center" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_car_photos_outside_photo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_car_photos_outside_photo"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_weight="1.0"
+                    android:text="车辆外景＊"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_car_photos_outside_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|right"
+                    android:hint="请上传照片"
+                    android:maxLength="18"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon" />
+            </LinearLayout>
+
+
+
 
 
             <View style="@style/lineSolid" />
@@ -411,6 +649,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
+                android:background="@color/main_color"
                 android:gravity="right"
                 android:text="带＊必须填写" />
         </LinearLayout>
