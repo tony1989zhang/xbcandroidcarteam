@@ -51,7 +51,7 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
     private Button m_btn_submit_pt; //拍照/上传;
     public   PhotoUtils mInstance;
     private String mUrl;
-    public int pTtype = 0;//两张照片的时候可以用到
+
     @Override
     protected void initView() {
         super.initView();
@@ -67,10 +67,15 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
 
     @Event(R.id.btn_submit_pt)
     private void submitPt(View v){
+        btn_submitPt();
         if(null == mInstance)
         return;
         mInstance.showDialog(this);;
-        pTtype = 0;
+
+    }
+     //扩充父类使子类能充分扩展
+    public void btn_submitPt(){
+
     }
 
     @Override
