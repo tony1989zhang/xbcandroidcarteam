@@ -171,14 +171,17 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
             m_tv_business_lic_photo.setText("营业执照＊");
             m_tv_road_permit_photo.setText("道路经营许可证＊");
             m_tv_account.setText("对公账户＊");
+            motorcadeDefaultType = 1;
         }else if(mot.getType()==2){
             m_tv_business_lic_photo.setText("营业执照＊");
             m_tv_road_permit_photo.setText("道路经营许可证");
             m_tv_account.setText("对公账户");
+            motorcadeDefaultType = 2;
         }else if(mot.getType()==3){
             m_tv_business_lic_photo.setText("营业执照");
             m_tv_road_permit_photo.setText("道路经营许可证");
             m_tv_account.setText("对公账户");
+            motorcadeDefaultType = 3;
         }
     }
 
