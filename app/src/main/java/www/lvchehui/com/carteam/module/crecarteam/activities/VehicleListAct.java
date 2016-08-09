@@ -33,6 +33,12 @@ import www.lvchehui.com.carteam.tools.XgoLog;
 public class VehicleListAct extends BaseListAct<LoginBean> {
 
     @Override
+    protected void initViews() {
+        super.initViews();
+        setTitleV(mTitleView,"车辆列表");
+    }
+
+    @Override
     protected List convertToBeanList(LoginBean bean) {
         XgoLog.e("carsListBean:" + bean.toString());
        ArrayList<CarsListEntity> list =  new ArrayList<>();
@@ -63,7 +69,7 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
 
     @Override
     protected Cancelable initRequest(int start) {
-        return CM.getInstance().login("","",this);
+        return CM.getInstance().login("", "", this);
     }
 
     @Override

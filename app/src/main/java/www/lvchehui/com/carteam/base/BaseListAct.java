@@ -354,11 +354,11 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
         }
     }
 
-    public void setTitleView(TitleView title_view, String title) {
-        setTitleView(title_view, title, null);
+    public void setTitleV(TitleView title_view, String title) {
+        setTitleV(title_view, title, null);
     }
 
-    public void setTitleView(TitleView title_view, String title, String rightText) {
+    public void setTitleV(TitleView title_view, String title, String rightText) {
         if (title_view == null)
             return;
 

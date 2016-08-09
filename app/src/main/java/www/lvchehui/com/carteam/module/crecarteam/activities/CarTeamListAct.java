@@ -13,7 +13,6 @@ import android.widget.TextView;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -39,7 +38,7 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
     protected void initViews() {
         super.initViews();
         EventBus.getDefault().register(this);
-        setTitleView(mTitleView, "消息中心");
+        setTitleV(mTitleView, "消息中心");
     }
 
     @Override
