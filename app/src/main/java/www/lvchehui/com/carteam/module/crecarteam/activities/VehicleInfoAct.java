@@ -82,6 +82,7 @@ public class VehicleInfoAct extends BaseFormAct {
                 startActivity(new Intent(this,CarTeamListAct.class));
                 break;
             case  R.id.et_registration_first:
+                m_et_registration_first.setText("2016-01-01");
                 break;
             case R.id.et_passanger_premium:
                 break;
