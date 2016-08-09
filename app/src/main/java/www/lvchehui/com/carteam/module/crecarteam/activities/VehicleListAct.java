@@ -21,6 +21,7 @@ import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.CarsListBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
+import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
 /**
@@ -58,7 +59,7 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
 
     @Override
     protected Cancelable initRequest(int start) {
-        return null;
+        return CM.getInstance().carsGetList(1,this);
     }
 
     @Override
@@ -117,10 +118,8 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
             }
         }
     }
-
     @Event(R.id.tv_submit_ok)
     private void submitOk(View v){
-        startActivity(new Intent(this,CarTeamInfoAct.class));
+        startActivity(new Intent(this,VehicleInfoAct.class));
     }
-
 }
