@@ -5,6 +5,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -14,6 +17,7 @@ import java.util.ArrayList;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.activities.UploadIdPtAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
 import www.lvchehui.com.carteam.tools.RegexUtils;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dlg.CWayDlg;
@@ -54,7 +58,7 @@ public class ResponInfoAct extends BaseFormAct {
     protected void submitOnClick() {
         super.submitOnClick();
         showToast("点击" + m_et_phone.getText().toString());
-        if(validationAwe(R.id.et_respon_name, RegexUtils.NOT_EMPTY, R.string.err_tel)&&
+        if(validationAwe(R.id.et_respon_name, RegexUtils.NOT_EMPTY, R.string.err_no_empty)&&
         validationAwe(R.id.et_respon_sex, RegexUtils.NOT_EMPTY, R.string.err_no_empty)&&
         validationAwe(R.id.et_preson_id_card, RegexUtils.NOT_EMPTY, R.string.err_no_empty)&&
         validationAwe(R.id.et_phone, RegexUtils.TELEPHONE, R.string.err_tel))
@@ -84,5 +88,13 @@ public class ResponInfoAct extends BaseFormAct {
     @Event(R.id.et_preson_id_card)
     private void setPresonIdCard(View v){
          startActivity(new Intent(this, UpdPeopleIDcardActivity.class));
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onUploadIdPtEvent(UploadIdPtEvent event){
+        if (event !=null) {
+            if (event.getUpLoadType().equals(UpdPeopleIDcardActivity.class.getSimpleName()))
+                m_et_preson_id_card.setText("已上传");
+        }
+        EventBus.getDefault().removeStickyEvent(event.getClass());
     }
 }
