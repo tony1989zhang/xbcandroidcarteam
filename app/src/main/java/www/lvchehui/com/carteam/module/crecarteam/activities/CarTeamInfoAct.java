@@ -57,11 +57,11 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     @ViewInject(R.id.et_account)
     private EditText m_et_account;
     @ViewInject(R.id.tv_business_lic_photo)
-    private EditText m_tv_business_lic_photo;
+    private TextView m_tv_business_lic_photo;
     @ViewInject(R.id.tv_road_permit_photo)
-    private EditText m_tv_road_permit_photo;
+    private TextView m_tv_road_permit_photo;
     @ViewInject(R.id.tv_account)
-    private EditText m_tv_account;
+    private TextView m_tv_account;
     private int motorcadeDefaultType = 0;
 
     @Override

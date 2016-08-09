@@ -391,6 +391,7 @@
                     android:gravity="center|right"
                     android:hint="请输入信息"
                     android:maxLength="18"
+                    android:focusable="false"
                     android:maxLines="1"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
