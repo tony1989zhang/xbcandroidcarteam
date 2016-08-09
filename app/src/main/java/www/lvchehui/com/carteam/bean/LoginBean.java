@@ -12,9 +12,7 @@ import www.lvchehui.com.carteam.http.JRParser;
  * 作用：基类
  */
 @HttpResponse(parser = JRParser.class)
-public class LoginBean implements Serializable{
-    public int errCode;
-    public String resMsg;
+public class LoginBean extends BaseBean{
     public LoginEntity resData;
 
     @Override

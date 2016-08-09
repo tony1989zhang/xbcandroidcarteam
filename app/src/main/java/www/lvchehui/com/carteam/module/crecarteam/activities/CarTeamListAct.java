@@ -33,10 +33,7 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  * Created by 张灿能 on 2016/8/5.
  * 作用：车队信息
  */
-@ContentView(R.layout.act_car_team_list)
 public class CarTeamListAct extends BaseListAct<LoginBean> {
-
-
     class TextBean{
         String a;
         String b;
