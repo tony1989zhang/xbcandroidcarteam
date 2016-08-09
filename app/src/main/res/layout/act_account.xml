@@ -105,7 +105,7 @@
                     android:ellipsize="end"
                     android:gravity="center|right"
                     android:hint="请选择开户地区"
-                    android:clickable="false"
+                    android:focusable="false"
                     android:maxLines="3"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
