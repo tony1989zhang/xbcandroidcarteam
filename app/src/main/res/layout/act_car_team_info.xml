@@ -273,6 +273,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_business_lic_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
@@ -321,6 +322,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_road_permit_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
@@ -370,6 +372,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_account"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"

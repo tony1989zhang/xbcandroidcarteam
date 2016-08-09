@@ -22,4 +22,13 @@ public class MotorcadeTypeEntity {
     public String getMotorcadeTypeDes() {
         return MotorcadeTypeDes;
     }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
 }
+

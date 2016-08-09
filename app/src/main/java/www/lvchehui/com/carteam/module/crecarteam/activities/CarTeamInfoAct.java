@@ -56,6 +56,12 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     private EditText m_et_road_permit_photo;
     @ViewInject(R.id.et_account)
     private EditText m_et_account;
+    @ViewInject(R.id.tv_business_lic_photo)
+    private EditText m_tv_business_lic_photo;
+    @ViewInject(R.id.tv_road_permit_photo)
+    private EditText m_tv_road_permit_photo;
+    @ViewInject(R.id.tv_account)
+    private EditText m_tv_account;
     private int motorcadeDefaultType = 0;
 
     @Override
@@ -149,8 +155,21 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
     }
 
     @Override
-    public void getItem(MotorcadeTypeEntity motorcadeTypeEntity) {
-        m_et_team_type.setText(motorcadeTypeEntity.getMotorcadeTypeName());
+    public void getItem(MotorcadeTypeEntity mot) {
+        m_et_team_type.setText(mot.getMotorcadeTypeName());
+        if (mot.getType()==1){
+            m_tv_business_lic_photo.setText("营业执照＊");
+            m_tv_road_permit_photo.setText("道路经营许可证＊");
+            m_tv_account.setText("对公账户＊");
+        }else if(mot.getType()==2){
+            m_tv_business_lic_photo.setText("营业执照＊");
+            m_tv_road_permit_photo.setText("道路经营许可证");
+            m_tv_account.setText("对公账户");
+        }else if(mot.getType()==3){
+            m_tv_business_lic_photo.setText("营业执照");
+            m_tv_road_permit_photo.setText("道路经营许可证");
+            m_tv_account.setText("对公账户");
+        }
     }
 
     @Override
