@@ -129,7 +129,13 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
             if (viewHoder instanceof  MessageItemViewHolder){
                 MessageItemViewHolder msgViewHolder = (MessageItemViewHolder) viewHoder;
-                TextBean bean = (TextBean) mItems.get(position);
+                final TextBean bean = (TextBean) mItems.get(position);
+                msgViewHolder.m_root.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        EventBus.getDefault().post(bean);
+                    }
+                });
                 msgViewHolder.m_tv_team_type.setText(bean.a);
                 msgViewHolder.m_tv_team_add.setText(bean.b);
 
