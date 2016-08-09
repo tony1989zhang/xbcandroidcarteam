@@ -79,7 +79,8 @@ public class CreCarTeamAct extends BaseAct {
                 break;
             case R.id.rl_vehicleInfo:
                 showToast("车辆信息填写");
-                t = VehicleInfoAct.class;
+                t = VehicleListAct.class;
+//                t = VehicleInfoAct.class;
                 break;
             case R.id.rl_driverInfo:
                 showToast("司机信息填写");

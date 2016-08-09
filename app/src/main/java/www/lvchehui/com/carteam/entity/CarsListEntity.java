@@ -31,5 +31,39 @@ public class CarsListEntity {
     public static class CarPhotosUrlBean {
         public List<String> in;
         public List<String> out;
+
+        @Override
+        public String toString() {
+            return "CarPhotosUrlBean{" +
+                    "in=" + in +
+                    ", out=" + out +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "CarsListEntity{" +
+                "cars_gid='" + cars_gid + '\'' +
+                ", plate_number='" + plate_number + '\'' +
+                ", vehicle_model='" + vehicle_model + '\'' +
+                ", vehicle_color='" + vehicle_color + '\'' +
+                ", seat_number_just=" + seat_number_just +
+                ", seat_number_sum_as=" + seat_number_sum_as +
+                ", registration_first=" + registration_first +
+                ", passanger_premium=" + passanger_premium +
+                ", passanger_premium_url='" + passanger_premium_url + '\'' +
+                ", drive_licence_number='" + drive_licence_number + '\'' +
+                ", drive_licence_url='" + drive_licence_url + '\'' +
+                ", road_transport_number='" + road_transport_number + '\'' +
+                ", road_transport_url='" + road_transport_url + '\'' +
+                ", manage_scope=" + manage_scope +
+                ", car_photos_url=" + car_photos_url +
+                ", car_describe='" + car_describe + '\'' +
+                ", motorcade_gid='" + motorcade_gid + '\'' +
+                ", check_status=" + check_status +
+                ", check_reason=" + check_reason +
+                ", runing_status=" + runing_status +
+                '}';
     }
 }

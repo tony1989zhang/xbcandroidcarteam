@@ -21,6 +21,7 @@ import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.CarsListBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
+import www.lvchehui.com.carteam.tools.XgoLog;
 
 /**
  * Created by 张灿能 on 2016/8/9.
@@ -30,6 +31,7 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
 
     @Override
     protected List convertToBeanList(CarsListBean carsListBean) {
+        XgoLog.e("carsListBean:" + carsListBean.toString());
         CarsListEntity entity = new CarsListEntity();
         for (int i = 0;i < 20;i++){
             entity.car_describe = "ss";
@@ -41,12 +43,12 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
 
     @Override
     protected BasePageAdapter initAdapter() {
-        return null;
+        return new VehicleAdapter();
     }
 
     @Override
     protected boolean isSwipeRefreshLayoutEnabled() {
-        return false;
+        return true;
     }
 
     @Override
@@ -61,7 +63,7 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
 
     @Override
     protected boolean isPageEnabled() {
-        return false;
+        return true;
     }
 
     @Override
@@ -80,8 +82,8 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
             @ViewInject(R.id.tv_team_name)
             private TextView m_tv_team_name; //闽南龙翔快运;
 
-            @ViewInject(R.id.tv_team_add)
-            private TextView m_tv_team_add; //福建厦门;
+            @ViewInject(R.id.tv_car_num)
+            private TextView m_tv_car_num; //福建厦门;
 
             @ViewInject(R.id.iv_edit)
             private ImageView m_iv_edit;
@@ -99,7 +101,7 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_car_team, viewGroup, false);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_vehicle, viewGroup, false);
             return new VehicleItemViewHolder(inflate);
         }
 
@@ -110,7 +112,7 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
                 VehicleItemViewHolder msgViewHolder = (VehicleItemViewHolder) viewHoder;
                 CarsListEntity bean = (CarsListEntity) mItems.get(position);
                 msgViewHolder.m_tv_team_type.setText(bean.drive_licence_number);
-                msgViewHolder.m_tv_team_add.setText(bean.car_describe);
+                msgViewHolder.m_tv_car_num.setText(bean.car_describe);
 
             }
         }

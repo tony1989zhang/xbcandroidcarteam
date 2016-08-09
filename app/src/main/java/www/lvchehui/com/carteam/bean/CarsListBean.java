@@ -17,4 +17,13 @@ public class CarsListBean {
     public int errCode;
     public String resMsg;
     public List<CarsListEntity> resData;
+
+    @Override
+    public String toString() {
+        return "CarsListBean{" +
+                "errCode=" + errCode +
+                ", resMsg='" + resMsg + '\'' +
+                ", resData=" + resData +
+                '}';
+    }
 }
