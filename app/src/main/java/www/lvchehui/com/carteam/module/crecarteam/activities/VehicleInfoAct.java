@@ -6,13 +6,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -69,9 +73,11 @@ public class VehicleInfoAct extends BaseFormAct {
     @Event({R.id.et_team_name,R.id.et_registration_first,R.id.et_passanger_premium,R.id.et_drive_licence_photo,
             R.id.et_road_permit_photo,R.id.et_car_photos_inner_photo,R.id.et_car_photos_outside_photo
     })
-    public void vehicleOnClick(View v){
+    private void vehicleOnClick(View v){
+        showToast("测试");
         switch (v.getId())
         {
+
             case R.id.et_team_name:
                 startActivity(new Intent(this,CarTeamListAct.class));
                 break;
@@ -87,6 +93,15 @@ public class VehicleInfoAct extends BaseFormAct {
                 break;
             case R.id.et_car_photos_outside_photo:
                 break;
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onReceiveEvent(TextBean textBean){
+        if (null != textBean){
+            m_et_team_name.setText(textBean.a);
+            EventBus.getDefault().removeStickyEvent(textBean);
+            App.getInstance().getTopActivity().finish();
         }
     }
 

@@ -25,6 +25,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
+import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.evebus.CarTeamEvent;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.tools.XgoLog;
@@ -34,10 +35,6 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  * 作用：车队信息
  */
 public class CarTeamListAct extends BaseListAct<LoginBean> {
-    class TextBean{
-        String a;
-        String b;
-    }
     @Override
     protected void initViews() {
         super.initViews();
