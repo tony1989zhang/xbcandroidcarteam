@@ -22,6 +22,7 @@ import www.lvchehui.com.carteam.adapter.CusArrAdapter;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.entity.MotorcadeTypeEntity;
+import www.lvchehui.com.carteam.evebus.BankAccEvent;
 import www.lvchehui.com.carteam.evebus.CarTeamEvent;
 import www.lvchehui.com.carteam.evebus.PkwSearchEvent;
 import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
@@ -92,6 +93,7 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
                 startActivity(new Intent(this,UpdRoadPtPtAct.class));
                 break;
             case R.id.et_account:
+                startActivity(new Intent(this,AccountAct.class));
                 break;
         }
     }
@@ -145,6 +147,12 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
             m_et_road_permit_photo.setText("已上传");
         }
         EventBus.getDefault().removeStickyEvent(event.getClass());
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void getBank(BankAccEvent event){
+        if (event != null){
+            m_et_account.setText(event.getBankName());
+        }
     }
     @Override
     public void getItemView(View view, ArrayList<MotorcadeTypeEntity> list, int position) {
