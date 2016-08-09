@@ -14,12 +14,14 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.CarsListBean;
+import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.tools.XgoLog;
@@ -28,18 +30,20 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  * Created by 张灿能 on 2016/8/9.
  * 作用：车辆列表
  */
-public class VehicleListAct extends BaseListAct<CarsListBean> {
+public class VehicleListAct extends BaseListAct<LoginBean> {
 
     @Override
-    protected List convertToBeanList(CarsListBean carsListBean) {
-        XgoLog.e("carsListBean:" + carsListBean.toString());
+    protected List convertToBeanList(LoginBean bean) {
+        XgoLog.e("carsListBean:" + bean.toString());
+       ArrayList<CarsListEntity> list =  new ArrayList<>();
         CarsListEntity entity = new CarsListEntity();
         for (int i = 0;i < 20;i++){
             entity.car_describe = "ss";
             entity.drive_licence_number = "ssssss";
+            list.add(entity);
         }
 
-        return carsListBean.resData;
+        return list;
     }
 
     @Override
@@ -59,7 +63,7 @@ public class VehicleListAct extends BaseListAct<CarsListBean> {
 
     @Override
     protected Cancelable initRequest(int start) {
-        return CM.getInstance().carsGetList(1,this);
+        return CM.getInstance().login("","",this);
     }
 
     @Override
