@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="www.lvchehui.com.carteam">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 在SDCard中创建与删除文件权限 -->
@@ -27,6 +27,7 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="1524b138d4f4c2702dc4cdb916a13fc3" />
+
         <activity
             android:name=".module.HomeAct"
             android:alwaysRetainTaskState="true"
@@ -42,11 +43,11 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".activities.PkwSearchAct"
+        <activity
+            android:name=".activities.PkwSearchAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".module.crecarteam.activities.CarTeamInfoAct"
             android:alwaysRetainTaskState="true"
@@ -65,29 +66,34 @@
         <activity
             android:name=".module.crecarteam.activities.ResponInfoAct"
             android:alwaysRetainTaskState="true"
-            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".module.crecarteam.activities.UpdPeopleIDcardActivity"
+            android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".module.crecarteam.activities.UpdPeopleIDcardActivity"
+        <activity
+            android:name=".module.crecarteam.activities.CarTeamListAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.crecarteam.activities.CarTeamListAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.crecarteam.activities.UpdBusLicPtAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.crecarteam.activities.UpdBusLicPtAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.crecarteam.activities.UpdRoadPtPtAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.crecarteam.activities.UpdRoadPtPtAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.crecarteam.activities.AccountAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.RegisterAct"
             android:alwaysRetainTaskState="true"
