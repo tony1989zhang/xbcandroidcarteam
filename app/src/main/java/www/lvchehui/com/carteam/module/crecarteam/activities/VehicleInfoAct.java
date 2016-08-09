@@ -17,6 +17,7 @@ import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.bean.TextBean;
+import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -85,8 +86,10 @@ public class VehicleInfoAct extends BaseFormAct {
                 m_et_registration_first.setText("2016-01-01");
                 break;
             case R.id.et_passanger_premium:
+                startActivity(new Intent(this,UpdPgersPremPtAct.class));
                 break;
             case R.id.et_drive_licence_photo:
+                startActivity(new Intent(this,UpdDriveLicencePtAct.class));
                 break;
             case  R.id.et_road_permit_photo:
                 break;
@@ -105,6 +108,19 @@ public class VehicleInfoAct extends BaseFormAct {
             App.getInstance().getTopActivity().finish();
         }
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onReceiveUploadIdEvent(UploadIdPtEvent event){
+        if (null != event){
+            if (event.getUpLoadType().equals(UpdPgersPremPtAct.class.getSimpleName()))
+            m_et_passanger_premium.setText("已完成");
+            if (event.getUpLoadType().equals(UpdPgersPremPtAct.class.getSimpleName()))
+                m_et_drive_licence_photo.setText("已完成");
+            EventBus.getDefault().removeStickyEvent(event);
+            App.getInstance().getTopActivity().finish();
+        }
+    }
+
 
     @Override
     protected void onDestroy() {
