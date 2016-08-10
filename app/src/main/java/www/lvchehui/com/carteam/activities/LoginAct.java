@@ -15,6 +15,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.module.HomeAct;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.btn.CaptchaButton;
@@ -40,7 +41,7 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
         super.onCreate(savedInstanceState);
     }
 
-    @Event(value = {R.id.btn_captcha,R.id.login_tv})
+    @Event(value = {R.id.btn_captcha,R.id.login_tv,R.id.register_tv})
     private void loginOnClick(View v){
 
         switch (v.getId())
@@ -51,6 +52,10 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
                 break;
             case R.id.login_tv:
                 showToast("登录注册同一个页面");
+                startActivity(new Intent(this, HomeAct.class));
+                break;
+            case R.id.register_tv:
+
                 startActivity(new Intent(this, CreCarTeamAct.class));
                 break;
         }

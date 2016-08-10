@@ -2,7 +2,6 @@ package www.lvchehui.com.carteam.module.crecarteam.activities;
 
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
