@@ -8,6 +8,7 @@ public class UploadIdPtEvent {
     private String upLoadType;
     private String idNum;
     private String idCardPt;
+    private String idCardPt2;
 
     public String getIdNum() {
         return idNum;
@@ -31,5 +32,13 @@ public class UploadIdPtEvent {
 
     public void setUpLoadType(String upLoadType) {
         this.upLoadType = upLoadType;
+    }
+
+    public String getIdCardPt2() {
+        return idCardPt2;
+    }
+
+    public void setIdCardPt2(String idCardPt2) {
+        this.idCardPt2 = idCardPt2;
     }
 }
