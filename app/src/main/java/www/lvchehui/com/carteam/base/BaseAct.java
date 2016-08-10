@@ -22,12 +22,16 @@ import java.util.List;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.adapter.CusArrAdapter;
+import www.lvchehui.com.carteam.adapter.PopAdapter;
 import www.lvchehui.com.carteam.app.App;
+import www.lvchehui.com.carteam.tools.PixelUtil;
 import www.lvchehui.com.carteam.view.HalfListV;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dlg.CProDlg;
 import www.lvchehui.com.carteam.view.dlg.Listdlg;
 import www.lvchehui.com.carteam.impl.*;
+import www.lvchehui.com.carteam.view.popwin.PopupWdLview;
+
 /**
  * 作者：V先生
  * 作用：Activity 基类
@@ -150,5 +154,24 @@ public class BaseAct extends Activity {
                 listDialog.dismiss();
             }
         });
+    }
+
+    public void showPopupWdLview(final ArrayList<String> listDatas,View showAsDropView,final PopAdapter.popItemOnClickListener itemClick){
+//        final List<String> listDatas = new ArrayList<>();
+//        listDatas.add("支付宝");
+//        listDatas.add("微信");
+
+
+        PopAdapter commonAdapter = new PopAdapter(this,listDatas,R.layout.spinner_list_item);
+        final PopupWdLview popupWindowListView = new PopupWdLview(this, PixelUtil.dp2px(this, 80), commonAdapter);
+        popupWindowListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                showToast("listDatas:" + listDatas.get(position));
+                itemClick.getResult(listDatas.get(position));
+                popupWindowListView.dismiss();
+            }
+        });
+        popupWindowListView.showAsDropDown(showAsDropView);
     }
 }
