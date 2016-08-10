@@ -80,7 +80,7 @@ public class VehicleInfoAct extends BaseFormAct {
         {
 
             case R.id.et_team_name:
-                startActivity(new Intent(this,CarTeamListAct.class));
+                startActivity(new Intent(this, CarTeamListAct.class));
                 break;
             case  R.id.et_registration_first:
                 m_et_registration_first.setText("2016-01-01");
@@ -95,8 +95,10 @@ public class VehicleInfoAct extends BaseFormAct {
                 startActivity(new Intent(this,UpdRoadTranPtAct.class));
                 break;
             case R.id.et_car_photos_inner_photo:
+                startActivity(new Intent(this,UpdCarInPtAct.class));
                 break;
             case R.id.et_car_photos_outside_photo:
+                startActivity(new Intent(this,UpdCarOutPtAct.class));
                 break;
         }
     }
