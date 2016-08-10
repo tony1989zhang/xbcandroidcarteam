@@ -3,25 +3,16 @@ package www.lvchehui.com.carteam.module.crecarteam.activities;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import org.greenrobot.eventbus.EventBus;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.activities.UploadIdPtAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
-import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
 import www.lvchehui.com.carteam.http.CUtil;
 import www.lvchehui.com.carteam.tools.PhotoUtils;
-import www.lvchehui.com.carteam.tools.RegexUtils;
-import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
