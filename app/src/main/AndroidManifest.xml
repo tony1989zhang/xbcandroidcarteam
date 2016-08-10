@@ -110,6 +110,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".module.crecarteam.activities.UpdRoadTranPtAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activities.RegisterAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"

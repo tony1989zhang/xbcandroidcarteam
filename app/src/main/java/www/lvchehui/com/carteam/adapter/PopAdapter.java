@@ -23,7 +23,7 @@ public class PopAdapter extends CommonAdapter<String> {
         helper.setText(R.id.tv_tinted_spinner, item);
     }
 
-  public interface popItemOnClickListener{
+  public interface PopItemOnClickListener{
           void getResult(String result);
     }
 }

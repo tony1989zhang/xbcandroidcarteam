@@ -49,7 +49,7 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
     private ImageView m_iv_photo;
     @ViewInject(R.id.btn_submit_pt)
     private Button m_btn_submit_pt; //拍照/上传;
-    public   PhotoUtils mInstance;
+    public  PhotoUtils mInstance;
     private String mUrl;
 
     @Override

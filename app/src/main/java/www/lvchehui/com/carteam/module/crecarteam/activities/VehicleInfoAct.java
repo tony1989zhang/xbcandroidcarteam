@@ -92,6 +92,7 @@ public class VehicleInfoAct extends BaseFormAct {
                 startActivity(new Intent(this,UpdDriveLicencePtAct.class));
                 break;
             case  R.id.et_road_permit_photo:
+                startActivity(new Intent(this,UpdRoadTranPtAct.class));
                 break;
             case R.id.et_car_photos_inner_photo:
                 break;

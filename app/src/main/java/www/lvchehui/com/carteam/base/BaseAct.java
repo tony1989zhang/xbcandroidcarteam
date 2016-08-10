@@ -156,7 +156,7 @@ public class BaseAct extends Activity {
         });
     }
 
-    public void showPopupWdLview(final ArrayList<String> listDatas,View showAsDropView,final PopAdapter.popItemOnClickListener itemClick){
+    public void showPopupWdLview(final ArrayList<String> listDatas,View showAsDropView,final PopAdapter.PopItemOnClickListener itemClick){
 //        final List<String> listDatas = new ArrayList<>();
 //        listDatas.add("支付宝");
 //        listDatas.add("微信");
