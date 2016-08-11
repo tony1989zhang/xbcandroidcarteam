@@ -30,8 +30,8 @@
                 android:gravity="center"
                 android:layout_alignParentLeft="true"
                 android:layout_marginRight="15dip"
-				android:textColor="#e84515"
-                android:textSize="13sp" />
+				android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_middle_size" />
 
 
             <TextView
@@ -41,9 +41,9 @@
                 android:layout_alignParentRight="true"
                 android:gravity="center"
                 android:text="完成"
-				android:textColor="#e84515"
+                android:textColor="@color/text_default_color"
 				android:paddingRight="12dp"
-                android:textSize="12sp" />
+                android:textSize="@dimen/text_middle_size" />
 
         </RelativeLayout>
 
