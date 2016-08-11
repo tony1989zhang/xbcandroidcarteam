@@ -2,9 +2,11 @@ package www.lvchehui.com.carteam.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.xutils.common.Callback;
 import org.xutils.view.annotation.ContentView;
@@ -20,6 +22,7 @@ import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.btn.CaptchaButton;
 import www.lvchehui.com.carteam.view.et.ClearEt;
+import www.lvchehui.com.carteam.view.wheelview.ChangeAddressPopWin;
 
 /**
  * 作者：V先生 on 2016/8/4 09:43
@@ -56,7 +59,8 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
                 break;
             case R.id.register_tv:
 
-                startActivity(new Intent(this, CreCarTeamAct.class));
+//                startActivity(new Intent(this, CreCarTeamAct.class));
+                popupWindow();
                 break;
         }
     }
@@ -86,5 +90,22 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
     @Override
     public void onFinished() {
 
+    }
+
+    private void popupWindow(){
+        showToast("点击");
+        ChangeAddressPopWin mChangeAddressPopwindow = new ChangeAddressPopWin(this);
+        mChangeAddressPopwindow.setAddress("广东", "深圳", "福田区");
+        mChangeAddressPopwindow.showAtLocation(m_login_tv, Gravity.BOTTOM, 0, 0);
+        mChangeAddressPopwindow
+                .setAddresskListener(new ChangeAddressPopWin.OnAddressCListener() {
+
+                    @Override
+                    public void onClick(String province, String city, String area) {
+                        // TODO Auto-generated method stub
+                        showToast( province + "-" + city + "-" + area);
+                        m_login_tv.setText(province + city + area);
+                    }
+                });
     }
 }
