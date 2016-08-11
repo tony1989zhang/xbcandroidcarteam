@@ -158,11 +158,22 @@ public class ChangeDatePickPopWin extends PopupWindow {
 
     @Event({R.id.btn_myinfo_cancel, R.id.btn_myinfo_sure, R.id.ly_myinfo_change_child})
     private void changeDatePickOnclick(View v) {
-        if (mBlnTimePicker) {
-            dateListener.getDateTime(strTimeToDateFormat(mYearStr, mDateStr, mHourStr, mMinuteStr), mBlnBeLongTerm);
-        } else {
-            dateListener.getDateTime(strTimeToDateFormat(mYearStr, mDateStr), mBlnBeLongTerm);
+        if (v.getId()== R.id.btn_myinfo_sure)
+        {
+            if (mBlnTimePicker) {
+                dateListener.getDateTime(strTimeToDateFormat(mYearStr, mDateStr, mHourStr, mMinuteStr), mBlnBeLongTerm);
+            } else {
+                dateListener.getDateTime(strTimeToDateFormat(mYearStr, mDateStr), mBlnBeLongTerm);
+            }
+        }else if(v.getId()==R.id.btn_myinfo_cancel){
+
+        }else if(v.getId()==R.id.ly_myinfo_change_child)
+        {
+
+        }else{
+
         }
+
         dismiss();
     }
 
