@@ -97,10 +97,6 @@ public class ChangeAddressPopWin extends PopupWindow {
 		//设置SelectPicPopupWindow弹出窗体的背景
 		this.setBackgroundDrawable(dw);
 
-//		lyChangeAddressChild.setOnClickListener(this);
-//		btnSure.setOnClickListener(this);
-//		btnCancel.setOnClickListener(this);
-
 		initJsonData();
 		initDatas();
 
