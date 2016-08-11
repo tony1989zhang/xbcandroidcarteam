@@ -11,6 +11,9 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,16 +22,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.view.toast.ToastManager;
 import www.lvchehui.com.carteam.view.wheelview.adpter.AbstractWheelTextAdapter1;
 
-public class ChangeAddressPopWin extends PopupWindow implements View.OnClickListener {
+public class ChangeAddressPopWin extends PopupWindow {
 
+	@ViewInject(R.id.wv_address_province)
 	private WheelView wvProvince;
+	@ViewInject(R.id.wv_address_city)
 	private WheelView wvCitys;
+	@ViewInject(R.id.wv_address_area)
 	private WheelView wvArea;
+	@ViewInject(R.id.ly_myinfo_changeaddress)
 	private View lyChangeAddress;
+	@ViewInject(R.id.ly_myinfo_changeaddress_child)
 	private View lyChangeAddressChild;
+	@ViewInject(R.id.btn_myinfo_sure)
+
 	private TextView btnSure;
+	@ViewInject(R.id.btn_myinfo_cancel)
 	private TextView btnCancel;
 
 	private Context context;
@@ -66,18 +78,12 @@ public class ChangeAddressPopWin extends PopupWindow implements View.OnClickList
 		super(context);
 		this.context = context;
 		View view=View.inflate(context, R.layout.edit_changeaddress_pop_layout,null);
-
-		wvProvince = (WheelView) view.findViewById(R.id.wv_address_province);
-		wvCitys = (WheelView) view.findViewById(R.id.wv_address_city);
-		wvArea = (WheelView)view. findViewById(R.id.wv_address_area);
-		lyChangeAddress = view.findViewById(R.id.ly_myinfo_changeaddress);
-		lyChangeAddressChild = view.findViewById(R.id.ly_myinfo_changeaddress_child);
-		btnSure = (TextView) view.findViewById(R.id.btn_myinfo_sure);
-		btnCancel = (TextView)view. findViewById(R.id.btn_myinfo_cancel);
-
-
 		//设置SelectPicPopupWindow的View
 		this.setContentView(view);
+		x.view().inject(this,view);
+
+
+
 		//设置SelectPicPopupWindow弹出窗体的宽
 		this.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
 		//设置SelectPicPopupWindow弹出窗体的高
@@ -91,9 +97,9 @@ public class ChangeAddressPopWin extends PopupWindow implements View.OnClickList
 		//设置SelectPicPopupWindow弹出窗体的背景
 		this.setBackgroundDrawable(dw);
 
-		lyChangeAddressChild.setOnClickListener(this);
-		btnSure.setOnClickListener(this);
-		btnCancel.setOnClickListener(this);
+//		lyChangeAddressChild.setOnClickListener(this);
+//		btnSure.setOnClickListener(this);
+//		btnCancel.setOnClickListener(this);
 
 		initJsonData();
 		initDatas();
@@ -281,8 +287,10 @@ public class ChangeAddressPopWin extends PopupWindow implements View.OnClickList
 		this.onAddressCListener = onAddressCListener;
 	}
 
-	@Override
-	public void onClick(View v) {
+
+	@Event({R.id.ly_myinfo_changeaddress_child,R.id.btn_myinfo_cancel,R.id.btn_myinfo_sure})
+	private void onClick(View v) {
+		ToastManager.getManager().show("点击");
 		// TODO Auto-generated method stub
 		if (v == btnSure) {
 			if (onAddressCListener != null) {
@@ -305,7 +313,7 @@ public class ChangeAddressPopWin extends PopupWindow implements View.OnClickList
 	 *
 	 */
 	public interface OnAddressCListener {
-		public void onClick(String province, String city, String area);
+		 void onClick(String province, String city, String area);
 	}
 
 	/**
