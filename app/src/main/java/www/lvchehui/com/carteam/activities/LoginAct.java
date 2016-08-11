@@ -23,6 +23,7 @@ import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.btn.CaptchaButton;
 import www.lvchehui.com.carteam.view.et.ClearEt;
 import www.lvchehui.com.carteam.view.wheelview.ChangeAddressPopWin;
+import www.lvchehui.com.carteam.view.wheelview.ChangeDatePickPopWin;
 
 /**
  * 作者：V先生 on 2016/8/4 09:43
@@ -44,25 +45,37 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
         super.onCreate(savedInstanceState);
     }
 
-    @Event(value = {R.id.btn_captcha,R.id.login_tv,R.id.register_tv})
-    private void loginOnClick(View v){
+    @Event(value = {R.id.btn_captcha, R.id.login_tv, R.id.register_tv})
+    private void loginOnClick(View v) {
 
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.btn_captcha:
                 m_btn_captcha.startCountdown();
-                CM.getInstance().login("","",this);
+                CM.getInstance().login("", "", this);
                 break;
             case R.id.login_tv:
                 showToast("登录注册同一个页面");
-                startActivity(new Intent(this, HomeAct.class));
+//                startActivity(new Intent(this, HomeAct.class));
+                showDatePickPopupWind(m_login_tv,false);
                 break;
             case R.id.register_tv:
 
 //                startActivity(new Intent(this, CreCarTeamAct.class));
-                popupWindow();
+                showAddressPopupWind(m_login_tv,false);
                 break;
         }
+    }
+
+    @Override
+    public void getChangeDatePickTime(String time) {
+        super.getChangeDatePickTime(time);
+        m_login_tv.setText("time" + time);
+    }
+
+    @Override
+    public void getAddress(String p, String c, String a) {
+        super.getAddress(p, c, a);
+        m_login_tv.setText("p:" + p + "c:" + c);
     }
 
     @Override
@@ -90,22 +103,5 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
     @Override
     public void onFinished() {
 
-    }
-
-    private void popupWindow(){
-        showToast("点击");
-        ChangeAddressPopWin mChangeAddressPopwindow = new ChangeAddressPopWin(this);
-        mChangeAddressPopwindow.setAddress("广东", "深圳", "福田区");
-        mChangeAddressPopwindow.showAtLocation(m_login_tv, Gravity.BOTTOM, 0, 0);
-        mChangeAddressPopwindow
-                .setAddresskListener(new ChangeAddressPopWin.OnAddressCListener() {
-
-                    @Override
-                    public void onClick(String province, String city, String area) {
-                        // TODO Auto-generated method stub
-                        showToast( province + "-" + city + "-" + area);
-                        m_login_tv.setText(province + city + area);
-                    }
-                });
     }
 }

@@ -73,15 +73,31 @@ public class ChangeAddressPopWin extends PopupWindow {
 
 	private int maxsize = 14;
 	private int minsize = 12;
+	private boolean hasArea;
+	public ChangeAddressPopWin(final Context context,boolean hasArea){
+		super(context);
+		this.hasArea = hasArea;
+		init(context);
+		if (hasArea){
+			wvArea.setVisibility(View.VISIBLE);
+		}else{
+			wvArea.setVisibility(View.GONE);
+		}
+	}
 
 	public ChangeAddressPopWin(final Context context) {
 		super(context);
+		init(context);
+
+
+	}
+
+	private void init(final Context context) {
 		this.context = context;
 		View view=View.inflate(context, R.layout.edit_changeaddress_pop_layout,null);
 		//设置SelectPicPopupWindow的View
 		this.setContentView(view);
 		x.view().inject(this,view);
-
 
 
 		//设置SelectPicPopupWindow弹出窗体的宽
@@ -227,8 +243,6 @@ public class ChangeAddressPopWin extends PopupWindow {
 				setTextviewSize(currentText, areaAdapter);
 			}
 		});
-
-
 	}
 
 

@@ -74,17 +74,18 @@ public class ChangeDatePickPopWin extends PopupWindow {
     private String mHourStr;
     private String mMinuteStr;
     private boolean mBlnBeLongTerm = false;//是否需要长期
-    private boolean mBlnTimePickerGone = false;//时间选择是否显示
-    public boolean showYear;
-    public DateChooseListener dateListener;
+    private boolean mBlnTimePicker = false;//时间选择是否显示
+    private boolean showYear;
+    private boolean showDays;
+    private DateChooseListener dateListener;
 
 
-    public ChangeDatePickPopWin(final Context context,boolean showTiemPick,boolean showYear) {
+    public ChangeDatePickPopWin(final Context context,boolean showTiemPick,boolean showYear,boolean showDays) {
         this.mContext = context;
         View view = View.inflate(context, R.layout.edit_changedatepick_pop_layout, null);
         this.setContentView(view);
         x.view().inject(this, view);
-        mBlnTimePickerGone = showTiemPick;
+        mBlnTimePicker = showTiemPick;
         setPopWIin();
         initYear();
         initData();
@@ -92,8 +93,23 @@ public class ChangeDatePickPopWin extends PopupWindow {
         initMinute();
         initListener();
         this.showYear = showYear;
+        this.showDays = showDays;
         if (showYear){
             m_wv_year.setVisibility(View.VISIBLE);
+        }
+        if (showDays)
+        {
+            m_wv_day.setVisibility(View.VISIBLE);
+        }else{
+            m_wv_day.setVisibility(View.GONE);
+        }
+
+        if (mBlnTimePicker){
+            m_wv_hour.setVisibility(View.VISIBLE);
+            m_wv_min.setVisibility(View.VISIBLE);
+        }else{
+            m_wv_hour.setVisibility(View.GONE);
+            m_wv_min.setVisibility(View.GONE);
         }
     }
     public ChangeDatePickPopWin(final Context context) {
@@ -117,12 +133,18 @@ public class ChangeDatePickPopWin extends PopupWindow {
 
     private String strTimeToDateFormat(String yearStr, String dateStr, String hourStr, String minuteStr) {
 
-        if (showYear)
+        if (showYear) {
             return yearStr.replace("年", "-") + dateStr.replace("月", "-").replace("日", " ")
                     + hourStr + ":" + minuteStr;
-        else
-            return dateStr.replace("月", "-").replace("日", " ")
-                    + hourStr + ":" + minuteStr;
+        }
+        else {
+            if (showDays) {
+                return dateStr.replace("月", "-").replace("日", " ")
+                        + hourStr + ":" + minuteStr;
+            }else{
+                return hourStr + ":" + minuteStr;
+            }
+        }
     }
 
     private String strTimeToDateFormat(String yearStr, String dateStr) {
@@ -136,10 +158,10 @@ public class ChangeDatePickPopWin extends PopupWindow {
 
     @Event({R.id.btn_myinfo_cancel, R.id.btn_myinfo_sure, R.id.ly_myinfo_change_child})
     private void changeDatePickOnclick(View v) {
-        if (mBlnTimePickerGone) {
-            dateListener.getDateTime(strTimeToDateFormat(mYearStr, mDateStr), mBlnBeLongTerm);
-        } else {
+        if (mBlnTimePicker) {
             dateListener.getDateTime(strTimeToDateFormat(mYearStr, mDateStr, mHourStr, mMinuteStr), mBlnBeLongTerm);
+        } else {
+            dateListener.getDateTime(strTimeToDateFormat(mYearStr, mDateStr), mBlnBeLongTerm);
         }
         dismiss();
     }
