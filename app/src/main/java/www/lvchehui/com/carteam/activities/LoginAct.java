@@ -55,28 +55,15 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
                 break;
             case R.id.login_tv:
                 showToast("登录注册同一个页面");
-//                startActivity(new Intent(this, HomeAct.class));
-                showDatePickPopupWind(m_login_tv,false);
+                startActivity(new Intent(this, HomeAct.class));
                 break;
             case R.id.register_tv:
 
-//                startActivity(new Intent(this, CreCarTeamAct.class));
-                showAddressPopupWind(m_login_tv,false);
+                startActivity(new Intent(this, CreCarTeamAct.class));
                 break;
         }
     }
 
-    @Override
-    public void getChangeDatePickTime(String time) {
-        super.getChangeDatePickTime(time);
-        m_login_tv.setText("time" + time);
-    }
-
-    @Override
-    public void getAddress(String p, String c, String a) {
-        super.getAddress(p, c, a);
-        m_login_tv.setText("p:" + p + "c:" + c);
-    }
 
     @Override
     protected void onDestroy() {
