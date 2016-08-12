@@ -44,12 +44,13 @@ public class HomeAct extends BaseAct{
 
                 break;
             case 1:
-                break;
-            case 2:
                 startActivity(new Intent(this, ScarMFirstepAct.class));//发布顺风车
                 break;
+            case 2:
+
+                break;
             case 3:
-                startActivity(new Intent(this, WalletAct.class));
+                startActivity(new Intent(this, WalletAct.class));//我的钱包
                 break;
         }
     }
