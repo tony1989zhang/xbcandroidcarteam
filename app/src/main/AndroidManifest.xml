@@ -128,6 +128,16 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+        <activity android:name=".module.scarmissauga.ScarMFirstepAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".module.scarmissauga.ScarMnextAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activities.RegisterAct"
             android:alwaysRetainTaskState="true"
