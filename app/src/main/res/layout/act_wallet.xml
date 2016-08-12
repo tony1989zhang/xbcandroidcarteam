@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context="com.lvchehui.www.activity.AgentActivity" >
+
+    <www.lvchehui.com.carteam.view.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </www.lvchehui.com.carteam.view.TitleView>
+
+
+    <www.lvchehui.com.carteam.view.dragtop.DragTopLayout
+        android:id="@+id/drag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titleView" >
+
+        <LinearLayout
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical" >
+
+
+
+            <www.lvchehui.com.carteam.view.dragtop.BanSlidingViewPage
+                android:id="@+id/banSlidingViewPage_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+            </www.lvchehui.com.carteam.view.dragtop.BanSlidingViewPage>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/drag_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:background="@color/title_column_color"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/tv_payments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="收支明细"
+                    android:textSize="@dimen/text_default_size"
+                    android:textColor="@color/text_default_color"
+                    />
+
+                <View
+                    android:layout_width="1sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/line_hint_color" />
+                <TextView
+                    android:id="@+id/tv_member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="我的伙伴"
+                    android:textSize="@dimen/text_default_size"
+                    android:textColor="@color/text_default_color"
+                    />
+
+                <View
+                    android:layout_width="1sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/line_hint_color" />
+
+
+
+                <TextView
+                    android:id="@+id/tv_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="闪电体现"
+                    android:textSize="@dimen/text_default_size"
+                    android:textColor="@color/text_default_color"
+                    />
+            </LinearLayout>
+
+            <www.lvchehui.com.carteam.view.dragtop.BanSlidingViewPage
+                android:id="@+id/banSlidingViewPage_msg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </www.lvchehui.com.carteam.view.dragtop.BanSlidingViewPage>
+        </LinearLayout>
+    </www.lvchehui.com.carteam.view.dragtop.DragTopLayout>
+
+</RelativeLayout>

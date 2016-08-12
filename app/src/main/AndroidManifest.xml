@@ -124,6 +124,10 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity android:name=".module.wallet.activityes.WalletAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.RegisterAct"
             android:alwaysRetainTaskState="true"

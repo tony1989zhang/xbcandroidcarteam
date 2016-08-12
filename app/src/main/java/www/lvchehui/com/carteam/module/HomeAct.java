@@ -1,4 +1,5 @@
 package www.lvchehui.com.carteam.module;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import org.xutils.x;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.adapter.GvAdapter;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.module.wallet.activityes.WalletAct;
 import www.lvchehui.com.carteam.view.XbcGv;
 import www.lvchehui.com.carteam.view.toast.ToastManager;
 @ContentView(R.layout.activity_home)
@@ -43,6 +45,9 @@ public class HomeAct extends BaseAct{
             case 1:
                 break;
             case 2:
+                break;
+            case 3:
+                startActivity(new Intent(this, WalletAct.class));
                 break;
         }
     }
