@@ -50,12 +50,12 @@
                 android:weightSum="3" >
 
                 <TextView
-                    android:id="@+id/tv_payments"
+                    android:id="@+id/tv_trandetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="收支明细"
+                    android:text="账单明细"
                     android:textSize="@dimen/text_default_size"
                     android:textColor="@color/text_default_color"
                     />
@@ -67,12 +67,12 @@
                     android:layout_marginTop="20dp"
                     android:background="@color/line_hint_color" />
                 <TextView
-                    android:id="@+id/tv_member"
+                    android:id="@+id/tv_withdraw"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="我的伙伴"
+                    android:text="闪电提现"
                     android:textSize="@dimen/text_default_size"
                     android:textColor="@color/text_default_color"
                     />
@@ -87,12 +87,12 @@
 
 
                 <TextView
-                    android:id="@+id/tv_tx"
+                    android:id="@+id/tv_quality_month"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="闪电体现"
+                    android:text="质保金"
                     android:textSize="@dimen/text_default_size"
                     android:textColor="@color/text_default_color"
                     />

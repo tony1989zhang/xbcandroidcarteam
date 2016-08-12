@@ -18,17 +18,17 @@ import www.lvchehui.com.carteam.base.BaseFm;
 @ContentView(R.layout.fm_trandetail_head)
 public class TranDetailHeadFm extends BaseFm{
 
-    @ViewInject(R.id.tv_tx)
-    TextView txTV;
+//    @ViewInject(R.id.tv_tx)
+//    TextView txTV;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
 
-    @Event(R.id.tv_tx)
-    private void txOnClick(View v) {
-
-
-    }
+//    @Event(R.id.tv_tx)
+//    private void txOnClick(View v) {
+//
+//
+//    }
 }

@@ -18,8 +18,8 @@
 
     <color name="swipe_refrsh_color1">#6a6aff</color>
     <color name="swipe_refrsh_color2">#FF4081</color>
-    <color name="swipe_refrsh_color3">#969696</color>
-    <color name="swipe_refrsh_color4">#f0c21f</color>
+    <color name="swipe_refrsh_color3">#f0c21f</color>
+    <color name="swipe_refrsh_color4">#969696</color>
 
 
     <color name="spinner_color">#002e3c</color>

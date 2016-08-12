@@ -42,13 +42,13 @@ public class WalletAct extends BaseFmAct {
     private BanSlidingViewPage msgViewPager;
 
 
-    @ViewInject(R.id.tv_member)
-    private android.widget.TextView memberTv;
-    @ViewInject(R.id.tv_payments)
-    private TextView paymentsTV;
+    @ViewInject(R.id.tv_withdraw)
+    private TextView m_tv_withdraw;
+    @ViewInject(R.id.tv_trandetail)
+    private TextView m_tv_trandetail;
 
-    @ViewInject(R.id.tv_tx)
-    private TextView txTv;
+    @ViewInject(R.id.tv_quality_month)
+    private TextView m_tv_quality_month;
 
     private ArrayList<Fragment> mFragmentsIV = new ArrayList<>();
     private ArrayList<Fragment> mFragmentsMsg = new ArrayList<>();
@@ -88,7 +88,7 @@ public class WalletAct extends BaseFmAct {
         ivViewPager.setCurrentItem(0);
         ivViewPager.setScanScroll(true);
         msgViewPager.setScanScroll(true);
-        paymentsTV.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
+        m_tv_trandetail.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
         dragLayout.setOverDrag(false);
         x.task().postDelayed(new Runnable() {
             @Override
@@ -100,18 +100,18 @@ public class WalletAct extends BaseFmAct {
     }
 
 
-    @Event(value = {R.id.title_right, R.id.tv_member, R.id.tv_payments, R.id.tv_tx}, type = View.OnClickListener.class)
+    @Event(value = {R.id.title_right, R.id.tv_withdraw, R.id.tv_trandetail, R.id.tv_quality_month}, type = View.OnClickListener.class)
     private void AgentOnClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_payments:
+            case R.id.tv_trandetail:
                 currentIndex = 0;
                 break;
-            case R.id.tv_member:
+            case R.id.tv_withdraw:
                 currentIndex = 1;
 
                 break;
 
-            case R.id.tv_tx:
+            case R.id.tv_quality_month:
                 currentIndex = 2;
                 break;
 
@@ -177,31 +177,31 @@ public class WalletAct extends BaseFmAct {
             msgViewPager.setCurrentItem(position);
             switch (position) {
                 case 0:
-                    paymentsTV.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
-                    memberTv.setTextColor(getResources().getColor(R.color.text_default_color));
-                    txTv.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_trandetail.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
+                    m_tv_withdraw.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_quality_month.setTextColor(getResources().getColor(R.color.text_default_color));
 
-                    paymentsTV.getPaint().setFakeBoldText(true);
-                    memberTv.getPaint().setFakeBoldText(false);
-                    txTv.getPaint().setFakeBoldText(false);
+                    m_tv_trandetail.getPaint().setFakeBoldText(true);
+                    m_tv_withdraw.getPaint().setFakeBoldText(false);
+                    m_tv_quality_month.getPaint().setFakeBoldText(false);
                     break;
                 case 1:
-                    memberTv.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
-                    paymentsTV.setTextColor(getResources().getColor(R.color.text_default_color));
-                    txTv.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_withdraw.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
+                    m_tv_trandetail.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_quality_month.setTextColor(getResources().getColor(R.color.text_default_color));
 
-                    memberTv.getPaint().setFakeBoldText(true);
-                    paymentsTV.getPaint().setFakeBoldText(false);
-                    txTv.getPaint().setFakeBoldText(false);
+                    m_tv_withdraw.getPaint().setFakeBoldText(true);
+                    m_tv_trandetail.getPaint().setFakeBoldText(false);
+                    m_tv_quality_month.getPaint().setFakeBoldText(false);
                     break;
                 case 2:
-                    paymentsTV.setTextColor(getResources().getColor(R.color.text_default_color));
-                    memberTv.setTextColor(getResources().getColor(R.color.text_default_color));
-                    txTv.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
+                    m_tv_trandetail.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_withdraw.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_quality_month.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
 
-                    memberTv.getPaint().setFakeBoldText(false);
-                    paymentsTV.getPaint().setFakeBoldText(false);
-                    txTv.getPaint().setFakeBoldText(true);
+                    m_tv_withdraw.getPaint().setFakeBoldText(false);
+                    m_tv_trandetail.getPaint().setFakeBoldText(false);
+                    m_tv_quality_month.getPaint().setFakeBoldText(true);
                     break;
 
                 default:
