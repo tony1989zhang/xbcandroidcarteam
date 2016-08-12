@@ -348,4 +348,18 @@ public abstract class BaseListFm<T> extends Fragment implements SwipeRefreshLayo
         toast.show();
     }
 
+    @Override
+    public void onError(Throwable ex, boolean isOnCallback) {
+
+    }
+
+    @Override
+    public void onCancelled(CancelledException cex) {
+
+    }
+
+    @Override
+    public void onFinished() {
+       showToast("加载完成");
+    }
 }
