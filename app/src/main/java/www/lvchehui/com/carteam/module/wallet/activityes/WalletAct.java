@@ -19,6 +19,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFmAct;
 import www.lvchehui.com.carteam.module.wallet.fm.TranDetailFm;
 import www.lvchehui.com.carteam.module.wallet.fm.TranDetailHeadFm;
+import www.lvchehui.com.carteam.module.wallet.fm.WithdrawFm;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dragtop.BanSlidingViewPage;
 import www.lvchehui.com.carteam.view.dragtop.DragTopLayout;
@@ -70,7 +71,7 @@ public class WalletAct extends BaseFmAct {
         mFragmentsIV.add(new TranDetailHeadFm());
 
         mFragmentsMsg.add(new TranDetailFm());
-        mFragmentsMsg.add(new TranDetailFm());
+        mFragmentsMsg.add(new WithdrawFm());
         mFragmentsMsg.add(new TranDetailFm());
 
         IVFragmentAdapter ivAdapter = new IVFragmentAdapter(getSupportFragmentManager());
