@@ -2,6 +2,7 @@ package www.lvchehui.com.carteam.module.scarmissauga;
 
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import org.xutils.view.annotation.ContentView;
@@ -37,6 +38,9 @@ public class ScarMFirstepAct extends BaseFormAct {
     @ViewInject(R.id.ll_add_address)
     private LinearLayout m_ll_add_address;
 
+    @ViewInject(R.id.view_add)
+    private LinearLayout m_view_add;
+
     @ViewInject(R.id.et_end_add)
     private EditText m_et_end_add;
 
@@ -65,6 +69,7 @@ public class ScarMFirstepAct extends BaseFormAct {
                 showDatePickPopupWind(m_et_end_time, false);
                 break;
             case R.id.ll_add_address:
+                addItem();
                 break;
             case R.id.et_end_add:
                 showAddressPopupWind(m_et_end_add,false);
@@ -97,13 +102,39 @@ public class ScarMFirstepAct extends BaseFormAct {
 
     @Override
     public void getAddress(View v,String p, String c, String a) {
-        super.getAddress(v,p, c, a);
+        super.getAddress(v, p, c, a);
         if (v==m_et_start_city)
         {
             m_et_start_city.setText(p+c);
         }else if(v==m_et_end_add){
             m_et_end_add.setText(p+c);
         }
+    }
 
+    private void addItem(){
+        final LinearLayout m_item_ly = (LinearLayout) getLayoutInflater().inflate(R.layout.item_scar_add_address, null);
+        ImageView m_iv_del = (ImageView) m_item_ly.findViewById(R.id.iv_del);
+        m_iv_del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m_view_add.removeView(m_item_ly);
+            }
+        });
+        EditText m_et_pass_add = (EditText) m_item_ly.findViewById(R.id.et_pass_add);
+        m_et_pass_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        EditText m_et_amount_time = (EditText) m_item_ly.findViewById(R.id.et_amount_time);
+        m_et_amount_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        m_view_add.addView(m_item_ly);
     }
 }
