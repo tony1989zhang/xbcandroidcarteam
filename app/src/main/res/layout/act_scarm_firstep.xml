@@ -188,13 +188,13 @@
                     android:textSize="15.0sp" />
 
                 <EditText
-                    android:id="@+id/et_address"
+                    android:id="@+id/et_end_time"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:ellipsize="end"
                     android:gravity="center|right"
-                    android:hint="请输入地址"
+                    android:hint="请选择结束时间"
                     android:focusable="false"
                     android:maxLines="3"
                     android:textColor="@color/text_default_color"

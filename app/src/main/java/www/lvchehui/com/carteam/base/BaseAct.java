@@ -193,7 +193,7 @@ public class BaseAct extends Activity {
     }
 
     //底部弹框的地址选择 三级联动或二级
-    public void showAddressPopupWind(View view, final boolean hasArea) {
+    public void showAddressPopupWind(final View view, final boolean hasArea) {
         ChangeAddressPopWin mChangeAddressPopwindow = new ChangeAddressPopWin(this, hasArea);
 //        mChangeAddressPopwindow.setAddress("广东", "深圳", "福田区");
         mChangeAddressPopwindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);
@@ -204,13 +204,13 @@ public class BaseAct extends Activity {
                     public void onClick(String province, String city, String area) {
                         // TODO Auto-generated method stub
                         showToast(province + "-" + city + "-" + area);
-                        getAddress(province, city, area);
+                        getAddress(view,province, city, area);
                     }
                 });
     }
 
     //获取到地址
-    public void getAddress(String p, String c, String a) {
+    public void getAddress(View v,String p, String c, String a) {
 
     }
     //年月日 时分 选择
