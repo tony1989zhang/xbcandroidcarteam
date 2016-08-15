@@ -6,13 +6,18 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CarTeamListAct;
 import www.lvchehui.com.carteam.view.TitleView;
 
@@ -41,7 +46,7 @@ public class ScarMnextAct extends BaseFormAct {
     private LinearLayout m_ll_select_vehicle;
 
     @ViewInject(R.id.tv_select_vehicle)
-    private EditText m_tv_select_vehicle;
+    private TextView m_tv_select_vehicle;
 
     @ViewInject(R.id.et_note)
     private EditText m_et_note;
@@ -57,20 +62,33 @@ public class ScarMnextAct extends BaseFormAct {
     protected void initView() {
         super.initView();
         setTitleV(m_title_view, "发布顺风车");
+       
     }
 
     @Event({R.id.ll_select_vehicle})
     private void actOnClick(View view){
-        startActivity(new Intent(this,CarTeamListAct.class));
+        startActivity(new Intent(this, CarTeamListAct.class));
     }
     @Event(value = {R.id.checkbox_sarah,R.id.checkbox_fuel,R.id.checkbox_toll_fee,R.id.checkbox_parking},type = CompoundButton.OnCheckedChangeListener.class)
     private void onCheck(CompoundButton bv,boolean isChecked){
         showToast("isChecked:" + isChecked);
+
     }
 
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    private void onReceiver(TextBean bean){
+        m_tv_select_vehicle.setText(bean.a);
+    }
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

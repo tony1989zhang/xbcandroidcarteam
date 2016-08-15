@@ -197,6 +197,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_select_vehicle"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10.0dip"
@@ -204,19 +205,6 @@
                     android:hint="请选择服务车辆"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
-
-                <EditText
-                    android:id="@+id/tv_select_vehicle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:ellipsize="end"
-                    android:focusable="false"
-                    android:gravity="center|right"
-                    android:background="@null"
-                    android:maxLines="3"
-                    android:textColor="@color/text_default_color"
-                    android:textSize="@dimen/text_default_size"
-                     />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

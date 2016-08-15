@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -16,6 +19,7 @@ import java.util.ArrayList;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.entity.MotorcadeTypeEntity;
 import www.lvchehui.com.carteam.impl.AdapterViewSetListener;
 import www.lvchehui.com.carteam.impl.ListDlgItemClickListener;
@@ -94,7 +98,7 @@ public class ScarMFirstepAct extends BaseFormAct {
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
-        startActivity(new Intent(this,ScarMnextAct.class));
+        startActivity(new Intent(this, ScarMnextAct.class));
     }
 
     @Override
