@@ -12,8 +12,10 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.tools.CityChUtil;
 import www.lvchehui.com.carteam.tools.DateChUtil;
 import www.lvchehui.com.carteam.view.TitleView;
+import www.lvchehui.com.carteam.view.wheelview.ChangeAddressPopWin;
 import www.lvchehui.com.carteam.view.wheelview.ChangeDatePickPopWin;
 
 /**
@@ -136,11 +138,10 @@ public class ScarMFirstepAct extends BaseFormAct {
             @Override
             public void onClick(View v) {
                 showToast("设计说这里要跳城市弹框:" + v);
-                //showAddressPopupWind(v, false);
-                DateChUtil.showDatePickPopupWind(v, false, new ChangeDatePickPopWin.DateChooseListener() {
+                CityChUtil.showAddressPopupWind(v, false, new ChangeAddressPopWin.OnAddressCListener() {
                     @Override
-                    public void getDateTime(String time, boolean longTimeChecked) {
-                        m_et_pass_add.setText(time);
+                    public void onClick(String province, String city, String area) {
+                        m_et_pass_add.setText(province + city);
                     }
                 });
             }
