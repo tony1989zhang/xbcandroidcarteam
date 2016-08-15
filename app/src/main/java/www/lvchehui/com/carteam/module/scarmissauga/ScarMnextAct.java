@@ -67,4 +67,10 @@ public class ScarMnextAct extends BaseFormAct {
     private void onCheck(CompoundButton bv,boolean isChecked){
         showToast("isChecked:" + isChecked);
     }
+
+    @Override
+    protected void submitOnClick() {
+        super.submitOnClick();
+        finish();
+    }
 }
