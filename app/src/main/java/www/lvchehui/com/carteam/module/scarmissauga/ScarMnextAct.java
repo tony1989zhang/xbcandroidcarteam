@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.module.scarmissauga;
 
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -15,7 +16,7 @@ import www.lvchehui.com.carteam.view.TitleView;
 
 /**
  * Created by 张灿能 on 2016/8/12.
- * 作用：
+ * 作用：发布顺风车费用的变更
  */
 @ContentView(R.layout.act_scarmnext)
 public class ScarMnextAct extends BaseFormAct {
@@ -54,14 +55,12 @@ public class ScarMnextAct extends BaseFormAct {
     protected void initView() {
         super.initView();
         setTitleV(m_title_view, "发布顺风车");
-        m_checkbox_toll_fee.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });
     }
 
+    @Event({R.id.ll_select_vehicle})
+    private void actOnClick(View view){
+
+    }
     @Event(value = {R.id.checkbox_sarah,R.id.checkbox_fuel,R.id.checkbox_toll_fee,R.id.checkbox_parking},type = CompoundButton.OnCheckedChangeListener.class)
     private void onCheck(CompoundButton bv,boolean isChecked){
         showToast("isChecked:" + isChecked);
