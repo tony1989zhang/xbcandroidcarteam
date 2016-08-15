@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -39,6 +40,7 @@ import www.lvchehui.com.carteam.view.dlg.CProDlg;
  */
 @ContentView(R.layout.list_normal_hastitle)
 public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLayout.OnRefreshListener, Callback.CommonCallback<T> {
+    protected final static String LAST_ACTIVITY_NAME = "LAST_ACTIVITY_NAME";
     @ViewInject(R.id.title_view)
     protected TitleView mTitleView;
     @ViewInject(R.id.recycler_view)
@@ -370,6 +372,13 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
 
         }
     }
+    @Override
+    public void startActivity(Intent intent) {
+        if (null != intent) {
+            intent.putExtra(LAST_ACTIVITY_NAME, this.getClass().getName());
+        }
+        super.startActivity(intent);
+    }
 
     @Override
     protected void onDestroy() {
@@ -377,6 +386,7 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
         if (cancelable != null && !cancelable.isCancelled()) {
             cancelable.cancel();
         }
+        mProgress = null;
         App.getInstance().aliveActivitys.remove(WriActivity);
     }
 

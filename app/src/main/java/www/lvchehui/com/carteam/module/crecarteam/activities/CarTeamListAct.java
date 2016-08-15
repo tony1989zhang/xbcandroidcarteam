@@ -38,7 +38,7 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
     protected void initViews() {
         super.initViews();
         EventBus.getDefault().register(this);
-        setTitleV(mTitleView, "消息中心");
+        setTitleV(mTitleView, "车辆列表");
     }
 
     @Override
