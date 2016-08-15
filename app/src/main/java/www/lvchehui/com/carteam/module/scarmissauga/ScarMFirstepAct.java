@@ -50,11 +50,32 @@ public class ScarMFirstepAct extends BaseFormAct {
     @Event({R.id.et_start_date,R.id.et_start_city,
             R.id.et_start_time,R.id.et_address,R.id.ll_add_address,R.id.et_end_add})
     private void scarMFirStepOnClic(View v){
+        switch (v.getId())
+        {
+            case R.id.et_start_date:
+                showDatePickPopupWind(m_et_start_date);
+                break;
+            case R.id.et_start_city:
+                break;
+            case R.id.et_start_time:
+                break;
+            case R.id.et_address:
+                break;
+            case R.id.ll_add_address:
+                break;
+            case R.id.et_end_add:
+                break;
+        }
 
     }
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
         finish();
+    }
+
+    @Override
+    public void getChangeDatePickTime(String time, View v) {
+        super.getChangeDatePickTime(time, v);
     }
 }

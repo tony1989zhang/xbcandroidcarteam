@@ -219,7 +219,7 @@ public class BaseAct extends Activity {
     }
 
     //年月日 时分 选择
-    public void showDatePickPopupWind(View v, Boolean hasDaysNoTime) {
+    public void showDatePickPopupWind(final View v, Boolean hasDaysNoTime) {
         ChangeDatePickPopWin mChangeAddressPopwindow = null;
         if (null == hasDaysNoTime) {
             mChangeAddressPopwindow = new ChangeDatePickPopWin(this);//月日时分
@@ -233,7 +233,7 @@ public class BaseAct extends Activity {
                 .setDateListener(new ChangeDatePickPopWin.DateChooseListener() {
                                      @Override
                                      public void getDateTime(String time, boolean longTimeChecked) {
-                                         getChangeDatePickTime(time);
+                                         getChangeDatePickTime(time,v);
                                      }
                                  }
 
@@ -241,7 +241,7 @@ public class BaseAct extends Activity {
     }
 
     //获取到年月日
-    public void getChangeDatePickTime(String time) {
+    public void getChangeDatePickTime(String time,View v) {
 
     }
 
