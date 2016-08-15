@@ -183,9 +183,8 @@
                 android:paddingLeft="20dp"
                 android:paddingTop="15dp"
                 />
-
             <LinearLayout
-                android:id="@+id/ll_add_address"
+                android:id="@+id/ll_select_vehicle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -208,11 +207,23 @@
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
+                <EditText
+                    android:id="@+id/tv_select_vehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:gravity="center|right"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size"
+                     />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:src="@mipmap/item_back_icon"
+                    android:visibility="gone"
                     />
             </LinearLayout>
 
@@ -265,13 +276,15 @@
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
-                <TextView
-                    android:id="@+id/tv_end_time"
+                <EditText
+                    android:id="@+id/tv_team_offer"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:ellipsize="end"
+                    android:focusable="false"
                     android:gravity="center|right"
                     android:maxLines="3"
+                    android:background="@null"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size"
                     android:hint="请输入车队报价" />
