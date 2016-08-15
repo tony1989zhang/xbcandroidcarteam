@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.module.scarmissauga;
 
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -11,7 +12,9 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.tools.DateChUtil;
 import www.lvchehui.com.carteam.view.TitleView;
+import www.lvchehui.com.carteam.view.wheelview.ChangeDatePickPopWin;
 
 /**
  * Created by 张灿能 on 2016/8/12.
@@ -43,6 +46,8 @@ public class ScarMFirstepAct extends BaseFormAct {
 
     @ViewInject(R.id.et_end_add)
     private EditText m_et_end_add;
+
+    private int pass_city = 0;
 
 
     @Override
@@ -112,19 +117,32 @@ public class ScarMFirstepAct extends BaseFormAct {
     }
 
     private void addItem(){
+        if (pass_city > 2){
+            showToast("设计说途经城市最多3个");
+            return;
+        }
+        pass_city++;
         final LinearLayout m_item_ly = (LinearLayout) getLayoutInflater().inflate(R.layout.item_scar_add_address, null);
         ImageView m_iv_del = (ImageView) m_item_ly.findViewById(R.id.iv_del);
         m_iv_del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 m_view_add.removeView(m_item_ly);
+                pass_city--;
             }
         });
-        EditText m_et_pass_add = (EditText) m_item_ly.findViewById(R.id.et_pass_add);
+        final EditText m_et_pass_add = (EditText) m_item_ly.findViewById(R.id.et_pass_add);
         m_et_pass_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showToast("设计说这里要跳城市弹框:" + v);
+                //showAddressPopupWind(v, false);
+                DateChUtil.showDatePickPopupWind(v, false, new ChangeDatePickPopWin.DateChooseListener() {
+                    @Override
+                    public void getDateTime(String time, boolean longTimeChecked) {
+                        m_et_pass_add.setText(time);
+                    }
+                });
             }
         });
         EditText m_et_amount_time = (EditText) m_item_ly.findViewById(R.id.et_amount_time);
