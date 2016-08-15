@@ -19,6 +19,9 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+    <style name="checkBoxStyle">
+        <item name="android:button">@drawable/selector_checkbox</item>
+    </style>
     <style parent="@style/AlertDialogStyle" name="CustomProgressDialog">
 
     <item name="android:windowBackground">@android:color/transparent</item>
