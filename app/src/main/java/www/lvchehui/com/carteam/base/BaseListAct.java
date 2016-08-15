@@ -47,6 +47,8 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
     protected RecyclerView mViewList;
     @ViewInject(R.id.empty_propt)
     private TextView mEmptyTips;
+    @ViewInject(R.id.include_btn_submit)
+    public View m_include_btn_submit;
 
     SwipeRefreshLayout mSwipeRefreshLayout;
 

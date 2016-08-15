@@ -27,6 +27,7 @@ import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.evebus.CarTeamEvent;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.module.scarmissauga.ScarMnextAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
 /**
@@ -39,6 +40,11 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
         super.initViews();
         EventBus.getDefault().register(this);
         setTitleV(mTitleView, "车辆列表");
+
+        String lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
+        if (lastAct.equals(ScarMnextAct.class.getName())){
+            m_include_btn_submit.setVisibility(View.GONE);
+        }
     }
 
     @Override
