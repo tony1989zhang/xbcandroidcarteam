@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.module.scarmissauga;
 
+import android.content.Intent;
 import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -93,7 +94,7 @@ public class ScarMFirstepAct extends BaseFormAct {
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
-        finish();
+        startActivity(new Intent(this,ScarMnextAct.class));
     }
 
     @Override
