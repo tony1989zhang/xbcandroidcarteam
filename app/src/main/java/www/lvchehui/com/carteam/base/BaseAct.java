@@ -157,9 +157,13 @@ public class BaseAct extends Activity {
 
     }
 
-    public <T> void showListDlg(Context context, final ListDlgItemClickListener listener, AdapterViewSetListener<T> adalistener, final ArrayList<T> list) {
+    public<T> void showListDlg(Context context,final ListDlgItemClickListener listener, AdapterViewSetListener<T> adalistener, final ArrayList<T> list)
+    {
+        showListDlg(context, R.layout.item_team_type,listener,adalistener,list);
+    }
+    public <T> void showListDlg(Context context,int itemly, final ListDlgItemClickListener listener, AdapterViewSetListener<T> adalistener, final ArrayList<T> list) {
         HalfListV halfListView = new HalfListV(this);
-        final CusArrAdapter<T> adapter = new CusArrAdapter<>(context, R.layout.item_team_type, adalistener, list);
+        final CusArrAdapter<T> adapter = new CusArrAdapter<>(context, itemly, adalistener, list);
         halfListView.setAdapter(adapter);
         halfListView.setCacheColorHint(0x000000);
         final Listdlg listDialog = new Listdlg(this, halfListView);

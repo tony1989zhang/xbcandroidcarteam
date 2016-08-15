@@ -5,13 +5,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
+import java.util.ArrayList;
+
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.entity.MotorcadeTypeEntity;
+import www.lvchehui.com.carteam.impl.AdapterViewSetListener;
+import www.lvchehui.com.carteam.impl.ListDlgItemClickListener;
 import www.lvchehui.com.carteam.tools.CityChUtil;
 import www.lvchehui.com.carteam.tools.DateChUtil;
 import www.lvchehui.com.carteam.view.TitleView;
@@ -55,7 +61,7 @@ public class ScarMFirstepAct extends BaseFormAct {
     @Override
     protected void initView() {
         super.initView();
-        setTitleV(m_title_view,"发布顺风车");
+        setTitleV(m_title_view, "发布顺风车");
     }
 
     @Event({R.id.et_start_date,R.id.et_start_city,
@@ -146,14 +152,36 @@ public class ScarMFirstepAct extends BaseFormAct {
                 });
             }
         });
-        EditText m_et_amount_time = (EditText) m_item_ly.findViewById(R.id.et_amount_time);
+       final EditText m_et_amount_time = (EditText) m_item_ly.findViewById(R.id.et_amount_time);
         m_et_amount_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ArrayList<MotorcadeTypeEntity> list = new ArrayList<>();
+                list.add(new MotorcadeTypeEntity(1, "0.5小时", ""));
+                list.add(new MotorcadeTypeEntity(2, "1小时", ""));
+                list.add(new MotorcadeTypeEntity(3, "1.5小时", ""));
+                list.add(new MotorcadeTypeEntity(4, "2小时", ""));
+                list.add(new MotorcadeTypeEntity(5, "2.5小时", ""));
+                list.add(new MotorcadeTypeEntity(6, "3小时", ""));
+                list.add(new MotorcadeTypeEntity(7, "3.5小时", ""));
+                list.add(new MotorcadeTypeEntity(8, "4小时", ""));
+                showListDlg(ScarMFirstepAct.this, R.layout.item_list, new ListDlgItemClickListener<MotorcadeTypeEntity>() {
+                    @Override
+                    public void getItem(MotorcadeTypeEntity motorcadeTypeEntity) {
+                        m_et_amount_time.setText(motorcadeTypeEntity.getMotorcadeTypeName());
+                    }
+                }, new AdapterViewSetListener<MotorcadeTypeEntity>() {
+                    @Override
+                    public void getItemView(View view, ArrayList<MotorcadeTypeEntity> list, int position) {
+                        TextView tv = (TextView) view;
+                        tv.setText(list.get(position).getMotorcadeTypeName());
+                    }
+                }, list);
             }
         });
 
         m_view_add.addView(m_item_ly);
     }
+
+
 }
