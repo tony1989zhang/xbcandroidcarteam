@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFmAct;
 import www.lvchehui.com.carteam.module.orders.fm.QuoteListFm;
+import www.lvchehui.com.carteam.module.orders.fm.ScheduledListFm;
 import www.lvchehui.com.carteam.module.wallet.fm.TranDetailFm;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dragtop.BanSlidingViewPage;
@@ -60,7 +61,7 @@ public class OrdersAct extends BaseFmAct {
 
         setTitleView(m_title_view, "我的行程");
         mFragmentsMsg.add(new QuoteListFm());
-        mFragmentsMsg.add(new QuoteListFm());
+        mFragmentsMsg.add(new ScheduledListFm());
         mFragmentsMsg.add(new TranDetailFm());
         mFragmentsMsg.add(new TranDetailFm());
         mFragmentsMsg.add(new TranDetailFm());
