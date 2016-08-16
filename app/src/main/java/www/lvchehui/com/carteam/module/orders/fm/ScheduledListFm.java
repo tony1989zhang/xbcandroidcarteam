@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.activities.WebAct;
 import www.lvchehui.com.carteam.base.BaseListFm;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
@@ -146,6 +147,10 @@ public class ScheduledListFm extends BaseListFm<LoginBean> {
                     break;
                 case R.id.tv_details:
                     showToast("查看详情");
+                    Intent intent = new Intent(getActivity(), WebAct.class);
+                    intent.putExtra(WebAct.WEB_EXT_TITLE,"订单详情");
+                    intent.putExtra(WebAct.WEB_EXT_URL,"http://www.4000592122.com/xbc_wap/pages_dynamic/order_bill.html");
+                    startActivity(intent);
                     break;
 
             }
