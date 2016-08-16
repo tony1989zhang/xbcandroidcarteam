@@ -2,6 +2,7 @@ package www.lvchehui.com.carteam.module.scarmissauga;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -21,6 +22,7 @@ import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CarTeamListAct;
+import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -80,7 +82,6 @@ public class ScarMnextAct extends BaseFormAct {
         EventBus.getDefault().register(this);
         setTitleV(m_title_view, "发布顺风车");
     }
-
     @Event({R.id.ll_checkbox_sarah,R.id.ll_checkbox_fuel,R.id.ll_checkbox_toll_fee,R.id.ll_checkbox_parking})
     private void checkOnClick(View v){
         switch (v.getId())
@@ -121,7 +122,6 @@ public class ScarMnextAct extends BaseFormAct {
         super.submitOnClick();
         finish();
     }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
