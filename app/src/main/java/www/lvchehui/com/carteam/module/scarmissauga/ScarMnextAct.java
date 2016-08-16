@@ -61,11 +61,43 @@ public class ScarMnextAct extends BaseFormAct {
 
 
 
+    @ViewInject(R.id.ll_checkbox_sarah)
+    private LinearLayout m_ll_checkbox_sarah;
+
+    @ViewInject(R.id.ll_checkbox_fuel)
+    private LinearLayout m_ll_checkbox_fuel;
+
+
+    @ViewInject(R.id.ll_checkbox_toll_fee)
+    private LinearLayout m_ll_checkbox_toll_fee;
+    @ViewInject(R.id.ll_checkbox_parking)
+    private LinearLayout m_ll_checkbox_parking;
+
+
     @Override
     protected void initView() {
         super.initView();
         EventBus.getDefault().register(this);
         setTitleV(m_title_view, "发布顺风车");
+    }
+
+    @Event({R.id.ll_checkbox_sarah,R.id.ll_checkbox_fuel,R.id.ll_checkbox_toll_fee,R.id.ll_checkbox_parking})
+    private void checkOnClick(View v){
+        switch (v.getId())
+        {
+            case R.id.ll_checkbox_sarah:
+                m_checkbox_sarah.setChecked(!m_checkbox_sarah.isChecked());
+                break;
+            case R.id.ll_checkbox_fuel:
+                m_checkbox_fuel.setChecked(!m_checkbox_fuel.isChecked());
+                break;
+            case R.id.ll_checkbox_toll_fee:
+                m_checkbox_toll_fee.setChecked(!m_checkbox_toll_fee.isChecked());
+                break;
+            case R.id.ll_checkbox_parking:
+                m_checkbox_parking.setChecked(!m_checkbox_parking.isChecked());
+                break;
+        }
     }
 
     @Event({R.id.ll_select_vehicle})
