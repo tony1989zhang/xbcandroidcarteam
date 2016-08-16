@@ -148,7 +148,7 @@ public class OrdersAct extends BaseFmAct {
         }
     }
 
-    @Event(value = {R.id.tv_quote, R.id.tv_scheduled, R.id.tv_setoff, R.id.tv_finish}, type = View.OnClickListener.class)
+    @Event(value = {R.id.tv_quote, R.id.tv_scheduled, R.id.tv_setoff,R.id.tv_driver, R.id.tv_finish}, type = View.OnClickListener.class)
     private void ItineraryOnClick(View v) {
 
         switch (v.getId()) {
