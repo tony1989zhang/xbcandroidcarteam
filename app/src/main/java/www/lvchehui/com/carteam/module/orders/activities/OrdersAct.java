@@ -35,13 +35,16 @@ public class OrdersAct extends BaseFmAct {
     private LinearLayout m_l1;
 
     @ViewInject(R.id.tv_quote)
-    private TextView m_tv_quote; //报价中;
+    private TextView m_tv_quote; //未报价;
 
     @ViewInject(R.id.tv_scheduled)
-    private TextView m_tv_scheduled;//已预定;
+    private TextView m_tv_scheduled;//未预定;
 
     @ViewInject(R.id.tv_setoff)
-    private TextView m_tv_setoff; //已出发;
+    private TextView m_tv_setoff; //未出发;
+
+    @ViewInject(R.id.tv_driver)  //行驶中
+    private TextView m_tv_driver;
 
     @ViewInject(R.id.tv_finish)
     private TextView m_tv_finish; //已完成;
@@ -50,11 +53,13 @@ public class OrdersAct extends BaseFmAct {
     private BanSlidingViewPage m_banSlidingView;
     private ArrayList<Fragment> mFragmentsMsg = new ArrayList<>();
     int currentIndex = 0;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setTitleView(m_title_view, "我的行程");
+        mFragmentsMsg.add(new QuoteListFm());
         mFragmentsMsg.add(new QuoteListFm());
         mFragmentsMsg.add(new TranDetailFm());
         mFragmentsMsg.add(new TranDetailFm());
@@ -84,6 +89,7 @@ public class OrdersAct extends BaseFmAct {
             return mFragmentsMsg.size();
         }
     }
+
     class ItineraryOnPageChangeListener implements ViewPager.OnPageChangeListener {
 
         @Override
@@ -94,29 +100,40 @@ public class OrdersAct extends BaseFmAct {
         @Override
         public void onPageSelected(int position) {
             m_banSlidingView.setCurrentItem(position);
-            switch (position){
+            switch (position) {
                 case 0:
                     m_tv_quote.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
                     m_tv_scheduled.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_setoff.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_driver.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_finish.setTextColor(getResources().getColor(R.color.text_default_color));
                     break;
                 case 1:
                     m_tv_quote.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_scheduled.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
                     m_tv_setoff.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_driver.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_finish.setTextColor(getResources().getColor(R.color.text_default_color));
                     break;
                 case 2:
                     m_tv_quote.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_scheduled.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_setoff.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
+                    m_tv_driver.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_finish.setTextColor(getResources().getColor(R.color.text_default_color));
                     break;
                 case 3:
                     m_tv_quote.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_scheduled.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_setoff.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_driver.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
+                    m_tv_finish.setTextColor(getResources().getColor(R.color.text_default_color));
+                    break;
+                case 4:
+                    m_tv_quote.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_scheduled.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_setoff.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_driver.setTextColor(getResources().getColor(R.color.text_default_color));
                     m_tv_finish.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
                     break;
 
@@ -131,10 +148,10 @@ public class OrdersAct extends BaseFmAct {
         }
     }
 
-    @Event(value = {R.id.tv_quote,R.id.tv_scheduled,R.id.tv_setoff,R.id.tv_finish},type = View.OnClickListener.class)
-    private void ItineraryOnClick(View v){
+    @Event(value = {R.id.tv_quote, R.id.tv_scheduled, R.id.tv_setoff, R.id.tv_finish}, type = View.OnClickListener.class)
+    private void ItineraryOnClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.tv_quote:
                 currentIndex = 0;
                 break;
@@ -144,8 +161,11 @@ public class OrdersAct extends BaseFmAct {
             case R.id.tv_setoff:
                 currentIndex = 2;
                 break;
-            case R.id.tv_finish:
+            case R.id.tv_driver:
                 currentIndex = 3;
+                break;
+            case R.id.tv_finish:
+                currentIndex = 4;
                 break;
         }
         m_banSlidingView.setCurrentItem(currentIndex);
