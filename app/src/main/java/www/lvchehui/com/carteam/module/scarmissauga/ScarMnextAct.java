@@ -1,6 +1,7 @@
 package www.lvchehui.com.carteam.module.scarmissauga;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -58,11 +59,12 @@ public class ScarMnextAct extends BaseFormAct {
     private EditText m_tv_team_offer;
 
 
+
     @Override
     protected void initView() {
         super.initView();
+        EventBus.getDefault().register(this);
         setTitleV(m_title_view, "发布顺风车");
-       
     }
 
     @Event({R.id.ll_select_vehicle})
@@ -78,7 +80,8 @@ public class ScarMnextAct extends BaseFormAct {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     private void onReceiver(TextBean bean){
-        m_tv_select_vehicle.setText(bean.a);
+//        m_tv_select_vehicle.setText();
+        showToast("bean.a" + bean.a);
     }
     @Override
     protected void submitOnClick() {
@@ -87,7 +90,7 @@ public class ScarMnextAct extends BaseFormAct {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }
