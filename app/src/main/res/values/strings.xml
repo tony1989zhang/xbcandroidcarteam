@@ -28,6 +28,7 @@
     <string name="scar_missauga_str">发布顺丰车</string>
     <string name="replace_driver_str">更换司机</string>
     <string name="_replace_vehicle_str">更换车辆</string>
+    <string name="cancel">取消</string>
 
     <style name="btn_ok">确认</style>
 </resources>
