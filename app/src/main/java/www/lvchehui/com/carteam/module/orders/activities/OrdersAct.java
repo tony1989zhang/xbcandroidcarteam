@@ -34,7 +34,7 @@ public class OrdersAct extends BaseFmAct {
     private LinearLayout m_l1;
 
     @ViewInject(R.id.tv_quote)
-    private android.widget.TextView m_tv_quote; //报价中;
+    private TextView m_tv_quote; //报价中;
 
     @ViewInject(R.id.tv_scheduled)
     private TextView m_tv_scheduled;//已预定;
