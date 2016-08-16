@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="报价中"
+            android:text="未报价"
             android:textSize="@dimen/text_larght_size"
             android:textColor="@color/text_default_color"
             />
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="已预定"
+            android:text="未预定"
             android:textSize="@dimen/text_larght_size"
             android:textColor="@color/text_default_color"
             />
@@ -57,8 +57,26 @@
             android:background="@color/line_hint_color" />
 
 
+
+
         <TextView
             android:id="@+id/tv_setoff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="未出发"
+            android:textSize="@dimen/text_larght_size"
+            android:textColor="@color/text_default_color"
+            />
+        <View
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/line_hint_color" />
+        <TextView
+            android:id="@+id/tv_driver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -67,6 +85,14 @@
             android:textSize="@dimen/text_larght_size"
             android:textColor="@color/text_default_color"
             />
+
+        <View
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/line_hint_color" />
+
 
         <TextView
             android:id="@+id/tv_finish"
