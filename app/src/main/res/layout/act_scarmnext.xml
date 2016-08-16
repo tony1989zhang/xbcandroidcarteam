@@ -37,6 +37,7 @@
                 />
 
             <LinearLayout
+                android:id="@+id/ll_checkbox_sarah"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -71,6 +72,7 @@
             <View style="@style/lineSolid_center" />
 
             <LinearLayout
+                android:id="@+id/ll_checkbox_fuel"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -103,6 +105,7 @@
 
             <View style="@style/lineSolid_center" />
             <LinearLayout
+                android:id="@+id/ll_checkbox_toll_fee"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -136,6 +139,7 @@
             <View style="@style/lineSolid_center" />
 
             <LinearLayout
+                android:id="@+id/ll_checkbox_parking"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"

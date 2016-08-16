@@ -17,6 +17,7 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CarTeamListAct;
@@ -74,14 +75,14 @@ public class ScarMnextAct extends BaseFormAct {
     @Event(value = {R.id.checkbox_sarah,R.id.checkbox_fuel,R.id.checkbox_toll_fee,R.id.checkbox_parking},type = CompoundButton.OnCheckedChangeListener.class)
     private void onCheck(CompoundButton bv,boolean isChecked){
         showToast("isChecked:" + isChecked);
-
     }
 
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    private void onReceiver(TextBean bean){
-//        m_tv_select_vehicle.setText();
+    public void onReceiver(TextBean bean){
+        m_tv_select_vehicle.setText(bean.a);
         showToast("bean.a" + bean.a);
+        App.getInstance().getTopActivity().finish();
     }
     @Override
     protected void submitOnClick() {
