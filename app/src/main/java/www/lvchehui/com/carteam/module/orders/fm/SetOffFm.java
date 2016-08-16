@@ -76,25 +76,25 @@ public class SetOffFm extends BaseListFm<LoginBean> {
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View view = View.inflate(viewGroup.getContext(), R.layout.item_quote, null);
             View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_setoff, viewGroup, false);
-            return new QuoteItemViewHolder(inflate);
+            return new SetOffItemViewHolder(inflate);
         }
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
-            if (viewHoder instanceof QuoteItemViewHolder){
+            if (viewHoder instanceof SetOffItemViewHolder){
                 CarsListEntity demandSubmitDataBean = (CarsListEntity) mItems.get(position);
-                QuoteItemViewHolder holder = (QuoteItemViewHolder) viewHoder;
-                QuoteOnClickListener quoteOnClickListener = new QuoteOnClickListener(position);
+                SetOffItemViewHolder holder = (SetOffItemViewHolder) viewHoder;
+                SetOffOnClickListener quoteOnClickListener = new SetOffOnClickListener(position);
                 holder.m_tv_ltinerary_title.setOnClickListener(quoteOnClickListener);
                 holder.m_ll_ltinerary_content.setOnClickListener(quoteOnClickListener);
             }
 
         }
 
-        class QuoteOnClickListener implements View.OnClickListener{
+        class SetOffOnClickListener implements View.OnClickListener{
 
             private int position;
-            public QuoteOnClickListener(int position){
+            public SetOffOnClickListener(int position){
                 this.position = position;
             }
             @Override
@@ -119,7 +119,7 @@ public class SetOffFm extends BaseListFm<LoginBean> {
 
 
 
-        class QuoteItemViewHolder extends RecyclerView.ViewHolder {
+        class SetOffItemViewHolder extends RecyclerView.ViewHolder {
             @ViewInject(R.id.tv_ltinerary_title)
             private TextView m_tv_ltinerary_title;
 
@@ -155,7 +155,7 @@ public class SetOffFm extends BaseListFm<LoginBean> {
 
             @ViewInject(R.id.textView15)
             private TextView m_textView15;
-            public QuoteItemViewHolder(View itemView) {
+            public SetOffItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
             }
