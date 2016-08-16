@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.activities.WebAct;
 import www.lvchehui.com.carteam.base.BaseListFm;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
@@ -90,7 +91,7 @@ public class QuoteListFm extends BaseListFm<LoginBean>{
                 holder.m_tv_ltinerary_countdown.start(2 * 60 * 60 * 1000); // Millisecond
                 QuoteOnClickListener quoteOnClickListener = new QuoteOnClickListener(position);
                 holder.m_tv_ltinerary_title.setOnClickListener(quoteOnClickListener);
-                holder.m_tv_cancel_dingd.setOnClickListener(quoteOnClickListener);
+                holder.m_tv_details.setOnClickListener(quoteOnClickListener);
                 holder.m_ll_ltinerary_content.setOnClickListener(quoteOnClickListener);
             }
 
@@ -108,24 +109,12 @@ public class QuoteListFm extends BaseListFm<LoginBean>{
                     case R.id.tv_ltinerary_title:
                         //跳转
                         break;
-                    case R.id.tv_cancel_dingd:
-                        final CusDlg customDialog = new CusDlg(getContext());
-                        customDialog.setTitle("取消订单");
-                        customDialog.setMessage("取消订单将扣除信用值");
-                        customDialog.setButtonsText("取消", "确认");
-                        customDialog.show();
-                        customDialog.setOperationListener(new OnOperationListener() {
-                            @Override
-                            public void onLeftClick() {
-                                customDialog.dismiss();
-                            }
-
-                            @Override
-                            public void onRightClick() {
-                                showToast("传入demand_gid");
-                                customDialog.dismiss();
-                            }
-                        });
+                    case R.id.tv_details:
+                        showToast("查看详情");
+                        Intent intent = new Intent(getActivity(), WebAct.class);
+                        intent.putExtra(WebAct.WEB_EXT_TITLE,"订单详情");
+                        intent.putExtra(WebAct.WEB_EXT_URL,"http://www.4000592122.com/xbc_wap/pages_dynamic/order_bill.html");
+                        startActivity(intent);
                         break;
                     case R.id.ll_ltinerary_content:
                         showToast("position:" + position);
@@ -158,8 +147,8 @@ public class QuoteListFm extends BaseListFm<LoginBean>{
             @ViewInject(R.id.tv_ltinerary_countdown)
             private CountdownView m_tv_ltinerary_countdown;
 
-            @ViewInject(R.id.tv_cancel_dingd)
-            private TextView m_tv_cancel_dingd; //取消订单;
+            @ViewInject(R.id.tv_details)
+            private TextView m_tv_details;
 
             @ViewInject(R.id.textView15)
             private TextView m_textView15;

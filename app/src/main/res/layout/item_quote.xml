@@ -122,10 +122,11 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:gravity="right"
+            android:layout_weight="2">
 
             <TextView
-                android:id="@+id/tv_cancel_dingd"
+                android:id="@+id/tv_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_black_selector"
@@ -133,7 +134,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="取消订单"
+                android:text="查看详情"
                 android:textSize="@dimen/text_default_size" />
 
         </LinearLayout>
