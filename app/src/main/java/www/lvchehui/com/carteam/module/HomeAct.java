@@ -10,6 +10,7 @@ import org.xutils.x;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.adapter.GvAdapter;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.module.orders.activities.OrdersAct;
 import www.lvchehui.com.carteam.module.scarmissauga.ScarMFirstepAct;
 import www.lvchehui.com.carteam.module.wallet.activityes.WalletAct;
 import www.lvchehui.com.carteam.view.XbcGv;
@@ -41,7 +42,7 @@ public class HomeAct extends BaseAct{
         switch (position)
         {
             case 0:
-
+                startActivity(new Intent(this, OrdersAct.class));
                 break;
             case 1:
                 startActivity(new Intent(this, ScarMFirstepAct.class));//发布顺风车
