@@ -1,5 +1,7 @@
 package www.lvchehui.com.carteam.module.scarmissauga;
 
+import android.app.Activity;
+import android.app.AliasActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -16,6 +18,9 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
+
+import java.lang.ref.WeakReference;
+import java.util.List;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.app.App;
@@ -120,6 +125,8 @@ public class ScarMnextAct extends BaseFormAct {
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
+        List<WeakReference<Activity>> aliveActivitys = App.getInstance().aliveActivitys;
+        aliveActivitys.get(aliveActivitys.size() -2).get().finish();
         finish();
     }
     @Override
