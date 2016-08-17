@@ -116,8 +116,5 @@ public class PermissionListAct extends BaseListAct<LoginBean>{
             }
         }
     }
-    @Event(R.id.tv_submit_ok)
-    private void submitOk(View v){
-        startActivity(new Intent(this,VehicleInfoAct.class));
-    }
+
 }

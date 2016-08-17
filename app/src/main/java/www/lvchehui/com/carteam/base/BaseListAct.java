@@ -31,6 +31,7 @@ import java.util.List;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.http.CUtil;
+import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleInfoAct;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dlg.CProDlg;
 
@@ -47,6 +48,9 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
     protected RecyclerView mViewList;
     @ViewInject(R.id.empty_propt)
     private TextView mEmptyTips;
+    @ViewInject(R.id.tv_submit_ok)
+    private TextView m_tv_submit_ok;
+
     @ViewInject(R.id.include_btn_submit)
     public View m_include_btn_submit;
 
@@ -404,6 +408,15 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
 
     @Override
     public void onFinished() {
+
+    }
+    @Event(R.id.tv_submit_ok)
+    private void submitOk(View v){
+        submitOnClick();
+
+    }
+
+    public void submitOnClick(){
 
     }
 }
