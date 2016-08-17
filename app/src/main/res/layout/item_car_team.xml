@@ -30,10 +30,10 @@
         />
 
     <TextView
-        android:id="@+id/tv_team_add"
+        android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="福建厦门"
+        android:text=" 福建厦门"
         android:layout_marginLeft="5dp"
         android:layout_weight="1"
         android:textColor="@color/text_default_color"
@@ -41,15 +41,17 @@
         />
     <ImageView
         android:id="@+id/iv_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginRight="10dp"
+        android:src="@mipmap/item_edit_icon"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:layout_marginRight="5dp"
         />
     <ImageView
         android:id="@+id/iv_del"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@mipmap/item_del_icon"
         />
 </LinearLayout>

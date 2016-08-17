@@ -103,8 +103,6 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
             @ViewInject(R.id.tv_team_name)
             private TextView m_tv_team_name; //闽南龙翔快运;
 
-            @ViewInject(R.id.tv_team_add)
-            private TextView m_tv_team_add; //福建厦门;
 
             @ViewInject(R.id.iv_edit)
             private ImageView m_iv_edit;
@@ -139,8 +137,6 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
                     }
                 });
                 msgViewHolder.m_tv_team_type.setText(bean.a);
-                msgViewHolder.m_tv_team_add.setText(bean.b);
-
             }
         }
     }

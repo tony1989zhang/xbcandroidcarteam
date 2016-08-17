@@ -53,7 +53,7 @@ public class QuoteAct extends BaseListAct<LoginBean> {
 
     @Override
     protected BasePageAdapter initAdapter() {
-        return new VehicleAdapter();
+        return new CarTeamAdapter();
     }
 
     @Override
@@ -80,9 +80,10 @@ public class QuoteAct extends BaseListAct<LoginBean> {
     protected boolean isDataGot() {
         return false;
     }
-    class VehicleAdapter extends BasePageAdapter {
+    class CarTeamAdapter extends BasePageAdapter {
 
-        class VehicleItemViewHolder extends RecyclerView.ViewHolder {
+        class CarTeamItemViewHolder extends RecyclerView.ViewHolder {
+
             @ViewInject(R.id.root)
             private LinearLayout m_root;
 
@@ -92,8 +93,8 @@ public class QuoteAct extends BaseListAct<LoginBean> {
             @ViewInject(R.id.tv_team_name)
             private TextView m_tv_team_name; //闽南龙翔快运;
 
-            @ViewInject(R.id.tv_car_num)
-            private TextView m_tv_car_num; //福建厦门;
+            @ViewInject(R.id.tv_address)
+            private TextView m_tv_address; // 福建厦门;
 
             @ViewInject(R.id.iv_edit)
             private ImageView m_iv_edit;
@@ -102,7 +103,7 @@ public class QuoteAct extends BaseListAct<LoginBean> {
             private ImageView m_iv_del;
 
 
-            public VehicleItemViewHolder(View itemView) {
+            public CarTeamItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
 
@@ -111,18 +112,18 @@ public class QuoteAct extends BaseListAct<LoginBean> {
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_vehicle, viewGroup, false);
-            return new VehicleItemViewHolder(inflate);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_car_team, viewGroup, false);
+            return new CarTeamItemViewHolder(inflate);
         }
 
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
-            if (viewHoder instanceof  VehicleItemViewHolder){
-                VehicleItemViewHolder msgViewHolder = (VehicleItemViewHolder) viewHoder;
+            if (viewHoder instanceof  CarTeamItemViewHolder){
+                CarTeamItemViewHolder msgViewHolder = (CarTeamItemViewHolder) viewHoder;
                 CarsListEntity bean = (CarsListEntity) mItems.get(position);
                 msgViewHolder.m_tv_team_type.setText(bean.drive_licence_number);
-                msgViewHolder.m_tv_car_num.setText(bean.car_describe);
+                msgViewHolder.m_tv_address.setText(bean.car_describe);
 
             }
         }
