@@ -15,6 +15,7 @@
             android:layout_width="58.0dip"
             android:layout_height="58.0dip"
             android:src="@mipmap/home_message_icon"
+            android:scaleType="center"
             android:background="@drawable/shape_solid_orange"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/app_name" />
