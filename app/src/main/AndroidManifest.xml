@@ -145,6 +145,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".module.manager.ManagerAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activities.RegisterAct"
             android:alwaysRetainTaskState="true"
