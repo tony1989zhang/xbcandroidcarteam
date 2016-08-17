@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.activities.PermissionListAct;
 import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.CarsListBean;
@@ -32,10 +35,19 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  */
 public class VehicleListAct extends BaseListAct<LoginBean> {
 
+    private boolean isFromPermission = false;
     @Override
     protected void initViews() {
         super.initViews();
-        setTitleV(mTitleView,"车辆列表");
+        setTitleV(mTitleView, "车辆列表");
+        Intent intent = getIntent();
+        String lastActivity = intent.getStringExtra(BaseListAct.LAST_ACTIVITY_NAME);
+        if (lastActivity.equals(PermissionListAct.class.getName()))isFromPermission = true;
+
+
+        if (isFromPermission){
+            m_tv_submit_ok.setText("确认");
+        }
     }
 
     @Override
@@ -88,13 +100,13 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
             private LinearLayout m_root;
 
             @ViewInject(R.id.tv_team_type)
-            private TextView m_tv_team_type; //A;
+            private TextView m_tv_team_type;
 
             @ViewInject(R.id.tv_team_name)
             private TextView m_tv_team_name; //闽南龙翔快运;
 
             @ViewInject(R.id.tv_car_num)
-            private TextView m_tv_car_num; //福建厦门;
+            private TextView m_tv_car_num; // 闽D8876 8座;
 
             @ViewInject(R.id.iv_edit)
             private ImageView m_iv_edit;
@@ -102,11 +114,17 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
             @ViewInject(R.id.iv_del)
             private ImageView m_iv_del;
 
+            @ViewInject(R.id.checkbox_car)
+            private CheckBox m_checkbox_car;
+
+
 
             public VehicleItemViewHolder(View itemView) {
                 super(itemView);
-                x.view().inject(this,itemView);
-
+                x.view().inject(this, itemView);
+                m_iv_edit.setVisibility(View.GONE);
+                m_iv_del.setVisibility(View.GONE);
+                m_checkbox_car.setVisibility(View.VISIBLE);
             }
         }
         @Override
@@ -120,16 +138,30 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
             if (viewHoder instanceof  VehicleItemViewHolder){
-                VehicleItemViewHolder msgViewHolder = (VehicleItemViewHolder) viewHoder;
+                final VehicleItemViewHolder vehicleViewHolder = (VehicleItemViewHolder) viewHoder;
                 CarsListEntity bean = (CarsListEntity) mItems.get(position);
-                msgViewHolder.m_tv_team_type.setText(bean.drive_licence_number);
-                msgViewHolder.m_tv_car_num.setText(bean.car_describe);
+                vehicleViewHolder.m_tv_team_type.setText(bean.drive_licence_number);
+                vehicleViewHolder.m_tv_car_num.setText(bean.car_describe);
+                vehicleViewHolder.m_root.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (isFromPermission) {
+                            vehicleViewHolder.m_checkbox_car.setChecked(!vehicleViewHolder.m_checkbox_car.isChecked());
+                        } else {
+
+                        }
+                    }
+                });
 
             }
         }
     }
     @Event(R.id.tv_submit_ok)
     private void submitOk(View v){
-        startActivity(new Intent(this,VehicleInfoAct.class));
+        if (isFromPermission){
+            finish();
+        }else {
+            startActivity(new Intent(this, VehicleInfoAct.class));
+        }
     }
 }

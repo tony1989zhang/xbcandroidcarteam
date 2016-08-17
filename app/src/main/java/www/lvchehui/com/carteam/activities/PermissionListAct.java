@@ -36,6 +36,7 @@ public class PermissionListAct extends BaseListAct<LoginBean>{
     protected void initViews() {
         super.initViews();
         setTitleV(mTitleView,"包车报价");
+        m_tv_submit_ok.setText("新增");
     }
 
     @Override

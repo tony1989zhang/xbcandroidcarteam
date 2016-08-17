@@ -32,6 +32,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.http.CUtil;
 import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleInfoAct;
+import www.lvchehui.com.carteam.view.DividerItemDecoration;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dlg.CProDlg;
 
@@ -49,7 +50,7 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
     @ViewInject(R.id.empty_propt)
     private TextView mEmptyTips;
     @ViewInject(R.id.tv_submit_ok)
-    private TextView m_tv_submit_ok;
+    public TextView m_tv_submit_ok;
 
     @ViewInject(R.id.include_btn_submit)
     public View m_include_btn_submit;
@@ -90,7 +91,7 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
         mAdapter = initAdapter();
         mAdapter.init(mViewList, isPageEnabled());
         mViewList.setItemAnimator(new DefaultItemAnimator());
-        //mViewList.addItemDecoration(new DividerItemDecoration(mViewList.getContext(), LinearLayoutManager.VERTICAL));
+        mViewList.addItemDecoration(new DividerItemDecoration(mViewList.getContext(), LinearLayoutManager.VERTICAL));
        // mEmptyTips = (TextView) findViewById(R.id.empty_propt);
         mEmptyTips.setOnClickListener(new View.OnClickListener() {
 
