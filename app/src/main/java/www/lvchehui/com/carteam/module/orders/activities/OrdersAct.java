@@ -18,10 +18,10 @@ import java.util.ArrayList;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFmAct;
 import www.lvchehui.com.carteam.module.orders.fm.DriverFm;
+import www.lvchehui.com.carteam.module.orders.fm.FinishListFm;
 import www.lvchehui.com.carteam.module.orders.fm.QuoteListFm;
 import www.lvchehui.com.carteam.module.orders.fm.ScheduledListFm;
-import www.lvchehui.com.carteam.module.orders.fm.SetOffFm;
-import www.lvchehui.com.carteam.module.wallet.fm.TranDetailFm;
+import www.lvchehui.com.carteam.module.orders.fm.SetOffListFm;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dragtop.BanSlidingViewPage;
 
@@ -64,9 +64,9 @@ public class OrdersAct extends BaseFmAct {
         setTitleView(m_title_view, "我的行程");
         mFragmentsMsg.add(new QuoteListFm());
         mFragmentsMsg.add(new ScheduledListFm());
-        mFragmentsMsg.add(new SetOffFm());
+        mFragmentsMsg.add(new SetOffListFm());
         mFragmentsMsg.add(new DriverFm());
-        mFragmentsMsg.add(new TranDetailFm());
+        mFragmentsMsg.add(new FinishListFm());
         ItineraryFragmentAdapter itineraryFragmentAdapter = new ItineraryFragmentAdapter(getSupportFragmentManager());
         m_banSlidingView.setAdapter(itineraryFragmentAdapter);
         m_banSlidingView.setOnPageChangeListener(new ItineraryOnPageChangeListener());
