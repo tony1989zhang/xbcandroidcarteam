@@ -12,6 +12,7 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -26,7 +27,8 @@ public class ManagerAct extends BaseAct {
     @Override
     protected void initView() {
         super.initView();
-        setTitleV(m_title_view,"权限管理");
+        setTitleV(m_title_view, "权限管理");
+        XgoLog.e("initView");
     }
 
     @Event({R.id.rl_quote,R.id.rl_scar_missauga,R.id.rl_replace_driver,R.id.rl_replace_vehicle})
@@ -35,7 +37,7 @@ public class ManagerAct extends BaseAct {
         {
             case R.id.rl_quote:
                 showToast("点击效果");
-                startActivity(new Intent(this,ManagerAct.class));
+                startActivity(new Intent(this,QuoteAct.class));
                 break;
             case R.id.rl_scar_missauga:
                 break;
