@@ -146,7 +146,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="取消订单"
+                android:text="费用变更"
                 android:textSize="@dimen/text_default_size" />
             <TextView
                 android:id="@+id/tv_change_car"
@@ -172,7 +172,7 @@
                 android:layout_marginRight="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="指派司机"
+                android:text="更换司机"
                 android:textSize="@dimen/text_default_size" />
 
 
@@ -184,7 +184,7 @@
             android:layout_weight="1"
             >
         <TextView
-            android:id="@+id/tv_setoff"
+            android:id="@+id/tv_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_yellow_selector"
@@ -195,7 +195,7 @@
             android:paddingRight="10dp"
             android:paddingTop="5dp"
             android:textColor="@drawable/text_yellow_selector"
-            android:text="出发"
+            android:text="地图"
             android:textSize="@dimen/text_default_size"
 
             />
