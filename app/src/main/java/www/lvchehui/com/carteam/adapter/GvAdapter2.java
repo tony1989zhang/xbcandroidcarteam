@@ -21,11 +21,11 @@ public class GvAdapter2 extends BaseAdapter {
 
     public String[] img_text2 = { "我的订单", "发布顺风车", "被抢订单", "我的钱包", "车队管理","权限管理","帮助中心", "设置",
             "反馈建议"};
-    public int[] imgs2 = { R.mipmap.home_message_icon, R.mipmap.home_message_icon,
-            R.mipmap.home_message_icon,  R.mipmap.home_message_icon,
-            R.mipmap.home_message_icon,  R.mipmap.home_message_icon,
-            R.mipmap.home_message_icon,  R.mipmap.home_message_icon,
-            R.mipmap.home_message_icon};
+    public int[] imgs2 = { R.mipmap.home_orders_icon, R.mipmap.home_scarmf_icon,
+            R.mipmap.home_roborder_icon,  R.mipmap.home_wallet_icon,
+            R.mipmap.home_teamager_icon,  R.mipmap.home_manager_icon,
+            R.mipmap.home_help_icon,  R.mipmap.home_setting_icon,
+            R.mipmap.home_feedback_icon};
 
     public int[] bgs2 = {R.drawable.shape_solid_orange,R.drawable.shape_solid_cygreen,R.drawable.shape_solid_orange,
             R.drawable.shape_solid_blue,R.drawable.shape_solid_bpurple,R.drawable.shape_solid_bpurple,R.drawable.shape_solid_dblue,R.drawable.shape_solid_purple,R.drawable.shape_solid_cyan
