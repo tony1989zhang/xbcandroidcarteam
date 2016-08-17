@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.module.manager;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -33,6 +34,8 @@ public class ManagerAct extends BaseAct {
         switch (v.getId())
         {
             case R.id.rl_quote:
+                showToast("点击效果");
+                startActivity(new Intent(this,ManagerAct.class));
                 break;
             case R.id.rl_scar_missauga:
                 break;
