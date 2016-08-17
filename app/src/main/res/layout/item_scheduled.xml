@@ -4,40 +4,40 @@
     android:layout_height="match_parent"
     android:background="@color/main_color"
     android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center|left"
-        android:weightSum="2"
         android:background="@color/white"
+        android:minHeight="30dp"
+        android:gravity="center|left"
         android:padding="5dp"
         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="旅"
+            android:padding="5dp"
+            android:background="@color/text_default_yellow"
+            android:textColor="@color/white"
+            />
         <TextView
             android:id="@+id/tv_ltinerary_title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:gravity="center_vertical"
-            android:minHeight="30dp"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:text="龙翔"
-            android:layout_weight="1"
+            android:text="张全蛋"
+            android:layout_marginLeft="5dp"
             android:textSize="@dimen/text_default_size" />
-        <LinearLayout
-            android:layout_width="0dp"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center|right"
-            >
-
-        </LinearLayout>
-
+            android:text="8分"
+            android:textSize="@dimen/text_default_size"
+            android:padding="5dp"
+            />
     </LinearLayout>
-
 
 
     <LinearLayout
