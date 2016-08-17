@@ -3,12 +3,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.widget.BaseAdapter;
 import android.widget.ScrollView;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.adapter.GvAdapter;
+import www.lvchehui.com.carteam.adapter.GvAdapter2;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.module.orders.activities.OrdersAct;
 import www.lvchehui.com.carteam.module.scarmissauga.ScarMFirstepAct;
@@ -21,12 +23,18 @@ public class HomeAct extends BaseAct{
     private ScrollView m_sv;
     @ViewInject(R.id.xbc_gv)
     private XbcGv m_xbc_gv;
-    private GvAdapter imagerAdapter;
+    private BaseAdapter imagerAdapter;
+    private boolean isTrue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         showProgressDialog();
+
+        if (isTrue)
         imagerAdapter = new GvAdapter(this);
+        else
+        imagerAdapter = new GvAdapter2(this);
+
         m_xbc_gv.setAdapter(imagerAdapter);
         m_xbc_gv.setSelector(new ColorDrawable(Color.TRANSPARENT));
         x.task().postDelayed(new Runnable() {
@@ -51,6 +59,32 @@ public class HomeAct extends BaseAct{
 
                 break;
             case 3:
+                startActivity(new Intent(this, WalletAct.class));//我的钱包
+                break;
+            case 4:
+                if (isTrue){
+                    showToast("我是司机");
+                }else{
+                    showToast("我是老板");
+                }
+                break;
+            case 5:
+                if (isTrue){
+                    showToast("我是司机");
+                }else{
+                    showToast("我是老板");
+                }
+                break;
+            case 6:
+                startActivity(new Intent(this, WalletAct.class));//我的钱包
+                break;
+            case 7:
+                startActivity(new Intent(this, WalletAct.class));//我的钱包
+                break;
+            case 8:
+                startActivity(new Intent(this, WalletAct.class));//我的钱包
+                break;
+            case 9:
                 startActivity(new Intent(this, WalletAct.class));//我的钱包
                 break;
         }
