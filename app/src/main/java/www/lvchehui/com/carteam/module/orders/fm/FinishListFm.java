@@ -74,79 +74,45 @@ public class FinishListFm extends BaseListFm<LoginBean> {
     class FinishAdapter extends BasePageAdapter{
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
-//            View view = View.inflate(viewGroup.getContext(), R.layout.item_quote, null);
             View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_finish, viewGroup, false);
             return new FinishItemViewHolder(inflate);
         }
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
-            if (viewHoder instanceof FinishItemViewHolder){
-                CarsListEntity demandSubmitDataBean = (CarsListEntity) mItems.get(position);
-                FinishItemViewHolder holder = (FinishItemViewHolder) viewHoder;
-                holder.m_tv_ltinerary_countdown.start(2 * 60 * 60 * 1000); // Millisecond
-                FinishOnClickListener quoteOnClickListener = new FinishOnClickListener(position);
-                holder.m_tv_ltinerary_title.setOnClickListener(quoteOnClickListener);
-                holder.m_tv_details.setOnClickListener(quoteOnClickListener);
-                holder.m_ll_ltinerary_content.setOnClickListener(quoteOnClickListener);
-            }
 
         }
 
-        class FinishOnClickListener implements View.OnClickListener{
 
-            private int position;
-            public FinishOnClickListener(int position){
-                this.position = position;
-            }
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.tv_ltinerary_title:
-                        //跳转
-                        break;
-                    case R.id.tv_details:
-                        showToast("查看详情");
-                        Intent intent = new Intent(getActivity(), WebAct.class);
-                        intent.putExtra(WebAct.WEB_EXT_TITLE,"订单详情");
-                        intent.putExtra(WebAct.WEB_EXT_URL,"http://www.4000592122.com/xbc_wap/pages_dynamic/order_bill.html");
-                        startActivity(intent);
-                        break;
-                    case R.id.ll_ltinerary_content:
-                        showToast("position:" + position);
-                        break;
-                }
-            }
-        }
 
 
 
         class FinishItemViewHolder extends RecyclerView.ViewHolder {
             @ViewInject(R.id.tv_ltinerary_title)
             private TextView m_tv_ltinerary_title;
+
             @ViewInject(R.id.ll_ltinerary_content)
             private LinearLayout m_ll_ltinerary_content;
 
             @ViewInject(R.id.tv_data_time)
             private TextView m_tv_data_time;
-
             @ViewInject(R.id.tv_address_content)
             private TextView m_tv_address_content;
-
             @ViewInject(R.id.tv_dingd_content)
             private TextView m_tv_dingd_content;
-
             @ViewInject(R.id.tv_ltinerary_type)
             private TextView m_tv_ltinerary_type;
 
             @ViewInject(R.id.tv_ltinerary_countdown)
-            private CountdownView m_tv_ltinerary_countdown;
+            private TextView m_tv_ltinerary_countdown;
 
-            @ViewInject(R.id.tv_details)
-            private TextView m_tv_details;
+            @ViewInject(R.id.tv_eva)
+            private TextView m_tv_eva;
 
             @ViewInject(R.id.textView15)
             private TextView m_textView15;
+
+
             public FinishItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
