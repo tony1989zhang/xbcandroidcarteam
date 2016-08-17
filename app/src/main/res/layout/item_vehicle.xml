@@ -55,4 +55,12 @@
         android:scaleType="center"
         android:src="@mipmap/item_del_icon"
         />
+    <CheckBox
+        android:id="@+id/checkbox_car"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        style="@style/checkBoxStyle"
+        android:visibility="gone"
+        android:layout_marginLeft="10dp" />
 </LinearLayout>
