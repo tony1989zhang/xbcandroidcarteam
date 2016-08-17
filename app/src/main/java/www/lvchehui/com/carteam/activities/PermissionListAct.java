@@ -24,6 +24,7 @@ import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleInfoAct;
+import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleListAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
 /**
@@ -117,4 +118,9 @@ public class PermissionListAct extends BaseListAct<LoginBean>{
         }
     }
 
+    @Override
+    public void submitOnClick() {
+        super.submitOnClick();
+        startActivity(new Intent(this,VehicleListAct.class));
+    }
 }
