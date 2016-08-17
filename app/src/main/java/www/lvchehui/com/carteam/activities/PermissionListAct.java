@@ -1,4 +1,4 @@
-package www.lvchehui.com.carteam.module.manager;
+package www.lvchehui.com.carteam.activities;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -27,10 +27,10 @@ import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleInfoAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
 /**
- * Created by 张灿能 on 2016/8/12.
+ * Created by 张灿能 on 2016/8/17.
  * 作用：
  */
-public class QuoteAct extends BaseListAct<LoginBean> {
+public class PermissionListAct extends BaseListAct<LoginBean>{
     @Override
     protected void initViews() {
         super.initViews();
@@ -53,7 +53,7 @@ public class QuoteAct extends BaseListAct<LoginBean> {
 
     @Override
     protected BasePageAdapter initAdapter() {
-        return new QuoteAdapter();
+        return new PermissionAdapter();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class QuoteAct extends BaseListAct<LoginBean> {
     }
 
     @Override
-    protected Cancelable initRequest(int start) {
+    protected Callback.Cancelable initRequest(int start) {
         return CM.getInstance().login("", "", this);
     }
 
@@ -80,30 +80,21 @@ public class QuoteAct extends BaseListAct<LoginBean> {
     protected boolean isDataGot() {
         return false;
     }
-    class QuoteAdapter extends BasePageAdapter {
+    class PermissionAdapter extends BasePageAdapter {
 
-        class QuoteItemViewHolder extends RecyclerView.ViewHolder {
+        class PermissionItemViewHolder extends RecyclerView.ViewHolder {
 
             @ViewInject(R.id.root)
             private LinearLayout m_root;
 
-            @ViewInject(R.id.tv_team_type)
-            private TextView m_tv_team_type; //A;
-
-            @ViewInject(R.id.tv_team_name)
-            private TextView m_tv_team_name; //闽南龙翔快运;
-
-            @ViewInject(R.id.tv_address)
-            private TextView m_tv_address; // 福建厦门;
-
-            @ViewInject(R.id.iv_edit)
-            private ImageView m_iv_edit;
+            @ViewInject(R.id.tv_people)
+            private TextView m_tv_people;
 
             @ViewInject(R.id.iv_del)
             private ImageView m_iv_del;
 
 
-            public QuoteItemViewHolder(View itemView) {
+            public PermissionItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
 
@@ -111,19 +102,16 @@ public class QuoteAct extends BaseListAct<LoginBean> {
         }
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
-//            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_car_team, viewGroup, false);
-            return new QuoteItemViewHolder(inflate);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_permission, viewGroup, false);
+            return new PermissionItemViewHolder(inflate);
         }
 
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
-            if (viewHoder instanceof  QuoteItemViewHolder){
-                QuoteItemViewHolder msgViewHolder = (QuoteItemViewHolder) viewHoder;
+            if (viewHoder instanceof  PermissionItemViewHolder){
+                PermissionItemViewHolder msgViewHolder = (PermissionItemViewHolder) viewHoder;
                 CarsListEntity bean = (CarsListEntity) mItems.get(position);
-                msgViewHolder.m_tv_team_type.setText(bean.drive_licence_number);
-                msgViewHolder.m_tv_address.setText(bean.car_describe);
 
             }
         }

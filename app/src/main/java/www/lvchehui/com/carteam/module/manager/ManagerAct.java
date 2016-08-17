@@ -11,6 +11,7 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.activities.PermissionListAct;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
@@ -37,7 +38,7 @@ public class ManagerAct extends BaseAct {
         {
             case R.id.rl_quote:
                 showToast("点击效果");
-                startActivity(new Intent(this,QuoteAct.class));
+                startActivity(new Intent(this,PermissionListAct.class));
                 break;
             case R.id.rl_scar_missauga:
                 break;

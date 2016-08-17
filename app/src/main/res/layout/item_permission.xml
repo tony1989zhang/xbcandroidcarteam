@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_gray"
+    android:gravity="center_vertical"
+    android:minHeight="48dp"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    >
 
+
+    <TextView
+        android:id="@+id/tv_people"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:text="王刚  先生  13055778899"
+        android:textColor="@color/text_default_color"
+        android:textSize="@dimen/text_default_size" />
+
+
+    <ImageView
+        android:id="@+id/iv_del"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:scaleType="center"
+        android:src="@mipmap/item_del_icon" />
 </LinearLayout>

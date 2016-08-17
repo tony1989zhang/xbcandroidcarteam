@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:minHeight="48dp"
     android:orientation="horizontal"
+    android:background="@drawable/bg_white_gray"
     android:gravity="center_vertical"
     android:paddingLeft="@dimen/padding_left"
     android:paddingRight="@dimen/padding_right"
