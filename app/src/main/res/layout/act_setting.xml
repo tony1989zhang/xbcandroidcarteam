@@ -115,10 +115,9 @@
                 android:textSize="15.0sp" />
 
             <TextView
-                android:id="@+id/cache_size"
+                android:id="@+id/tv_cache_size"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12"
                 />
 
             <ImageView
