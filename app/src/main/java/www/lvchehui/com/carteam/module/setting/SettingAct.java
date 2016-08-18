@@ -1,16 +1,21 @@
 package www.lvchehui.com.carteam.module.setting;
 
 import android.content.Intent;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.activities.LoginAct;
+import www.lvchehui.com.carteam.activities.WebAct;
 import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.impl.OnOperationListener;
+import www.lvchehui.com.carteam.tools.Constants;
+import www.lvchehui.com.carteam.tools.MarketUtils;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dlg.CusDlg;
 
@@ -38,6 +43,24 @@ public class SettingAct extends BaseAct{
         setTitleV(m_title_view,"设置");
     }
 
+
+    @Event({R.id.ll_about,R.id.ll_soft_eva,R.id.ll_clear_cache})
+    private void setOnClick(View v){
+        switch (v.getId())
+        {
+            case R.id.ll_about:
+                Intent intent = new Intent(this, WebAct.class);
+                intent.putExtra(WebAct.WEB_EXT_TITLE,getResources().getString(R.string.about));
+                intent.putExtra(WebAct.WEB_EXT_URL, Constants.ABOUT_US);
+                startActivity(intent);
+                break;
+            case R.id.ll_soft_eva:
+                MarketUtils.launchAppDetail("com.baidu.www", "com.qihoo.appstore");
+                break;
+            case R.id.ll_clear_cache:
+                break;
+        }
+    }
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
