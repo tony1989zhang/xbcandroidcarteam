@@ -79,7 +79,7 @@ public class HomeAct extends BaseAct{
                 }
                 break;
             case 6:
-                startActivity(new Intent(this, WalletAct.class));//我的钱包
+                startActivity(new Intent(this, HelpAct.class));
                 break;
             case 7:
                 startActivity(new Intent(this, SettingAct.class));//设置

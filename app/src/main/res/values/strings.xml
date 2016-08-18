@@ -32,6 +32,12 @@
     <string name="about">关于我们</string>
     <string name="soft_eva">软件评价</string>
     <string name="clear_cache">清除缓存</string>
+    <string name="order_guide">接单指南</string>
+    <string name="faq">常见问题</string>
+    <string name="car_level">等级规定</string>
+    <string name="membership_agreement">会员协议</string>
+    <string name="over_travel_bill">超行程费用参考</string>
+    <string name="privacy_policy">隐私条款</string>
 
     <style name="btn_ok">确认</style>
 </resources>

@@ -165,6 +165,11 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity android:name=".module.HelpAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activities.WebAct"
             android:alwaysRetainTaskState="true"
