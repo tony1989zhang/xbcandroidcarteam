@@ -262,9 +262,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
                 android:gravity="right"
-                android:visibility="gone"
                 android:text="带＊必须填写" />
         </LinearLayout>
     </ScrollView>
