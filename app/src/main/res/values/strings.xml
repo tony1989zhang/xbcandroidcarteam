@@ -29,6 +29,9 @@
     <string name="replace_driver_str">更换司机</string>
     <string name="_replace_vehicle_str">更换车辆</string>
     <string name="cancel">取消</string>
+    <string name="about">关于我们</string>
+    <string name="soft_eva">软件评价</string>
+    <string name="clear_cache">清除缓存</string>
 
     <style name="btn_ok">确认</style>
 </resources>

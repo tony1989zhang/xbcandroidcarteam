@@ -143,18 +143,23 @@
             android:name=".module.orders.activities.OrdersAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.manager.ManagerAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.manager.ManagerAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.setting.SettingAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".activities.PermissionListAct"
+        <activity
+            android:name=".activities.PermissionListAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.RegisterAct"
             android:alwaysRetainTaskState="true"
