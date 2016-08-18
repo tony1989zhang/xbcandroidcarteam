@@ -12,6 +12,7 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.module.HomeAct;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -63,6 +64,11 @@ public class CreCarTeamAct extends BaseAct {
     protected void initView() {
         super.initView();
         setTitleV(m_title_view, "填写入驻信息");
+        String lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
+        if (HomeAct.class.getName().equals(lastAct))
+        {
+
+        }
     }
 
     @Event({R.id.rl_responInfo, R.id.rl_carTeamInfo, R.id.rl_vehicleInfo, R.id.rl_driverInfo, R.id.tv_submit_ok})

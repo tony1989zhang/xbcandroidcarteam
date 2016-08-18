@@ -12,6 +12,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.adapter.GvAdapter;
 import www.lvchehui.com.carteam.adapter.GvAdapter2;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
 import www.lvchehui.com.carteam.module.manager.ManagerAct;
 import www.lvchehui.com.carteam.module.orders.activities.OrdersAct;
 import www.lvchehui.com.carteam.module.scarmissauga.ScarMFirstepAct;
@@ -68,6 +69,7 @@ public class HomeAct extends BaseAct{
                     showToast("我是司机");
                 }else{
                     showToast("我是老板");
+                    startActivity(new Intent(HomeAct.this, CreCarTeamAct.class));
                 }
                 break;
             case 5:
