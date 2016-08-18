@@ -43,6 +43,8 @@ public class SettingAct extends BaseAct{
         super.submitOnClick();
        final CusDlg cusDlg = new CusDlg(this);
         cusDlg.setButtonsText("取消","确定");
+        cusDlg.setTitle("退出账号");
+        cusDlg.setMessage("是否确认退出账号");
         cusDlg.setOperationListener(new OnOperationListener() {
             @Override
             public void onLeftClick() {
@@ -55,6 +57,7 @@ public class SettingAct extends BaseAct{
                 cusDlg.dismiss();
             }
         });
+        cusDlg.show();
     }
 
 
