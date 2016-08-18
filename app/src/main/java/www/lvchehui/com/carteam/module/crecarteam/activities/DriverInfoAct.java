@@ -40,7 +40,7 @@ public class DriverInfoAct extends BaseFormAct{
     @Override
     protected void initView() {
         super.initView();
-        setTitleV(m_title_view, "车辆信息");
+        setTitleV(m_title_view, "司机信息");
     }
     @Event({R.id.et_respon_sex,R.id.et_preson_id_card,R.id.et_drive_licence,R.id.et_job_licence})
     private void driverOnClick(View v){
