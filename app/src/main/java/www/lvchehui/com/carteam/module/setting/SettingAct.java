@@ -94,8 +94,6 @@ public class SettingAct extends BaseAct{
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
-
-
                             }
                         }, 2000);
                         cusDlg.dismiss();
