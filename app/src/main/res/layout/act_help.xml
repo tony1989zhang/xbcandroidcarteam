@@ -40,7 +40,6 @@
             <TextView
                 android:layout_width="0.0dip"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
                 android:layout_weight="1.0"
                 android:text="@string/order_guide"
                 android:textColor="@color/text_default_color"
@@ -66,16 +65,11 @@
             android:paddingLeft="10.0dip"
             android:paddingRight="10.0dip">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:src="@mipmap/ic_launcher" />
+ d
 
             <TextView
                 android:layout_width="0.0dip"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
                 android:layout_weight="1.0"
                 android:text="@string/faq"
                 android:textColor="@color/text_default_color"
@@ -111,7 +105,6 @@
             <TextView
                 android:layout_width="0.0dip"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
                 android:layout_weight="1.0"
                 android:text= "@string/over_travel_bill"
                 android:textColor="@color/text_default_color"
@@ -148,7 +141,6 @@
             <TextView
                 android:layout_width="0.0dip"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
                 android:layout_weight="1.0"
                 android:text= "@string/car_level"
                 android:textColor="@color/text_default_color"
@@ -185,7 +177,6 @@
             <TextView
                 android:layout_width="0.0dip"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
                 android:layout_weight="1.0"
                 android:text= "@string/membership_agreement"
                 android:textColor="@color/text_default_color"
@@ -221,7 +212,6 @@
             <TextView
                 android:layout_width="0.0dip"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10.0dip"
                 android:layout_weight="1.0"
                 android:text= "@string/privacy_policy"
                 android:textColor="@color/text_default_color"
