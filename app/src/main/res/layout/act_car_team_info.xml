@@ -44,7 +44,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="车队类型＊"
                     android:textColor="@color/text_default_color"
@@ -90,7 +89,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="车队名称＊"
                     android:textColor="@color/text_default_color"
@@ -135,7 +133,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="法人代表＊"
                     android:textColor="@color/text_default_color"
@@ -181,7 +178,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="地址＊"
                     android:textColor="@color/text_default_color"
@@ -226,7 +222,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="所属地区＊"
                     android:textColor="@color/text_default_color"
@@ -275,7 +270,6 @@
                     android:id="@+id/tv_business_lic_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="营业执照＊"
                     android:textColor="@color/text_default_color"
@@ -324,7 +318,6 @@
                     android:id="@+id/tv_road_permit_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="道路经营许可证＊"
                     android:textColor="@color/text_default_color"
@@ -374,7 +367,6 @@
                     android:id="@+id/tv_account"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="对公账户＊"
                     android:textColor="@color/text_default_color"
@@ -410,6 +402,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dp"
+                android:paddingTop="5dp"
                 android:gravity="right"
                 android:background="@color/main_color"
                 android:text="带＊必须填写" />
