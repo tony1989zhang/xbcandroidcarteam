@@ -45,7 +45,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="出发日期"
                     android:textColor="@color/text_default_color"
@@ -90,7 +89,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="出发地点"
                     android:textColor="@color/text_default_color"
@@ -135,7 +133,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="接单开始时间"
                     android:textColor="@color/text_default_color"
@@ -181,7 +178,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="接单结束时间"
                     android:textColor="@color/text_default_color"
@@ -239,7 +235,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="新增途径地点"
                     android:textColor="@color/text_default_color"
@@ -290,7 +285,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="到达地点"
                     android:textColor="@color/text_default_color"
