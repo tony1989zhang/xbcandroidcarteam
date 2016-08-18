@@ -30,7 +30,8 @@
                 android:text="费用包含"
                 android:background="@color/main_color"
                 android:textSize="@dimen/text_middle_size"
-                android:paddingLeft="20dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="5dp"
                 />
             <View
                 style="@style/lineSolid"
@@ -53,7 +54,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="司机工作餐"
                     android:textColor="@color/text_default_color"
@@ -88,7 +88,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="油费"
                     android:textColor="@color/text_default_color"
@@ -121,7 +120,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="路桥费"
                     android:textColor="@color/text_default_color"
@@ -155,7 +153,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="停车费"
                     android:textColor="@color/text_default_color"
@@ -183,8 +180,9 @@
                 android:text="车辆选择"
                 android:background="@color/main_color"
                 android:textSize="@dimen/text_middle_size"
-                android:paddingLeft="20dp"
+                android:paddingLeft="10dp"
                 android:paddingTop="15dp"
+                android:paddingBottom="5dp"
                 />
             <LinearLayout
                 android:id="@+id/ll_select_vehicle"
@@ -204,7 +202,6 @@
                     android:id="@+id/tv_select_vehicle"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:hint="请选择服务车辆"
                     android:textColor="@color/text_default_color"
@@ -221,7 +218,8 @@
                 android:background="@color/main_color"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:paddingLeft="20dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="5dp"
                 android:paddingTop="15dp"
                 android:text="备注"
                 />
@@ -238,8 +236,9 @@
                 android:text="费用信息"
                 android:background="@color/main_color"
                 android:textSize="@dimen/text_middle_size"
-                android:paddingLeft="20dp"
+                android:paddingLeft="10dp"
                 android:paddingTop="15dp"
+                android:paddingBottom="5dp"
                 />
 
             <LinearLayout
@@ -259,7 +258,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="车队报价"
                     android:textColor="@color/text_default_color"
