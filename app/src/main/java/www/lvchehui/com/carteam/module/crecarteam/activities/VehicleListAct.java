@@ -122,9 +122,15 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
             public VehicleItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this, itemView);
-                m_iv_edit.setVisibility(View.GONE);
-                m_iv_del.setVisibility(View.GONE);
-                m_checkbox_car.setVisibility(View.VISIBLE);
+                if (isFromPermission){
+                    m_iv_edit.setVisibility(View.GONE);
+                    m_iv_del.setVisibility(View.GONE);
+                    m_checkbox_car.setVisibility(View.VISIBLE);
+                }else{
+                    m_iv_edit.setVisibility(View.VISIBLE);
+                    m_iv_del.setVisibility(View.VISIBLE);
+                    m_checkbox_car.setVisibility(View.GONE);
+                }
             }
         }
         @Override
