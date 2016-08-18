@@ -46,7 +46,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="所属车队＊"
                     android:textColor="@color/text_default_color"
@@ -92,7 +91,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="车牌＊"
                     android:textColor="@color/text_default_color"
@@ -137,7 +135,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="品牌车型＊"
                     android:textColor="@color/text_default_color"
@@ -183,7 +180,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="座位数＊"
                     android:textColor="@color/text_default_color"
@@ -228,7 +224,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="副座位数＊"
                     android:textColor="@color/text_default_color"
@@ -273,7 +268,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="车身颜色＊"
                     android:textColor="@color/text_default_color"
@@ -364,7 +358,6 @@
                 <TextView
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="首次上牌时间＊"
                     android:textColor="@color/text_default_color"
@@ -413,7 +406,6 @@
                     android:id="@+id/tv_passanger_premium"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="乘客险＊"
                     android:textColor="@color/text_default_color"
@@ -462,7 +454,6 @@
                     android:id="@+id/tv_drive_licence_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="行驶证＊"
                     android:textColor="@color/text_default_color"
@@ -511,7 +502,6 @@
                     android:id="@+id/tv_road_transport_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="道路运输证＊"
                     android:textColor="@color/text_default_color"
@@ -562,7 +552,6 @@
                     android:id="@+id/tv_car_photos_inner_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="车辆内景＊"
                     android:textColor="@color/text_default_color"
@@ -613,7 +602,6 @@
                     android:id="@+id/tv_car_photos_outside_photo"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10.0dip"
                     android:layout_weight="1.0"
                     android:text="车辆外景＊"
                     android:textColor="@color/text_default_color"
@@ -650,7 +638,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
+                android:paddingBottom="20dp"
                 android:background="@color/main_color"
+                android:textColor="@color/text_hint_color"
+                android:textSize="@dimen/text_middle_size"
+                android:paddingTop="5dp"
                 android:gravity="right"
                 android:text="带＊必须填写" />
         </LinearLayout>
