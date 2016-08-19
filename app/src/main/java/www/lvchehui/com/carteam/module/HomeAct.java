@@ -46,7 +46,7 @@ public class HomeAct extends BaseAct{
               dismissProgressDialog();
                 m_sv.scrollTo(0,0);
             }
-        },3000);
+        },1000);
     }
     public void itemClick(int position) {
         ToastManager.getManager().show("" + position);
