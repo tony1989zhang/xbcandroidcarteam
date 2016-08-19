@@ -23,6 +23,7 @@ import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.impl.OnOperationListener;
+import www.lvchehui.com.carteam.module.orders.activities.DingDAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.dlg.CusDlg;
 import www.lvchehui.com.carteam.view.timecountdown.CountdownView;
@@ -111,7 +112,7 @@ public class QuoteListFm extends BaseListFm<LoginBean>{
                         break;
                     case R.id.tv_details:
                         showToast("查看详情");
-                        Intent intent = new Intent(getActivity(), WebAct.class);
+                        Intent intent = new Intent(getActivity(), DingDAct.class);
                         intent.putExtra(WebAct.WEB_EXT_TITLE,"订单详情");
                         intent.putExtra(WebAct.WEB_EXT_URL,"http://www.4000592122.com/xbc_wap/pages_dynamic/order_bill.html");
                         startActivity(intent);

@@ -13,7 +13,9 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        >
 
         <WebView
             android:id="@+id/activty_wb_content"
@@ -52,5 +54,4 @@
     <include
         layout="@layout/include_btn_submit"
         />
-
 </LinearLayout>
