@@ -1,10 +1,7 @@
 package www.lvchehui.com.carteam.module.scarmissauga;
 
 import android.app.Activity;
-import android.app.AliasActivity;
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -26,8 +23,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.bean.TextBean;
-import www.lvchehui.com.carteam.module.crecarteam.activities.CarTeamListAct;
-import www.lvchehui.com.carteam.tools.XgoLog;
+import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleListAct;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -108,7 +104,7 @@ public class ScarMnextAct extends BaseFormAct {
 
     @Event({R.id.ll_select_vehicle})
     private void actOnClick(View view){
-        startActivity(new Intent(this, CarTeamListAct.class));
+        startActivity(new Intent(this, VehicleListAct.class));
     }
     @Event(value = {R.id.checkbox_sarah,R.id.checkbox_fuel,R.id.checkbox_toll_fee,R.id.checkbox_parking},type = CompoundButton.OnCheckedChangeListener.class)
     private void onCheck(CompoundButton bv,boolean isChecked){
