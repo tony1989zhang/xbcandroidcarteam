@@ -79,20 +79,10 @@ public class TranDetailFm extends BaseListFm<LoginBean>{
             @ViewInject(R.id.root)
             private LinearLayout m_root;
 
-            @ViewInject(R.id.tv_team_type)
-            private TextView m_tv_team_type; //A;
+            @ViewInject(R.id.tv_vehicleInfo)
+            private TextView m_tv_vehicleInfo; //A;
 
-            @ViewInject(R.id.tv_team_name)
-            private TextView m_tv_team_name; //闽南龙翔快运;
 
-            @ViewInject(R.id.tv_car_num)
-            private TextView m_tv_car_num; //福建厦门;
-
-            @ViewInject(R.id.iv_edit)
-            private ImageView m_iv_edit;
-
-            @ViewInject(R.id.iv_del)
-            private ImageView m_iv_del;
 
 
             public VehicleItemViewHolder(View itemView) {
@@ -114,8 +104,7 @@ public class TranDetailFm extends BaseListFm<LoginBean>{
             if (viewHoder instanceof  VehicleItemViewHolder){
                 VehicleItemViewHolder msgViewHolder = (VehicleItemViewHolder) viewHoder;
                 CarsListEntity bean = (CarsListEntity) mItems.get(position);
-                msgViewHolder.m_tv_team_type.setText(bean.drive_licence_number);
-                msgViewHolder.m_tv_car_num.setText(bean.car_describe);
+                msgViewHolder.m_tv_vehicleInfo.setText("A 车队名称  闽D8876 8座");
 
             }
         }

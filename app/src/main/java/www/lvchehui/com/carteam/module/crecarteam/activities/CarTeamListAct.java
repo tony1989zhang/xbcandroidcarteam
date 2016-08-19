@@ -40,7 +40,7 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
     protected void initViews() {
         super.initViews();
         EventBus.getDefault().register(this);
-        setTitleV(mTitleView, "车辆列表");
+        setTitleV(mTitleView, "车队列表");
 
          lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
         if (!lastAct.equals(CreCarTeamAct.class.getName())){

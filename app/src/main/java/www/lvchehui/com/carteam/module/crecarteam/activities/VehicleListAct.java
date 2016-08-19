@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.common.Callback;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -25,7 +28,9 @@ import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.CarsListBean;
 import www.lvchehui.com.carteam.bean.LoginBean;
+import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
+import www.lvchehui.com.carteam.evebus.CarTeamEvent;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
@@ -35,38 +40,35 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  */
 public class VehicleListAct extends BaseListAct<LoginBean> {
 
-    private boolean isFromPermission = false;
+    String lastAct = "";
     @Override
     protected void initViews() {
         super.initViews();
+        EventBus.getDefault().register(this);
         setTitleV(mTitleView, "车辆列表");
-        Intent intent = getIntent();
-        String lastActivity = intent.getStringExtra(BaseListAct.LAST_ACTIVITY_NAME);
-        if (lastActivity.equals(PermissionListAct.class.getName()))isFromPermission = true;
 
-
-        if (isFromPermission){
-            m_tv_submit_ok.setText("确认");
+        lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
+        if (!lastAct.equals(CreCarTeamAct.class.getName())){
+            m_include_btn_submit.setVisibility(View.GONE);
         }
     }
 
     @Override
-    protected List convertToBeanList(LoginBean bean) {
-        XgoLog.e("carsListBean:" + bean.toString());
-       ArrayList<CarsListEntity> list =  new ArrayList<>();
-        CarsListEntity entity = new CarsListEntity();
-        for (int i = 0;i < 20;i++){
-            entity.car_describe = "ss";
-            entity.drive_licence_number = "ssssss";
-            list.add(entity);
+    protected List convertToBeanList(LoginBean t) {
+        XgoLog.e("json:" + t);
+        ArrayList<TextBean> arr =  new ArrayList<>();
+        for (int i = 0;i<30;i++){
+            TextBean textBean = new TextBean();
+            textBean.a = "a" + i;
+            textBean.b = "b" + i;
+            arr.add(textBean);
         }
-
-        return list;
+        return arr;
     }
 
     @Override
     protected BasePageAdapter initAdapter() {
-        return new VehicleAdapter();
+        return new MessageListAdapter();
     }
 
     @Override
@@ -81,32 +83,29 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
 
     @Override
     protected Cancelable initRequest(int start) {
-        return CM.getInstance().login("", "", this);
+        return CM.getInstance().login("","",this);
     }
 
     @Override
     protected boolean isPageEnabled() {
-        return true;
+        return false;
     }
 
     @Override
     protected boolean isDataGot() {
         return false;
     }
-    class VehicleAdapter extends BasePageAdapter {
 
-        class VehicleItemViewHolder extends RecyclerView.ViewHolder {
+
+    class MessageListAdapter extends BasePageAdapter {
+
+        class MessageItemViewHolder extends RecyclerView.ViewHolder {
             @ViewInject(R.id.root)
             private LinearLayout m_root;
 
-            @ViewInject(R.id.tv_team_type)
-            private TextView m_tv_team_type;
+            @ViewInject(R.id.tv_vehicleInfo)
+            private TextView m_tv_vehicleInfo;
 
-            @ViewInject(R.id.tv_team_name)
-            private TextView m_tv_team_name; //闽南龙翔快运;
-
-            @ViewInject(R.id.tv_car_num)
-            private TextView m_tv_car_num; // 闽D8876 8座;
 
             @ViewInject(R.id.iv_edit)
             private ImageView m_iv_edit;
@@ -119,17 +118,12 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
 
 
 
-            public VehicleItemViewHolder(View itemView) {
+            public MessageItemViewHolder(View itemView) {
                 super(itemView);
-                x.view().inject(this, itemView);
-                if (isFromPermission){
+                x.view().inject(this,itemView);
+                if (!lastAct.equals(CreCarTeamAct.class.getName())){
                     m_iv_edit.setVisibility(View.GONE);
                     m_iv_del.setVisibility(View.GONE);
-                    m_checkbox_car.setVisibility(View.VISIBLE);
-                }else{
-                    m_iv_edit.setVisibility(View.VISIBLE);
-                    m_iv_del.setVisibility(View.VISIBLE);
-                    m_checkbox_car.setVisibility(View.GONE);
                 }
             }
         }
@@ -137,37 +131,45 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
             View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_vehicle, viewGroup, false);
-            return new VehicleItemViewHolder(inflate);
+            return new MessageItemViewHolder(inflate);
         }
 
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
-            if (viewHoder instanceof  VehicleItemViewHolder){
-                final VehicleItemViewHolder vehicleViewHolder = (VehicleItemViewHolder) viewHoder;
-                CarsListEntity bean = (CarsListEntity) mItems.get(position);
-                vehicleViewHolder.m_tv_team_type.setText(bean.drive_licence_number);
-                vehicleViewHolder.m_tv_car_num.setText(bean.car_describe);
-                vehicleViewHolder.m_root.setOnClickListener(new View.OnClickListener() {
+            if (viewHoder instanceof  MessageItemViewHolder){
+                MessageItemViewHolder msgViewHolder = (MessageItemViewHolder) viewHoder;
+                final TextBean bean = (TextBean) mItems.get(position);
+                bean.a = "A 车队名称  闽D8876 8座";
+                msgViewHolder.m_root.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (isFromPermission) {
-                            vehicleViewHolder.m_checkbox_car.setChecked(!vehicleViewHolder.m_checkbox_car.isChecked());
-                        } else {
-
-                        }
+                        EventBus.getDefault().post(bean);
                     }
                 });
-
+                msgViewHolder.m_tv_vehicleInfo.setText("A 车队名称  闽D8876 8座");
             }
         }
     }
+
     @Event(R.id.tv_submit_ok)
     private void submitOk(View v){
-        if (isFromPermission){
-            finish();
-        }else {
-            startActivity(new Intent(this, VehicleInfoAct.class));
+        startActivity(new Intent(this,CarTeamInfoAct.class));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onReceiveStickyEvent(CarTeamEvent event) {
+        if (event.isCarTeamOnClick())
+        {
+            showToast("我已经刷新了");
+            onRefresh();
+            EventBus.getDefault().removeAllStickyEvents();
         }
     }
 }

@@ -30,6 +30,7 @@ import www.lvchehui.com.carteam.entity.MotorcadeTypeEntity;
 import www.lvchehui.com.carteam.impl.AdapterViewSetListener;
 import www.lvchehui.com.carteam.impl.ListDlgItemClickListener;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CarTeamListAct;
+import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleListAct;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -254,7 +255,7 @@ public class MyQuoteAct extends BaseFormAct {
         inflate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MyQuoteAct.this, CarTeamListAct.class));
+                startActivity(new Intent(MyQuoteAct.this, VehicleListAct.class));
                 tvNum = tvArrs.indexOf(m_tv_car);
             }
         });
