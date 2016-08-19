@@ -35,14 +35,15 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  * 作用：车队信息
  */
 public class CarTeamListAct extends BaseListAct<LoginBean> {
+    String lastAct = "";
     @Override
     protected void initViews() {
         super.initViews();
         EventBus.getDefault().register(this);
         setTitleV(mTitleView, "车辆列表");
 
-        String lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
-        if (lastAct.equals(ScarMnextAct.class.getName())){
+         lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
+        if (!lastAct.equals(CreCarTeamAct.class.getName())){
             m_include_btn_submit.setVisibility(View.GONE);
         }
     }
@@ -114,7 +115,10 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
             public MessageItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
-
+                if (!lastAct.equals(CreCarTeamAct.class.getName())){
+                    m_iv_edit.setVisibility(View.GONE);
+                    m_iv_del.setVisibility(View.GONE);
+                }
             }
         }
         @Override
