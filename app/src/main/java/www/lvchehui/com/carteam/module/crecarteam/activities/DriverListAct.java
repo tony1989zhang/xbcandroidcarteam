@@ -36,19 +36,19 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  */
 public class DriverListAct extends BaseListAct<LoginBean> {
     String lastAct = "";
-    private boolean isFromPermission = false;
     @Override
     protected void initViews() {
         super.initViews();
         setTitleV(mTitleView, "车辆列表");
         Intent intent = getIntent();
         String lastActivity = intent.getStringExtra(BaseListAct.LAST_ACTIVITY_NAME);
-        if (lastActivity.equals(PermissionListAct.class.getName()))isFromPermission = true;
-
-
-        if (isFromPermission){
+        if (lastActivity.equals(PermissionListAct.class.getName())) {
             m_tv_submit_ok.setText("确认");
+        }else if(lastAct.equals(CreCarTeamAct.class.getName())){
+            m_tv_submit_ok.setText("新增");
         }
+
+
     }
 
     @Override
@@ -118,15 +118,20 @@ public class DriverListAct extends BaseListAct<LoginBean> {
             public VehicleItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this, itemView);
-                if (isFromPermission){
+                if (lastAct.equals(PermissionListAct.class.getName())){
                     m_iv_edit.setVisibility(View.GONE);
                     m_iv_del.setVisibility(View.GONE);
                     m_checkbox_car.setVisibility(View.VISIBLE);
                 }
-                else{
+               else if (lastAct.equals(CreCarTeamAct.class.getName())){
                     m_iv_edit.setVisibility(View.VISIBLE);
                     m_iv_del.setVisibility(View.VISIBLE);
                     m_checkbox_car.setVisibility(View.GONE);
+
+                }
+                else{
+                    m_iv_edit.setVisibility(View.GONE);
+                    m_iv_del.setVisibility(View.GONE);
                 }
             }
         }
@@ -148,9 +153,11 @@ public class DriverListAct extends BaseListAct<LoginBean> {
                 vehicleViewHolder.m_root.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (isFromPermission) {
+                        if (lastAct.equals(PermissionListAct.class.getName())) {
                             vehicleViewHolder.m_checkbox_car.setChecked(!vehicleViewHolder.m_checkbox_car.isChecked());
-                        } else {
+                        } else if(lastAct.equals(CreCarTeamAct.class.getName())){
+
+                        }else{
                             EventBus.getDefault().post(bean);
                         }
                     }
@@ -161,10 +168,10 @@ public class DriverListAct extends BaseListAct<LoginBean> {
     }
     @Event(R.id.tv_submit_ok)
     private void submitOk(View v){
-        if (isFromPermission){
+        if (lastAct.equals(PermissionListAct.class.getName())){
             finish();
-        }else {
-            startActivity(new Intent(this, VehicleInfoAct.class));
+        }else if(lastAct.equals(CreCarTeamAct.class.getName())){
+            startActivity(new Intent(this, DriverInfoAct.class));
         }
     }
 }
