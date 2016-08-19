@@ -82,6 +82,7 @@ public class ScarMnextAct extends BaseFormAct {
         super.initView();
         EventBus.getDefault().register(this);
         setTitleV(m_title_view, "发布顺风车");
+        m_tv_submit_ok.setText("发布");
     }
     @Event({R.id.ll_checkbox_sarah,R.id.ll_checkbox_fuel,R.id.ll_checkbox_toll_fee,R.id.ll_checkbox_parking})
     private void checkOnClick(View v){

@@ -67,6 +67,7 @@ public class ScarMFirstepAct extends BaseFormAct {
     protected void initView() {
         super.initView();
         setTitleV(m_title_view, "发布顺风车");
+        m_tv_submit_ok.setText("下一步");
     }
 
     @Event({R.id.et_start_date,R.id.et_start_city,

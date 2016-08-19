@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.lang.ref.WeakReference;
@@ -48,6 +49,9 @@ public class BaseAct extends Activity {
     private View toastView;
     private Toast toast;
     public WeakReference<Activity> WriActivity = new WeakReference<Activity>(this);
+
+    @ViewInject(R.id.tv_submit_ok)
+    public TextView m_tv_submit_ok;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
