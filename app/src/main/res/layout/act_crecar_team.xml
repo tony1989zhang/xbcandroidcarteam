@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_large_edit_dialog_white"
+            android:background="@drawable/selector_large_edit_dialog_white2"
             android:gravity="center">
 
             <TextView
@@ -60,7 +60,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_large_edit_dialog_white"
+            android:background="@drawable/selector_large_edit_dialog_white2"
             android:gravity="center">
 
             <TextView
@@ -89,7 +89,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_large_edit_dialog_white"
+            android:background="@drawable/selector_large_edit_dialog_white2"
             android:gravity="center">
 
             <TextView
@@ -118,7 +118,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_large_edit_dialog_white"
+            android:background="@drawable/selector_large_edit_dialog_white2"
             android:gravity="center">
 
             <TextView
