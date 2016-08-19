@@ -43,16 +43,16 @@ public class MyQuoteAct extends BaseFormAct {
     private www.lvchehui.com.carteam.view.TitleView m_title_view;
 
     @ViewInject(R.id.tv_data_time)
-    private TextView m_tv_data_time; //02月23日 13:23-02月23日 21:00;
+    private TextView m_tv_data_time; 
 
     @ViewInject(R.id.tv_use_car_type)
     private TextView m_tv_use_car_type;
 
     @ViewInject(R.id.tv_car_type)
-    private TextView m_tv_car_type; //期望车型：35座x1辆 32座x1辆 33座x1辆;
+    private TextView m_tv_car_type;
 
     @ViewInject(R.id.tv_people_num)
-    private TextView m_tv_people_num; //90人;
+    private TextView m_tv_people_num;
 
     @ViewInject(R.id.ll_checkbox_sarah)
     private LinearLayout m_ll_checkbox_sarah;
@@ -130,7 +130,8 @@ public class MyQuoteAct extends BaseFormAct {
     protected void initView() {
         super.initView();
         EventBus.getDefault().register(this);
-        setTitleV(m_title_view, "参与报价");
+        setTitleV(m_title_view, "立即报价");
+        m_tv_submit_ok.setText("参与报价");
         addItem();
     }
 
