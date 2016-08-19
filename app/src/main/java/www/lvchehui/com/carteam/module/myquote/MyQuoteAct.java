@@ -160,7 +160,7 @@ public class MyQuoteAct extends BaseFormAct {
                 addItem();
                 break;
         }
-        startActivity(new Intent(this, CarTeamListAct.class));
+
     }
     @Event(value = {R.id.checkbox_sarah,
             R.id.checkbox_fuel
@@ -179,12 +179,14 @@ public class MyQuoteAct extends BaseFormAct {
     private void addItem(){
         itemNum++;
         final View inflate = getLayoutInflater().inflate(R.layout.item_add_car, null);
+        inflate.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MyQuoteAct.this, CarTeamListAct.class));
+            }
+        });
         TextView m_tv_car = (TextView) inflate.findViewById(R.id.tv_car);
        final ImageView m_iv_quit = (ImageView) inflate.findViewById(R.id.iv_quit);
-        if (itemNum == 1)
-        {
-            m_iv_quit.setVisibility(View.GONE);
-        }
         m_iv_quit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,10 +194,10 @@ public class MyQuoteAct extends BaseFormAct {
                     m_view_add.removeView(inflate);
                 }else{
                     showToast("设计说最少保留一个");
-                    m_iv_quit.setVisibility(View.GONE);
                 }
             }
         });
+
         m_view_add.addView(inflate);
     }
 
