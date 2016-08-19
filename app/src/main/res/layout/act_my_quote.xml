@@ -14,8 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:scrollbars="none"
-        >
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,16 +24,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                 android:layout_height="93dp"
-                android:background="@color/main_color"
-                >
+                android:layout_height="93dp"
+                android:background="@color/main_color">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:background="@drawable/selector_my_quote">
 
                 </RelativeLayout>
@@ -44,15 +42,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="费用包含"
                 android:background="@color/main_color"
-                android:textSize="@dimen/text_middle_size"
-                android:paddingLeft="10dp"
                 android:paddingBottom="5dp"
-                />
-            <View
-                style="@style/lineSolid"
-                />
+                android:paddingLeft="10dp"
+                android:text="费用包含"
+                android:textSize="@dimen/text_middle_size" />
+
+            <View style="@style/lineSolid" />
 
             <LinearLayout
                 android:id="@+id/ll_checkbox_sarah"
@@ -79,13 +75,15 @@
 
                 <CheckBox
                     android:id="@+id/checkbox_sarah"
+                    style="@style/checkBoxStyle"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    style="@style/checkBoxStyle"
                     android:layout_marginLeft="10dp" />
             </LinearLayout>
+
             <View style="@style/lineSolid_center" />
+
             <LinearLayout
                 android:id="@+id/ll_checkbox_accommodation"
                 android:layout_width="fill_parent"
@@ -110,12 +108,13 @@
 
                 <CheckBox
                     android:id="@+id/checkbox_accommodation"
+                    style="@style/checkBoxStyle"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    style="@style/checkBoxStyle"
                     android:layout_marginLeft="10dp" />
             </LinearLayout>
+
             <View style="@style/lineSolid_center" />
 
             <LinearLayout
@@ -142,16 +141,16 @@
 
                 <CheckBox
                     android:id="@+id/checkbox_fuel"
+                    style="@style/checkBoxStyle"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    style="@style/checkBoxStyle"
                     android:layout_marginLeft="10dp" />
             </LinearLayout>
 
 
-
             <View style="@style/lineSolid_center" />
+
             <LinearLayout
                 android:id="@+id/ll_checkbox_toll_fee"
                 android:layout_width="fill_parent"
@@ -176,10 +175,10 @@
 
                 <CheckBox
                     android:id="@+id/checkbox_toll_fee"
+                    style="@style/checkBoxStyle"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    style="@style/checkBoxStyle"
                     android:layout_marginLeft="10dp" />
             </LinearLayout>
 
@@ -209,10 +208,10 @@
 
                 <CheckBox
                     android:id="@+id/checkbox_parking"
+                    style="@style/checkBoxStyle"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    style="@style/checkBoxStyle"
                     android:layout_marginLeft="10dp" />
             </LinearLayout>
 
@@ -220,19 +219,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                />
+                android:orientation="vertical" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="车辆选择"
                 android:background="@color/main_color"
-                android:textSize="@dimen/text_middle_size"
+                android:paddingBottom="5dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
-                android:paddingBottom="5dp"
-                />
+                android:text="车辆选择"
+                android:textSize="@dimen/text_middle_size" />
+
             <LinearLayout
                 android:id="@+id/ll_checkbox_replace_car"
                 android:layout_width="fill_parent"
@@ -257,15 +255,15 @@
 
                 <CheckBox
                     android:id="@+id/checkbox_replace_car"
+                    style="@style/checkBoxStyle"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    style="@style/checkBoxStyle"
                     android:layout_marginLeft="10dp" />
             </LinearLayout>
-            <View
-                style="@style/lineSolid_center"
-                />
+
+            <View style="@style/lineSolid_center" />
+
             <LinearLayout
                 android:id="@+id/ll_select_vehicle"
                 android:layout_width="fill_parent"
@@ -288,16 +286,15 @@
                     android:hint="请选择服务车辆"
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:src="@mipmap/item_back_icon"
-                    />
+                    android:src="@mipmap/item_back_icon" />
             </LinearLayout>
-            <View
-                style="@style/lineSolid_center"
-                />
+
+            <View style="@style/lineSolid_center" />
 
             <LinearLayout
                 android:id="@+id/ll_add_car"
@@ -327,10 +324,125 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:ellipsize="end"
-                    android:gravity="center|right"
                     android:focusable="false"
+                    android:gravity="center|right"
                     android:maxLines="3"
-                    android:visibility="gone"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_color"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:text="备注" />
+
+            <EditText
+                android:id="@+id/et_note"
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:background="@color/white"
+                android:gravity="top|left"
+                android:hint="请输入您想备注的事项..."
+                android:inputType="textMultiLine"
+                android:minLines="4"
+                android:padding="5dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_color"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="费用信息"
+                android:textSize="@dimen/text_middle_size" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="接受预订最晚期限"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_deadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:gravity="center|right"
+                    android:hint="请选择出发日期"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/item_back_icon" />
+            </LinearLayout>
+
+            <View style="@style/lineSolid_center" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="违约订金赔率"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_deposit_odds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:gravity="center|right"
+                    android:hint="选择订金赔率"
+                    android:maxLines="3"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
 
@@ -339,40 +451,55 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:src="@mipmap/item_back_icon"
-                    android:visibility="gone"
-                    />
+                    android:visibility="visible" />
             </LinearLayout>
-            <TextView
-                android:background="@color/main_color"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingBottom="5dp"
-                android:paddingTop="15dp"
-                android:text="备注"
-                />
-            <EditText
-                android:id="@+id/et_note"
-                android:layout_width="match_parent"
-                android:background="@color/white"
-                android:padding="5dp"
-                android:layout_height="92dp"
-                android:hint="请输入您想备注的事项..."
-                android:inputType="textMultiLine"
-                android:minLines="4"
-                android:gravity="top|left"
-                />
 
-            <TextView
-                android:layout_width="match_parent"
+            <View style="@style/lineSolid_center" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="费用信息"
-                android:background="@color/main_color"
-                android:textSize="@dimen/text_middle_size"
-                android:paddingLeft="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                />
+                android:background="@drawable/bg_white_gray"
+                android:gravity="center_vertical"
+                android:minHeight="48.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="是否按天收款"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
+                <EditText
+                    android:id="@+id/et_start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:gravity="center|right"
+                    android:maxLines="3"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="@dimen/text_default_size"
+                    android:visibility="gone" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_according_to_days"
+                    style="@style/checkBoxStyle"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp" />
+            </LinearLayout>
+
+            <View style="@style/lineSolid_center" />
 
             <LinearLayout
                 android:id="@+id/ll_team_offer"
@@ -400,27 +527,28 @@
                     android:id="@+id/tv_team_offer"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:background="@null"
                     android:ellipsize="end"
                     android:gravity="center|right"
+                    android:hint="请输入车队报价"
                     android:maxLines="3"
-                    android:background="@null"
                     android:textColor="@color/text_default_color"
-                    android:textSize="@dimen/text_default_size"
-                    android:hint="请输入车队报价" />
+                    android:textSize="@dimen/text_default_size" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:src="@mipmap/item_back_icon"
-                    android:visibility="gone"
-                    />
+                    android:visibility="gone" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:background="@color/main_color"/>
+                android:background="@color/main_color" />
         </LinearLayout>
     </ScrollView>
+
     <include layout="@layout/include_btn_submit" />
 </LinearLayout>
