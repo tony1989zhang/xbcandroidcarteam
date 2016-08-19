@@ -112,6 +112,7 @@ public class MyQuoteAct extends BaseFormAct {
     protected void initView() {
         super.initView();
         setTitleV(m_title_view,"立即报价");
+        addItem();
     }
 
     @Event({R.id.ll_checkbox_sarah,
@@ -169,7 +170,8 @@ public class MyQuoteAct extends BaseFormAct {
 
     private void addItem(){
         View inflate = getLayoutInflater().inflate(R.layout.item_add_car, null);
-        
+        TextView m_tv_car = (TextView) inflate.findViewById(R.id.tv_car);
+        m_view_add.addView(inflate);
     }
 
 }

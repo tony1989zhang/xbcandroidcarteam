@@ -3,34 +3,39 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="48dp"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:background="@drawable/bg_white_gray"
-    android:paddingLeft="@dimen/padding_left"
-    android:paddingRight="@dimen/padding_right"
-    >
+    android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/item_quit_icon"
-        />
-    <TextView
-        android:id="@+id/tv_car"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="请选择服务车辆"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/text_default_color"
-        android:textSize="@dimen/text_default_size"
-        />
+        android:background="@drawable/bg_white_gray"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_left"
+        android:paddingRight="@dimen/padding_right">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/item_quit_icon" />
+
+        <TextView
+            android:id="@+id/tv_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:hint="请选择服务车辆"
+            android:textColor="@color/text_default_color"
+            android:textSize="@dimen/text_default_size" />
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/item_back_icon"
-        />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/item_back_icon" />
+    </LinearLayout>
+
+    <View style="@style/lineSolid_center" />
 </LinearLayout>
