@@ -130,7 +130,7 @@ public class MyQuoteAct extends BaseFormAct {
     protected void initView() {
         super.initView();
         EventBus.getDefault().register(this);
-        setTitleV(m_title_view, "立即报价");
+        setTitleV(m_title_view, "参与报价");
         addItem();
     }
 
