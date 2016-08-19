@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -107,11 +108,13 @@ public class MyQuoteAct extends BaseFormAct {
     @ViewInject(R.id.tv_team_offer)
     private EditText m_tv_team_offer;
 
+    private int itemNum;
+
 
     @Override
     protected void initView() {
         super.initView();
-        setTitleV(m_title_view,"立即报价");
+        setTitleV(m_title_view, "立即报价");
         addItem();
     }
 
@@ -150,8 +153,13 @@ public class MyQuoteAct extends BaseFormAct {
         }
     }
 
-    @Event({R.id.ll_select_vehicle})
-    private void actOnClick(View view){
+    @Event({R.id.ll_select_vehicle,R.id.ll_add_car})
+    private void actOnClick(View v){
+        switch (v.getId()){
+            case R.id.ll_add_car:
+                addItem();
+                break;
+        }
         startActivity(new Intent(this, CarTeamListAct.class));
     }
     @Event(value = {R.id.checkbox_sarah,
@@ -169,8 +177,25 @@ public class MyQuoteAct extends BaseFormAct {
 
 
     private void addItem(){
-        View inflate = getLayoutInflater().inflate(R.layout.item_add_car, null);
+        itemNum++;
+        final View inflate = getLayoutInflater().inflate(R.layout.item_add_car, null);
         TextView m_tv_car = (TextView) inflate.findViewById(R.id.tv_car);
+       final ImageView m_iv_quit = (ImageView) inflate.findViewById(R.id.iv_quit);
+        if (itemNum == 1)
+        {
+            m_iv_quit.setVisibility(View.GONE);
+        }
+        m_iv_quit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (itemNum>1){
+                    m_view_add.removeView(inflate);
+                }else{
+                    showToast("设计说最少保留一个");
+                    m_iv_quit.setVisibility(View.GONE);
+                }
+            }
+        });
         m_view_add.addView(inflate);
     }
 
