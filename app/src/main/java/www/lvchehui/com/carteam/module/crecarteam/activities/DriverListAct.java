@@ -153,6 +153,7 @@ public class DriverListAct extends BaseListAct<LoginBean> {
                 final VehicleItemViewHolder vehicleViewHolder = (VehicleItemViewHolder) viewHoder;
                 final TextBean bean = (TextBean) mItems.get(position);
                 vehicleViewHolder.m_tv_driver_info.setText("王刚  先生  13055778899");
+                bean.a = "王刚  先生  13055778899";
                 vehicleViewHolder.m_root.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

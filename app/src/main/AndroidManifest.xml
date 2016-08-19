@@ -153,8 +153,7 @@
             android:name=".module.setting.SettingAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.PermissionListAct"
             android:alwaysRetainTaskState="true"
@@ -165,20 +164,27 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".module.HelpAct"
+        <activity
+            android:name=".module.HelpAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.orders.activities.DingDAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.myquote.MyQuoteAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.crecarteam.activities.DriverListAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.orders.activities.DingDAct"
-            android:alwaysRetainTaskState="true"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.myquote.MyQuoteAct"
-            android:alwaysRetainTaskState="true"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
+
             />
         <activity
             android:name=".activities.WebAct"
