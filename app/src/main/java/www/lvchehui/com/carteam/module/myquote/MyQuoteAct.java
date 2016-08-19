@@ -167,4 +167,9 @@ public class MyQuoteAct extends BaseFormAct {
     }
 
 
+    private void addItem(){
+        View inflate = getLayoutInflater().inflate(R.layout.item_add_car, null);
+        
+    }
+
 }

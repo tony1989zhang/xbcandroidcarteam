@@ -17,35 +17,17 @@
         android:src="@mipmap/item_quit_icon"
         />
     <TextView
-        android:id="@+id/tv_team_type"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_car"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="A"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/text_default_color"
-        android:textSize="@dimen/text_default_size"
-        />
-
-    <TextView
-        android:id="@+id/tv_team_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="闽南龙翔快运"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/text_default_color"
-        android:textSize="@dimen/text_default_size"
-        />
-
-    <TextView
-        android:id="@+id/tv_car_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" 闽D8876 8座"
-        android:layout_marginLeft="5dp"
         android:layout_weight="1"
+        android:hint="请选择服务车辆"
+        android:layout_marginLeft="5dp"
         android:textColor="@color/text_default_color"
         android:textSize="@dimen/text_default_size"
         />
+
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
