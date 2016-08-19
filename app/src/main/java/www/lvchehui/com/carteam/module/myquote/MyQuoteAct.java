@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -114,6 +115,7 @@ public class MyQuoteAct extends BaseFormAct {
     @Override
     protected void initView() {
         super.initView();
+        EventBus.getDefault().register(this);
         setTitleV(m_title_view, "立即报价");
         addItem();
     }
@@ -200,5 +202,9 @@ public class MyQuoteAct extends BaseFormAct {
 
         m_view_add.addView(inflate);
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 }
