@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_white_gray"
+    android:paddingLeft="@dimen/padding_left"
+    android:paddingRight="@dimen/padding_right"
+    >
+
+    <TextView
+        android:id="@+id/tv_driver_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="王刚  先生  13055778899"
+        android:textColor="@color/text_default_color"
+        android:textSize="@dimen/text_default_size"
+        android:layout_weight="1"
+        />
+
+
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="center"
+        android:src="@mipmap/item_edit_icon"
+        android:layout_marginRight="10dp"
+        />
+    <ImageView
+        android:id="@+id/iv_del"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="center"
+        android:src="@mipmap/item_del_icon"
+        />
+    <CheckBox
+        android:id="@+id/checkbox_car"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        style="@style/checkBoxStyle"
+        android:visibility="gone"
+        android:layout_marginLeft="10dp" />
+</LinearLayout>
