@@ -17,7 +17,11 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseFmAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
@@ -114,6 +118,9 @@ public class MyQuoteAct extends BaseFormAct {
 
     private int itemNum;
 
+    private ArrayList<TextView> tvArrs = new ArrayList<>();
+    private int tvNum = 0;
+
 
     @Override
     protected void initView() {
@@ -184,33 +191,43 @@ public class MyQuoteAct extends BaseFormAct {
     private void addItem(){
         itemNum++;
         final View inflate = getLayoutInflater().inflate(R.layout.item_add_car, null);
-        inflate.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MyQuoteAct.this, CarTeamListAct.class));
-            }
-        });
 
-       TextView m_tv_car = (TextView) inflate.findViewById(R.id.tv_car);
-       final ImageView m_iv_quit = (ImageView) inflate.findViewById(R.id.iv_quit);
+        final TextView m_tv_car = (TextView) inflate.findViewById(R.id.tv_car);
+        m_tv_car.setId(1500+itemNum);
+        tvArrs.add(m_tv_car);
+        final ImageView m_iv_quit = (ImageView) inflate.findViewById(R.id.iv_quit);
         m_iv_quit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (itemNum>1){
+                if (itemNum > 1) {
                     m_view_add.removeView(inflate);
-                }else{
+                    tvArrs.remove(m_tv_car);
+                    itemNum--;
+                } else {
                     showToast("设计说最少保留一个");
                 }
             }
         });
 
+        inflate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MyQuoteAct.this, CarTeamListAct.class));
+                tvNum = tvArrs.indexOf(m_tv_car);
+            }
+        });
+
         m_view_add.addView(inflate);
     }
-
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onReceiveStickyEvent(TextBean event) {
-            EventBus.getDefault().removeAllStickyEvents();
+        showToast("event点击效果:" + event.a);
+        EventBus.getDefault().removeAllStickyEvents();
+        App.getInstance().getTopActivity().finish();
+        TextView textView = tvArrs.get(tvNum);
+        textView.setText(event.a + event.b);
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
