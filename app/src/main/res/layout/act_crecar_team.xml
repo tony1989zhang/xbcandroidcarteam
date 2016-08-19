@@ -95,12 +95,22 @@
             <TextView
                 android:id="@+id/tv_vehicleInfo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/vehicleInfo"
                 android:textColor="@drawable/text_bla_yel_selector"
                 android:textSize="@dimen/title_text_size" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="车辆数较多建议通过网站进行批量填写"
+                android:id="@+id/textView"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/text_hint_color"
+                android:textSize="@dimen/text_middle_size"
+                android:layout_below="@+id/tv_vehicleInfo"
+                android:layout_alignStart="@+id/tv_vehicleInfo" />
             <ImageView
                 android:id="@+id/iv_application"
                 android:layout_width="wrap_content"
@@ -110,6 +120,8 @@
                 android:layout_margin="10dp"
                 android:src="@mipmap/item_yes_icon"
                 android:visibility="gone" />
+
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -124,11 +136,22 @@
             <TextView
                 android:id="@+id/tv_driverInfo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/driverInfo"
                 android:textColor="@drawable/text_bla_yel_selector"
                 android:textSize="@dimen/title_text_size" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请填写车队所有司机信息"
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/text_hint_color"
+                android:textSize="@dimen/text_middle_size"
+                android:layout_below="@+id/tv_driverInfo"
+                android:layout_alignStart="@+id/tv_driverInfo" />
 
             <ImageView
                 android:id="@+id/iv_driverInfo"
