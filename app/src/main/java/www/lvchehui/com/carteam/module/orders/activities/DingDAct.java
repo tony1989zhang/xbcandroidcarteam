@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.module.orders.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,6 +11,7 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.activities.WebAct;
+import www.lvchehui.com.carteam.module.myquote.MyQuoteAct;
 
 /**
  * Created by 张灿能 on 2016/8/19.
@@ -29,5 +31,6 @@ public class DingDAct extends WebAct {
     private void submitOk(View v)
     {
         //我要报价
+        startActivity(new Intent(this,MyQuoteAct.class));
     }
 }
