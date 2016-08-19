@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -19,6 +21,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseFmAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CarTeamListAct;
 import www.lvchehui.com.carteam.view.TitleView;
 
@@ -187,7 +190,8 @@ public class MyQuoteAct extends BaseFormAct {
                 startActivity(new Intent(MyQuoteAct.this, CarTeamListAct.class));
             }
         });
-        TextView m_tv_car = (TextView) inflate.findViewById(R.id.tv_car);
+
+       TextView m_tv_car = (TextView) inflate.findViewById(R.id.tv_car);
        final ImageView m_iv_quit = (ImageView) inflate.findViewById(R.id.iv_quit);
         m_iv_quit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,6 +205,11 @@ public class MyQuoteAct extends BaseFormAct {
         });
 
         m_view_add.addView(inflate);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onReceiveStickyEvent(TextBean event) {
+            EventBus.getDefault().removeAllStickyEvents();
     }
     @Override
     protected void onDestroy() {
