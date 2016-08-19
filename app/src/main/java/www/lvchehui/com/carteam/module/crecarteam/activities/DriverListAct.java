@@ -39,15 +39,20 @@ public class DriverListAct extends BaseListAct<LoginBean> {
     @Override
     protected void initViews() {
         super.initViews();
-        setTitleV(mTitleView, "车辆列表");
+
+        String titleStr = "选择司机";
         Intent intent = getIntent();
-        String lastActivity = intent.getStringExtra(BaseListAct.LAST_ACTIVITY_NAME);
-        if (lastActivity.equals(PermissionListAct.class.getName())) {
+        lastAct = intent.getStringExtra(BaseListAct.LAST_ACTIVITY_NAME);
+        if (lastAct.equals(PermissionListAct.class.getName())) {
             m_tv_submit_ok.setText("确认");
+            titleStr = "新增司机";
         }else if(lastAct.equals(CreCarTeamAct.class.getName())){
             m_tv_submit_ok.setText("新增");
-        }
+            titleStr = "填写司机信息";
+        }else{
 
+        }
+        setTitleV(mTitleView,titleStr );
 
     }
 
