@@ -25,6 +25,7 @@ public class DingDAct extends WebAct {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        m_tv_submit_ok.setText("立即报价");
     }
 
     @Event(R.id.tv_submit_ok)
