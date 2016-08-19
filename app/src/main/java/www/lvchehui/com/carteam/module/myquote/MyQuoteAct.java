@@ -26,6 +26,9 @@ import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.base.BaseFmAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.bean.TextBean;
+import www.lvchehui.com.carteam.entity.MotorcadeTypeEntity;
+import www.lvchehui.com.carteam.impl.AdapterViewSetListener;
+import www.lvchehui.com.carteam.impl.ListDlgItemClickListener;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CarTeamListAct;
 import www.lvchehui.com.carteam.view.TitleView;
 
@@ -95,6 +98,9 @@ public class MyQuoteAct extends BaseFormAct {
     @ViewInject(R.id.et_note)
     private EditText m_et_note;
 
+    @ViewInject(R.id.ll_deadline)
+    private LinearLayout m_ll_deadline;
+
     @ViewInject(R.id.et_deadline)
     private EditText m_et_deadline;
 
@@ -103,9 +109,6 @@ public class MyQuoteAct extends BaseFormAct {
 
     @ViewInject(R.id.ll_checkbox_according_to_days)
     private LinearLayout m_ll_checkbox_according_to_days;
-
-    @ViewInject(R.id.et_start_time)
-    private EditText m_et_start_time;
 
     @ViewInject(R.id.checkbox_according_to_days)
     private CheckBox m_checkbox_according_to_days;
@@ -165,15 +168,54 @@ public class MyQuoteAct extends BaseFormAct {
         }
     }
 
-    @Event({R.id.ll_select_vehicle,R.id.ll_add_car})
+    @Event({R.id.ll_add_car,R.id.ll_deadline,R.id.et_deadline,R.id.ll_deposit_odds,R.id.et_deposit_odds})
     private void actOnClick(View v){
         switch (v.getId()){
             case R.id.ll_add_car:
                 addItem();
                 break;
+            case R.id.ll_deadline:
+            case R.id.et_deadline:
+                showDatePickPopupWind(m_ll_deadline);
+                break;
+            case R.id.ll_deposit_odds:
+            case R.id.et_deposit_odds:
+                showPopupWindow();
+                break;
         }
 
     }
+
+    private void showPopupWindow() {
+        ArrayList<MotorcadeTypeEntity> list = new ArrayList<>();
+        list.add(new MotorcadeTypeEntity(1, "2倍", ""));
+        list.add(new MotorcadeTypeEntity(1, "3倍", ""));
+        list.add(new MotorcadeTypeEntity(1, "4倍", ""));
+        list.add(new MotorcadeTypeEntity(1, "5倍", ""));
+        list.add(new MotorcadeTypeEntity(1, "6倍", ""));
+        list.add(new MotorcadeTypeEntity(1, "7倍", ""));
+        list.add(new MotorcadeTypeEntity(1, "8倍", ""));
+        list.add(new MotorcadeTypeEntity(1, "9倍", ""));
+        showListDlg(MyQuoteAct.this, R.layout.item_list, new ListDlgItemClickListener<MotorcadeTypeEntity>() {
+            @Override
+            public void getItem(MotorcadeTypeEntity motorcadeTypeEntity) {
+                m_et_deposit_odds.setText(motorcadeTypeEntity.getMotorcadeTypeName());
+            }
+        }, new AdapterViewSetListener<MotorcadeTypeEntity>() {
+            @Override
+            public void getItemView(View view, ArrayList<MotorcadeTypeEntity> list, int position) {
+                TextView tv = (TextView) view;
+                tv.setText(list.get(position).getMotorcadeTypeName());
+            }
+        }, list);
+    }
+
+    @Override
+    public void getChangeDatePickTime(String time, View v) {
+        super.getChangeDatePickTime(time, v);
+        m_et_deadline.setText(time);
+    }
+
     @Event(value = {R.id.checkbox_sarah,
             R.id.checkbox_fuel
             ,R.id.checkbox_toll_fee,

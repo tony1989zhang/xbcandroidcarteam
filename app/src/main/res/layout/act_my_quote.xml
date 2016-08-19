@@ -388,6 +388,7 @@
                 android:textSize="@dimen/text_middle_size" />
 
             <LinearLayout
+                android:id="@+id/ll_deadline"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
@@ -416,7 +417,6 @@
                     android:ellipsize="end"
                     android:focusable="false"
                     android:gravity="center|right"
-                    android:hint="请选择出发日期"
                     android:maxLines="3"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
@@ -431,6 +431,7 @@
             <View style="@style/lineSolid_center" />
 
             <LinearLayout
+                android:id="@+id/ll_deposit_odds"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_white_gray"
