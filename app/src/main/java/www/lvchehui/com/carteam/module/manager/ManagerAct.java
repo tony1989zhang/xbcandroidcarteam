@@ -34,18 +34,25 @@ public class ManagerAct extends BaseAct {
 
     @Event({R.id.rl_quote,R.id.rl_scar_missauga,R.id.rl_replace_driver,R.id.rl_replace_vehicle})
     private void managerOnClick(View v){
+        Intent intent = new Intent(this, PermissionListAct.class);
         switch (v.getId())
         {
             case R.id.rl_quote:
                 showToast("点击效果");
-                startActivity(new Intent(this,PermissionListAct.class));
+
+                intent.putExtra(PermissionListAct.PERMISSSION_NAME, PermissionListAct.PerMissType);
+
                 break;
             case R.id.rl_scar_missauga:
+                intent.putExtra(PermissionListAct.PERMISSSION_NAME, PermissionListAct.PerMissType2);
                 break;
             case R.id.rl_replace_driver:
+                intent.putExtra(PermissionListAct.PERMISSSION_NAME, PermissionListAct.PerMissType3);
                 break;
             case R.id.rl_replace_vehicle:
+                intent.putExtra(PermissionListAct.PERMISSSION_NAME, PermissionListAct.PerMissType4);
                 break;
         }
+        startActivity(intent);
     }
 }

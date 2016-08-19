@@ -33,10 +33,30 @@ import www.lvchehui.com.carteam.tools.XgoLog;
  * 作用：
  */
 public class PermissionListAct extends BaseListAct<LoginBean>{
+    public static final int PerMissType = 1;
+    public static final int PerMissType2 = 2;
+    public static final int PerMissType3 = 3;
+    public static final int PerMissType4 = 4;
+    public static final String PERMISSSION_NAME = "PERMISSSION_NAME";
     @Override
     protected void initViews() {
         super.initViews();
-        setTitleV(mTitleView,"包车报价");
+
+        int intExtra = getIntent().getIntExtra(PERMISSSION_NAME,0);
+        if (intExtra == PerMissType)
+        {
+            setTitleV(mTitleView, "包车报价");
+        }else if(intExtra == PerMissType2)
+        {
+            setTitleV(mTitleView, "发布顺风车");
+        }else if(intExtra == PerMissType3)
+        {
+            setTitleV(mTitleView, "更换司机");
+        }else if(intExtra == PerMissType4)
+        {
+            setTitleV(mTitleView, "更换车辆");
+        }
+
         m_tv_submit_ok.setText("新增");
     }
 
