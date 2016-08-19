@@ -227,7 +227,10 @@
                 android:id="@+id/et_note"
                 android:layout_width="match_parent"
                 android:background="@color/white"
-                android:padding="15dp"
+                android:padding="5dp"
+                android:gravity="top|left"
+                android:textSize="@dimen/text_default_size"
+                android:hint="请输入您想备注的事项..."
                 android:layout_height="92dp" />
 
             <TextView
