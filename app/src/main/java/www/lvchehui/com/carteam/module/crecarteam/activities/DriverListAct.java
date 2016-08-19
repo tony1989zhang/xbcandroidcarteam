@@ -49,11 +49,6 @@ public class DriverListAct extends BaseListAct<LoginBean> {
         if (isFromPermission){
             m_tv_submit_ok.setText("确认");
         }
-
-        lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
-        if (!lastAct.equals(CreCarTeamAct.class.getName())){
-            m_include_btn_submit.setVisibility(View.GONE);
-        }
     }
 
     @Override
@@ -128,10 +123,6 @@ public class DriverListAct extends BaseListAct<LoginBean> {
                     m_iv_del.setVisibility(View.GONE);
                     m_checkbox_car.setVisibility(View.VISIBLE);
                 }
-               else if (!lastAct.equals(CreCarTeamAct.class.getName())){
-                    m_iv_edit.setVisibility(View.GONE);
-                    m_iv_del.setVisibility(View.GONE);
-                }
                 else{
                     m_iv_edit.setVisibility(View.VISIBLE);
                     m_iv_del.setVisibility(View.VISIBLE);
@@ -142,7 +133,7 @@ public class DriverListAct extends BaseListAct<LoginBean> {
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_vehicle, viewGroup, false);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_driver, viewGroup, false);
             return new VehicleItemViewHolder(inflate);
         }
 
