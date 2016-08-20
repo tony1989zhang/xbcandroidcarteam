@@ -43,7 +43,7 @@ public class MyQuoteAct extends BaseFormAct {
     private www.lvchehui.com.carteam.view.TitleView m_title_view;
 
     @ViewInject(R.id.tv_data_time)
-    private TextView m_tv_data_time; 
+    private TextView m_tv_data_time;
 
     @ViewInject(R.id.tv_use_car_type)
     private TextView m_tv_use_car_type;
