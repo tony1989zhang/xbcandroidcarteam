@@ -156,10 +156,10 @@
             android:layout_height="match_parent"
             android:gravity="left"
             android:layout_weight="3"
-           >
+            >
 
             <TextView
-                android:id="@+id/tv_cancel_dingd"
+                android:id="@+id/tv_change_dingd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_black_selector"
@@ -167,7 +167,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="取消订单"
+                android:text="费用变更"
                 android:textSize="@dimen/text_default_size" />
             <TextView
                 android:id="@+id/tv_change_car"
@@ -204,22 +204,22 @@
             android:gravity="right"
             android:layout_weight="1"
             >
-        <TextView
-            android:id="@+id/tv_map"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_yellow_selector"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="5dp"
-            android:textColor="@drawable/text_yellow_selector"
-            android:text="地图"
-            android:textSize="@dimen/text_default_size"
+            <TextView
+                android:id="@+id/tv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_yellow_selector"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:textColor="@drawable/text_yellow_selector"
+                android:text="地图"
+                android:textSize="@dimen/text_default_size"
 
-            />
+                />
         </LinearLayout>
     </LinearLayout>
 

@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.xutils.common.Callback;
-import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -23,13 +22,12 @@ import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
-import www.lvchehui.com.carteam.view.timecountdown.CountdownView;
 
 /**
- * Created by 张灿能 on 2016/8/16.
- * 作用：未出发
+ * Created by 张灿能 on 2016/8/17.
+ * 作用：
  */
-public class SetOffListFm extends BaseListFm<LoginBean> {
+public class DrivingListFm extends BaseListFm<LoginBean> {
     @Override
     protected List convertToBeanList(LoginBean loginBean) {
         ArrayList<CarsListEntity> list =  new ArrayList<>();
@@ -44,7 +42,7 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
 
     @Override
     protected BasePageAdapter initAdapter() {
-        return new SetOffAdapter();
+        return new DrivingAdapter();
     }
 
     @Override
@@ -59,7 +57,7 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
 
     @Override
     protected Cancelable initRequest(int start) {
-         return CM.getInstance().login("", "", this);
+        return CM.getInstance().login("", "", this);
     }
 
     @Override
@@ -72,12 +70,11 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
         return false;
     }
 
-    class SetOffAdapter extends BasePageAdapter{
-        private int position;
+    class DrivingAdapter extends BasePageAdapter{
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View view = View.inflate(viewGroup.getContext(), R.layout.item_quote, null);
-            View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_setoff, viewGroup, false);
+            View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_driver, viewGroup, false);
             return new SetOffItemViewHolder(inflate);
         }
 
@@ -86,21 +83,17 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
             if (viewHoder instanceof SetOffItemViewHolder){
                 CarsListEntity demandSubmitDataBean = (CarsListEntity) mItems.get(position);
                 SetOffItemViewHolder holder = (SetOffItemViewHolder) viewHoder;
-                SetOffOnClickListener quoteOnClickListener = new SetOffOnClickListener(position);
+                DriverOnClickListener quoteOnClickListener = new DriverOnClickListener(position);
                 holder.m_tv_ltinerary_title.setOnClickListener(quoteOnClickListener);
                 holder.m_ll_ltinerary_content.setOnClickListener(quoteOnClickListener);
             }
+
         }
 
-        @Event(R.id.tv_cancel_dingd)
-        private void cancle_dingd(View v){
-                  showToast("position:" + position);
-        }
-
-        class SetOffOnClickListener implements View.OnClickListener{
+        class DriverOnClickListener implements View.OnClickListener{
 
             private int position;
-            public SetOffOnClickListener(int position){
+            public DriverOnClickListener(int position){
                 this.position = position;
             }
             @Override
@@ -165,7 +158,6 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                 super(itemView);
                 x.view().inject(this,itemView);
             }
-
         }
     }
 }
