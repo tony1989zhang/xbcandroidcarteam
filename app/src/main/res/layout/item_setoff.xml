@@ -193,7 +193,7 @@
                 android:layout_marginRight="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="更换司机"
+                android:text="指派司机"
                 android:textSize="@dimen/text_default_size" />
 
 

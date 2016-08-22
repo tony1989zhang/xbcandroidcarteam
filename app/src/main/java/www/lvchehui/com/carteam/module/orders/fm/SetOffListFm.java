@@ -94,6 +94,7 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                 holder.m_tv_cancel_dingd.setOnClickListener(setOffOnClick);
                 holder.m_tv_setoff.setOnClickListener(setOffOnClick);
                 holder.m_tv_kf.setOnClickListener(setOffOnClick);
+                holder.m_tv_getdriver.setOnClickListener(setOffOnClick);
             }
         }
 
@@ -131,6 +132,8 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                         break;
                     case R.id.tv_kf:
                         kf();
+                        break;
+                    case R.id.tv_getdriver:
                         break;
                 }
             }
