@@ -543,7 +543,7 @@
                     android:textColor="@color/text_default_color"
                     android:textSize="15.0sp" />
 
-                <EditText
+                <www.lvchehui.com.carteam.view.et.ExtendedEt
                     android:id="@+id/tv_team_offer"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -551,6 +551,8 @@
                     android:ellipsize="end"
                     android:gravity="center|right"
                     android:hint="请输入车队报价"
+                    android:digits="0123456789"
+                    android:maxLength="8"
                     android:maxLines="3"
                     android:textColor="@color/text_default_color"
                     android:textSize="@dimen/text_default_size" />
@@ -561,6 +563,66 @@
                     android:layout_marginLeft="5dp"
                     android:src="@mipmap/item_back_icon"
                     android:visibility="gone" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_result"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_gray"
+                android:orientation="vertical"
+                android:gravity="center_vertical|right"
+                android:minHeight="48.0dip"
+                >
+
+                <View
+                    style="@style/lineSolid_center"
+                    />
+                <TextView
+                    android:id="@+id/tv_commission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="佣金:0x10%＝0元"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+                <TextView
+                    android:id="@+id/tv_invoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="发票:0x10%＝0元"
+                    android:gravity="right"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+                <TextView
+                    android:id="@+id/tv_deposit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="订金:0x30%＝0元"
+                    android:gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="含税总额:报价＋佣金＋发票＝0元"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:textColor="@color/text_default_color"
+                    android:textSize="15.0sp" />
+
             </LinearLayout>
 
             <View

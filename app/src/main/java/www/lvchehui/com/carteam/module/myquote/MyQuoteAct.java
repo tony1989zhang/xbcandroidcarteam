@@ -2,6 +2,8 @@ package www.lvchehui.com.carteam.module.myquote;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -31,7 +33,9 @@ import www.lvchehui.com.carteam.impl.AdapterViewSetListener;
 import www.lvchehui.com.carteam.impl.ListDlgItemClickListener;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CarTeamListAct;
 import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleListAct;
+import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
+import www.lvchehui.com.carteam.view.et.ExtendedEt;
 
 /**
  * Created by 张灿能 on 2016/8/19.
@@ -118,13 +122,25 @@ public class MyQuoteAct extends BaseFormAct {
     private LinearLayout m_ll_team_offer;
 
     @ViewInject(R.id.tv_team_offer)
-    private EditText m_tv_team_offer;
+    private ExtendedEt m_tv_team_offer;
 
     private int itemNum;
 
     private ArrayList<TextView> tvArrs = new ArrayList<>();
     private int tvNum = 0;
 
+
+    @ViewInject(R.id.tv_commission)
+    private TextView m_tv_commission; //佣金:0x10%＝0元;
+
+    @ViewInject(R.id.tv_invoice)
+    private TextView m_tv_invoice;//发票:0x10%＝0元;
+
+    @ViewInject(R.id.tv_deposit)
+    private TextView m_tv_deposit; //订金:0x30%＝0元;
+
+    @ViewInject(R.id.total)
+    private TextView m_total; //含税总额:报价＋佣金＋发票＝0元;
 
     @Override
     protected void initView() {
@@ -133,8 +149,29 @@ public class MyQuoteAct extends BaseFormAct {
         setTitleV(m_title_view, "立即报价");
         m_tv_submit_ok.setText("参与报价");
         addItem();
+//        if (m_tv_team_offer.hasFocus()) {
+//            m_tv_team_offer.clearTextChangedListeners();
+            m_tv_team_offer.addTextChangedListener(new MyQuoteETWatcher());
+//        }
     }
 
+    class MyQuoteETWatcher implements TextWatcher{
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            XgoLog.e("s"+s.toString());
+            showToast("s:" + s.toString());
+        }
+    }
     @Event({R.id.ll_checkbox_sarah,
             R.id.ll_checkbox_fuel,
             R.id.ll_checkbox_toll_fee,
