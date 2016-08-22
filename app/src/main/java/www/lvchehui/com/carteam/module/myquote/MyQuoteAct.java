@@ -310,6 +310,13 @@ public class MyQuoteAct extends BaseFormAct {
     }
 
     @Override
+    protected void submitOnClick() {
+        super.submitOnClick();
+        App.getInstance().aliveActivitys.get(App.getInstance().aliveActivitys.size()-2).get().finish();
+        finish();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
