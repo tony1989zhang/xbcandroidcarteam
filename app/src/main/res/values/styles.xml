@@ -22,13 +22,14 @@
     <style name="checkBoxStyle">
         <item name="android:button">@drawable/selector_checkbox</item>
     </style>
-    <style parent="@style/AlertDialogStyle" name="CustomProgressDialog">
 
-    <item name="android:windowBackground">@android:color/transparent</item>
+    <style name="CustomProgressDialog" parent="@style/AlertDialogStyle">
 
-    <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
 
-</style>
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
     <!-- 自定义仿IOS的AlertDialog的样式 -->
     <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -59,12 +60,15 @@
         <item name="android:layout_marginLeft">8dp</item>
         <item name="android:layout_marginRight">8dp</item>
     </style>
+
     <style name="title_bg">
         <item name="android:background">@color/title_bg_color</item>
     </style>
+
     <style name="title_back">
         <item name="android:src">@mipmap/back_icon</item>
     </style>
+
     <style name="title_text">
         <item name="android:textColor">#ffffff</item>
     </style>
