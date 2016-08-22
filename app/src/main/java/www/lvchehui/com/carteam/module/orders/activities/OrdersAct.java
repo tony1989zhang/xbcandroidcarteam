@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFmAct;
-import www.lvchehui.com.carteam.module.orders.fm.DriverFm;
+import www.lvchehui.com.carteam.module.orders.fm.DrivingListFm;
 import www.lvchehui.com.carteam.module.orders.fm.FinishListFm;
 import www.lvchehui.com.carteam.module.orders.fm.QuoteListFm;
 import www.lvchehui.com.carteam.module.orders.fm.ScheduledListFm;
@@ -65,7 +65,7 @@ public class OrdersAct extends BaseFmAct {
         mFragmentsMsg.add(new QuoteListFm());
         mFragmentsMsg.add(new ScheduledListFm());
         mFragmentsMsg.add(new SetOffListFm());
-        mFragmentsMsg.add(new DriverFm());
+        mFragmentsMsg.add(new DrivingListFm());
         mFragmentsMsg.add(new FinishListFm());
         ItineraryFragmentAdapter itineraryFragmentAdapter = new ItineraryFragmentAdapter(getSupportFragmentManager());
         m_banSlidingView.setAdapter(itineraryFragmentAdapter);

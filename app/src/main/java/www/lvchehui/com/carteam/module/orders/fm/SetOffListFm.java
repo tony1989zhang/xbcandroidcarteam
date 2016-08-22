@@ -92,10 +92,7 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
             }
         }
 
-        @Event(R.id.tv_cancel_dingd)
-        private void cancle_dingd(View v){
-                  showToast("position:" + position);
-        }
+
 
         class SetOffOnClickListener implements View.OnClickListener{
 
@@ -165,7 +162,6 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                 super(itemView);
                 x.view().inject(this,itemView);
             }
-
         }
     }
 }

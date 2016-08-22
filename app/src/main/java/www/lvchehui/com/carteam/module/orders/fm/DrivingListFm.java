@@ -74,18 +74,18 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View view = View.inflate(viewGroup.getContext(), R.layout.item_quote, null);
-            View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_driver, viewGroup, false);
-            return new SetOffItemViewHolder(inflate);
+            View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_driving, viewGroup, false);
+            return new DrivingItemViewHolder(inflate);
         }
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
-            if (viewHoder instanceof SetOffItemViewHolder){
+            if (viewHoder instanceof DrivingItemViewHolder){
                 CarsListEntity demandSubmitDataBean = (CarsListEntity) mItems.get(position);
-                SetOffItemViewHolder holder = (SetOffItemViewHolder) viewHoder;
-                DriverOnClickListener quoteOnClickListener = new DriverOnClickListener(position);
-                holder.m_tv_ltinerary_title.setOnClickListener(quoteOnClickListener);
-                holder.m_ll_ltinerary_content.setOnClickListener(quoteOnClickListener);
+                DrivingItemViewHolder holder = (DrivingItemViewHolder) viewHoder;
+                DriverOnClickListener driverOnClickListener = new DriverOnClickListener(position);
+                holder.m_tv_ltinerary_title.setOnClickListener(driverOnClickListener);
+                holder.m_ll_ltinerary_content.setOnClickListener(driverOnClickListener);
             }
 
         }
@@ -118,7 +118,7 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
 
 
 
-        class SetOffItemViewHolder extends RecyclerView.ViewHolder {
+        class DrivingItemViewHolder extends RecyclerView.ViewHolder {
             @ViewInject(R.id.tv_ltinerary_title)
             private TextView m_tv_ltinerary_title;
 
@@ -154,7 +154,7 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
 
             @ViewInject(R.id.textView15)
             private TextView m_textView15;
-            public SetOffItemViewHolder(View itemView) {
+            public DrivingItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
             }
