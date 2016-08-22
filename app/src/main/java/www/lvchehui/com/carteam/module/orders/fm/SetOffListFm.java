@@ -127,6 +127,7 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                         break;
                     case R.id.tv_setoff:
 //                        startActivity(new Intent(getActivity(), AMapYunTuActivity.class));
+                        showToast("决定出发");
                         break;
                     case R.id.tv_kf:
                         kf();
