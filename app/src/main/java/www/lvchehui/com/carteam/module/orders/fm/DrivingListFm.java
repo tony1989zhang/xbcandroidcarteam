@@ -23,6 +23,8 @@ import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleListAct;
+import www.lvchehui.com.carteam.module.orders.activities.ChangeDriverListAct;
 import www.lvchehui.com.carteam.tools.PhoneUtil;
 import www.lvchehui.com.carteam.view.dlg.CusDlg;
 
@@ -123,6 +125,9 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                         break;
                     case R.id.tv_kf:
                         kf();
+                        break;
+                    case R.id.tv_getdriver:
+                        startActivity(new Intent(getActivity(), VehicleListAct.class));
                         break;
                 }
             }
