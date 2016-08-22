@@ -157,7 +157,8 @@ public class ScheduledListFm extends BaseListFm<LoginBean> {
         }
 
         private void cancelDingDan() {
-            customDialog = new CusDlg(getActivity(), new View.OnClickListener() {
+
+             customDialog = new CusDlg(getActivity(), new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     onRefresh();

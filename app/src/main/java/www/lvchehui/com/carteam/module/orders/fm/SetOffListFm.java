@@ -23,6 +23,7 @@ import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.view.dlg.CusDlg;
 import www.lvchehui.com.carteam.view.timecountdown.CountdownView;
 
 /**
@@ -86,9 +87,10 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
             if (viewHoder instanceof SetOffItemViewHolder){
                 CarsListEntity demandSubmitDataBean = (CarsListEntity) mItems.get(position);
                 SetOffItemViewHolder holder = (SetOffItemViewHolder) viewHoder;
-                SetOffOnClickListener quoteOnClickListener = new SetOffOnClickListener(position);
-                holder.m_tv_ltinerary_title.setOnClickListener(quoteOnClickListener);
-                holder.m_ll_ltinerary_content.setOnClickListener(quoteOnClickListener);
+                SetOffOnClickListener setOffOnClick = new SetOffOnClickListener(position);
+                holder.m_tv_ltinerary_title.setOnClickListener(setOffOnClick);
+                holder.m_ll_ltinerary_content.setOnClickListener(setOffOnClick);
+                holder.m_tv_cancel_dingd.setOnClickListener(setOffOnClick);
             }
         }
 
@@ -96,6 +98,7 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
 
         class SetOffOnClickListener implements View.OnClickListener{
 
+            private CusDlg customDialog = null;
             private int position;
             public SetOffOnClickListener(int position){
                 this.position = position;
@@ -116,7 +119,25 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                     case R.id.ll_ltinerary_content:
                         showToast("position:" + position);
                         break;
+                    case R.id.tv_cancel_dingd:
+                        cancelDingDan();
+                        break;
                 }
+            }
+
+            private void cancelDingDan() {
+
+                customDialog = new CusDlg(getActivity(), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onRefresh();
+                        customDialog.dismiss();
+                    }
+                });
+                customDialog.setTitle("取消订单");
+                customDialog.setMessage("如果取消订单，将扣除2分信用值");
+                customDialog.setButtonsText("否","是");
+                customDialog.show();
             }
         }
 
