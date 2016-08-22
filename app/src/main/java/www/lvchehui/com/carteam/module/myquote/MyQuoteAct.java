@@ -151,7 +151,7 @@ public class MyQuoteAct extends BaseFormAct {
         addItem();
 //        if (m_tv_team_offer.hasFocus()) {
 //            m_tv_team_offer.clearTextChangedListeners();
-            m_tv_team_offer.addTextChangedListener(new MyQuoteETWatcher());
+//            m_tv_team_offer.addTextChangedListener(new MyQuoteETWatcher());
 //        }
     }
 
