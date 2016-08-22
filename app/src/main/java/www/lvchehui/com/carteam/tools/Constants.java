@@ -20,4 +20,10 @@ public class Constants {
     public static final String FAQ = HTTP_URL + HTTP_PATH + "FAQ.html";
     public static final String PRIVACY_POLICY = HTTP_URL + HTTP_PATH + "privacy_policy.html";
     public static final String MEMBERSHIP_AGREEMENT = HTTP_URL + HTTP_PATH + "membership_agreement.html";
+
+    public interface YUNTU_MAP {
+        String AMAP_YUNTU_TABLEID = "5796bb0e7bbf1978ba69246d";
+        String AMAP_WEB_API_KEY = "1524b138d4f4c2702dc4cdb916a13fc3";
+        long AMAP_UPLOAD_INTERVAL = 10000;
+    }
 }
