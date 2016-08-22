@@ -23,6 +23,8 @@ import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.tools.PhoneUtil;
+import www.lvchehui.com.carteam.view.dlg.CusDlg;
 
 /**
  * Created by 张灿能 on 2016/8/17.
@@ -87,12 +89,14 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                 DriverOnClickListener driverOnClickListener = new DriverOnClickListener(position);
                 holder.m_tv_ltinerary_title.setOnClickListener(driverOnClickListener);
                 holder.m_ll_ltinerary_content.setOnClickListener(driverOnClickListener);
+                holder.m_tv_kf.setOnClickListener(driverOnClickListener);
             }
 
         }
 
         class DriverOnClickListener implements View.OnClickListener{
 
+            private CusDlg customDialog = null;
             private int position;
             public DriverOnClickListener(int position){
                 this.position = position;
@@ -116,7 +120,24 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                     case R.id.tv_map:
                         startActivity(new Intent(getActivity(), AMapYunTuAct.class));
                         break;
+                    case R.id.tv_kf:
+                        kf();
+                        break;
                 }
+            }
+            private void kf() {
+
+                customDialog = new CusDlg(getActivity(), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        PhoneUtil.call(getActivity(),"15859254561");
+                        customDialog.dismiss();
+                    }
+                });
+                customDialog.setTitle("是否拨打客服电话");
+                customDialog.setMessage("");
+                customDialog.setButtonsText("否","是");
+                customDialog.show();
             }
         }
 
