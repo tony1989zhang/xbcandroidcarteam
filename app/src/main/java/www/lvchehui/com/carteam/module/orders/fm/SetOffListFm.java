@@ -21,6 +21,7 @@ import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.module.orders.activities.ChangeDriverListAct;
 import www.lvchehui.com.carteam.view.dlg.CusDlg;
 
 /**
@@ -130,6 +131,7 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                         kf();
                         break;
                     case R.id.tv_getdriver:
+                        startActivity(new Intent(getActivity(), ChangeDriverListAct.class));
                         break;
                 }
             }

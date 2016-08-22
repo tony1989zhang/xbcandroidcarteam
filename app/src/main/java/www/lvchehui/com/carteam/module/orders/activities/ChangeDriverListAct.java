@@ -8,12 +8,15 @@ import android.view.ViewGroup;
 import org.xutils.common.Callback;
 import org.xutils.x;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
+import www.lvchehui.com.carteam.entity.CarsListEntity;
+import www.lvchehui.com.carteam.http.CM;
 
 /**
  * Created by 张灿能 on 2016/8/22.
@@ -21,8 +24,22 @@ import www.lvchehui.com.carteam.bean.LoginBean;
  */
 public class ChangeDriverListAct extends BaseListAct<LoginBean> {
     @Override
+    protected void initViews() {
+        super.initViews();
+        setTitleV(mTitleView, "指派司机");
+        m_tv_submit_ok.setText("确定");
+    }
+
+    @Override
     protected List convertToBeanList(LoginBean loginBean) {
-        return null;
+        ArrayList<CarsListEntity> list =  new ArrayList<>();
+        CarsListEntity entity = new CarsListEntity();
+        for (int i = 0;i < 2;i++){
+            entity.car_describe = "ss";
+            entity.drive_licence_number = "ssssss";
+            list.add(entity);
+        }
+        return list;
     }
 
     @Override
@@ -42,7 +59,7 @@ public class ChangeDriverListAct extends BaseListAct<LoginBean> {
 
     @Override
     protected Cancelable initRequest(int start) {
-        return null;
+        return CM.getInstance().login("", "", this);
     }
 
     @Override
