@@ -160,7 +160,7 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
     /**
      * 解析Json，得到List,在子线程中运行
      */
-    protected abstract List<T> convertToBeanList(T t);
+    protected abstract List convertToBeanList(T t);
 
     protected RecyclerView.LayoutManager initLayoutManager() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(mViewList.getContext());

@@ -21,7 +21,7 @@ import www.lvchehui.com.carteam.bean.LoginBean;
  */
 public class ChangeDriverListAct extends BaseListAct<LoginBean> {
     @Override
-    protected List<LoginBean> convertToBeanList(LoginBean loginBean) {
+    protected List convertToBeanList(LoginBean loginBean) {
         return null;
     }
 
