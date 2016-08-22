@@ -92,7 +92,8 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                 holder.m_tv_ltinerary_title.setOnClickListener(setOffOnClick);
                 holder.m_ll_ltinerary_content.setOnClickListener(setOffOnClick);
                 holder.m_tv_cancel_dingd.setOnClickListener(setOffOnClick);
-                holder.m_tv_map.setOnClickListener(setOffOnClick);
+                holder.m_tv_setoff.setOnClickListener(setOffOnClick);
+                holder.m_tv_kf.setOnClickListener(setOffOnClick);
             }
         }
 
@@ -124,8 +125,11 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                     case R.id.tv_cancel_dingd:
                         cancelDingDan();
                         break;
-                    case R.id.tv_map:
-                        startActivity(new Intent(getActivity(), AMapYunTuActivity.class));
+                    case R.id.tv_setoff:
+//                        startActivity(new Intent(getActivity(), AMapYunTuActivity.class));
+                        break;
+                    case R.id.tv_kf:
+                        kf();
                         break;
                 }
             }
@@ -141,6 +145,20 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                 });
                 customDialog.setTitle("取消订单");
                 customDialog.setMessage("如果取消订单，将扣除2分信用值");
+                customDialog.setButtonsText("否","是");
+                customDialog.show();
+            }
+            private void kf() {
+
+                customDialog = new CusDlg(getActivity(), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onRefresh();
+                        customDialog.dismiss();
+                    }
+                });
+                customDialog.setTitle("是否拨打客服电话");
+                customDialog.setMessage("");
                 customDialog.setButtonsText("否","是");
                 customDialog.show();
             }
@@ -182,8 +200,8 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
             @ViewInject(R.id.tv_getdriver)
             private TextView m_tv_getdriver;
 
-            @ViewInject(R.id.tv_map)
-            private TextView m_tv_map;
+            @ViewInject(R.id.tv_setoff)
+            private TextView m_tv_setoff;
 
             @ViewInject(R.id.textView15)
             private TextView m_textView15;
