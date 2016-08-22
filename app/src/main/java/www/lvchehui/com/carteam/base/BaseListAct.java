@@ -376,7 +376,6 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
         if (null != rightText && !("").equals(rightText)) {
             title_view.setTitleRightText(rightText);
         } else {
-
         }
     }
     @Override
@@ -399,25 +398,20 @@ public abstract class BaseListAct<T> extends Activity implements SwipeRefreshLay
 
     @Override
     public void onError(Throwable ex, boolean isOnCallback) {
-
     }
 
     @Override
     public void onCancelled(CancelledException cex) {
-
     }
 
     @Override
     public void onFinished() {
-
     }
     @Event(R.id.tv_submit_ok)
     private void submitOk(View v){
         submitOnClick();
-
     }
 
     public void submitOnClick(){
-
     }
 }
