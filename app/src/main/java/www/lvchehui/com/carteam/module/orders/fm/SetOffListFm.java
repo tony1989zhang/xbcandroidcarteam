@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.xutils.common.Callback;
-import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -17,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.activities.AMapYunTuActivity;
 import www.lvchehui.com.carteam.activities.WebAct;
 import www.lvchehui.com.carteam.base.BaseListFm;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
@@ -25,7 +22,6 @@ import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.view.dlg.CusDlg;
-import www.lvchehui.com.carteam.view.timecountdown.CountdownView;
 
 /**
  * Created by 张灿能 on 2016/8/16.

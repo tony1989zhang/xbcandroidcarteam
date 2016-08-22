@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.activities.AMapYunTuAct;
 import www.lvchehui.com.carteam.activities.WebAct;
 import www.lvchehui.com.carteam.base.BaseListFm;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
@@ -112,6 +113,9 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                     case R.id.ll_ltinerary_content:
                         showToast("position:" + position);
                         break;
+                    case R.id.tv_map:
+                        startActivity(new Intent(getActivity(), AMapYunTuAct.class));
+                        break;
                 }
             }
         }
@@ -122,6 +126,9 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
             @ViewInject(R.id.tv_ltinerary_title)
             private TextView m_tv_ltinerary_title;
 
+            @ViewInject(R.id.tv_kf)
+            private TextView m_tv_kf;
+
             @ViewInject(R.id.ll_ltinerary_content)
             private LinearLayout m_ll_ltinerary_content;
 
@@ -130,7 +137,6 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
 
             @ViewInject(R.id.tv_address_content)
             private TextView m_tv_address_content;
-
             @ViewInject(R.id.tv_dingd_content)
             private TextView m_tv_dingd_content;
 
@@ -140,8 +146,8 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
             @ViewInject(R.id.tv_ltinerary_countdown)
             private TextView m_tv_ltinerary_countdown;
 
-            @ViewInject(R.id.tv_cancel_dingd)
-            private TextView m_tv_cancel_dingd;
+            @ViewInject(R.id.tv_change_dingd)
+            private TextView m_tv_change_dingd;
 
             @ViewInject(R.id.tv_change_car)
             private TextView m_tv_change_car;
@@ -149,8 +155,8 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
             @ViewInject(R.id.tv_getdriver)
             private TextView m_tv_getdriver;
 
-            @ViewInject(R.id.tv_setoff)
-            private TextView m_tv_setoff;
+            @ViewInject(R.id.tv_map)
+            private TextView m_tv_map;
 
             @ViewInject(R.id.textView15)
             private TextView m_textView15;

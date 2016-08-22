@@ -189,7 +189,7 @@
 
             />
         <activity
-            android:name=".activities.AMapYunTuActivity"
+            android:name=".activities.AMapYunTuAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
