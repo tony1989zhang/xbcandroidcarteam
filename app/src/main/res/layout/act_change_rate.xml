@@ -110,6 +110,7 @@
                     android:id="@+id/button21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="54dp"
                     android:text="增加"
                     style="@style/RadioButton" />
 
@@ -117,6 +118,7 @@
                     android:id="@+id/button22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minWidth="54dp"
                     android:text="减少"
                     style="@style/RadioButton" />
             </info.hoang8f.android.segmented.SegmentedGroup>
