@@ -47,4 +47,7 @@
     <string name="eva_bad">失望，不再光顾...</string>
     <string name="eva_ver_bad">糟糕，糟糕透顶！</string>
     <string name="eva_please">请评价</string>
+
+    <string name="study"><u>立即学习</u></string>
+    <string name="describe">初始总分＝0，完成加分项总分上限可升至12 违规或者被投诉，会扣除相应分值 总分＝0，禁止接单。</string>
 </resources>

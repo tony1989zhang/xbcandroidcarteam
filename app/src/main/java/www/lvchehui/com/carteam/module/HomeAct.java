@@ -28,6 +28,8 @@ import www.lvchehui.com.carteam.view.toast.ToastManager;
 public class HomeAct extends BaseAct{
     @ViewInject(R.id.sv)
     private ScrollView m_sv;
+    @ViewInject(R.id.ll_credit)
+    private View m_ll_credit;
     @ViewInject(R.id.title_right_img)
     private ImageView m_title_right_img;
     @ViewInject(R.id.xbc_gv)
@@ -98,8 +100,17 @@ public class HomeAct extends BaseAct{
         }
     }
 
-    @Event(R.id.title_right_img)
+    @Event({R.id.title_right_img,R.id.ll_credit})
     private void homeOnClick(View view){
-        startActivity(new Intent(this,MessageAct.class));
+        switch (view.getId())
+        {
+            case R.id.ll_credit:
+                startActivity(new Intent(this,CreditValueAct.class));
+                break;
+            case R.id.title_right_img:
+                startActivity(new Intent(this,MessageAct.class));
+                break;
+
+        }
     }
 }
