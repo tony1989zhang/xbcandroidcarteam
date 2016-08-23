@@ -3,9 +3,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 import www.lvchehui.com.carteam.R;
@@ -24,6 +27,8 @@ import www.lvchehui.com.carteam.view.toast.ToastManager;
 public class HomeAct extends BaseAct{
     @ViewInject(R.id.sv)
     private ScrollView m_sv;
+    @ViewInject(R.id.title_right_img)
+    private ImageView m_title_right_img;
     @ViewInject(R.id.xbc_gv)
     private XbcGv m_xbc_gv;
     private BaseAdapter imagerAdapter;
@@ -93,5 +98,10 @@ public class HomeAct extends BaseAct{
                 startActivity(new Intent(this, WalletAct.class));//我的钱包
                 break;
         }
+    }
+
+    @Event(R.id.title_right_img)
+    private void homeOnClick(View view){
+        startActivity(new Intent(this,MessageAct.class));
     }
 }

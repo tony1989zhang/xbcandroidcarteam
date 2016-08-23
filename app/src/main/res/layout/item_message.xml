@@ -3,33 +3,60 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/btn_yellow_selector"
-    android:padding="15dp"
-    android:layout_margin="5dp"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="sdfdsfddddddddddddddddddddddd Text"
-        android:textSize="@dimen/text_default_size"
-        android:textColor="@color/text_default_color"
-        android:id="@+id/tv_msg" />
+        android:layout_margin="5dp"
+        android:background="@drawable/selector_large_edit_dialog_white"
+        android:orientation="vertical"
+        android:padding="15dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:gravity="center|right"
-        android:textSize="@dimen/text_default_size"
-        android:layout_marginTop="10dp"
-        android:id="@+id/tv_data" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="对于您本次取消订单，扣除您一半的订金。"
+            android:textColor="@color/text_default_color"
+            android:textSize="@dimen/text_default_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--android:text="Large Text"-->
+            <!--android:gravity="center|right"-->
+            <!--android:textSize="@dimen/text_default_size"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/tv_data"-->
+            <!--android:layout_gravity="right" />-->
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|bottom"
+                android:text="2016年3月23日 13:24"
+                android:layout_weight="1"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_middle_size" />
+
+            <TextView
+                android:id="@+id/tv_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textColor="@color/text_default_yellow"
+                android:textSize="@dimen/text_middle_size"
+                android:visibility="gone"
+                android:text="点击查看" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
