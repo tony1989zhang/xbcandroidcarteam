@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="通过三证审核"
+                android:layout_weight="1"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:text="总分:3"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--android:text="Large Text"-->
+            <!--android:gravity="center|right"-->
+            <!--android:textSize="@dimen/text_default_size"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/tv_data"-->
+            <!--android:layout_gravity="right" />-->
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|bottom"
+                android:text="2016年3月23日 13:24"
+                android:layout_weight="1"
+                android:textColor="@color/text_hint_color"
+                android:textSize="@dimen/text_middle_size" />
+
+            <TextView
+                android:id="@+id/tv_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textColor="@color/text_default_yellow"
+                android:textSize="@dimen/text_middle_size"
+                android:visibility="gone"
+                android:text="点击查看" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
