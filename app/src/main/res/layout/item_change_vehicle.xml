@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="@color/main_color"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_change_car"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_gray"
+        android:gravity="center_vertical"
+        android:minHeight="48.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip">
+
+
+        <TextView
+            android:id="@+id/tv_car"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="请选择更换的车辆"
+            android:textColor="@color/text_default_color"
+            android:textSize="15.0sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/item_back_icon"
+            />
+    </LinearLayout>
+
+    <View style="@style/lineSolid_center" />
+
+    <LinearLayout
+        android:id="@+id/ll_change_driver"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_gray"
+        android:gravity="center_vertical"
+        android:minHeight="48.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_change_driver"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="王刚  先生  13055778899"
+            android:textColor="@color/text_default_color"
+            android:textSize="15.0sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/item_back_icon"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/main_color"
+        />
+</LinearLayout>
