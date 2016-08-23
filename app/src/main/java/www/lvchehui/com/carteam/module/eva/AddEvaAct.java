@@ -1,14 +1,10 @@
 package www.lvchehui.com.carteam.module.eva;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
-
-import java.util.ArrayList;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
@@ -22,7 +18,7 @@ import www.lvchehui.com.carteam.view.TitleView;
 @ContentView(R.layout.activity_add_eva)
 public class AddEvaAct extends BaseAct implements RatingBarView.OnRatingListener {
 
-    private static final int[] RATING_STATUS = {R.string.eva_ver_bad,R.string.eva_bad,R.string.eva_general,R.string.eva_good};
+    private static final int[] RATING_STATUS = {R.string.eva_ver_bad, R.string.eva_bad, R.string.eva_general, R.string.eva_good};
 
 
     private static final int BIND_TYPE_ONTIME = 1;
@@ -36,30 +32,30 @@ public class AddEvaAct extends BaseAct implements RatingBarView.OnRatingListener
     TitleView m_title_view;
 
 
-
     @ViewInject(R.id.rating_ontime)
-    private RatingBarView m_rating_ontime;
+    private www.lvchehui.com.carteam.view.RatingBarView m_rating_ontime;
 
     @ViewInject(R.id.tv_ontime)
-    private TextView m_tv_ontime;
+    private TextView m_tv_ontime; //@string/eva_please;
 
     @ViewInject(R.id.rating_server)
-    private RatingBarView m_rating_server;
+    private www.lvchehui.com.carteam.view.RatingBarView m_rating_server;
 
     @ViewInject(R.id.tv_server)
-    private TextView m_tv_server;
+    private TextView m_tv_server; //@string/eva_please;
 
     @ViewInject(R.id.rating_health)
     private RatingBarView m_rating_health;
 
     @ViewInject(R.id.tv_health)
-    private TextView m_tv_health;
+    private TextView m_tv_health; //@string/eva_please;
 
     @ViewInject(R.id.rating_car_situation)
     private RatingBarView m_rating_car_situation;
 
     @ViewInject(R.id.tv_car_situation)
-    private TextView m_tv_car_situation;
+    private TextView m_tv_car_situation; //@string/eva_please;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,33 +84,27 @@ public class AddEvaAct extends BaseAct implements RatingBarView.OnRatingListener
     }
 
 
-
     @Override
     public void onRating(Object bindObject, int RatingScore) {
-        if (RatingScore > 4){
+        if (RatingScore > 4) {
             RatingScore = 4;
         }
         int bindStaus = (int) bindObject;
-        switch (bindStaus){
+        switch (bindStaus) {
             case BIND_TYPE_ONTIME:
-                m_tv_ontime.setText(RATING_STATUS[RatingScore-1]);
+                m_tv_ontime.setText(RATING_STATUS[RatingScore - 1]);
                 break;
             case BIND_TYPE_SERVER:
-                m_tv_server.setText(RATING_STATUS[RatingScore-1]);
+                m_tv_server.setText(RATING_STATUS[RatingScore - 1]);
                 break;
             case BIND_TYPE_HEALTH:
-                m_tv_health.setText(RATING_STATUS[RatingScore-1]);
+                m_tv_health.setText(RATING_STATUS[RatingScore - 1]);
                 break;
             case BIND_TYPE_CAR_SITUATION:
-                m_tv_car_situation.setText(RATING_STATUS[RatingScore-1]);
+                m_tv_car_situation.setText(RATING_STATUS[RatingScore - 1]);
                 break;
         }
         showToast(getResources().getString(RATING_STATUS[RatingScore - 1]));
-    }
-
-    @Event(value = R.id.btn_ok,type = View.OnClickListener.class)
-    private void onAddEvaOnClick(View v){
-        finish();
     }
 
     @Override

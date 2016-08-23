@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_default_color"
                 android:textSize="@dimen/text_default_size"
-                android:text="司机准点"
+                android:text="准时上车"
                 />
         </LinearLayout>
         <TextView
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_default_color"
                 android:textSize="@dimen/text_default_size"
-                android:text="司机服务"
+                android:text="礼貌有序"
                 />
         </LinearLayout>
         <TextView
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_default_color"
                 android:textSize="@dimen/text_default_size"
-                android:text="车辆卫生"
+                android:text="沟通高效"
                 />
         </LinearLayout>
         <TextView
@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_default_color"
                 android:textSize="@dimen/text_default_size"
-                android:text="车况新旧"
+                android:text="行程愉快"
                 />
         </LinearLayout>
         <TextView
