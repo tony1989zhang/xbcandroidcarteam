@@ -93,6 +93,7 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                 holder.m_ll_ltinerary_content.setOnClickListener(driverOnClickListener);
                 holder.m_tv_kf.setOnClickListener(driverOnClickListener);
                 holder.m_tv_map.setOnClickListener(driverOnClickListener);
+                holder.m_tv_getdriver.setOnClickListener(driverOnClickListener);
             }
 
         }

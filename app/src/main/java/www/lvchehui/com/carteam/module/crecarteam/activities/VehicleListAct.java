@@ -48,7 +48,8 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
         setTitleV(mTitleView, "车辆列表");
 
         lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
-        if (!lastAct.equals(CreCarTeamAct.class.getName())){
+
+        if (!lastAct.equals(CreCarTeamAct.class.getName())||lastAct == null){
             m_include_btn_submit.setVisibility(View.GONE);
         }
     }
