@@ -39,6 +39,7 @@ public class ChangeVehicleListAct extends BaseListAct<LoginBean> {
         super.initViews();
         EventBus.getDefault().register(this);
         setTitleV(mTitleView, "更换车辆");
+        m_tv_submit_ok.setText("确定");
     }
 
     @Override
