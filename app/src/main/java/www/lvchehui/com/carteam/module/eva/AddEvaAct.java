@@ -108,6 +108,12 @@ public class AddEvaAct extends BaseAct implements RatingBarView.OnRatingListener
     }
 
     @Override
+    protected void submitOnClick() {
+        super.submitOnClick();
+        finish();
+    }
+
+    @Override
     public void finish() {
         super.finish();
         showToast("finish");
