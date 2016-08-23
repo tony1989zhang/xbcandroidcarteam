@@ -17,7 +17,7 @@
         android:background="@color/main_color"
         android:paddingBottom="5dp"
         android:paddingLeft="10dp"
-        android:paddingTop="15dp"
+        android:paddingTop="10dp"
         android:text="备注" />
 
     <EditText
@@ -43,7 +43,7 @@
             android:background="@color/main_color"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
-            android:paddingTop="15dp"
+            android:paddingTop="10dp"
             android:text="费用信息" />
 
 
@@ -129,7 +129,6 @@
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:ellipsize="end"
-                android:focusable="false"
                 android:gravity="center|right"
                 android:layout_weight="1"
                 android:maxLines="3"
