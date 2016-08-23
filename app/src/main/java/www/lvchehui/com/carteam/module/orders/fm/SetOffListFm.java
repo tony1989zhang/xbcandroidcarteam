@@ -22,6 +22,7 @@ import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.module.orders.activities.ChangeDriverListAct;
+import www.lvchehui.com.carteam.module.orders.activities.ChangeVehicleListAct;
 import www.lvchehui.com.carteam.view.dlg.CusDlg;
 
 /**
@@ -92,6 +93,7 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                 holder.m_tv_setoff.setOnClickListener(setOffOnClick);
                 holder.m_tv_kf.setOnClickListener(setOffOnClick);
                 holder.m_tv_getdriver.setOnClickListener(setOffOnClick);
+                holder.m_tv_change_car.setOnClickListener(setOffOnClick);
             }
         }
 
@@ -132,6 +134,9 @@ public class SetOffListFm extends BaseListFm<LoginBean> {
                         break;
                     case R.id.tv_getdriver:
                         startActivity(new Intent(getActivity(), ChangeDriverListAct.class));
+                        break;
+                    case R.id.tv_change_car:
+                        startActivity(new Intent(getActivity(), ChangeVehicleListAct.class));
                         break;
                 }
             }

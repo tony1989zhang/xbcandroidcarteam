@@ -155,6 +155,12 @@ public class ChangeVehicleListAct extends BaseListAct<LoginBean> {
     }
 
     @Override
+    public void submitOnClick() {
+        super.submitOnClick();
+        finish();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         textViews.clear();
