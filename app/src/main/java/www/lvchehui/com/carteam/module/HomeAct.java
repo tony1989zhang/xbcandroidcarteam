@@ -18,6 +18,7 @@ import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
 import www.lvchehui.com.carteam.module.manager.ManagerAct;
 import www.lvchehui.com.carteam.module.orders.activities.OrdersAct;
+import www.lvchehui.com.carteam.module.robborder.RobbedOrderAct;
 import www.lvchehui.com.carteam.module.scarmissauga.ScarMFirstepAct;
 import www.lvchehui.com.carteam.module.setting.SettingAct;
 import www.lvchehui.com.carteam.module.wallet.activityes.WalletAct;
@@ -64,7 +65,7 @@ public class HomeAct extends BaseAct{
                 startActivity(new Intent(this, ScarMFirstepAct.class));//发布顺风车
                 break;
             case 2:
-
+                startActivity(new Intent(this,RobbedOrderAct.class));
                 break;
             case 3:
                 startActivity(new Intent(this, WalletAct.class));//我的钱包
