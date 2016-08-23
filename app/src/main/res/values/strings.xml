@@ -50,4 +50,7 @@
 
     <string name="study"><u>立即学习</u></string>
     <string name="describe">初始总分＝0，完成加分项总分上限可升至12 违规或者被投诉，会扣除相应分值 总分＝0，禁止接单。</string>
+    <string name="describe_level">等级无封顶，十分为一个等级
+参与投标得2分(包括：顺风车、快车、发布需求)
+中标得3分，逃标则享等级直接降1级。</string>
 </resources>

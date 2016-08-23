@@ -26,6 +26,13 @@ import www.lvchehui.com.carteam.http.CM;
  */
 public class CreRecordListAct extends BaseListAct<LoginBean> {
     @Override
+    protected void initViews() {
+        super.initViews();
+        setTitleV(mTitleView,"信用记录");
+        m_include_btn_submit.setVisibility(View.GONE);
+    }
+
+    @Override
     protected List convertToBeanList(LoginBean loginBean) {
         ArrayList<CarsListEntity> list =  new ArrayList<>();
         CarsListEntity entity = new CarsListEntity();
@@ -84,7 +91,7 @@ public class CreRecordListAct extends BaseListAct<LoginBean> {
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_message, viewGroup, false);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_crerecord, viewGroup, false);
             return new MessageItemViewHolder(inflate);
         }
 

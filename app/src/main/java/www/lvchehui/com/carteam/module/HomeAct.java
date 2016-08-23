@@ -100,7 +100,7 @@ public class HomeAct extends BaseAct{
         }
     }
 
-    @Event({R.id.title_right_img,R.id.ll_credit})
+    @Event({R.id.title_right_img,R.id.ll_credit,R.id.ll_level})
     private void homeOnClick(View view){
         switch (view.getId())
         {
@@ -109,6 +109,9 @@ public class HomeAct extends BaseAct{
                 break;
             case R.id.title_right_img:
                 startActivity(new Intent(this,MessageAct.class));
+                break;
+            case R.id.ll_level:
+                startActivity(new Intent(this,XbcCreditListAct.class));
                 break;
 
         }

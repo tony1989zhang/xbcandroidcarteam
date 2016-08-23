@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="5sp"
             android:padding="10dp"
-            android:text="@string/describe"
+            android:text="@string/describe_level"
             android:textColor="@color/text_default_color"
             android:textSize="@dimen/text_default_size" />
 
