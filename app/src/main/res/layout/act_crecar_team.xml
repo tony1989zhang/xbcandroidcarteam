@@ -57,7 +57,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/cre_car_team_icon_1"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_below="@+id/iv_responInfo"
                 android:layout_toEndOf="@+id/iv_responInfo" />
         </RelativeLayout>
@@ -89,6 +91,16 @@
                 android:layout_margin="10dp"
                 android:src="@mipmap/item_yes_icon"
                 android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@mipmap/cre_car_team_icon_2"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -100,34 +112,51 @@
             android:background="@drawable/selector_large_edit_dialog_white2"
             android:gravity="center">
 
-            <TextView
-                android:id="@+id/tv_vehicleInfo"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="@string/vehicleInfo"
-                android:textColor="@drawable/text_bla_yel_selector"
-                android:textSize="@dimen/title_text_size" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="车辆数较多建议通过网站进行批量填写"
-                android:id="@+id/textView"
-                android:gravity="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/text_hint_color"
-                android:textSize="@dimen/text_middle_size"
-                android:layout_below="@+id/tv_vehicleInfo"
-                android:layout_alignStart="@+id/tv_vehicleInfo" />
+                >
+                <TextView
+                    android:id="@+id/tv_vehicleInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/vehicleInfo"
+                    android:textColor="@drawable/text_bla_yel_selector"
+                    android:textSize="@dimen/title_text_size" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="车辆数较多建议通过网站进行批量填写"
+                    android:id="@+id/textView"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/text_hint_color"
+                    android:textSize="@dimen/text_middle_size"
+                    android:layout_below="@+id/tv_vehicleInfo"
+                    android:layout_alignStart="@+id/tv_vehicleInfo" />
+                <ImageView
+                    android:id="@+id/iv_application"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="10dp"
+                    android:src="@mipmap/item_yes_icon"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
             <ImageView
-                android:id="@+id/iv_application"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
+                android:id="@+id/imageView3"
+                android:src="@mipmap/cre_car_team_icon_3"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_alignParentTop="true"
-                android:layout_margin="10dp"
-                android:src="@mipmap/item_yes_icon"
-                android:visibility="gone" />
+                android:layout_alignParentStart="true" />
 
 
         </RelativeLayout>
@@ -140,7 +169,11 @@
             android:layout_weight="1"
             android:background="@drawable/selector_large_edit_dialog_white2"
             android:gravity="center">
-
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
             <TextView
                 android:id="@+id/tv_driverInfo"
                 android:layout_width="match_parent"
@@ -171,6 +204,18 @@
                 android:src="@mipmap/item_yes_icon"
                 android:visibility="gone"
                />
+
+
+        </RelativeLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@mipmap/cre_car_team_icon_4"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
         </RelativeLayout>
     </LinearLayout>
     <include layout="@layout/include_btn_submit" />
