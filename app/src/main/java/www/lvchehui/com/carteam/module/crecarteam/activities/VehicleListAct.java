@@ -49,7 +49,7 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
 
         lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
 
-        if (!lastAct.equals(CreCarTeamAct.class.getName())||lastAct == null){
+        if (lastAct == null||!lastAct.equals(CreCarTeamAct.class.getName())){
             m_include_btn_submit.setVisibility(View.GONE);
         }
     }
