@@ -68,6 +68,8 @@ public class CreCarTeamAct extends BaseAct {
         if (HomeAct.class.getName().equals(lastAct))
         {
 
+        }else{
+            m_tv_submit_ok.setText("新增");
         }
     }
 

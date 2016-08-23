@@ -51,6 +51,8 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
 
         if (lastAct == null||!lastAct.equals(CreCarTeamAct.class.getName())){
             m_include_btn_submit.setVisibility(View.GONE);
+        }else {
+            m_tv_submit_ok.setText("新增");
         }
     }
 
@@ -69,7 +71,7 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
 
     @Override
     protected BasePageAdapter initAdapter() {
-        return new MessageListAdapter();
+        return new VehicleListAdapter();
     }
 
     @Override
@@ -98,9 +100,9 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
     }
 
 
-    class MessageListAdapter extends BasePageAdapter {
+    class VehicleListAdapter extends BasePageAdapter {
 
-        class MessageItemViewHolder extends RecyclerView.ViewHolder {
+        class VehicleItemViewHolder extends RecyclerView.ViewHolder {
             @ViewInject(R.id.root)
             private LinearLayout m_root;
 
@@ -119,7 +121,7 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
 
 
 
-            public MessageItemViewHolder(View itemView) {
+            public VehicleItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
                 if (lastAct == null ||!lastAct.equals(CreCarTeamAct.class.getName())){
@@ -132,14 +134,14 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
             View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_vehicle, viewGroup, false);
-            return new MessageItemViewHolder(inflate);
+            return new VehicleItemViewHolder(inflate);
         }
 
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
-            if (viewHoder instanceof  MessageItemViewHolder){
-                MessageItemViewHolder msgViewHolder = (MessageItemViewHolder) viewHoder;
+            if (viewHoder instanceof  VehicleItemViewHolder){
+                VehicleItemViewHolder msgViewHolder = (VehicleItemViewHolder) viewHoder;
                 final TextBean bean = (TextBean) mItems.get(position);
                 bean.a = "A 车队名称  闽D8876 8座";
                 msgViewHolder.m_root.setOnClickListener(new View.OnClickListener() {
@@ -155,8 +157,8 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
 
     @Event(R.id.tv_submit_ok)
     private void submitOk(View v){
-        startActivity(new Intent(this,CarTeamInfoAct.class));
-    }
+        startActivity(new Intent(this,VehicleInfoAct.class));
+    }//CarTeamInfoAct
 
     @Override
     protected void onDestroy() {
