@@ -156,6 +156,8 @@ public class ChangeVehicleListAct extends BaseListAct<LoginBean> {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        textViews.clear();
+        textViews = null;
         EventBus.getDefault().unregister(this);
     }
 }
