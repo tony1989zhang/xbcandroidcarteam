@@ -43,7 +43,10 @@ public class DriverListAct extends BaseListAct<LoginBean> {
         String titleStr = "选择司机";
         Intent intent = getIntent();
         lastAct = intent.getStringExtra(BaseListAct.LAST_ACTIVITY_NAME);
-        if (lastAct.equals(PermissionListAct.class.getName())) {
+        if (lastAct == null){
+            titleStr = "选择司机";
+            m_tv_submit_ok.setVisibility(View.GONE);
+        }else if (lastAct.equals(PermissionListAct.class.getName())) {
             m_tv_submit_ok.setText("确认");
             titleStr = "新增司机";
         }else if(lastAct.equals(CreCarTeamAct.class.getName())){
@@ -123,7 +126,13 @@ public class DriverListAct extends BaseListAct<LoginBean> {
             public VehicleItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this, itemView);
-                if (lastAct.equals(PermissionListAct.class.getName())){
+                if (lastAct == null)
+                {
+                    m_iv_edit.setVisibility(View.GONE);
+                    m_iv_del.setVisibility(View.GONE);
+                    m_checkbox_car.setVisibility(View.GONE);
+
+                }else if (lastAct.equals(PermissionListAct.class.getName())){
                     m_iv_edit.setVisibility(View.GONE);
                     m_iv_del.setVisibility(View.GONE);
                     m_checkbox_car.setVisibility(View.VISIBLE);
@@ -158,7 +167,10 @@ public class DriverListAct extends BaseListAct<LoginBean> {
                 vehicleViewHolder.m_root.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (lastAct.equals(PermissionListAct.class.getName())) {
+                        if (lastAct == null){
+                            EventBus.getDefault().post(bean);
+                        }
+                        else if (lastAct.equals(PermissionListAct.class.getName())) {
                             vehicleViewHolder.m_checkbox_car.setChecked(!vehicleViewHolder.m_checkbox_car.isChecked());
                         } else if(lastAct.equals(CreCarTeamAct.class.getName())){
 

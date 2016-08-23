@@ -122,7 +122,7 @@ public class VehicleListAct extends BaseListAct<LoginBean> {
             public MessageItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
-                if (!lastAct.equals(CreCarTeamAct.class.getName())){
+                if (lastAct == null ||!lastAct.equals(CreCarTeamAct.class.getName())){
                     m_iv_edit.setVisibility(View.GONE);
                     m_iv_del.setVisibility(View.GONE);
                 }

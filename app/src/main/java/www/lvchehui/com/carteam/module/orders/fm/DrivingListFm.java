@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.common.Callback;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -18,11 +21,14 @@ import java.util.List;
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.activities.AMapYunTuAct;
 import www.lvchehui.com.carteam.activities.WebAct;
+import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseListFm;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
+import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.module.crecarteam.activities.DriverListAct;
 import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleListAct;
 import www.lvchehui.com.carteam.module.orders.activities.ChangeDriverListAct;
 import www.lvchehui.com.carteam.tools.PhoneUtil;
@@ -33,6 +39,12 @@ import www.lvchehui.com.carteam.view.dlg.CusDlg;
  * 作用：
  */
 public class DrivingListFm extends BaseListFm<LoginBean> {
+    @Override
+    protected void initViews(View root) {
+        super.initViews(root);
+        EventBus.getDefault().register(this);
+    }
+
     @Override
     protected List convertToBeanList(LoginBean loginBean) {
         ArrayList<CarsListEntity> list =  new ArrayList<>();
@@ -128,7 +140,7 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                         kf();
                         break;
                     case R.id.tv_getdriver:
-                        startActivity(new Intent(getActivity(), VehicleListAct.class));
+                        startActivity(new Intent(getActivity(), DriverListAct.class));
                         break;
                 }
             }
@@ -193,5 +205,17 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                 x.view().inject(this,itemView);
             }
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void getDriver(TextBean bean){
+        App.getInstance().getTopActivity().finish();
+        showToast("获取到车辆的列表：" + bean.a);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        EventBus.getDefault().unregister(this);
     }
 }
