@@ -25,6 +25,12 @@ import www.lvchehui.com.carteam.http.CM;
  */
 public class RobbedOrderAct extends BaseListAct<LoginBean> {
     @Override
+    protected void initViews() {
+        super.initViews();
+        setTitleV(mTitleView,"被抢订单");
+    }
+
+    @Override
     protected List convertToBeanList(LoginBean loginBean) {
         ArrayList<CarsListEntity> list =  new ArrayList<>();
         CarsListEntity entity = new CarsListEntity();
