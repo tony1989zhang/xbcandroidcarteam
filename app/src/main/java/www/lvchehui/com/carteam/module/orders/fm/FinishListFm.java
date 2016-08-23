@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.xutils.common.Callback;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -16,13 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.activities.WebAct;
 import www.lvchehui.com.carteam.base.BaseListFm;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
-import www.lvchehui.com.carteam.view.timecountdown.CountdownView;
+import www.lvchehui.com.carteam.module.eva.AddEvaAct;
 
 /**
  * Created by 张灿能 on 2016/8/17.
@@ -80,6 +78,16 @@ public class FinishListFm extends BaseListFm<LoginBean> {
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
+            if (viewHoder instanceof  FinishItemViewHolder)
+            {
+               FinishItemViewHolder itemViewHolder = (FinishItemViewHolder) viewHoder;
+                itemViewHolder.m_tv_eva.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(getActivity(), AddEvaAct.class));
+                    }
+                });
+            }
 
         }
 

@@ -61,9 +61,6 @@ public class AddEvaAct extends BaseAct implements RatingBarView.OnRatingListener
     @ViewInject(R.id.tv_car_situation)
     private TextView m_tv_car_situation;
 
-
-    private final String[] funTitles = {"车辆卫生好", "司机服务差", "车况较新", "旅途很愉快", "车辆没有准时", "享包车很便捷"};
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

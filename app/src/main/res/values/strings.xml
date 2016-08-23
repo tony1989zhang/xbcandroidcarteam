@@ -40,4 +40,11 @@
     <string name="privacy_policy">隐私条款</string>
 
     <style name="btn_ok">确认</style>
+
+
+    <string name="eva_good">很好，值得推荐！</string>
+    <string name="eva_general">一般，可以尝试～</string>
+    <string name="eva_bad">失望，不再光顾...</string>
+    <string name="eva_ver_bad">糟糕，糟糕透顶！</string>
+    <string name="eva_please">请评价</string>
 </resources>
