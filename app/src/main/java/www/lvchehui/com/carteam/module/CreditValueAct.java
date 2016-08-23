@@ -1,8 +1,11 @@
 package www.lvchehui.com.carteam.module;
 
+import android.content.Intent;
+import android.view.View;
 import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
@@ -24,5 +27,10 @@ public class CreditValueAct extends BaseAct {
     protected void initView() {
         super.initView();
         setTitleV(m_title_view,"信用值");
+    }
+
+    @Event({R.id.tv_jl})
+    private void creditOnClick(View v){
+        startActivity(new Intent(this,CreRecordListAct.class));
     }
 }

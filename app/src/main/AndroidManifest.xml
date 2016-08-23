@@ -228,11 +228,16 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".module.CreditValueAct"
+        <activity
+            android:name=".module.CreditValueAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.CreRecordListAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.WebAct"
             android:alwaysRetainTaskState="true"
