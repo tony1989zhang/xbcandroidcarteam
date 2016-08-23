@@ -3,6 +3,374 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/main_color"
     >
 
+    <www.lvchehui.com.carteam.view.TitleView
+        android:id="@+id/title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_color"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:text="备注" />
+
+    <EditText
+        android:id="@+id/et_note"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="@color/white"
+        android:gravity="top|left"
+        android:hint="请输入变更原因..."
+        android:inputType="textMultiLine"
+        android:textSize="@dimen/text_default_size"
+        android:minLines="4"
+        android:padding="5dp" />
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:text="费用信息" />
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center_vertical"
+
+            android:minHeight="48.0dip"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="车队报价"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center|right"
+                android:maxLines="3"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:text="3000元"
+          />
+
+        </LinearLayout>
+
+        <View style="@style/lineSolid_center" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center_vertical"
+            android:minHeight="48.0dip"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="车队报价"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+            <info.hoang8f.android.segmented.SegmentedGroup
+                xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/segmented2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                segmentedgroup:sc_border_width="2dp"
+                segmentedgroup:sc_corner_radius="10dp">
+
+                <RadioButton
+                    android:id="@+id/button21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="One"
+                    style="@style/RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/button22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Two"
+                    style="@style/RadioButton" />
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center|right"
+                android:maxLines="3"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:hint="请输入增加的费用"
+          />
+
+        </LinearLayout>
+
+        <View style="@style/lineSolid_center" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center_vertical"
+            android:minHeight="30dp"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="佣金"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center|right"
+                android:maxLines="3"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:text="3000x10%＝300元"
+          />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center_vertical"
+            android:paddingLeft="10.0dip"
+            android:minHeight="30dp"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="发票"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center|right"
+                android:maxLines="3"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:text="3300x7％＝231元"
+          />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center_vertical"
+            android:minHeight="30dp"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="保险"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center|right"
+                android:maxLines="3"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:text="100元"
+          />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center_vertical"
+            android:paddingLeft="10.0dip"
+            android:minHeight="30dp"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="当前未付金额"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center|right"
+                android:maxLines="3"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:text="2700元"
+          />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center_vertical"
+            android:minHeight="30dp"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="变更后含税总额"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center|right"
+                android:maxLines="3"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:text="3531元"
+          />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_gray"
+            android:gravity="center_vertical"
+            android:minHeight="30dp"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="当前已付金额"
+                android:textColor="@color/text_default_color"
+                android:textSize="15.0sp" />
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center|right"
+                android:maxLines="3"
+                android:textColor="@color/text_default_color"
+                android:textSize="@dimen/text_default_size"
+                android:text="831元"
+          />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/include_btn_submit"
+        />
 </LinearLayout>

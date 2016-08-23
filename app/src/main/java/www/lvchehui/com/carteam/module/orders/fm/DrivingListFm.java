@@ -31,6 +31,7 @@ import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.module.crecarteam.activities.DriverListAct;
 import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleListAct;
 import www.lvchehui.com.carteam.module.orders.activities.ChangeDriverListAct;
+import www.lvchehui.com.carteam.module.orders.activities.ChangeRateAct;
 import www.lvchehui.com.carteam.module.orders.activities.ChangeVehicleListAct;
 import www.lvchehui.com.carteam.tools.PhoneUtil;
 import www.lvchehui.com.carteam.view.dlg.CusDlg;
@@ -108,6 +109,7 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                 holder.m_tv_map.setOnClickListener(driverOnClickListener);
                 holder.m_tv_getdriver.setOnClickListener(driverOnClickListener);
                 holder.m_tv_change_car.setOnClickListener(driverOnClickListener);
+                holder.m_tv_change_rate.setOnClickListener(driverOnClickListener);
             }
 
         }
@@ -146,6 +148,9 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
                         break;
                     case R.id.tv_change_car:
                         startActivity(new Intent(getActivity(), ChangeVehicleListAct.class));
+                        break;
+                    case R.id.tv_change_rate:
+                        startActivity(new Intent(getActivity(), ChangeRateAct.class));
                         break;
                 }
             }
@@ -191,8 +196,8 @@ public class DrivingListFm extends BaseListFm<LoginBean> {
             @ViewInject(R.id.tv_ltinerary_countdown)
             private TextView m_tv_ltinerary_countdown;
 
-            @ViewInject(R.id.tv_change_dingd)
-            private TextView m_tv_change_dingd;
+            @ViewInject(R.id.tv_change_rate)
+            private TextView m_tv_change_rate;
 
             @ViewInject(R.id.tv_change_car)
             private TextView m_tv_change_car;
