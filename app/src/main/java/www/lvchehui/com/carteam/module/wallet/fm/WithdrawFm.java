@@ -44,7 +44,7 @@ public class WithdrawFm extends BaseListFm<LoginBean>
             XgoLog.e("carsListBean:" + bean.toString());
             ArrayList<CarsListEntity> list =  new ArrayList<>();
             CarsListEntity entity = new CarsListEntity();
-            for (int i = 0;i < 20;i++){
+            for (int i = 0;i < 0;i++){
                 entity.car_describe = "ss";
                 entity.drive_licence_number = "ssssss";
                 list.add(entity);

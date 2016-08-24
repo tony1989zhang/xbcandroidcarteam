@@ -19,6 +19,7 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFmAct;
 import www.lvchehui.com.carteam.module.wallet.fm.TranDetailFm;
 import www.lvchehui.com.carteam.module.wallet.fm.TranDetailHeadFm;
+import www.lvchehui.com.carteam.module.wallet.fm.WithHeadFm;
 import www.lvchehui.com.carteam.module.wallet.fm.WithdrawFm;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dragtop.BanSlidingViewPage;
@@ -59,7 +60,7 @@ public class WalletAct extends BaseFmAct {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitleView(titleView, "代理商");
+        setTitleView(titleView, "我的账单");
         showProgressDailog();
         initViewPager();
         //   dragLayout.setOverDrag(true);//dragLayout.isOverDrag()
@@ -67,7 +68,7 @@ public class WalletAct extends BaseFmAct {
 
     private void initViewPager() {
         mFragmentsIV.add(new TranDetailHeadFm());
-        mFragmentsIV.add(new TranDetailHeadFm());
+        mFragmentsIV.add(new WithHeadFm());
         mFragmentsIV.add(new TranDetailHeadFm());
 
         mFragmentsMsg.add(new TranDetailFm());
