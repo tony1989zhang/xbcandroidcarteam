@@ -5,9 +5,11 @@ import org.xutils.common.Callback.Cancelable;
 import org.xutils.common.Callback.CommonCallback ;
 import org.xutils.x;
 
+import java.net.CacheRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+import www.lvchehui.com.carteam.bean.SendSmsBean;
 import www.lvchehui.com.carteam.tools.Constants;
 import www.lvchehui.com.carteam.tools.SPUtil;
 
@@ -16,7 +18,9 @@ import www.lvchehui.com.carteam.tools.SPUtil;
  * 作用：提交网络请求。设置为可以兼容CUtil 与ConnecionUtil
  */
 public class CM {
-    private static final String SERVER_URL = "192.168.1.66/api.php/main/";
+
+    private static final String SENDSMS_SEND= "sendsms/send";
+
     private static final String USERS_LOGIN = "Users/login";
     private static final String CARS_GETLIST = "Cars/getList";
     private static CM mCM;
@@ -29,6 +33,13 @@ public class CM {
             mCM = new CM();
         }
         return mCM;
+    }
+
+
+    public Cancelable sendSMS(String to,ComCb<SendSmsBean> comcb){
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("to",to);
+        return CUtil.Post(SENDSMS_SEND,params,comcb);
     }
 
       public Cancelable login(String uname,String pwd ,CommonCallback comCb) {

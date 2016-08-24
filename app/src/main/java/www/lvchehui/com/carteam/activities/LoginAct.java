@@ -59,7 +59,8 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
                 break;
             case R.id.register_tv:
 
-                startActivity(new Intent(this, CreCarTeamAct.class));
+//                startActivity(new Intent(this, CreCarTeamAct.class));
+                startActivity(new Intent(this,RegisterAct.class));
                 break;
         }
     }
