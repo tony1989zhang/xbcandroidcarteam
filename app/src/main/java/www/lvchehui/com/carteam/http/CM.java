@@ -9,6 +9,7 @@ import java.net.CacheRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+import www.lvchehui.com.carteam.bean.RegisterBean;
 import www.lvchehui.com.carteam.bean.SendSmsBean;
 import www.lvchehui.com.carteam.tools.Constants;
 import www.lvchehui.com.carteam.tools.SPUtil;
@@ -48,12 +49,13 @@ public class CM {
     }
 
 //
-//    public Cancelable register(String username,String password,String smscode,Com){
-//        HashMap<String ,Object> params = new HashMap<>();
-//        params.put("username",username);
-//        params.put("password",Constants.DEFAULT_PWD);
-//        return CUtil.Post(USERS_REGISTER,params,)
-//    }
+    public Cancelable register(String username,String smscode,ComCb<RegisterBean> comCb){
+        HashMap<String ,Object> params = new HashMap<>();
+        params.put("username",username);
+        params.put("smscode",smscode);
+        params.put("password",Constants.DEFAULT_PWD);
+        return CUtil.Post(USERS_REGISTER,params,comCb);
+    }
 
     public Cancelable login(String uname,String pwd ,CommonCallback comCb) {
        Map<String,Object> params = new HashMap<>();

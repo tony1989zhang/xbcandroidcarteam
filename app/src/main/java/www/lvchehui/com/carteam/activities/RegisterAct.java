@@ -14,10 +14,13 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.bean.RegisterBean;
 import www.lvchehui.com.carteam.bean.SendSmsBean;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.http.ComCb;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
+import www.lvchehui.com.carteam.tools.Constants;
+import www.lvchehui.com.carteam.tools.SPUtil;
 import www.lvchehui.com.carteam.tools.StringUtils;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
@@ -82,12 +85,27 @@ public class RegisterAct extends BaseAct {
             if (StringUtils.isEmpty(m_account_et.getText()))
             {
                 showToast("账号不能为空");
+                return;
             }else if(StringUtils.isEmpty(m_captcha_et.getText()))
             {
                showToast("验证码不能为空");
+                return;
             }
 
 
-          startActivity(new Intent(this, CreCarTeamAct.class));
+        showProgressDialog();
+        CM.getInstance().register(m_account_et.getText().toString(), m_captcha_et.getText().toString(), new ComCb<RegisterBean>() {
+            @Override
+            public void onSuccess(RegisterBean result) {
+                dismissProgressDialog();
+                showToast(result.resMsg);
+                if (result.errCode != -1) {
+                    startActivity(new Intent(RegisterAct.this, CreCarTeamAct.class));
+                    SPUtil.getInstant(RegisterAct.this).save(Constants.USERS_GID, result.resData.gid);
+                    SPUtil.getInstant(RegisterAct.this).save(Constants.USER_NAME,result.resData.username);
+                }
+            }
+        });
+
     }
 }

@@ -7,9 +7,12 @@ package www.lvchehui.com.carteam.tools;
 public class Constants {
 
 
-    public static final String DEFAULT_PWD = "*&^^ABC))assfgh";
+    public static final String DEFAULT_PWD = "*&^^ABC))assfgh";//默认设置的密码
 
     public static final String USERS_GID = "users_gid";
+    public static final String USER_NAME = "user_name";
+
+
     public static final String APP_FILE_PATH = "SDCard/Android/data/www.lvchehui.com.carteam/files/"; //缓存路径
 
     private static final String HTTP_URL = "http://www.4000592122.com/";
