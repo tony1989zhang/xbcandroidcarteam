@@ -17,6 +17,8 @@ import java.util.ArrayList;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFmAct;
+import www.lvchehui.com.carteam.module.wallet.fm.QaFm;
+import www.lvchehui.com.carteam.module.wallet.fm.QaHeadFm;
 import www.lvchehui.com.carteam.module.wallet.fm.TranDetailFm;
 import www.lvchehui.com.carteam.module.wallet.fm.TranDetailHeadFm;
 import www.lvchehui.com.carteam.module.wallet.fm.WithHeadFm;
@@ -69,11 +71,11 @@ public class WalletAct extends BaseFmAct {
     private void initViewPager() {
         mFragmentsIV.add(new TranDetailHeadFm());
         mFragmentsIV.add(new WithHeadFm());
-        mFragmentsIV.add(new TranDetailHeadFm());
+        mFragmentsIV.add(new QaHeadFm());
 
         mFragmentsMsg.add(new TranDetailFm());
         mFragmentsMsg.add(new WithdrawFm());
-        mFragmentsMsg.add(new TranDetailFm());
+        mFragmentsMsg.add(new QaFm());
 
         IVFragmentAdapter ivAdapter = new IVFragmentAdapter(getSupportFragmentManager());
         ivViewPager.setAdapter(ivAdapter);
