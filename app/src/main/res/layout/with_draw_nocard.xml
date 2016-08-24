@@ -20,7 +20,7 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/selector_btn_submit"
         android:gravity="center"
-        android:text="绑定支付宝/微信账户"
+        android:text="绑定支付宝"
         android:textColor="@color/white"
         android:id="@+id/tv_ok"
         android:layout_centerVertical="true"
