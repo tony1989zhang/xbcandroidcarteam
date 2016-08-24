@@ -1,5 +1,7 @@
 package www.lvchehui.com.carteam.activities;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -15,8 +17,10 @@ import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.bean.SendSmsBean;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.http.ComCb;
+import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
 import www.lvchehui.com.carteam.tools.StringUtils;
 import www.lvchehui.com.carteam.tools.XgoLog;
+import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.btn.CaptchaButton;
 import www.lvchehui.com.carteam.view.et.ClearEt;
 
@@ -26,6 +30,8 @@ import www.lvchehui.com.carteam.view.et.ClearEt;
  */
 @ContentView(R.layout.act_register)
 public class RegisterAct extends BaseAct {
+    @ViewInject(R.id.title_view)
+    private TitleView m_title_view;
     @ViewInject(R.id.account_et)
     private ClearEt m_account_et;
 
@@ -44,6 +50,8 @@ public class RegisterAct extends BaseAct {
     @Override
     protected void initView() {
         super.initView();
+        setTitleV(m_title_view, "");
+        m_title_view.setTitleBackgroundColor(Color.TRANSPARENT);
     }
 
 
@@ -61,13 +69,25 @@ public class RegisterAct extends BaseAct {
 
             @Override
             public void onSuccess(SendSmsBean result) {
-                XgoLog.e("result:"  + result.toString());
-                showToast("result:" + result.toString());
+                if (result.errCode != -1)
+                {
+                    showToast(result.resMsg);
+                }
+                XgoLog.e("result:" + result.toString());
             }
         });
     }
     @Event(R.id.register_tv)
     private void onRegisterOnClick(View v){
+            if (StringUtils.isEmpty(m_account_et.getText()))
+            {
+                showToast("账号不能为空");
+            }else if(StringUtils.isEmpty(m_captcha_et.getText()))
+            {
+               showToast("验证码不能为空");
+            }
 
+
+          startActivity(new Intent(this, CreCarTeamAct.class));
     }
 }

@@ -21,6 +21,11 @@ public class CM {
 
     private static final String SENDSMS_SEND= "sendsms/send";
 
+
+    /*
+    *用户基础
+    * */
+    private static final String USERS_REGISTER = "Users/register";
     private static final String USERS_LOGIN = "Users/login";
     private static final String CARS_GETLIST = "Cars/getList";
     private static CM mCM;
@@ -42,7 +47,15 @@ public class CM {
         return CUtil.Post(SENDSMS_SEND,params,comcb);
     }
 
-      public Cancelable login(String uname,String pwd ,CommonCallback comCb) {
+//
+//    public Cancelable register(String username,String password,String smscode,Com){
+//        HashMap<String ,Object> params = new HashMap<>();
+//        params.put("username",username);
+//        params.put("password",Constants.DEFAULT_PWD);
+//        return CUtil.Post(USERS_REGISTER,params,)
+//    }
+
+    public Cancelable login(String uname,String pwd ,CommonCallback comCb) {
        Map<String,Object> params = new HashMap<>();
         params.put("username", "15859254561");
         params.put("password", "E10ADC3949BA59ABBE56E057F20F883E");

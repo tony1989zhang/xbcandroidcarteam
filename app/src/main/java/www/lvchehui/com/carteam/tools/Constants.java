@@ -7,6 +7,7 @@ package www.lvchehui.com.carteam.tools;
 public class Constants {
 
 
+    public static final String DEFAULT_PWD = "*&^^ABC))assfgh";
 
     public static final String USERS_GID = "users_gid";
     public static final String APP_FILE_PATH = "SDCard/Android/data/www.lvchehui.com.carteam/files/"; //缓存路径
