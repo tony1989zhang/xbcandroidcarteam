@@ -43,7 +43,7 @@ public class TranDetailFm extends BaseListFm<LoginBean>{
 
     @Override
     protected BasePageAdapter initAdapter() {
-        return new VehicleAdapter();
+        return new TranDetailAdapter();
     }
 
     @Override
@@ -73,38 +73,37 @@ public class TranDetailFm extends BaseListFm<LoginBean>{
 
 
 
-    class VehicleAdapter extends BasePageAdapter {
+    class TranDetailAdapter extends BasePageAdapter {
 
-        class VehicleItemViewHolder extends RecyclerView.ViewHolder {
-            @ViewInject(R.id.root)
-            private LinearLayout m_root;
+        class TranDetailItemViewHolder extends RecyclerView.ViewHolder {
 
-            @ViewInject(R.id.tv_vehicleInfo)
-            private TextView m_tv_vehicleInfo; //A;
+            @ViewInject(R.id.RelativeLayout1)
+            private LinearLayout m_RelativeLayout1;
+            @ViewInject(R.id.tv_date_time)
+            private TextView m_tv_date_time; //03-28;
+            @ViewInject(R.id.et_name)
+            private TextView m_et_name; //厦门单程;
+            @ViewInject(R.id.tv_money_income)
+            private TextView m_tv_money_income; //2000元;
 
-
-
-
-            public VehicleItemViewHolder(View itemView) {
+            public TranDetailItemViewHolder(View itemView) {
                 super(itemView);
                 x.view().inject(this,itemView);
-
             }
         }
         @Override
         protected RecyclerView.ViewHolder initViewHolder(ViewGroup viewGroup, int viewType) {
 //            View inflate = View.inflate(viewGroup.getContext(), R.layout.item_message, false);
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_vehicle, viewGroup, false);
-            return new VehicleItemViewHolder(inflate);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_tran, viewGroup, false);
+            return new TranDetailItemViewHolder(inflate);
         }
 
 
         @Override
         public void doBindViewHolder(RecyclerView.ViewHolder viewHoder, int position) {
-            if (viewHoder instanceof  VehicleItemViewHolder){
-                VehicleItemViewHolder msgViewHolder = (VehicleItemViewHolder) viewHoder;
+            if (viewHoder instanceof  TranDetailItemViewHolder){
+                TranDetailItemViewHolder msgViewHolder = (TranDetailItemViewHolder) viewHoder;
                 CarsListEntity bean = (CarsListEntity) mItems.get(position);
-                msgViewHolder.m_tv_vehicleInfo.setText("A 车队名称  闽D8876 8座");
 
             }
         }

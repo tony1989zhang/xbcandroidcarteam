@@ -22,10 +22,11 @@
             android:text="累计收入" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal"
-            >
+            android:gravity="center"
+            android:id="@+id/linearLayout">
             <TextView
                 android:id="@+id/tv_total_revenue"
                 android:layout_width="wrap_content"
@@ -48,6 +49,17 @@
                 android:textColor="@color/white"
                 />
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="总接单数300单"
+            android:id="@+id/textView3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_default_size"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
