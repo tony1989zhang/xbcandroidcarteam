@@ -1,5 +1,6 @@
 package www.lvchehui.com.carteam.module.wallet.fm;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.module.wallet.activityes.SetPayPassWordAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
 /**
@@ -62,7 +64,7 @@ public class WithdrawFm extends BaseListFm<LoginBean>
             @Override
             public void onClick(View v) {
                 showToast("跳转支付页面");
-//                startActivity(new Intent(getActivity(), SetPayPassWordActivity.class));
+                startActivity(new Intent(getActivity(), SetPayPassWordAct.class));
             }
         });
     }

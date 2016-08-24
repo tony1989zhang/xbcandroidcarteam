@@ -243,6 +243,21 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".module.wallet.activityes.EnterSmsAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".module.wallet.activityes.PayAccountAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".module.wallet.activityes.SetPayPassWordAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activities.WebAct"
             android:alwaysRetainTaskState="true"

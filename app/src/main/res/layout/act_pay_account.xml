@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color"
+    android:orientation="vertical">
+
+    <www.lvchehui.com.carteam.view.TitleView
+        android:id="@+id/title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/text_default_color"
+        android:textSize="@dimen/text_middle_size"
+        android:padding="10dp"
+        android:text="仅支持支付宝账户体现，其他收款账号请联系客服"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+
+        android:background="@drawable/selector_edit_box_bg"
+        android:orientation="horizontal">
+        <!--android:drawableRight="@drawable/arrow"-->
+        <TextView
+            android:id="@+id/tv_pay_type"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:text="支付宝"
+            android:textColor="@color/text_default_color"
+            android:textSize="@dimen/text_default_size" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/text_default_color" />
+
+        <www.lvchehui.com.carteam.view.et.ClearEt
+            android:id="@+id/account_et"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:digits="0123456789"
+            android:gravity="center|left"
+            android:hint="请输入账号"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:textSize="@dimen/text_default_size" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <include layout="@layout/include_btn_submit" />
+</LinearLayout>
