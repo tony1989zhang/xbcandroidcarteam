@@ -8,6 +8,7 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.view.TitleView;
 
@@ -31,5 +32,8 @@ public class EnterSmsAct extends BaseAct {
     @Override
     protected void submitOnClick() {
         super.submitOnClick();
+        showToast("验证成功");
+        App.getInstance().aliveActivitys.get(App.getInstance().aliveActivitys.size() -2).get().finish();
+        finish();
     }
 }
