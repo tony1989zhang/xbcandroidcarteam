@@ -70,6 +70,7 @@ public class CarTeamInfoAct extends BaseFormAct implements ListDlgItemClickListe
         super.initView();
         EventBus.getDefault().register(this);
         setTitleV(m_title_view, "车队信息");
+        m_tv_submit_ok.setText("保存");
     }
 
     @Event({R.id.et_team_type, R.id.et_address, R.id.et_business_lic_photo, R.id.et_road_permit_photo, R.id.et_account})

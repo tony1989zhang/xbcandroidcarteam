@@ -67,9 +67,10 @@ public class CreCarTeamAct extends BaseAct {
         String lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
         if (HomeAct.class.getName().equals(lastAct))
         {
+            m_tv_submit_ok.setText("提交审核");
 
         }else{
-            m_tv_submit_ok.setText("新增");
+            m_tv_submit_ok.setText("提交审核");
         }
     }
 

@@ -53,6 +53,7 @@ public class ResponInfoAct extends BaseFormAct {
     protected void initView() {
         super.initView();
         setTitleV(m_title_view, "负责人信息");
+        m_tv_submit_ok.setText("保存");
     }
     @Override
     protected void submitOnClick() {

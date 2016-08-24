@@ -42,10 +42,12 @@ public class CarTeamListAct extends BaseListAct<LoginBean> {
         EventBus.getDefault().register(this);
         setTitleV(mTitleView, "车队列表");
 
+
          lastAct = getIntent().getStringExtra(LAST_ACTIVITY_NAME);
         if (!lastAct.equals(CreCarTeamAct.class.getName())){
             m_include_btn_submit.setVisibility(View.GONE);
         }
+        m_tv_submit_ok.setText("新增");
     }
 
     @Override

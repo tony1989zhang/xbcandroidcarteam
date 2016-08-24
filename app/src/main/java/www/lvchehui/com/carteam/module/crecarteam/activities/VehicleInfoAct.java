@@ -69,6 +69,7 @@ public class VehicleInfoAct extends BaseFormAct {
         super.initView();
         EventBus.getDefault().register(this);
         setTitleV(m_title_view, "车辆信息");
+        m_tv_submit_ok.setText("保存");
     }
 
     @Event({R.id.et_team_name,R.id.et_registration_first,R.id.et_passanger_premium,R.id.et_drive_licence_photo,
