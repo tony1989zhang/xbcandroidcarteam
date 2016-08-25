@@ -46,7 +46,8 @@ public class CM {
         return CUtil.Post(SENDSMS_SEND,params,comcb);
     }
 
-//
+//    public Cancelable fastLogin(String user)
+
     public Cancelable register(String username,String smscode,ComCb<RegisterBean> comCb){
         HashMap<String ,Object> params = new HashMap<>();
         params.put("username",username);

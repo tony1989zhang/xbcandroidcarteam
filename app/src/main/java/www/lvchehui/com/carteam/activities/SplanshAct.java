@@ -99,10 +99,10 @@ public class SplanshAct extends BaseAct {
                 getWindowManager().getDefaultDisplay().getMetrics(dm);
                 ViewGroup.LayoutParams layoutParams = m_imageView2.getLayoutParams();
                 int height = ViewGroup.LayoutParams.WRAP_CONTENT;
-
                 m_imageView2.setLayoutParams(layoutParams);
                 m_imageView2.setMaxWidth(dm.widthPixels);
                 m_imageView2.setMaxHeight((int)(dm.widthPixels*5));
+
                 m_imageView2.setImageDrawable(result);
                 m_imageView2.setOnClickListener(new View.OnClickListener() {
                     @Override
