@@ -87,7 +87,7 @@ public class SplanshAct extends BaseAct {
                         //设置支持gif
                 .setIgnoreGif(false)
                 .build();
-        x.image().loadDrawable("http://7xlh8k.com1.z0.glb.clouddn.com/%E8%BD%A6%E9%98%9F%EF%BC%8D%E5%B9%BF%E5%91%8A.png", options, new ComCb<Drawable>() {
+        x.image().loadDrawable("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1472088194&di=db4dca288e8967cf60d7a5971703f4b1&src=http://img.zcool.cn/community/01313f56c3d5546ac7256cb094ff05.jpg", options, new ComCb<Drawable>() {
             @Override
             public void onSuccess(Drawable result) {
                 m_imageView2.setImageDrawable(result);
