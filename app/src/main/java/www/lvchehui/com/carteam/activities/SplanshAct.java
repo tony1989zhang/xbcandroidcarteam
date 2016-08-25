@@ -78,13 +78,13 @@ public class SplanshAct extends BaseAct {
         ImageOptions options = new ImageOptions.Builder()
                 //设置加载过程中的图片
                 .setLoadingDrawableId(R.mipmap.icon_img_null_bg)
-                //设置加载失败后的图片
+                        //设置加载失败后的图片
                 .setFailureDrawableId(R.mipmap.icon_img_null_bg)
-               //设置使用缓存
+                        //设置使用缓存
                 .setUseMemCache(true)
-                //设置显示圆形图片
+                        //设置显示圆形图片
                 .setCircular(false)
-                   //设置支持gif
+                        //设置支持gif
                 .setIgnoreGif(false)
                 .build();
         x.image().loadDrawable("http://7xlh8k.com1.z0.glb.clouddn.com/%E8%BD%A6%E9%98%9F%EF%BC%8D%E5%B9%BF%E5%91%8A.png", options, new ComCb<Drawable>() {
