@@ -18,10 +18,12 @@ import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.bean.FastLoginBean;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.bean.SendSmsBean;
+import www.lvchehui.com.carteam.bean.UserGetTypeBean;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.http.ComCb;
 import www.lvchehui.com.carteam.module.HomeAct;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
+import www.lvchehui.com.carteam.tools.Constants;
 import www.lvchehui.com.carteam.tools.StringUtils;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.btn.CaptchaButton;
@@ -89,6 +91,15 @@ public class LoginAct extends BaseAct {
                                 if (result.errCode != -1)
                                 {
                                     //判断用户类型
+                                    CM.getInstance().usersGetType(result.resData.gid, "" + Constants.CLIENT_TYPE, new ComCb<UserGetTypeBean>() {
+                                        @Override
+                                        public void onSuccess(UserGetTypeBean result) {
+                                            if (result.errCode != -1)
+                                            {
+                                                showToast("result:" + result.resData);
+                                            }
+                                        }
+                                    });
                                 }
 
                             }

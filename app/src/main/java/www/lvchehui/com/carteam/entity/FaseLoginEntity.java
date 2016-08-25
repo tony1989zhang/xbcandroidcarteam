@@ -5,6 +5,6 @@ package www.lvchehui.com.carteam.entity;
  * 作用：快速登录
  */
 public class FaseLoginEntity {
-    public String code;
-    public String to;
+    public String gid;
+    public String username;
 }

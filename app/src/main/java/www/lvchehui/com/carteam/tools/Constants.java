@@ -13,6 +13,9 @@ public class Constants {
     public static final String IS_FRIST_START_APP = "IS_FRIST_START_APP";
     public static final String USER_GID = "users_gid";
     public static final String USER_NAME = "user_name";
+    public static final int CLIENT_TYPE = 2;
+    public static final int CLIENT_TYPE_DRIVER = 3;
+    public static final int CLIENT_TYPE_RESPONSIBLE = 2;
 
 
     public static final String APP_FILE_PATH = "SDCard/Android/data/www.lvchehui.com.carteam/files/"; //缓存路径
