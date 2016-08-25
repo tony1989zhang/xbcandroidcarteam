@@ -22,8 +22,10 @@ public abstract class ComCb<ResultType> implements CommonCallback<ResultType> {
             String msg = httpEx.getMessage();
             String result = httpEx.getResult();
             errStr = "错误码：" + code + "解析:" + msg;
-        }else{
+        }else if(isOnCallback){
             errStr = "网络错误";
+        }else{
+            errStr = "数据处理出错";
         }
         XgoLog.e("errStr:" + errStr);
     }
@@ -33,6 +35,11 @@ public abstract class ComCb<ResultType> implements CommonCallback<ResultType> {
     }
     @Override
     public void onFinished() {
-        ToastManager.getManager().show("加载数据完成");
+        ToastManager.getManager().show(errStr);
+    }
+
+    @Override
+    public void onSuccess(ResultType result) {
+         XgoLog.e("ResultType-result:" + result);
     }
 }

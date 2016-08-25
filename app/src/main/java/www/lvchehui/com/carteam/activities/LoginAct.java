@@ -2,6 +2,7 @@ package www.lvchehui.com.carteam.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +25,7 @@ import www.lvchehui.com.carteam.http.ComCb;
 import www.lvchehui.com.carteam.module.HomeAct;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
 import www.lvchehui.com.carteam.tools.Constants;
+import www.lvchehui.com.carteam.tools.SPUtil;
 import www.lvchehui.com.carteam.tools.StringUtils;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.btn.CaptchaButton;
@@ -36,7 +38,7 @@ import www.lvchehui.com.carteam.view.wheelview.ChangeDatePickPopWin;
  * 作用：登录
  */
 @ContentView(R.layout.act_login)
-public class LoginAct extends BaseAct {
+public class LoginAct extends BaseAct{
     @ViewInject(R.id.account_et)
     private ClearEt m_account_et;
     @ViewInject(R.id.captcha_et)
@@ -83,37 +85,73 @@ public class LoginAct extends BaseAct {
                     showToast("验证码不能为空");
                     return;
                 }
-                CM.getInstance().fastLogin(m_account_et.getText().toString(), m_captcha_et.getText().toString()
-                        , new ComCb<FastLoginBean>() {
-                            @Override
-                            public void onSuccess(FastLoginBean result) {
-                                showToast(result.resMsg);
-                                if (result.errCode != -1)
-                                {
-                                    //判断用户类型
-                                    CM.getInstance().usersGetType(result.resData.gid, "" + Constants.CLIENT_TYPE, new ComCb<UserGetTypeBean>() {
-                                        @Override
-                                        public void onSuccess(UserGetTypeBean result) {
-                                            if (result.errCode != -1)
-                                            {
-                                                showToast("result:" + result.resData);
-                                            }
-                                        }
-                                    });
-                                }
-
-                            }
-                        }
-                );
-                showToast("登录注册同一个页面");
-                startActivity(new Intent(this, HomeAct.class));
+                showProgressDialog();
+                CM.getInstance().fastLogin(m_account_et.getText().toString(), m_captcha_et.getText().toString(),new FastLoginComCb());
                 break;
             case R.id.register_tv:
 //                startActivity(new Intent(this, CreCarTeamAct.class));
-                startActivity(new Intent(this,RegisterAct.class));
+                startActivity(new Intent(this, RegisterAct.class));
                 break;
         }
     }
+
+    class FastLoginComCb extends ComCb<FastLoginBean>{
+
+        @Override
+        public void onSuccess(FastLoginBean result) {
+
+            showToast(result.resMsg);
+            if (result.errCode != -1)
+            {
+                showProgressDialog("获取当前用户类型");
+                //判断用户类型
+                CM.getInstance().usersGetType(result.resData.gid, "" + Constants.CLIENT_TYPE,new GetTypeComCb());
+                SPUtil.getInstant(LoginAct.this).save(Constants.USER_GID, result.resData.gid);
+                SPUtil.getInstant(LoginAct.this).save(Constants.USER_NAME,result.resData.username);
+            }
+        }
+
+
+        @Override
+        public void onFinished() {
+            super.onFinished();
+            dismissProgressDialog();
+        }
+    }
+
+
+    class GetTypeComCb extends ComCb<UserGetTypeBean>{
+        @Override
+        public void onSuccess(UserGetTypeBean result) {
+
+            if (result.errCode != -1)
+            {
+
+                if (result.resData == Constants.CLIENT_TYPE_OTHER) {
+                    showToast("result:" + result.resData);
+                    startActivity(new Intent(LoginAct.this,CreCarTeamAct.class));
+                }
+                switch (result.resData){
+                    case Constants.CLIENT_TYPE_PASSENGER:
+                        break;
+                    case Constants.CLIENT_TYPE_DRIVER:
+                        break;
+                    case Constants.CLIENT_TYPE_RESPONSIBLE:
+                        startActivity(new Intent(LoginAct.this,HomeAct.class));
+                        break;
+                    case Constants.CLIENT_TYPE_OTHER:
+                        startActivity(new Intent(LoginAct.this,CreCarTeamAct.class));
+                        break;
+                }
+            }
+        }
+        @Override
+        public void onFinished() {
+            super.onFinished();
+            dismissProgressDialog();
+        }
+    }
+
 
 
     @Override

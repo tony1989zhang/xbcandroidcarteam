@@ -14,8 +14,11 @@ public class Constants {
     public static final String USER_GID = "users_gid";
     public static final String USER_NAME = "user_name";
     public static final int CLIENT_TYPE = 2;
-    public static final int CLIENT_TYPE_DRIVER = 3;
+
+    public static final int CLIENT_TYPE_PASSENGER = 1;
     public static final int CLIENT_TYPE_RESPONSIBLE = 2;
+    public static final int CLIENT_TYPE_DRIVER = 3;
+    public static final int CLIENT_TYPE_OTHER = 4;
 
 
     public static final String APP_FILE_PATH = "SDCard/Android/data/www.lvchehui.com.carteam/files/"; //缓存路径
