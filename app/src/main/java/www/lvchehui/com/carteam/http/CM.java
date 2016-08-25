@@ -7,6 +7,7 @@ import org.xutils.x;
 import java.util.HashMap;
 import java.util.Map;
 
+import www.lvchehui.com.carteam.bean.FastLoginBean;
 import www.lvchehui.com.carteam.bean.RegisterBean;
 import www.lvchehui.com.carteam.bean.SendSmsBean;
 import www.lvchehui.com.carteam.tools.Constants;
@@ -27,6 +28,7 @@ public class CM {
     private static final String USERS_REGISTER = "Users/register";
     private static final String USERS_LOGIN = "Users/login";
     private static final String CARS_GETLIST = "Cars/getList";
+    private static final String USERS_FASTLOGIN = "Users/fastLogin";
     private static CM mCM;
 
     private CM() {
@@ -46,7 +48,14 @@ public class CM {
         return CUtil.Post(SENDSMS_SEND,params,comcb);
     }
 
-//    public Cancelable fastLogin(String user)
+    public Cancelable fastLogin(String username,String code,ComCb<FastLoginBean> comCb){
+
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("username",username);
+        params.put("code",code);
+        return CUtil.Post("username",params,comCb);
+
+    }
 
     public Cancelable register(String username,String smscode,ComCb<RegisterBean> comCb){
         HashMap<String ,Object> params = new HashMap<>();
