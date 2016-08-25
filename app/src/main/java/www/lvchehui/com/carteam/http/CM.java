@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import www.lvchehui.com.carteam.bean.FastLoginBean;
+import www.lvchehui.com.carteam.bean.IdentitySubmitBean;
 import www.lvchehui.com.carteam.bean.RegisterBean;
 import www.lvchehui.com.carteam.bean.SendSmsBean;
 import www.lvchehui.com.carteam.bean.UserGetTypeBean;
@@ -30,6 +31,10 @@ public class CM {
     private static final String USERS_LOGIN = "Users/login";
     private static final String CARS_GETLIST = "Cars/getList";
     private static final String USERS_FASTLOGIN = "Users/fastLogin";
+    /**
+     * 负责人身份信息管理
+     * */
+    private static final String IDENTITY_SUBMIT = "Identity/submit";
 
     /**
      * 用户访问接口权限
@@ -96,5 +101,18 @@ public class CM {
         params.put("users_gid",(String) SPUtil.getInstant(x.app()).get(Constants.USER_GID,""));
         params.put("page",page);
         return CUtil.Post(CARS_GETLIST,params,comCb);
+    }
+
+    /**
+     * 提交身份信息 
+     * */
+    public Cancelable identitySubmit(String users_gid,String phone,String phone_backup,String idcard_url,String idcard_number,ComCb<IdentitySubmitBean> comCb){
+        Map<String,Object> params = new HashMap<>();
+        params.put("users_gid",users_gid);
+        params.put("phone",phone);
+        params.put("phone_backup",phone_backup);
+        params.put("idcard_url",idcard_url);
+        params.put("idcard_number",idcard_number);
+        return CUtil.Post(IDENTITY_SUBMIT,params,comCb);
     }
 }
