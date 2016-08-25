@@ -11,4 +11,12 @@ import www.lvchehui.com.carteam.http.JRParser;
 public class BaseBean {
     public int errCode;
     public String resMsg;
+
+    @Override
+    public String toString() {
+        return "BaseBean{" +
+                "errCode=" + errCode +
+                ", resMsg='" + resMsg + '\'' +
+                '}';
+    }
 }

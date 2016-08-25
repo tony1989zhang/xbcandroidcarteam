@@ -5,8 +5,10 @@ import com.google.gson.Gson;
 import org.xutils.http.app.ResponseParser;
 import org.xutils.http.request.UriRequest;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 
+import www.lvchehui.com.carteam.bean.BaseBean;
 import www.lvchehui.com.carteam.tools.XgoLog;
 
 /**
@@ -26,8 +28,41 @@ public class JRParser implements ResponseParser {
      * result 字符串类型
      * */
     @Override
-    public Object parse(Type resultType, Class<?> resultClass, String result) throws Throwable {
+    public Object parse(Type resultType, Class<?> resultClass1, String result) throws Throwable {
+        Class<?> resultClass = resultClass1;
         XgoLog.e("class:" + resultClass + ","+"result:" + result);
-        return new Gson().fromJson(result,resultClass);
+        Gson gson = new Gson();
+        Object o = null;
+        try {
+             o = gson.fromJson(result, resultClass1);
+            return o;
+        }catch (Exception e){
+            BaseBean baseBean = gson.fromJson(result, BaseBean.class);
+            Object o1 = resultClass.newInstance();
+            Field resData = resultClass.getDeclaredField("resData");
+            resData.setAccessible(true);
+            resData.set(o1, null);
+            Field errCode = null;
+            Field resMsg = null;
+              for (;resultClass != Object.class;resultClass = resultClass.getSuperclass())
+              {
+                  try {
+                      errCode = resultClass.getDeclaredField("errCode");
+                      resMsg = resultClass.getDeclaredField("resMsg");
+                  }catch (Exception a)
+                  {
+
+                  }
+              }
+
+            errCode.setAccessible(true);
+            errCode.set(o1, baseBean.errCode);
+
+            errCode.setAccessible(true);
+            resMsg.set(o1,baseBean.resMsg);
+            return o1;
+        }
+
+
     }
 }
