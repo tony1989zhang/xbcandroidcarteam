@@ -89,7 +89,6 @@ public class LoginAct extends BaseAct{
                 CM.getInstance().fastLogin(m_account_et.getText().toString(), m_captcha_et.getText().toString(),new FastLoginComCb());
                 break;
             case R.id.register_tv:
-//                startActivity(new Intent(this, CreCarTeamAct.class));
                 startActivity(new Intent(this, RegisterAct.class));
                 break;
         }
