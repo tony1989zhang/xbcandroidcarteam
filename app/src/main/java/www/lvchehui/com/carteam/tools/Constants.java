@@ -7,9 +7,11 @@ package www.lvchehui.com.carteam.tools;
 public class Constants {
 
 
+
     public static final String DEFAULT_PWD = "*&^^ABC))assfgh";//默认设置的密码
 
-    public static final String USERS_GID = "users_gid";
+    public static final String IS_FRIST_START_APP = "IS_FRIST_START_APP";
+    public static final String USER_GID = "users_gid";
     public static final String USER_NAME = "user_name";
 
 

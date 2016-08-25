@@ -203,7 +203,7 @@ public class AMapYunTuAct extends BaseAct implements LocationSource,AMapLocation
         CloudSearch.SearchBound bound = new CloudSearch.SearchBound("全国");
         try {
             mQuery = new CloudSearch.Query(Constants.YUNTU_MAP.AMAP_YUNTU_TABLEID,"",bound);
-            mQuery.addFilterString("xbc_gid",(String) SPUtil.getInstant(this).get(Constants.USERS_GID,""));
+            mQuery.addFilterString("xbc_gid",(String) SPUtil.getInstant(this).get(Constants.USER_GID,""));
             mCloudSearch.searchCloudAsyn(mQuery);
         } catch (AMapException e) {
             e.printStackTrace();

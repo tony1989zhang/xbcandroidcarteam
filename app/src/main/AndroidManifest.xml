@@ -238,36 +238,48 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".module.XbcCreditListAct"
+        <activity
+            android:name=".module.XbcCreditListAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.wallet.activityes.EnterSmsAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.wallet.activityes.EnterSmsAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.wallet.activityes.PayAccountAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.wallet.activityes.PayAccountAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".module.wallet.activityes.SetPayPassWordAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.wallet.activityes.SetPayPassWordAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SplanshAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".activities.WebAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".activities.WelAct">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".activities.WelAct"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+
         </activity>
     </application>
 

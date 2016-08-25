@@ -2,8 +2,6 @@ package www.lvchehui.com.carteam.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -101,7 +99,7 @@ public class RegisterAct extends BaseAct {
                 showToast(result.resMsg);
                 if (result.errCode != -1) {
                     startActivity(new Intent(RegisterAct.this, CreCarTeamAct.class));
-                    SPUtil.getInstant(RegisterAct.this).save(Constants.USERS_GID, result.resData.gid);
+                    SPUtil.getInstant(RegisterAct.this).save(Constants.USER_GID, result.resData.gid);
                     SPUtil.getInstant(RegisterAct.this).save(Constants.USER_NAME,result.resData.username);
                 }
             }

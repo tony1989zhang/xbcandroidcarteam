@@ -1,11 +1,9 @@
 package www.lvchehui.com.carteam.http;
 
-import org.xutils.common.Callback;
 import org.xutils.common.Callback.Cancelable;
 import org.xutils.common.Callback.CommonCallback ;
 import org.xutils.x;
 
-import java.net.CacheRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -66,7 +64,7 @@ public class CM {
 
     public Cancelable carsGetList(int page,CommonCallback comCb){
         Map<String,Object> params = new HashMap<>();
-        params.put("users_gid",(String) SPUtil.getInstant(x.app()).get(Constants.USERS_GID,""));
+        params.put("users_gid",(String) SPUtil.getInstant(x.app()).get(Constants.USER_GID,""));
         params.put("page",page);
         return CUtil.Post(CARS_GETLIST,params,comCb);
     }
