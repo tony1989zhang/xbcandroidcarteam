@@ -15,10 +15,14 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.bean.FastLoginBean;
 import www.lvchehui.com.carteam.bean.LoginBean;
+import www.lvchehui.com.carteam.bean.SendSmsBean;
 import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.http.ComCb;
 import www.lvchehui.com.carteam.module.HomeAct;
 import www.lvchehui.com.carteam.module.crecarteam.activities.CreCarTeamAct;
+import www.lvchehui.com.carteam.tools.StringUtils;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.btn.CaptchaButton;
 import www.lvchehui.com.carteam.view.et.ClearEt;
@@ -30,7 +34,7 @@ import www.lvchehui.com.carteam.view.wheelview.ChangeDatePickPopWin;
  * 作用：登录
  */
 @ContentView(R.layout.act_login)
-public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBean> {
+public class LoginAct extends BaseAct {
     @ViewInject(R.id.account_et)
     private ClearEt m_account_et;
     @ViewInject(R.id.captcha_et)
@@ -50,15 +54,50 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
 
         switch (v.getId()) {
             case R.id.btn_captcha:
-                m_btn_captcha.startCountdown();
-                CM.getInstance().login("", "", this);
+                if (StringUtils.isEmpty(m_account_et.getText().toString())){
+                    showToast("用户名不能为空");
+                    return;
+                }
+
+                CM.getInstance().sendSMS(m_account_et.getText().toString(), new ComCb<SendSmsBean>(){
+                    @Override
+                    public void onSuccess(SendSmsBean result) {
+                        showToast(result.resMsg);
+                        if (result.errCode != -1)
+                        {
+                            m_btn_captcha.startCountdown();
+                        }
+                    }
+                });
                 break;
             case R.id.login_tv:
+                if (StringUtils.isEmpty(m_account_et.getText().toString()))
+                {
+                    showToast("用户名不能为空");
+                    return;
+                }
+                if (StringUtils.isEmpty(m_captcha_et.getText().toString()))
+                {
+                    showToast("验证码不能为空");
+                    return;
+                }
+                CM.getInstance().fastLogin(m_account_et.getText().toString(), m_captcha_et.getText().toString()
+                        , new ComCb<FastLoginBean>() {
+                            @Override
+                            public void onSuccess(FastLoginBean result) {
+                                showToast(result.resMsg);
+                                if (result.errCode != -1)
+                                {
+                                    //判断用户类型
+                                }
+
+                            }
+                        }
+                );
                 showToast("登录注册同一个页面");
                 startActivity(new Intent(this, HomeAct.class));
                 break;
             case R.id.register_tv:
-
 //                startActivity(new Intent(this, CreCarTeamAct.class));
                 startActivity(new Intent(this,RegisterAct.class));
                 break;
@@ -70,26 +109,5 @@ public class LoginAct extends BaseAct implements Callback.CommonCallback<LoginBe
     protected void onDestroy() {
         super.onDestroy();
         m_btn_captcha.cancelCountdown();
-    }
-
-
-    @Override
-    public void onSuccess(LoginBean result) {
-        XgoLog.e(result.toString());
-    }
-
-    @Override
-    public void onError(Throwable ex, boolean isOnCallback) {
-
-    }
-
-    @Override
-    public void onCancelled(CancelledException cex) {
-
-    }
-
-    @Override
-    public void onFinished() {
-
     }
 }

@@ -5,25 +5,8 @@ package www.lvchehui.com.carteam.entity;
  * 作用：实体类
  */
 public class LoginEntity {
-    private String gid;
-    private String username;
-
-    public String getGid() {
-        return gid;
-    }
-
-    public void setGid(String gid) {
-        this.gid = gid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
+    public String gid;
+    public String username;
     @Override
     public String toString() {
         return "ResDataBean{" +
