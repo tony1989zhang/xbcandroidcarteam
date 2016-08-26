@@ -14,12 +14,14 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.activities.UploadIdPtAct;
 import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.bean.IdentitySubmitBean;
+import www.lvchehui.com.carteam.entity.IdentitySubmitEntity;
 import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.http.ComCb;
@@ -60,11 +62,29 @@ public class ResponInfoAct extends BaseFormAct {
     @ViewInject(R.id.et_phone_sec)
     private EditText m_et_phone_sec;
     private UploadIdPtEvent mUploadIdPtEvent;
+    private IdentitySubmitEntity submitEntity;
     protected void initView() {
         super.initView();
         EventBus.getDefault().register(this);
         setTitleV(m_title_view, "负责人信息");
         m_tv_submit_ok.setText("保存");
+
+        try {
+            submitEntity =  App.getInstance().getDbManager().findFirst(IdentitySubmitEntity.class);
+            if (submitEntity != null)
+            {
+                m_et_respon_name.setText("" + submitEntity.true_name);
+                m_et_preson_id_card.setText("已上传");
+                m_et_phone.setText("" + submitEntity.phone);
+                m_et_phone_sec.setText("" + submitEntity.phone_backup);
+                XgoLog.e("submitEntity:" + submitEntity.toString());
+                showToast("submitEntity:" + submitEntity);
+            }else{
+                showToast("submitEntity为空");
+            }
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
     }
     @Override
     protected void submitOnClick() {
@@ -77,6 +97,7 @@ public class ResponInfoAct extends BaseFormAct {
             showToast("提交数据");
         else{
             showToast("数据不对");
+            return;
         }
         showProgressDialog();
         String deCodeUpLoadPt = ParseUtil.deCodeString(mUploadIdPtEvent.getIdCardPt());
@@ -88,13 +109,23 @@ public class ResponInfoAct extends BaseFormAct {
                     @Override
                     public void onSuccess(IdentitySubmitBean result) {
                         super.onSuccess(result);
+                        dismissProgressDialog();
                         showToast("result:" + result.toString());
                         try {
-                            App.getInstance().getDbManager().save(result);
+                            if (submitEntity != null) {
+                                App.getInstance().getDbManager().update(result.resData);
+                                List<IdentitySubmitEntity> all = App.getInstance().getDbManager().findAll(IdentitySubmitEntity.class);
+                                XgoLog.e("all:" + all.toString());
+                            }else {
+                                App.getInstance().getDbManager().save(result.resData);
+                                 IdentitySubmitEntity identitySubmitEntity = App.getInstance().getDbManager().findFirst(IdentitySubmitEntity.class);
+                                XgoLog.e("数据库数据:" + identitySubmitEntity.toString());
+
+                            }
                         } catch (DbException e) {
                             e.printStackTrace();
                         }
-                        dismissProgressDialog();
+
                         finish();
                     }
                 });

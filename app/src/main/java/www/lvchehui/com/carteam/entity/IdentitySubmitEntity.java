@@ -1,5 +1,7 @@
 package www.lvchehui.com.carteam.entity;
 
+import com.google.gson.annotations.Expose;
+
 import org.xutils.db.annotation.Column;
 import org.xutils.db.annotation.Table;
 
@@ -9,6 +11,9 @@ import org.xutils.db.annotation.Table;
  */
 @Table(name = "IdentitySubmitEntity")
 public class IdentitySubmitEntity {
+    @Column(name = "id",isId = true)
+    @Expose
+    public int id;
     @Column(name = "add_time")
     public int add_time;
     @Column(name = "update_time")
@@ -18,7 +23,7 @@ public class IdentitySubmitEntity {
     @Column(name = "phone")
     public String phone;
     @Column(name = "phone_backup")
-    public Object phone_backup;
+    public String phone_backup;
     @Column(name = "true_name")
     public String true_name;
     @Column(name = "idcard_url")
