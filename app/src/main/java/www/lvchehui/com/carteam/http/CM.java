@@ -19,7 +19,7 @@ import www.lvchehui.com.carteam.tools.SPUtil;
 
 /**
  * 作者：V先生 on 2016/7/30 17:13
- * 作用：提交网络请求。设置为可以兼容CUtil 与ConnecionUtil
+ * 作用：提交网络请求
  */
 public class CM {
 
