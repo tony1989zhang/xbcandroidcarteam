@@ -27,6 +27,7 @@ import www.lvchehui.com.carteam.http.CUtil;
 import www.lvchehui.com.carteam.http.ComCb;
 import www.lvchehui.com.carteam.tools.PhotoUtils;
 import www.lvchehui.com.carteam.tools.RegexUtils;
+import www.lvchehui.com.carteam.tools.StringUtils;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
 
@@ -86,6 +87,11 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         super.submitOnClick();
         validationAwe(R.id.et_id_number_content, RegexUtils.NOT_EMPTY, R.string.err_no_empty);
 
+        if(StringUtils.isEmpty(mUrl))
+        {
+            showToast("请选择要上传的文件");
+            return;
+        }
         UploadIdPtEvent uploadIdPtEvent = new UploadIdPtEvent();
         uploadIdPtEvent.setIdNum(m_et_id_number_content.getText().toString());
         uploadIdPtEvent.setIdCardPt(mUrl);
