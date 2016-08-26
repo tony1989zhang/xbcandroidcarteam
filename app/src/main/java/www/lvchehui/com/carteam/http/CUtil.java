@@ -64,20 +64,6 @@ public class CUtil {
         Cancelable cancelable = x.http().post(params, callback);
         return cancelable;
     }
-    public static <T>Cancelable UpLoadFile2(String path,Map<String,Object> map,CommonCallback<T> callback){
-        RequestParams params = new RequestParams(getUrl(path));
-        if (null != map)
-        {
-            for (Map.Entry<String,Object> entry:map.entrySet())
-            {
-                params.addParameter(entry.getKey(),entry.getValue());
-            }
-        }
-        params.setMultipart(true);
-        Cancelable cancelable = x.http().post(params, callback);
-        return cancelable;
-    }
-
 
     public static <T>Cancelable DownLoadFile(String url, String filePath,CommonCallback<T> callback)
     {
