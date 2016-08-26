@@ -114,7 +114,6 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         mInstance.getActivityResult(this, requestCode, resultCode, data);
     }
     public String getClassName(){
-
         return this.getClass().getSimpleName();
     }
 }
