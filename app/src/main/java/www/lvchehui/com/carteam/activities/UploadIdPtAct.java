@@ -108,7 +108,6 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
                 mUrl = result.resData.url;
             }
         });
-//        mUrl = "123";
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
