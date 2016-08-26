@@ -6,13 +6,17 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.xutils.ex.DbException;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
+import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.entity.IdentitySubmitEntity;
 import www.lvchehui.com.carteam.module.HomeAct;
+import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;
 
 /**
@@ -72,6 +76,28 @@ public class CreCarTeamAct extends BaseAct {
         }else{
             m_tv_submit_ok.setText("提交审核");
         }
+
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        IdentitySubmitEntity  submitEntity = null;
+        try {
+            submitEntity = App.getInstance().getDbManager().findFirst(IdentitySubmitEntity.class);
+            if (submitEntity != null)
+            {
+                showToast("submitEntity:" + submitEntity);
+                m_rl_responInfo.setPressed(true);
+            }else{
+                showToast("submitEntity为空");
+            }
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Event({R.id.rl_responInfo, R.id.rl_carTeamInfo, R.id.rl_vehicleInfo, R.id.rl_driverInfo, R.id.tv_submit_ok})
