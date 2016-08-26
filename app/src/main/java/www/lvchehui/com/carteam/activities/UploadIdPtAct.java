@@ -74,8 +74,7 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         btn_submitPt();
         if(null == mInstance)
         return;
-        mInstance.showDialog(this);;
-
+        mInstance.showDialog(this);
     }
      //扩充父类使子类能充分扩展
     public void btn_submitPt(){
