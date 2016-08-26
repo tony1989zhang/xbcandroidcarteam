@@ -7,7 +7,7 @@ import www.lvchehui.com.carteam.http.JRParser;
 
 /**
  * Created by 张灿能 on 2016/8/26.
- * 作用：
+ * 作用：上传照片
  */
 @HttpResponse(parser = JRParser.class)
 public class PictureUploadBean extends BaseBean {
