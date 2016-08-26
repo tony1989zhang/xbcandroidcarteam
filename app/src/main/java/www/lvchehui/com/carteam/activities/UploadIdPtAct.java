@@ -92,6 +92,8 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
             showToast("请选择要上传的文件");
             return;
         }
+
+        showToast("mUrl:" + mUrl);
         UploadIdPtEvent uploadIdPtEvent = new UploadIdPtEvent();
         uploadIdPtEvent.setIdNum(m_et_id_number_content.getText().toString());
         uploadIdPtEvent.setIdCardPt(mUrl);

@@ -19,4 +19,24 @@ public class IdentitySubmitEntity {
     public String identity_account;
     public String check_reason;
     public String identity_gid;
+
+    @Override
+    public String toString() {
+        return "IdentitySubmitEntity{" +
+                "add_time=" + add_time +
+                ", update_time=" + update_time +
+                ", ver='" + ver + '\'' +
+                ", phone='" + phone + '\'' +
+                ", phone_backup=" + phone_backup +
+                ", true_name='" + true_name + '\'' +
+                ", idcard_url='" + idcard_url + '\'' +
+                ", idcard_number='" + idcard_number + '\'' +
+                ", users_gid='" + users_gid + '\'' +
+                ", check_status=" + check_status +
+                ", identity_type=" + identity_type +
+                ", identity_account='" + identity_account + '\'' +
+                ", check_reason='" + check_reason + '\'' +
+                ", identity_gid='" + identity_gid + '\'' +
+                '}';
+    }
 }
