@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.xutils.ex.DbException;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.activities.UploadIdPtAct;
+import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.bean.IdentitySubmitBean;
 import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
@@ -87,7 +89,13 @@ public class ResponInfoAct extends BaseFormAct {
                     public void onSuccess(IdentitySubmitBean result) {
                         super.onSuccess(result);
                         showToast("result:" + result.toString());
+                        try {
+                            App.getInstance().getDbManager().save(result);
+                        } catch (DbException e) {
+                            e.printStackTrace();
+                        }
                         dismissProgressDialog();
+                        finish();
                     }
                 });
     }

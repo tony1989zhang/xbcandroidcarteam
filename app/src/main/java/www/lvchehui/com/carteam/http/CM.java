@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import www.lvchehui.com.carteam.bean.FastLoginBean;
+import www.lvchehui.com.carteam.bean.IdentityIssueBean;
 import www.lvchehui.com.carteam.bean.IdentitySubmitBean;
 import www.lvchehui.com.carteam.bean.PictureUploadBean;
 import www.lvchehui.com.carteam.bean.RegisterBean;
@@ -38,6 +39,7 @@ public class CM {
      * 负责人身份信息管理
      * */
     private static final String IDENTITY_SUBMIT = "Identity/submit";
+    private static final String IDENTITY_ISSUE = "Identity/issue";
 
     /**
      * 用户访问接口权限
@@ -66,7 +68,7 @@ public class CM {
     public Cancelable sendSMS(String to,ComCb<SendSmsBean> comcb){
         HashMap<String, Object> params = new HashMap<>();
         params.put("to",to);
-        return CUtil.Post(SENDSMS_SEND,params,comcb);
+        return CUtil.Post(SENDSMS_SEND, params, comcb);
     }
 
     /**
@@ -124,6 +126,13 @@ public class CM {
         params.put("idcard_url",idcard_url);
         params.put("idcard_number",idcard_number);
         return CUtil.Post(IDENTITY_SUBMIT,params,comCb);
+    }
+
+    public Cancelable identityIssue(String users_gid,String identity_gid,ComCb<IdentityIssueBean> comCb){
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("users_gid",users_gid);
+        params.put("identity_gid",identity_gid);
+        return CUtil.Post(IDENTITY_ISSUE,params,comCb);
     }
 
 }
