@@ -22,4 +22,5 @@ public class UpdPeopleIDcardActivity extends UploadIdPtAct {
                 "身份证各项信息及头像均清晰可见，持证人需免冠，面部无遮拦，无关清洗可见，须露出手肘。",
                 "http://img2.imgtn.bdimg.com/it/u=1173121091,4029038941&fm=21&gp=0.jpg");
     }
+
 }

@@ -18,7 +18,10 @@ import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.activities.UploadIdPtAct;
 import www.lvchehui.com.carteam.base.BaseFormAct;
 import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
+import www.lvchehui.com.carteam.http.CM;
+import www.lvchehui.com.carteam.tools.Constants;
 import www.lvchehui.com.carteam.tools.RegexUtils;
+import www.lvchehui.com.carteam.tools.SPUtil;
 import www.lvchehui.com.carteam.view.TitleView;
 import www.lvchehui.com.carteam.view.dlg.CWayDlg;
 
@@ -67,6 +70,12 @@ public class ResponInfoAct extends BaseFormAct {
         else{
             showToast("数据不对");
         }
+//        CM.getInstance().identitySubmit((String)SPUtil.getInstant(this).get(Constants.USER_GID,"")
+//        ,m_et_phone.getText().toString(),
+//                m_et_phone_sec.getText().toString(),
+//                m_et_preson_id_card.getText().toString(),
+//                m
+//        )
     }
     @Event({R.id.et_respon_sex})
     private void setSexClick(View v){

@@ -4,11 +4,13 @@ import org.xutils.common.Callback.Cancelable;
 import org.xutils.common.Callback.CommonCallback ;
 import org.xutils.x;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 import www.lvchehui.com.carteam.bean.FastLoginBean;
 import www.lvchehui.com.carteam.bean.IdentitySubmitBean;
+import www.lvchehui.com.carteam.bean.PictureUploadBean;
 import www.lvchehui.com.carteam.bean.RegisterBean;
 import www.lvchehui.com.carteam.bean.SendSmsBean;
 import www.lvchehui.com.carteam.bean.UserGetTypeBean;
@@ -24,6 +26,7 @@ public class CM {
     private static final String SENDSMS_SEND= "sendsms/send";
 
 
+    private static final String PICTURE_UPLOAD = "picture/upload";
     /*
     *用户基础
     * */
@@ -50,6 +53,13 @@ public class CM {
             mCM = new CM();
         }
         return mCM;
+    }
+
+    public Cancelable picUpload(String file,ComCb<PictureUploadBean> comCb){
+
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("file",new File(file));
+        return CUtil.UpLoadFile(PICTURE_UPLOAD,params,comCb);
     }
 
 
@@ -104,7 +114,7 @@ public class CM {
     }
 
     /**
-     * 提交身份信息 
+     * 提交身份信息
      * */
     public Cancelable identitySubmit(String users_gid,String phone,String phone_backup,String idcard_url,String idcard_number,ComCb<IdentitySubmitBean> comCb){
         Map<String,Object> params = new HashMap<>();
@@ -115,4 +125,5 @@ public class CM {
         params.put("idcard_number",idcard_number);
         return CUtil.Post(IDENTITY_SUBMIT,params,comCb);
     }
+
 }

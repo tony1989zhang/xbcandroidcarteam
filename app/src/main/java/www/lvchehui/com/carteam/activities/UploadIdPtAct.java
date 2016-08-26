@@ -20,8 +20,11 @@ import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
 import www.lvchehui.com.carteam.base.BaseFormAct;
+import www.lvchehui.com.carteam.bean.PictureUploadBean;
 import www.lvchehui.com.carteam.evebus.UploadIdPtEvent;
+import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.http.CUtil;
+import www.lvchehui.com.carteam.http.ComCb;
 import www.lvchehui.com.carteam.tools.PhotoUtils;
 import www.lvchehui.com.carteam.tools.RegexUtils;
 import www.lvchehui.com.carteam.tools.XgoLog;
@@ -62,6 +65,7 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         m_tv_id_number_title.setText(idNumTitle);
         m_tv_des_title.setText(desTitle);
         m_tv_des_content.setText(desContent);
+        m_tv_submit_ok.setText("保存");
         CUtil.loadImage(m_iv_photo, pic);
     }
 
@@ -86,7 +90,6 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
         UploadIdPtEvent uploadIdPtEvent = new UploadIdPtEvent();
         uploadIdPtEvent.setIdNum(m_et_id_number_content.getText().toString());
         uploadIdPtEvent.setIdCardPt(mUrl);
-
         uploadIdPtEvent.setUpLoadType(getClassName());
         EventBus.getDefault().post(uploadIdPtEvent);
         finish();
@@ -96,8 +99,16 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
     public void onPotoResult(Bitmap ib) {
         XgoLog.e("onPotoResult:" + ib);
         m_iv_photo.setImageBitmap(ib);
+        String bitUrl = mInstance.saveBitmap(ib);
         //执行上传文件操作，返回url交给子类保存到对应的表当中
-        mUrl = "123";
+        CM.getInstance().picUpload(bitUrl, new ComCb<PictureUploadBean>() {
+            @Override
+            public void onSuccess(PictureUploadBean result) {
+                super.onSuccess(result);
+                mUrl = result.resData.url;
+            }
+        });
+//        mUrl = "123";
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
