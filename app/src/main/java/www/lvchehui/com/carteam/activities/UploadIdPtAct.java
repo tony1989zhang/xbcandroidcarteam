@@ -105,6 +105,7 @@ public class UploadIdPtAct extends BaseFormAct implements PhotoUtils.GetPhotoRes
             public void onSuccess(PictureUploadBean result) {
                 super.onSuccess(result);
                 mUrl = result.resData.url;
+                XgoLog.e("mUrl:" + mUrl);
             }
         });
     }
