@@ -61,7 +61,7 @@ public class ResponInfoAct extends BaseFormAct {
     private LinearLayout m_ll_phone_sec;
     @ViewInject(R.id.et_phone_sec)
     private EditText m_et_phone_sec;
-    private UploadIdPtEvent mUploadIdPtEvent;
+    private UploadIdPtEvent mUploadIdPtEvent = new UploadIdPtEvent();
     private IdentitySubmitEntity submitEntity;
     protected void initView() {
         super.initView();
@@ -79,6 +79,8 @@ public class ResponInfoAct extends BaseFormAct {
                 m_et_phone_sec.setText("" + submitEntity.phone_backup);
                 XgoLog.e("submitEntity:" + submitEntity.toString());
                 showToast("submitEntity:" + submitEntity);
+                mUploadIdPtEvent.setIdCardPt("" + submitEntity.idcard_url);
+                mUploadIdPtEvent.setIdNum("" + submitEntity.idcard_number);
             }else{
                 showToast("submitEntity为空");
             }
@@ -118,8 +120,9 @@ public class ResponInfoAct extends BaseFormAct {
                                 XgoLog.e("all:" + all.toString());
                             }else {
                                 App.getInstance().getDbManager().save(result.resData);
-                                 IdentitySubmitEntity identitySubmitEntity = App.getInstance().getDbManager().findFirst(IdentitySubmitEntity.class);
+                                IdentitySubmitEntity identitySubmitEntity = App.getInstance().getDbManager().findFirst(IdentitySubmitEntity.class);
                                 XgoLog.e("数据库数据:" + identitySubmitEntity.toString());
+
 
                             }
                         } catch (DbException e) {
