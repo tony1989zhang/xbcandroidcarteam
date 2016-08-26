@@ -36,7 +36,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.LoginAct"
+            android:name=".module.LoginAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -157,12 +157,12 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.PermissionListAct"
+            android:name=".module.manager.PermissionListAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.RegisterAct"
+            android:name=".module.RegisterAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
@@ -189,7 +189,7 @@
 
             />
         <activity
-            android:name=".activities.AMapYunTuAct"
+            android:name=".module.orders.activities.AMapYunTuAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
@@ -259,7 +259,7 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.SplanshAct"
+            android:name=".module.SplanshAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
@@ -275,7 +275,7 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.WelAct"
+            android:name=".module.WelAct"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">

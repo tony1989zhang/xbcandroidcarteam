@@ -20,13 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.activities.PermissionListAct;
-import www.lvchehui.com.carteam.base.BaseAct;
+import www.lvchehui.com.carteam.module.manager.PermissionListAct;
 import www.lvchehui.com.carteam.base.BaseListAct;
 import www.lvchehui.com.carteam.base.BasePageAdapter;
 import www.lvchehui.com.carteam.bean.LoginBean;
 import www.lvchehui.com.carteam.bean.TextBean;
-import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.tools.XgoLog;
 

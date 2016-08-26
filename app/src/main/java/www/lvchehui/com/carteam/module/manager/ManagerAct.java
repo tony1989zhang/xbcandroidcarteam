@@ -2,16 +2,12 @@ package www.lvchehui.com.carteam.module.manager;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.activities.PermissionListAct;
 import www.lvchehui.com.carteam.base.BaseAct;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.TitleView;

@@ -11,7 +11,6 @@ import android.widget.TextView;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import org.xutils.common.Callback;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import www.lvchehui.com.carteam.R;
-import www.lvchehui.com.carteam.activities.AMapYunTuAct;
+import www.lvchehui.com.carteam.module.orders.activities.AMapYunTuAct;
 import www.lvchehui.com.carteam.activities.WebAct;
 import www.lvchehui.com.carteam.app.App;
 import www.lvchehui.com.carteam.base.BaseListFm;
@@ -29,8 +28,6 @@ import www.lvchehui.com.carteam.bean.TextBean;
 import www.lvchehui.com.carteam.entity.CarsListEntity;
 import www.lvchehui.com.carteam.http.CM;
 import www.lvchehui.com.carteam.module.crecarteam.activities.DriverListAct;
-import www.lvchehui.com.carteam.module.crecarteam.activities.VehicleListAct;
-import www.lvchehui.com.carteam.module.orders.activities.ChangeDriverListAct;
 import www.lvchehui.com.carteam.module.orders.activities.ChangeRateAct;
 import www.lvchehui.com.carteam.module.orders.activities.ChangeVehicleListAct;
 import www.lvchehui.com.carteam.tools.PhoneUtil;
