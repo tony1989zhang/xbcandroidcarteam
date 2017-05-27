@@ -65,8 +65,8 @@ public class BaseAct extends Activity {
         initView();
     }
 
-    protected void initView() {
-    }
+        protected void initView() {
+        }
 
     public void setTitleV(TitleView title_v, String title) {
         setTitleV(title_v, title, null);

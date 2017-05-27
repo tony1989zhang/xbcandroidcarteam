@@ -67,13 +67,13 @@ public class OrdersAct extends BaseFmAct {
         mFragmentsMsg.add(new SetOffListFm());
         mFragmentsMsg.add(new DrivingListFm());
         mFragmentsMsg.add(new FinishListFm());
-        ItineraryFragmentAdapter itineraryFragmentAdapter = new ItineraryFragmentAdapter(getSupportFragmentManager());
-        m_banSlidingView.setAdapter(itineraryFragmentAdapter);
-        m_banSlidingView.setOnPageChangeListener(new ItineraryOnPageChangeListener());
-        m_banSlidingView.setOffscreenPageLimit(0);
-        m_banSlidingView.setCurrentItem(currentIndex);
-        m_banSlidingView.setScanScroll(true);
-        m_tv_quote.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
+            ItineraryFragmentAdapter itineraryFragmentAdapter = new ItineraryFragmentAdapter(getSupportFragmentManager());
+            m_banSlidingView.setAdapter(itineraryFragmentAdapter);
+            m_banSlidingView.setOnPageChangeListener(new ItineraryOnPageChangeListener());
+            m_banSlidingView.setOffscreenPageLimit(0);
+            m_banSlidingView.setCurrentItem(currentIndex);
+            m_banSlidingView.setScanScroll(true);
+            m_tv_quote.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
     }
 
     class ItineraryFragmentAdapter extends FragmentPagerAdapter {
@@ -105,11 +105,11 @@ public class OrdersAct extends BaseFmAct {
             m_banSlidingView.setCurrentItem(position);
             switch (position) {
                 case 0:
-                    m_tv_quote.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
-                    m_tv_scheduled.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_setoff.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_driver.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_finish.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_quote.setTextColor(getColor(R.color.swipe_refrsh_color3));
+                    m_tv_scheduled.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_setoff.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_driver.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_finish.setTextColor(getColor(R.color.text_default_color));
                     break;
                 case 1:
                     m_tv_quote.setTextColor(getResources().getColor(R.color.text_default_color));
@@ -119,25 +119,25 @@ public class OrdersAct extends BaseFmAct {
                     m_tv_finish.setTextColor(getResources().getColor(R.color.text_default_color));
                     break;
                 case 2:
-                    m_tv_quote.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_scheduled.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_setoff.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
-                    m_tv_driver.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_finish.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_quote.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_scheduled.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_setoff.setTextColor(getColor(R.color.swipe_refrsh_color3));
+                    m_tv_driver.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_finish.setTextColor(getColor(R.color.text_default_color));
                     break;
                 case 3:
-                    m_tv_quote.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_scheduled.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_setoff.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_driver.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
-                    m_tv_finish.setTextColor(getResources().getColor(R.color.text_default_color));
+                    m_tv_quote.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_scheduled.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_setoff.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_driver.setTextColor(getColor(R.color.swipe_refrsh_color3));
+                    m_tv_finish.setTextColor(getColor(R.color.text_default_color));
                     break;
                 case 4:
-                    m_tv_quote.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_scheduled.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_setoff.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_driver.setTextColor(getResources().getColor(R.color.text_default_color));
-                    m_tv_finish.setTextColor(getResources().getColor(R.color.swipe_refrsh_color3));
+                    m_tv_quote.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_scheduled.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_setoff.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_driver.setTextColor(getColor(R.color.text_default_color));
+                    m_tv_finish.setTextColor(getColor(R.color.swipe_refrsh_color3));
                     break;
 
             }

@@ -1,6 +1,5 @@
 package www.lvchehui.com.carteam.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -19,13 +18,6 @@ import com.amap.api.services.help.InputtipsQuery;
 import com.amap.api.services.help.Tip;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
-//import com.lvchehui.www.xiangbc.R;
-//import com.lvchehui.www.xiangbc.base.BaseActivity;
-//import com.lvchehui.www.xiangbc.base.BaseListAdapter;
-//import com.lvchehui.www.xiangbc.utils.Constant;
-//import com.lvchehui.www.xiangbc.utils.StringUtils;
-//import com.lvchehui.www.xiangbc.utils.XgoLog;
-//import com.lvchehui.www.xiangbc.view.EditText.ClearEditText;
 
 import org.greenrobot.eventbus.EventBus;
 import org.xutils.view.annotation.ContentView;
@@ -43,6 +35,14 @@ import www.lvchehui.com.carteam.tools.StringUtils;
 import www.lvchehui.com.carteam.tools.XgoLog;
 import www.lvchehui.com.carteam.view.et.ClearEt;
 
+//import com.lvchehui.www.xiangbc.R;
+//import com.lvchehui.www.xiangbc.base.BaseActivity;
+//import com.lvchehui.www.xiangbc.base.BaseListAdapter;
+//import com.lvchehui.www.xiangbc.utils.Constant;
+//import com.lvchehui.www.xiangbc.utils.StringUtils;
+//import com.lvchehui.www.xiangbc.utils.XgoLog;
+//import com.lvchehui.www.xiangbc.view.EditText.ClearEditText;
+
 /**
  * Created by 张灿能 on 2016/6/29.
  * 作用：搜索关键字列表
@@ -58,7 +58,7 @@ public class PkwSearchAct extends BaseAct implements PoiSearch.OnPoiSearchListen
     @ViewInject(R.id.listfind)
     private ListView m_listfind;
 
-
+  
     private String strCity = "厦门市";
     private PoiSearch.Query query;
     private PoiSearch poiSearch;

@@ -74,12 +74,10 @@ public abstract class BasePageAdapter<TYPE> extends Adapter {
 		if (recyclerView.getLayoutManager() != null && recyclerView.getLayoutManager() instanceof LinearLayoutManager){
 			mLayoutManger = (LinearLayoutManager)recyclerView.getLayoutManager();
 		}
-
 		if(mIsPageEnabled){
 			PagingableScrollListener scrollListener = new PagingableScrollListener();
 			recyclerView.setOnScrollListener(scrollListener);
 		}
-
 	}
 	
 	public class PagingableScrollListener extends RecyclerView.OnScrollListener{
